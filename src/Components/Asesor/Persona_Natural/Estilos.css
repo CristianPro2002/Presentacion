@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.titulo{
+    text-align: center;
+    font-size: 400%;
+    font-family:'Roboto';
+}
+
+.input{
+    width: 100%;
+    background: white;
+    border: 3px solid rbg(255, 208, 1);
+    border-radius: 10px;
+    height: 45px;
+    padding: 0 40px 0 10px;
+    transition: .3s ease all;
+    box-sizing: border-box;
+    outline: none;
+    border-color: black;
+}
+
+.label{
+    width: 50%;
+    font-weight: 700;
+    padding: 10px;
+    cursor:pointer;
+    color: black;
+}
+
+.div{
+    width: 100%;
+}
+
+.col-md-4{
+   border-color: black;
+   border-width: 1px;
+   border-radius: 4px;
+   border-style: solid;
+   margin-top: -4%;
+   
+}
+
+.titulitos{
+    color: white;
+    background-color: #157ee0;
+    font-weight: 700;
+    text-align: center;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 4px;
+    border-style: solid;
+}
+
+.contenedor4{
+    border-color: black;
+    border-width: 1px;
+    border-radius: 4px;
+    border-style: solid;
+    width: 100%;
+    margin-top: -0%;
+    
+    
+}
+
+.padre{
+    background-color: #EBF5FB;
+    padding: 30px;
+}
+
+.select{
+    border-color: black;
+    border-width: 1px;
+    border-radius: 4px;
+    border-style: solid;
+    width: 100%;
+}
+
+.bordes{
+    border-color: black;
+    border-width: 1px;
+    border-radius: 4px;
+    border-style: solid;
+    width: 100%;
+}
+
+.red-red{
+    --bs-gutter-x: 0rem !important;
+}
+
+.cuadro{
+    background-color: chartreuse;
+    width: 30%;
+}
