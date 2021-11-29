@@ -6,256 +6,509 @@ const PersonaJuridica = () => {
   return (
     <div className="Fondo">
       <h1 className="Titulo-principal">PERSONA JURIDICA</h1>
-      <br />
-      <br />
-      <form className="Contenedor-First">
-        <div className="Contenedor-Main">
-          <h5 className="Titulo-One">Tipo de solicitud</h5>
-          <label className="Checkbox-One">
-            <input type="checkbox" name="" className="" /> Vinculación
-          </label>
-          <label className="Checkbox-Two">
-            <input type="checkbox" name="" className="" /> Actualización
-          </label>
-        </div>
-
-        <div className="Contenedor-One">
-          <h5 className="Titulo-Two">Fecha diligenciamiento</h5>
-          <label className="Date-One">
-            <input type="date" name="" className="" />
-          </label>
-        </div>
-        <br />
-
-        <div className="Contenedor-Two">
-          <h5 className="Titulo-Three">Información general de la entidad</h5>
-          <label className="Checkbox-Three">
-            Tipo de documento <input type="checkbox" name="" className="" /> NIT
-          </label>
-          <label className="Number-One">
-            Nº documento
-            <input type="number" name="" className="" />
-          </label>
-        </div>
-
-        <div className="Contenedor-Three">
-          <h5 className="Titulo-Four"></h5>
-          <label className="Checkbox-Four">
-            <input type="checkbox" name="" className="" /> Fideicomiso{" "}
-            <h7 className="Aviso">
-              {" "}
-              Este campo es diligenciado por el Grupo Bancolombia
-            </h7>
-          </label>
-          <label className="Number-Two">
-            Nº de fideicomiso <input type="number" name="" className="" />
-          </label>
-          <br />
-        </div>
-        <div className="Contenedor-Four">
-          <label className="Text-One">
-            Nombre o razón social <input type="text" name="" className="" />
-          </label>
-          <br />
-        </div>
-        <div className="Contenedor-Five">
-          <label className="Text-Two">
-            Nombre corto o sigla
-            <input type="text" name="" className="" />
-          </label>
-          <br />
-        </div>
-        <div className="Contenedor-Six">
-          <label className="Date-Two">
-            Fecha de constitución <input type="date" name="" className="" />
-          </label>
-          <br />
-        </div>
-        <div className="Contenedor-Seven">
-          <label className="Text-Three">
-            Ciudad de constitución <input type="text" name="" className="" />
-          </label>
-          <br />
-        </div>
-        <div className="Contenedor-Eight">
-          <label className="Text-Four">
-            Pais de constitución <input type="text" name="" className="" />
-          </label>
-        </div>
-        <div className="Contenedor-Nine">
-          <label className="Text-Five">
-            Dirección sede principal
-            <input type="text" name="" className="" />
-          </label>
-          <br />
-        </div>
-        <div className="Contenedor-Main-Ten">
-        <div className="Sub-Contenedor">
-        <div className="Contenedor-Ten">
-          <label className="Text-Six">
-            Barrio
-            <input type="text" name="" className="" />
-          </label>
-          <br />
-        </div>
-        </div>
-        <div className="Container-Main-Eleven">
-        <div className="Contenedor-Eleven">
-          <label className="Text-Seven">
-            Ciudad/Municipio
-            <input type="text" name="" className="" />
-          </label>
-          <br />
-        </div>
-        </div>
-        <div className="Container-Main-Twelve">
-        <div className="Contenedor-Twelve">
-          <label className="Text-Eight">
-            Departamento
-            <input type="text" name="" className="" />
-          </label>
-          <br />
-        </div>
-        </div>
-        
-        </div>
-        <div className="Contenedor-Thirteen">
-          <label className="Text-Nine">
-            País
-            <input type="text" name="" className="" />
-          </label>
-          <br />
-        </div>
-        <div className="Contenedor-Main-Fourteen">
-        <div className="Contenedor-Fourteen">
-          <label className="Text-Ten">
-            Teléfono
-            <input type="text" name="" className="" />
-          </label>
-          <div className="Contenedor-Ext" >
-          <label className="Text-Eleven">
-            Ext
-            <input type="text" name="" className="" />
-          </label>
-          <br />
-        </div>
-        </div>
-        </div>
-        <div className="Contenedor-Fifteen">
-          <label className="Text-Twelve">
-            Correo electrónico sede principal
-            <input type="text" name="" className="" />
-          </label>
-          <br />
-        </div>
-        <br />
-
-        <div className="Contenedor-Sixteen ">
-          <h5 className="Titulo-Five">Información del representante legal</h5>
-          <label className="Name-Select">
-            {" "}
-            Tipo de documento
-            <select className="Select-One">
-              <option>Seleccione su documento de identidad</option>
-              <option>CC</option>
-              <option>Cédula de extranjeria</option>
-              <option>Pasaporte</option>
-              <option>Carné diplomático</option>
-            </select>
-          </label>
-          <br />
-        </div>
-        <div className="Contenedor-Seventeen">
-          <label className="Number-Three">
-            N° de documento
-            <input type="number" name="" className="" />
-          </label>
-        </div>
-        <div className="Contenedor-Eighteen">
-          <label className="Text-Thirteen">
-            Primer nombre <input type="text" name="" className="Tamaño-1" /> Segundo
-            nombre <input type="text" name="" className="Tamaño-2" />
-          </label>
-          <div className="Contenedor-Nineteen">
-            <label className="Text-Fourteen">
-              Primer apellido <input type="text" name="" className="Tamaño-3" /> Segundo
-              apellido <input type="text" name="" className="Tamaño-4" />
+      <form className="row red-red">
+        <div className="col-md-8 ">
+          <Col className="column">
+            <h5 className="Titulo">Tipo de solicitud</h5>
+            <label className="label">
+              <input type="checkbox" name="" className="" /> Vinculación
             </label>
-          </div>
+            <label className="label">
+              <input type="checkbox" name="" className="" /> Actualización
+            </label>
+          </Col>
+        </div>
+
+        <div className="col-md-4">
+          <Col className="column">
+            <h5 className="Titulo">Fecha diligenciamiento</h5>
+            <label className="label">
+              <input type="date" name="" className=" Border" />
+            </label>
+          </Col>
+        </div>
+
+        <div className="col-md-6">
+          <Col className="column">
+            <h5 className="Titulo-2">Información general de la entidad</h5>
+            <label className="label">
+              Tipo de documento <input type="checkbox" name="" className="" />{" "}
+              NIT
+            </label>
+            <label className="label-2">
+              Nº documento
+              <input type="number" name="" className="Border" />
+            </label>
+          </Col>
+        </div>
+
+        <div className="col-md-6">
+          <Col className="column">
+            <h5 className="Titulo-3"></h5>
+            <label className="label">
+              <input type="checkbox" name="" className="" /> Fideicomiso{" "}
+              <h7 className="Aviso">
+                {" "}
+                Este campo es diligenciado por el Grupo Bancolombia
+              </h7>
+            </label>
+            <label className="label-2">
+              Nº de fideicomiso{" "}
+              <input type="number" name="" className="Border" />
+            </label>
+          </Col>
+        </div>
+
+        <div className="col-md-12">
+          <Col className="column">
+            <label className="label-2">
+              Nombre o razón social{" "}
+              <input type="text" name="" className="Border" />
+            </label>
+          </Col>
+        </div>
+
+        <div className="col-md-7">
+          <Col className="column">
+            <label className="label-2">
+              Nombre corto o sigla
+              <input type="text" name="" className="Border" />
+            </label>
+          </Col>
+        </div>
+
+        <div className="col-md-5">
+          <Col className="column">
+            <label className="label-3">
+              Fecha de constitución{" "}
+              <input type="date" name="" className="Border" />
+            </label>
+          </Col>
+        </div>
+
+        <div className="col-md-6">
+          <Col className="column">
+            <label className="label-2">
+              Ciudad de constitución{" "}
+              <input type="text" name="" className="Border" />
+            </label>
+          </Col>
+        </div>
+
+        <div className="col-md-6">
+          <Col className="column">
+            <label className="label-2">
+              Pais de constitución{" "}
+              <input type="text" name="" className="Border" />
+            </label>
+          </Col>
+        </div>
+
+        <div className="col-md-12">
+          <Col className="column">
+            <label className="label-2">
+              Dirección sede principal
+              <input type="text" name="" className="Border" />
+            </label>
+          </Col>
+        </div>
+
+        <div className="col-md-4">
+          <Col className="column">
+            <label className="label-2">
+              Barrio
+              <input type="text" name="" className="Border" />
+            </label>
+          </Col>
+        </div>
+
+        <div className="col-md-4">
+          <Col className="column">
+            <label className="label-2">
+              Ciudad/Municipio
+              <input type="text" name="" className="Border" />
+            </label>
+          </Col>
+        </div>
+
+        <div className="col-md-4">
+          <Col className="column">
+            <label className="label-2">
+              Departamento
+              <input type="text" name="" className="Border" />
+            </label>
+          </Col>
+        </div>
+
+        <div className="col-md-7">
+          <Col className="column">
+            <label className="label-2">
+              País
+              <input type="text" name="" className="Border" />
+            </label>
+          </Col>
+        </div>
+
+        <div className="col-md-5">
+          <Col className="column">
+            <label className="label-4">
+              Teléfono
+              <input type="text" name="" className="Border" />
+            </label>
+            <label className="label-4">
+              Ext
+              <input type="text" name="" className="Border" />
+            </label>
+          </Col>
+        </div>
+
+        <div className="col-md-12">
+          <Col className="column">
+            <label className="label-2">
+              Correo electrónico sede principal
+              <input type="text" name="" className="Border" />
+            </label>
+          </Col>
           <br />
         </div>
-        <div className="Contenedor-Seven">
-          <label className="Text-Three">
-            Cargo <input type="text" name="" className="" />
-          </label>
-          <br />
+
+        <div className="col-md-7">
+          <Col className="column">
+            <h5 className="Titulo-4">Información del representante legal</h5>
+            <label className="label-2">
+              {" "}
+              Tipo de documento
+              <select className="Select-One">
+                <option>Seleccione su documento de identidad</option>
+                <option>CC</option>
+                <option>Cédula de extranjeria</option>
+                <option>Pasaporte</option>
+                <option>Carné diplomático</option>
+              </select>
+            </label>
+          </Col>
         </div>
-        <div className="Contenedor-Eight">
-          <label className="Text-Four">
-            Dirección laboral <input type="text" name="" className="" />
-          </label>
+
+        <div className="col-md-5">
+          <Col className="column">
+            <h5 className="Titulo-3"></h5>
+            <label className="label-2">
+              N° de documento
+              <input type="number" name="" className="Border" />
+            </label>
+          </Col>
         </div>
-      <div className="Contenedor-Main-Ten">
-      <div className="Sub-Contenedor">
-        <div className="Contenedor-Ten">
-          <label className="Text-Six">
-            Barrio
-            <input type="text" name="" className="" />
-          </label>
-          <br />
+
+        <div className="col-md-12">
+          <Col className="column">
+            <label className="label">
+              Primer nombre <input type="text" name="" className="Border-2" />{" "}
+              Segundo nombre <input type="text" name="" className="Border-2" />
+            </label>
+            <label className="label">
+              Primer apellido <input type="text" name="" className="Border-2" />{" "}
+              Segundo apellido{" "}
+              <input type="text" name="" className="Border-2" />
+            </label>
+          </Col>
         </div>
+
+        <div className="col-md-6">
+          <Col className="column">
+            <label className="label-2">
+              Cargo <input type="text" name="" className="Border" />
+            </label>
+          </Col>
         </div>
-        <div className="Container-Main-Eleven">
-        <div className="Contenedor-Eleven">
-          <label className="Text-Seven">
-            Ciudad/Municipio
-            <input type="text" name="" className="" />
-          </label>
-          <br />
+
+        <div className="col-md-6">
+          <Col className="column">
+            <label className="label-2">
+              Dirección laboral <input type="text" name="" className="Border" />
+            </label>
+          </Col>
         </div>
+
+        <div className="col-md-4">
+          <Col className="column">
+            <label className="label-2">
+              Barrio
+              <input type="text" name="" className="Border" />
+            </label>
+          </Col>
         </div>
-        <div className="Container-Main-Twelve">
-        <div className="Contenedor-Twelve">
-          <label className="Text-Eight">
-            Departamento
-            <input type="text" name="" className="" />
-          </label>
-          <br />
+
+        <div className="col-md-4">
+          <Col className="column">
+            <label className="label-2">
+              Ciudad/Municipio
+              <input type="text" name="" className="Border" />
+            </label>
+          </Col>
         </div>
+
+        <div className="col-md-4">
+          <Col className="column">
+            <label className="label-2">
+              Departamento
+              <input type="text" name="" className="Border" />
+            </label>
+          </Col>
         </div>
+
+        <div className="col-md-4">
+          <Col className="column">
+            <label className="label-2">
+              País
+              <input type="text" name="" className="Border" />
+            </label>
+          </Col>
         </div>
-        <div className="Contenedor-Twenty">
-          <label className="Text-Fifteen">
-            País
-            <input type="text" name="" className="" />
-          </label>
-          <br />
+
+        <div className="col-md-5">
+          <Col className="column">
+            <label className="label-4">
+              Teléfono laboral
+              <input type="text" name="" className="Border" />
+            </label>
+            <label className="label-4">
+              Ext
+              <input type="text" name="" className="Border" />
+            </label>
+          </Col>
         </div>
-        <div className="Contenedor-Twenty-One">
-          <label className="Text-Sixteen">
-            Teléfono laboral
-            <input type="text" name="" className="" />
-          </label>
-          <label className="Text-Seventeen">
-            Ext
-            <input type="text" name="" className="" />
-          </label>
-          <br />
+
+        <div className="col-md-3">
+          <Col className="column">
+            <label className="label-2">
+              Celular
+              <input type="text" name="" className="Border" />
+            </label>
+          </Col>
         </div>
-        <div className="Contenedor-Twenty-Two">
-          <label className="Text-Eighteen">
-            Celular
-            <input type="text" name="" className="" />
-          </label>
+
+        <div className="col-md-12 mb-4">
+          <Col className="column">
+            <label className="label-2">
+              Correo electrónico laboral
+              <input type="text" name="" className="Border" />
+            </label>
+          </Col>
         </div>
-        <div className="Contenedor-Fifteen">
-          <label className="Text-Twelve">
-            Correo electrónico laboral
-            <input type="text" name="" className="" />
-          </label>
-          <br />
+
+        <div className="col-md-12 ">
+          <Col className="column">
+            <h5 className="Titulo">Información de socios o accionistas</h5>
+            <label className="label">
+              <p className="Texto">
+                ¿Tienes socios o accionistas con participación directa o
+                indirecta superior al 5%?
+              </p>
+              *Sí
+              <input type="checkbox" name="" className="" />
+            </label>
+            <label className="label">
+              No
+              <input type="checkbox" name="" className="" />
+            </label>
+          </Col>
         </div>
-        <br />
+        <div className="col-md-12 ">
+          <Col className="column">
+            <label className="label">
+              <p className="Texto">
+                ¿Tienes socios o accionistas con participación directa o
+                indirecta igual o inferior al 5% y que tengan control sobre la
+                entidad?
+              </p>
+              *Sí
+              <input type="checkbox" name="" className="" />
+            </label>
+            <label className="label">
+              No
+              <input type="checkbox" name="" className="" />
+            </label>
+          </Col>
+        </div>
+        <div className="col-md-12 ">
+          <Col className="column">
+            <label className="label">
+              <p className="">
+                *Si alguna de las respuestas es afirmativa, adjunte a esta
+                solicitud el anexo de Conocimiento Socios o Accionistas.
+              </p>
+            </label>
+          </Col>
+        </div>
+        <div className="col-md-7">
+          <Col className="column">
+            <h5 className="Titulo-4">
+              Información de un contacto en la entidad (Diligencie esta
+              Información para
+            </h5>
+            <label className="label-2">
+              {" "}
+              Tipo de documento
+              <select className="Select-One">
+                <option>Seleccione su documento de identidad</option>
+                <option>CC</option>
+                <option>Cédula de extranjeria</option>
+                <option>Pasaporte</option>
+                <option>Carné diplomático</option>
+              </select>
+            </label>
+          </Col>
+        </div>
+
+        <div className="col-md-5">
+          <Col className="column">
+            <h5 className="Titulo-4">
+              {" "}
+              un contacto diferente al representante legal){" "}
+            </h5>
+            <label className="label-2">
+              N° de documento
+              <input type="number" name="" className="Border" />
+            </label>
+          </Col>
+        </div>
+
+        <div className="col-md-12">
+          <Col className="column">
+            <label className="label">
+              Primer nombre <input type="text" name="" className="Border-2" />{" "}
+              Segundo nombre <input type="text" name="" className="Border-2" />
+            </label>
+            <label className="label">
+              Primer apellido <input type="text" name="" className="Border-2" />{" "}
+              Segundo apellido{" "}
+              <input type="text" name="" className="Border-2" />
+            </label>
+          </Col>
+        </div>
+
+        <div className="col-md-6">
+          <Col className="column">
+            <label className="label-2">
+              Cargo <input type="text" name="" className="Border" />
+            </label>
+          </Col>
+        </div>
+
+        <div className="col-md-6">
+          <Col className="column">
+            <label className="label-2">
+              Dirección laboral <input type="text" name="" className="Border" />
+            </label>
+          </Col>
+        </div>
+
+        <div className="col-md-4">
+          <Col className="column">
+            <label className="label-2">
+              Barrio
+              <input type="text" name="" className="Border" />
+            </label>
+          </Col>
+        </div>
+
+        <div className="col-md-4">
+          <Col className="column">
+            <label className="label-2">
+              Ciudad/Municipio
+              <input type="text" name="" className="Border" />
+            </label>
+          </Col>
+        </div>
+
+        <div className="col-md-4">
+          <Col className="column">
+            <label className="label-2">
+              Departamento
+              <input type="text" name="" className="Border" />
+            </label>
+          </Col>
+        </div>
+
+        <div className="col-md-4">
+          <Col className="column">
+            <label className="label-2">
+              País
+              <input type="text" name="" className="Border" />
+            </label>
+          </Col>
+        </div>
+
+        <div className="col-md-5">
+          <Col className="column">
+            <label className="label-4">
+              Teléfono laboral
+              <input type="text" name="" className="Border" />
+            </label>
+            <label className="label-4">
+              Ext
+              <input type="text" name="" className="Border" />
+            </label>
+          </Col>
+        </div>
+
+        <div className="col-md-3">
+          <Col className="column">
+            <label className="label-2">
+              Celular
+              <input type="text" name="" className="Border" />
+            </label>
+          </Col>
+        </div>
+
+        <div className="col-md-12 mb-4">
+          <Col className="column">
+            <label className="label-2">
+              Correo electrónico laboral
+              <input type="text" name="" className="Border" />
+            </label>
+          </Col>
+        </div>
+        <div className="col-md-8 ">
+          <Col className="column">
+            <h5 className="Titulo">
+              Información de la naturaleza y tipo de entidad jurídica
+            </h5>
+            <label className="label">
+              <p className="Texto-2">Naturaleza de la entidad</p>
+              <input type="checkbox" name="" className="" /> Privada
+            </label>
+            <label className="label">
+              <input type="checkbox" name="" className="" /> Pública
+            </label>
+            <label className="label">
+              <input type="checkbox" name="" className="" /> Mixta
+            </label>
+          </Col>
+        </div>
+        <div className="col-md-4">
+          <Col className="column">
+            <h5 className="Titulo-3"></h5>
+            <label className="label-2">
+              Código CIIU <input type="text" name="" className="Border" />
+            </label>
+          </Col>
+        </div>
+        <div className="col-md-9">
+          <Col className="column">
+            <label className="label-2">
+              Detalle de la actividad económica principal{" "}
+              <input type="text" name="" className="Border" />
+            </label>
+          </Col>
+        </div>
+        <div className="col-md-3">
+          <Col className="column">
+            <label className="label-2">
+              N°. Empleados <input type="text" name="" className="Border" />
+            </label>
+          </Col>
+        </div>
       </form>
     </div>
   );

@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+
+.padre{
+    background-image: url(https://fondosmil.com/fondo/504.jpg);
+    height: 100vh;
+	font-family: 'Roboto', sans-serif;
+}
+
+.contenedort{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo {
+   
+}
+
+.inicio {
+    width: 50%;
+    float: left;
+}
+
+.regresar {
+    width: 50%;
+    float: right;
+}
+
+.ini {
+    float: left;
+    width: 100px;
+}
+
+.regre {
+    float: right;
+    width: 100px;
+}
+
+.carousel {
+    width: 100%;
+    box-shadow: 20px black;
+    border-radius: 10px;
+}
+
+.concaro {
+    float: left;
+    width: 50%;
+    
+}
+
+.contb{
+    padding: 5px;
+    width: 50%;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pj{
+    margin: 10px;
+    float: right;
+}
+.pn{
+    margin: 10px;
+    float: left;
+}
+
+.titu {
+    width: 100%;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conn{
+width: 25%;
+float: right;
+}
+
+.contj{
+width: 25%;
+float: left;
+}
+
+.ct{
+
+}
