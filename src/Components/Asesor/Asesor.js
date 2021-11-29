@@ -11,15 +11,15 @@ const Asesor = () => {
     let History  = useHistory();
 
     return (
-        <div className="padre">
+        <div className="padresito">
             
             
             <div className="">
             <div className="inicio">
-            <Button onClick = {()=>History.push('/')} className="ini">Inicio</Button>
+            <Button onClick = {()=>History.push('/Roles')} className="ini">Regresar</Button>
             </div>
             <div className="regresar">
-            <Button onClick = {()=>History.push('/Roles')} className="regre"> Regresar</Button>
+            <Button onClick = {()=>History.push('/')} className="regre"> Inicio</Button>
             </div>
             </div>
             <div className = "contenedort">
@@ -64,16 +64,29 @@ const Asesor = () => {
 
             <div className="contb">
               <div className="titu">
-                <h2>Selecciona el tipo de Persona</h2>
+                <h2 className="tp">Selecciona el tipo de Persona</h2>
                 </div>
+                <div className="contj">
+            <img className = "PJ"
+                                alt=""
+                                src="https://gestion.pe/resizer/dy8H21bwi9uf03wgZtVdr_B10bg=/580x330/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/DS7R4ETDHFFUNAFCKI3BXXUFHU.jpg"
+                                width="400"
+                                height="200"
+                            />
+                            <div className="bj">
+            <button onClick = {()=>History.push('/PersonaJuridica')} className="pj">Persona Juridica</button>
             </div>
-
-            <div className="ct">
-            <div className="contj">
-            <Button onClick = {()=>History.push('/PersonaJuridica')} className="pj">Persona Juridica</Button>
             </div>
             <div className="conn">
-            <Button onClick = {()=>History.push('/PersonaNatural')} className="pn">Persona Natural</Button>
+            <img className = "PN"
+                                alt=""
+                                src="https://acasesores.co/es/wp-content/uploads/2020/07/ac-asesores-empresariales-declaraci%C3%B3n-renta-novedades-importantes-personas-naturales-700x291.jpg"
+                                width="400"
+                                height="200"
+                            />
+                            <div className="bn">
+            <button onClick = {()=>History.push('/PersonaNatural')} className="pn">Persona Natural</button>
+            </div>
             </div>
             </div>
             </div>

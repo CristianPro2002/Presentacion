@@ -2,7 +2,7 @@
 
 
 
-.padre{
+.padresito{
     background-image: url(https://fondosmil.com/fondo/504.jpg);
     height: 100vh;
 	font-family: 'Roboto', sans-serif;
@@ -43,6 +43,7 @@
     width: 100%;
     box-shadow: 20px black;
     border-radius: 10px;
+    padding: 10px;
 }
 
 .concaro {
@@ -63,31 +64,81 @@
 
 .pj{
     margin: 10px;
-    float: right;
+    border-radius: 10px;
+    width: 200px;
+    height: 45px;
+    background: #FFFFFF;
+	color: #00CED1;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    border-style: none;
+}
+.pj:hover{
+    box-shadow: 3px 0px 30px rgb(53, 86, 158);
 }
 .pn{
     margin: 10px;
-    float: left;
+    border-radius: 10px;
+    width: 200px;
+    height: 45px;
+    background: #FFFFFF;
+	color: #00CED1;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    border-style: none;
 }
-
+.pn:hover{
+    box-shadow: 3px 0px 30px rgba(53, 86, 158);
+}
 .titu {
     width: 100%;
     float: right;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
 }
 
 .conn{
-width: 25%;
-float: right;
+width: 50%;
+
 }
 
 .contj{
-width: 25%;
-float: left;
+width: 50%;
+
+
 }
 
-.ct{
+.tp {
+    font-weight: bold;
+    color: aliceblue;
+    font-family: 'Roboto', sans-serif;
+}
 
+.titulo{
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: aliceblue;
+}
+
+.PJ{
+    border-radius: 10px;
+}
+
+.PN {
+    border-radius: 10px;
+}
+
+.bj{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

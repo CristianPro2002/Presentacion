@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import "./Estilos.css";
+import "./Estilos_PJ.css";
 
 const PersonaJuridica = () => {
   return (
@@ -508,6 +508,7 @@ const PersonaJuridica = () => {
               N°. Empleados <input type="text" name="" className="Border" />
             </label>
           </Col>
+          <br />
         </div>
       </form>
     </div>

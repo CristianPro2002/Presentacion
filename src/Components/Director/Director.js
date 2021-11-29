@@ -60,7 +60,8 @@ async function handleSignup () {
                                      <label>
                                          <div className="Creacion__usuarios--nombre">
                                         Nombre de usuario </div>
-                                            <input
+                                            <input  
+                                                className="inputxd"                                          
                                                 ref={emailRef}
                                                 placeholder="enter the username"
                                                 type="text"
@@ -76,6 +77,7 @@ async function handleSignup () {
                                             Contraseña
                                             </div>
                                             <input
+                                            className="inputxd"                              
                                                 ref={passwordRef}
                                                 placeholder="password"
                                                 type="password"

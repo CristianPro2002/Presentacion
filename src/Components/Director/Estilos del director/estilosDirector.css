@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(77, 208, 225)
+    background-color: #ebf5fb;
 
    
 }
@@ -45,7 +45,7 @@ font-family: 'Times New Roman', Times, serif;
    
 }
 
-input{
+.inputxd{
     margin:5px;
     display: block;
     border-radius: 5px;
@@ -55,8 +55,6 @@ input{
     color: rgb(14, 14, 13);
     border-color: rgb(97, 93, 93);
     font-size: 15px;
-    
-    
 }
 
 

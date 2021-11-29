@@ -6,6 +6,8 @@
   font-size: 400%;
 }
 
+
+
 .inputsito {
   width: 100%;
   background-color: #cdcec0;
@@ -23,11 +25,14 @@
   background-color: #ebf5fb;
   padding: 30px;
   display: grid;
+ 
+  
 }
 
 .red-red {
   --bs-gutter-x: 0rem !important;
 }
+
 
 .column {
   border-color: #000000;

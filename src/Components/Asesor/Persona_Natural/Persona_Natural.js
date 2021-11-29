@@ -11,15 +11,15 @@ const PersonaNatural = () => {
   return (
     <div className="padre">
       <h1 className='titulo'>PERSONA NATURAL</h1>
-      <br />
-      <br />
+      
+     
 
       <form className="Form">
         <div className="row red-red" >
           <div className="col-md-4">
             <Col className="">
               <h5 className="titulitos">Tipo de solicitud</h5>
-              <label className="label">
+              <label className="label-forms">
                 Vinculación
                 <input
                   type="checkbox"
@@ -27,7 +27,7 @@ const PersonaNatural = () => {
                   className=""
                 />
               </label>
-              <label className="label">
+              <label className="label-forms">
                 Actualización
                 <input
                   type="checkbox"
@@ -41,7 +41,7 @@ const PersonaNatural = () => {
           <div className="col-md-4">
             <Col className="">
               <h5 className="titulitos">Tipo de solicitante</h5>
-              <label className="label">
+              <label className="label-forms">
                 Beneficiario/Ordenante de giros
                 <input
                   type="checkbox"
@@ -55,7 +55,7 @@ const PersonaNatural = () => {
           <div className="col-md-4">
             <Col className="">
               <h5 className="titulitos">Fecha de diligenciamiento</h5>
-              <label className="label">
+              <label className="label-forms">
                 <input
                   type="date"
                   name="nombre"
@@ -69,7 +69,7 @@ const PersonaNatural = () => {
 
         <div className="contenedor4">
           <h5 className="titulitos">Informacion personal</h5>
-          <label className="label">
+          <label className="label-forms">
             Primer Nombre
             <input
               type="text"
@@ -78,7 +78,7 @@ const PersonaNatural = () => {
             />
           </label>
 
-          <label className="label">
+          <label className="label-forms">
             Segundo Nombre
             <input
               type="text"
@@ -87,7 +87,7 @@ const PersonaNatural = () => {
             />
           </label>
 
-          <label className="label">
+          <label className="label-forms">
             Primer Apellido
             <input
               type="text"
@@ -96,7 +96,7 @@ const PersonaNatural = () => {
             />
           </label>
 
-          <label className="label">
+          <label className="label-forms">
             Segundo Apellido
             <input
               type="text"
@@ -119,7 +119,7 @@ const PersonaNatural = () => {
         </div>
 
       <div className="bordes">
-      <label className="label">
+      <label className="label-forms">
             Nº documento
             <input
               type="text"
@@ -128,7 +128,7 @@ const PersonaNatural = () => {
             />
           </label>
 
-          <label className="label">
+          <label className="label-forms">
             Fecha de expedición
             <input
               type="date"
@@ -139,7 +139,7 @@ const PersonaNatural = () => {
       </div>
 
       <div className="bordes">
-      <label className="label">
+      <label className="label-forms">
             Lugar de expedición
             <input
               type="text"
@@ -148,7 +148,7 @@ const PersonaNatural = () => {
             />
           </label>
 
-          <label className="label">
+          <label className="label-forms">
             Fecha de nacimiento
             <input
               type="date"
@@ -160,7 +160,7 @@ const PersonaNatural = () => {
 
     
       <div className="bordes">
-      <label className="label">
+      <label className="label-forms">
             Ciudad de nacimiento
             <input
               type="text"
@@ -173,7 +173,7 @@ const PersonaNatural = () => {
           <div className="col">
             <Col className="bordes cuadro">
               <h5>Género</h5>
-              <label className="label">
+              <label className="label-forms">
                 <input
                   type="checkbox"
                   name="nombre"
@@ -181,7 +181,7 @@ const PersonaNatural = () => {
                 />
                 F
               </label>
-              <label className="label">
+              <label className="label-forms">
                 <input
                   type="checkbox"
                   name="nombre"
@@ -195,7 +195,7 @@ const PersonaNatural = () => {
           <div className="col">
             <Col className="bordes">
               <h5>Estado civil</h5>
-              <label className="label">
+              <label className="label-forms">
                 Soltero
                 <input
                   type="checkbox"
@@ -203,7 +203,7 @@ const PersonaNatural = () => {
                   className=""
                 />
               </label>
-              <label className="label">
+              <label className="label-forms">
                Casado
                 <input
                   type="checkbox"
@@ -211,7 +211,7 @@ const PersonaNatural = () => {
                   className=""
                 />
               </label>
-              <label className="label">
+              <label className="label-forms">
                Unión libre
                 <input
                   type="checkbox"
