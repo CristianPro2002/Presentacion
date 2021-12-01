@@ -60,7 +60,7 @@ const App = () => {
 					label="Usuario"
 					placeholder="john123"
 					name="usuario"
-					leyendaError="El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo."
+					leyendaError="Usuario Incorrecto"
 					expresionRegular={expresiones.usuario}
 				/>
 				
@@ -70,14 +70,14 @@ const App = () => {
 					tipo="password"
 					label="Contraseña"
 					name="password1"
-					leyendaError="La contraseña tiene que ser de 4 a 12 dígitos."
+					leyendaError="Contraseña Incorrecta"
 					expresionRegular={expresiones.password}
 				/>
 				
 				{formularioValido === false && <MensajeError>
 					<p>
 						<FontAwesomeIcon icon={faExclamationTriangle}/>
-						<b>Error:</b> Por favor rellena el formulario correctamente.
+						<b>Error:</b> Por favor rellena correctamente.
 					</p>
 				</MensajeError>}
 				<br/>

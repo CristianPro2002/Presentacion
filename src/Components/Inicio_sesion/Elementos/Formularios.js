@@ -103,7 +103,7 @@ const Boton = styled.button`
 	background: #FFFFFF;
 	color: #00CED1;
 	font-weight: bold;
-	border: none;
+	border:none;
 	border-radius: 10px;
 	cursor: pointer;
 

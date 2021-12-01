@@ -1,0 +1,52 @@
+.Contenedor-Principal {
+    text-align: center;
+    background-color: rgb(145, 196, 255);
+    height: 180vh;
+    
+
+}
+
+.Botones {
+    text-align: left;
+}
+
+
+.main-container {  
+    background-color: white;
+    
+    border-color: black;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 2px;
+    display: inline-block;
+    padding: 35px;
+    
+}
+
+.form-control:focus {
+    z-index: 5;
+}
+
+.logo {
+    width: 100px;
+    height: 100px; 
+}
+
+.logo-second {
+    width: 25px;
+    height: 25px;
+    float: left;
+    margin-top: 4px;
+    margin-left: 35px;
+    margin-right: 7px;
+}
+
+.example-collapse-text {
+    margin-top: 20%;
+    
+}
+
+.mb-5 {
+    text-align: left;
+}
+
