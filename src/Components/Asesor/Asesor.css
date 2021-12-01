@@ -3,9 +3,12 @@
 
 
 .padresito{
+    position: absolute;
     background-image: url(https://fondosmil.com/fondo/504.jpg);
-    height: 100vh;
+    height: 100%;
+    width: 100%;
 	font-family: 'Roboto', sans-serif;
+    
 }
 
 .contenedort{
@@ -42,24 +45,24 @@
 .carousel {
     width: 100%;
     box-shadow: 20px black;
-    border-radius: 10px;
-    padding: 10px;
+    
 }
 
 .concaro {
-    float: left;
-    width: 50%;
+    margin: 0;
+    
+    
     
 }
 
 .contb{
     padding: 5px;
-    width: 50%;
+    width: 100%;
     float: right;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    
 }
 
 .pj{
@@ -92,7 +95,6 @@
 }
 .titu {
     width: 100%;
-    float: right;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,11 +104,17 @@
 
 .conn{
 width: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
 
 }
 
 .contj{
 width: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
 
 
 }
@@ -125,10 +133,14 @@ width: 50%;
 
 .PJ{
     border-radius: 10px;
+    width: 500px;
+    height: 300px;
 }
 
 .PN {
     border-radius: 10px;
+    width: 500px;
+    height: 300px;
 }
 
 .bj{
@@ -142,3 +154,16 @@ width: 50%;
     justify-content: center;
     align-items: center;
 }
+
+.caro {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.row{
+    margin: 0;
+}
+
