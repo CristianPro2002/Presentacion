@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.Titulo-principal {
+  text-align: center;
+  font-family: "Roboto";
+  font-size: 400%;
+  color: black;
+}
+
+.inputsito {
+  width: 100%;
+  background-color: #cdcec0;
+  border: 3px solid rgb(255, 208, 1);
+  border-radius: 3px;
+  height: 45px;
+  padding: 0% 40px 0 10px;
+  transition: 0.3s ease all;
+  box-sizing: border-box;
+  border: 0;
+  outline: none;
+}
+
+.Fondo {
+  background-color: #ebf5fb;
+  padding: 30px;
+  display: grid;
+}
+
+.red-red {
+  --bs-gutter-x: 0rem !important;
+  font-size: 110%;
+}
+
+.column {
+  border-color: #000000;
+  border-width: 1px;
+  border-radius: 4px;
+  border-style: solid;
+}
+
+.column-2 {
+  border-color: #000000;
+  border-width: 1px;
+  border-radius: 4px;
+  border-style: solid;
+
+  height: 178px;
+}
+
+.label {
+  font-weight: 700;
+  padding: 10px;
+  cursor: pointer;
+  color: rgb(7, 5, 5);
+}
+
+.label-2 {
+  display: grid;
+  font-weight: 700;
+  padding: 6px;
+  cursor: pointer;
+  color: rgb(7, 5, 5);
+  text-align: left;
+}
+
+.label-3 {
+  font-weight: 700;
+  padding: 25px;
+  cursor: pointer;
+  color: rgb(7, 5, 5);
+}
+
+.label-4 {
+  text-align: left;
+  width: 220px;
+  font-weight: 700;
+  padding: 10.5px;
+  cursor: pointer;
+  color: rgb(7, 5, 5);
+}
+
+.label-5 {
+  font-weight: 700;
+  padding: 10px;
+  cursor: pointer;
+  color: rgb(7, 5, 5);
+  width: 40%;
+}
+
+.label-6 {
+  display: grid;
+  font-weight: 700;
+  padding: 10.5px;
+  cursor: pointer;
+  color: rgb(7, 5, 5);
+  text-align: left;
+}
+
+.label-7 {
+  height: 68.8px;
+  font-weight: 700;
+  padding: 10px;
+  cursor: pointer;
+  color: rgb(7, 5, 5);
+  text-align: left;
+}
+
+.label-8 {
+  font-weight: 700;
+  padding: 10px;
+  cursor: pointer;
+  color: rgb(7, 5, 5);
+  text-align: left;
+  padding-right: 1px;
+}
+
+.label-9 {
+  display: grid;
+  font-weight: 700;
+  padding: 14.7px;
+  cursor: pointer;
+  color: rgb(7, 5, 5);
+  text-align: left;
+}
+
+.label-10 {
+  display: grid;
+  font-weight: 700;
+  padding: 8px;
+  cursor: pointer;
+  color: rgb(7, 5, 5);
+  text-align: left;
+}
+
+.label-11 {
+  font-weight: 700;
+  padding: 11.3px;
+  cursor: pointer;
+  color: rgb(7, 5, 5);
+  text-align: left;
+  padding-right: 1px;
+}
+
+.label-12 {
+  font-weight: 700;
+  padding: 6px;
+  cursor: pointer;
+  color: rgb(7, 5, 5);
+  text-align: left;
+  float: left;
+}
+
+.Border {
+  border-color: #000000;
+  border-width: 1px;
+  border-radius: 5px;
+  border-style: solid;
+}
+
+.Border-2 {
+  border-color: #000000;
+  border-width: 1px;
+  border-radius: 5px;
+  border-style: solid;
+  width: 300px;
+}
+
+.Titulo {
+  color: white;
+  background-color: #157ee0;
+  font-weight: 700;
+  text-align: center;
+  border-color: #000000;
+  border-width: 1px;
+  border-radius: 4px;
+  border-style: solid;
+  font-size: 120%;
+}
+
+.Titulo-2 {
+  padding-inline-start: 2%;
+  color: white;
+  background-color: #157ee0;
+  font-weight: 700;
+  border-color: #000000;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 120%;
+}
+
+.Titulo-3 {
+  color: white;
+  background-color: #157ee0;
+  font-weight: 700;
+  border-color: #000000;
+  border-width: 1px;
+  border-style: solid;
+  height: 27px;
+  font-size: 120%;
+}
+
+.Titulo-4 {
+  color: white;
+  background-color: #157ee0;
+  font-weight: 700;
+  text-align: right;
+  border-color: #000000;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 120%;
+}
+
+.Titulo-5 {
+  color: white;
+  background-color: #157ee0;
+  font-weight: 700;
+  text-align: left;
+  border-color: #000000;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 120%;
+}
+
+.Titulo-6 {
+  color: white;
+  background-color: rgb(107, 114, 121);
+  font-weight: 700;
+  text-align: center;
+  border-color: #000000;
+  border-width: 1px;
+  border-radius: 4px;
+  border-style: solid;
+  font-size: 120%;
+}
+
+.Titulo-7 {
+  color: #ffffff;
+  background-color: #157ee0;
+  font-weight: 700;
+  text-align: left;
+  border-color: #000000;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 80%;
+  height: 27px;
+}
+
+.Aviso {
+  padding: 10px;
+  color: grey;
+  margin-top: -1%;
+  font-size: small;
+}
+
+.Select-One {
+  width: 60%;
+  border-color: #000000;
+  border-width: 1px;
+  border-radius: 5px;
+  border-style: solid;
+  font-size: 120%;
+}
+
+.Texto {
+  float: left;
+  color: rgb(34, 14, 209);
+  padding-right: 40px;
+}
+
+.Texto-2 {
+  float: left;
+  padding-right: 40px;
+}
+
+.Texto-3 {
+  padding: 5px;
+  text-align: justify;
+}
+
+.Col {
+  border-color: #000000;
+  border-width: 1px;
+  border-radius: 4px;
+  border-style: solid;
+  min-height: 110px;
+}
+
+.Col-2 {
+  border-color: #000000;
+  border-width: 1px;
+  border-radius: 4px;
+  border-style: solid;
+  min-height: 88px;
+}
+
+.Col-3 {
+  border-color: #000000;
+  border-width: 1px;
+  border-radius: 4px;
+  border-style: solid;
+  min-height: 161px;
+}
+
+.Col-4 {
+  border-color: #000000;
+  border-width: 1px;
+  border-radius: 4px;
+  border-style: solid;
+  min-height: 79px;
+}
+
+.Col-5 {
+  display: grid;
+  border-color: #000000;
+  border-width: 1px;
+  border-radius: 4px;
+  border-style: solid;
+  min-height: 110px;
+}
+
+#rectangulo {
+  border: solid 1px #000;
+  border-radius: 5px;
+}
