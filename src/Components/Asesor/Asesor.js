@@ -9,13 +9,15 @@ import Imagen1 from './Imagens/imagen1.jpg'
 import Imagen5 from './Imagens/Imagen5.jpg'
 import Imagen3 from './Imagens/Imagen3.png'
 import Imagen4 from './Imagens/Imagen4.jpg'
+import personaj from './Imagens/personaj.png'
+import personan from './Imagens/personan.jpg'
 
 const Asesor = () => {
 
     let History  = useHistory();
 
     return (
-        <div className="">
+        <div className="principal">
             <div className="padresito">
             
             
@@ -85,7 +87,7 @@ const Asesor = () => {
                   <div className="col">
             <img className = "PJ"
                                 alt=""
-                                src="https://gestion.pe/resizer/dy8H21bwi9uf03wgZtVdr_B10bg=/580x330/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/DS7R4ETDHFFUNAFCKI3BXXUFHU.jpg"
+                                src={personaj}
                                 
                             />
                             <div className="bj">
@@ -98,7 +100,7 @@ const Asesor = () => {
             <div className="col">
             <img className = "PN"
                                 alt=""
-                                src="https://acasesores.co/es/wp-content/uploads/2020/07/ac-asesores-empresariales-declaraci%C3%B3n-renta-novedades-importantes-personas-naturales-700x291.jpg"
+                                src={personan}
                                 
                             />
                             <div className="bn">

@@ -16,10 +16,11 @@ const Roles = () => {
     const currentUser = useAuth();
 
     return (
-        <div className="">
+        <div className="principal2">
             <div className="fondo">
-            <Button onClick = {()=>History.push('/')}>Regresar</Button>
+            
             <div className="fondo2 ">
+            <Button onClick = {()=>History.push('/')}>Regresar</Button>
             <div className = "Croles">
             <div className = "row">
                 <h3>Registrado con: {currentUser?.email} </h3>
