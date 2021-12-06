@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
+#background {
+}
+
 .Titulo-principal {
   text-align: center;
   font-family: "Roboto";
@@ -20,10 +23,9 @@
   outline: none;
 }
 
-.Fondo {
+.FONDO {
   background-color: #ebf5fb;
   padding: 30px;
-  display: grid;
 }
 
 .red-red {
@@ -43,8 +45,14 @@
   border-width: 1px;
   border-radius: 4px;
   border-style: solid;
-
   height: 178px;
+}
+.column-3 {
+  border-color: #000000;
+  border-width: 1px;
+  border-radius: 4px;
+  border-style: solid;
+  height: 80px;
 }
 
 .label {
@@ -107,11 +115,10 @@
 
 .label-8 {
   font-weight: 700;
-  padding: 10px;
+  padding: 20px;
   cursor: pointer;
   color: rgb(7, 5, 5);
-  text-align: left;
-  padding-right: 1px;
+  padding-right: 5px;
 }
 
 .label-9 {
@@ -150,6 +157,86 @@
   float: left;
 }
 
+.label-13 {
+  display: grid;
+  font-weight: 700;
+  padding: 6px;
+  padding-top: 10px;
+  cursor: pointer;
+  color: rgb(7, 5, 5);
+  text-align: left;
+}
+
+.label-14 {
+  font-weight: 700;
+  margin-top: -0.7%;
+  cursor: pointer;
+  color: rgb(7, 5, 5);
+}
+
+.label-15 {
+  font-weight: 700;
+  margin-top: 4%;
+  cursor: pointer;
+  color: rgb(7, 5, 5);
+}
+
+.label-16 {
+  font-weight: 700;
+  padding: 10px;
+  cursor: pointer;
+  color: rgb(7, 5, 5);
+}
+
+.label-17 {
+  font-weight: 700;
+  margin-top: 2%;
+  cursor: pointer;
+  color: rgb(7, 5, 5);
+}
+
+.label-18 {
+  font-weight: 700;
+  padding: 10px;
+  cursor: pointer;
+  color: rgb(7, 5, 5);
+  float: left;
+}
+
+.label-19 {
+  padding: 7px;
+  padding-left: 77px;
+}
+
+.label-20 {
+  padding: 7px;
+  padding-right: 79px;
+}
+
+.label-21 {
+  font-weight: 700;
+  padding: 10px;
+  color: rgb(7, 5, 5);
+  float: left;
+}
+
+.label-22 {
+  height: 68.8px;
+  padding: 10px;
+  text-align: left;
+}
+
+.label-23 {
+  padding: 10px;
+}
+
+.center {
+  font-weight: 700;
+  padding: 25px;
+  cursor: pointer;
+  color: rgb(7, 5, 5);
+}
+
 .Border {
   border-color: #000000;
   border-width: 1px;
@@ -165,6 +252,21 @@
   width: 300px;
 }
 
+.Border-3 {
+  border-color: #000000;
+  border-width: 1px;
+  border-radius: 5px;
+  border-style: solid;
+  max-width: 160px;
+}
+
+.Border-4 {
+  border-color: #000000;
+  border-width: 1px;
+  border-radius: 5px;
+  border-style: solid;
+  width: 400px;
+}
 .Titulo {
   color: white;
   background-color: #157ee0;
@@ -174,7 +276,7 @@
   border-width: 1px;
   border-radius: 4px;
   border-style: solid;
-  font-size: 120%;
+  font-size: 101%;
 }
 
 .Titulo-2 {
@@ -189,25 +291,24 @@
 }
 
 .Titulo-3 {
-  color: white;
   background-color: #157ee0;
-  font-weight: 700;
+  border-radius: 4px;
   border-color: #000000;
   border-width: 1px;
   border-style: solid;
-  height: 27px;
-  font-size: 120%;
+  height: 23.3px;
 }
 
 .Titulo-4 {
   color: white;
   background-color: #157ee0;
   font-weight: 700;
-  text-align: right;
+  text-align: center;
   border-color: #000000;
   border-width: 1px;
   border-style: solid;
-  font-size: 120%;
+  font-size: 116%;
+  border-radius: 4px;
 }
 
 .Titulo-5 {
@@ -230,25 +331,25 @@
   border-width: 1px;
   border-radius: 4px;
   border-style: solid;
-  font-size: 120%;
+  font-size: 101%;
 }
 
 .Titulo-7 {
   color: #ffffff;
   background-color: #157ee0;
   font-weight: 700;
-  text-align: left;
+  text-align: center;
   border-color: #000000;
+  border-radius: 4px;
   border-width: 1px;
   border-style: solid;
-  font-size: 80%;
-  height: 27px;
+  font-size: 1vw;
+  height: 23.5px;
 }
 
 .Aviso {
-  padding: 10px;
+  padding: 7px;
   color: grey;
-  margin-top: -1%;
   font-size: small;
 }
 
@@ -263,7 +364,8 @@
 
 .Texto {
   float: left;
-  color: rgb(34, 14, 209);
+  color: #157ee0;
+  font-weight: 800;
   padding-right: 40px;
 }
 
@@ -277,14 +379,17 @@
   text-align: justify;
 }
 
-.Col {
-  border-color: #000000;
-  border-width: 1px;
-  border-radius: 4px;
-  border-style: solid;
-  min-height: 110px;
+.Texto-4 {
+  float: left;
+  color: rgb(34, 14, 209);
+  padding-right: 40px;
 }
 
+.Texto-5 {
+  display: grid;
+  padding: 6px;
+  text-align: left;
+}
 .Col-2 {
   border-color: #000000;
   border-width: 1px;
@@ -321,4 +426,87 @@
 #rectangulo {
   border: solid 1px #000;
   border-radius: 5px;
+}
+#Container-1 {
+  border-color: #000000;
+  border-width: 1px;
+  border-radius: 4px;
+  border-style: solid;
+}
+
+#Container-2 {
+  margin-top: 10px;
+  border-color: #000000;
+  border-width: 1px;
+  border-radius: 4px;
+  border-style: solid;
+  float: left;
+}
+
+#Container-3 {
+  float: left;
+  margin-top: 7%;
+}
+
+#Container-4 {
+  float: left;
+  margin-top: 15%;
+}
+
+#Container-5 {
+  float: left;
+}
+
+#Container-6 {
+  margin-top: 115px;
+  float: left;
+}
+
+#Container-7 {
+  border-color: #000000;
+  border-width: 1px;
+  border-radius: 4px;
+  border-style: solid;
+  height: 60px;
+}
+
+.Div {
+  text-align: left;
+}
+
+.firma {
+  width: 300px;
+}
+
+.Row {
+  margin-top: 215px;
+}
+
+.Subtitulo {
+  font-weight: 700;
+  color: rgb(7, 5, 5);
+}
+
+.Observaciones {
+  display: grid;
+  padding: 6px;
+  text-align: left;
+}
+
+.float-left {
+  float: left;
+}
+
+.padding {
+  padding: 10px;
+  word-spacing: 5pt;
+  margin-left: 30px;
+}
+#margin-bottom {
+  margin-bottom: -9px;
+}
+
+.color {
+  color: #157ee0;
+  font-weight: 800;
 }
