@@ -23,7 +23,7 @@ const Roles = () => {
             <Button onClick = {()=>History.push('/')}>Regresar</Button>
             <div className = "Croles">
             <div className = "row">
-                <h3>Registrado con: {currentUser?.email} </h3>
+                <h3 className="regis">Registrado con: {currentUser?.email} </h3>
                 <h1 className = "TituloR">Escoge tu Rol</h1>
                         <div className = "col">
                         <div className="Fl">
