@@ -29,7 +29,7 @@ const Asesor = () => {
             </div>
             
             <div className = "contenedort">
-            <h1 className="titulo">Asesor</h1>
+            <h1 className="titulu">Asesor</h1>
             </div>
             
             

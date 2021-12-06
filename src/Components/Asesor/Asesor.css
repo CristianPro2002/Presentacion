@@ -26,8 +26,12 @@
     align-items: center;
 }
 
-.titulo {
-   
+.titulu {
+    text-align: center;
+    font-size: 400%;
+    font-family:'Roboto';
+    color: rgb(255, 255, 255);
+    font-weight: bold;
 }
 
 .inicio {

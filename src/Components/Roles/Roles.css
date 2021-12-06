@@ -19,7 +19,7 @@
 .Croles {
     position: relative;
     padding: 20px;
-    padding-bottom: 150px;
+    
 }
 
 .Formu {
@@ -55,7 +55,7 @@ background: #ffffff ;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    
+    height: 100%;
     width: 100%;
    
 }
@@ -71,4 +71,10 @@ background: #ffffff ;
  
   position: relative;
 
+}
+
+@media screen and (max-width: 700px){
+    .fondo2{
+        height: auto;
+    }
 }
