@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "react-bootstrap/Button";
 import { Col, Row } from "react-bootstrap";
 import "./Estilos.css";
 
@@ -718,7 +719,7 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-18">
                 Total activos ${" "}
-                <input type="text" name="" className="Border-2" />
+                <input type="text" name="" size="50" className="Border" />
               </label>
             </Col>
           </div>
@@ -728,7 +729,7 @@ const PersonaJuridica = () => {
               <label className="label-2">Total pasivos</label>
               <label className="label float-left">
                 {" "}
-                $ <input type="text" name="" className="Border-4" />
+                $ <input type="text" size="30" name="" className="Border" />
               </label>
             </Col>
           </div>
@@ -737,7 +738,7 @@ const PersonaJuridica = () => {
               <label className="label-2">Total patrimonio </label>
               <label className="label float-left">
                 {" "}
-                $ <input type="text" name="" className="Border-4" />
+                $ <input type="text" size="30" name="" className="Border" />
               </label>
             </Col>
             <br />
@@ -1584,13 +1585,22 @@ const PersonaJuridica = () => {
           </div>
 
           <div className="col-md-4" id="Container-7">
-            <label className="Texto-5">Código vendedor</label>
+            <label className="Texto-5">
+              Código vendedor
+              <input type="text" className="Border" />
+            </label>
           </div>
           <div className="col-md-4" id="Container-7">
-            <label className="Texto-5">Nombre</label>
+            <label className="Texto-5">
+              Nombre
+              <input type="text" className="Border" />
+            </label>
           </div>
           <div className="col-md-4" id="Container-7">
-            <label className="Texto-5">Oficina</label>
+            <label className="Texto-5">
+              Oficina
+              <input type="text" className="Border" />
+            </label>
           </div>
 
           <div className="col-md-9" id="Container-1">
@@ -1605,9 +1615,7 @@ const PersonaJuridica = () => {
             <div>
               <label className="Observaciones">
                 <p> Observaciones</p>
-                <p> _______________________________________________________</p>
-                <p> _______________________________________________________</p>
-                <p> _______________________________________________________</p>
+                <input type="text" className="Border-4" />
               </label>
             </div>
           </div>
@@ -1616,11 +1624,16 @@ const PersonaJuridica = () => {
             <Col>
               <label>
                 <Row className="Row">
-                  <p>______________________ </p>
+                  <p>____________________</p>
                   <p>Firma</p>
                 </Row>
               </label>
             </Col>
+          </div>
+          <div className="col-md-12" id="">
+            <Button className="BOTON" variant="primary">
+              Guardar
+            </Button>
           </div>
         </form>
       </div>

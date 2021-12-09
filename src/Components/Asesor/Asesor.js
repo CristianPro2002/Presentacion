@@ -36,44 +36,7 @@ const Asesor = () => {
             <div className="pri">
             <div className="concaro">
             
-              <div className="caro">
-            
-            <Carousel fade className="carousel">
-  <Carousel.Item>
-    <img
-      id="imagen1"
-      className="d-block w-100"
-      src={Imagen1}
-      alt="First slide"
-    />
-    <Carousel.Caption>
-    </Carousel.Caption>
-  </Carousel.Item>
-  <Carousel.Item>
-    <img
-      id="imagen1"
-      className="d-block w-100"
-      src={Imagen5}
-      alt="Second slide"
-    />
-
-    <Carousel.Caption>
-    </Carousel.Caption>
-  </Carousel.Item>
-  <Carousel.Item>
-    <img
-      id="imagen1"
-      className="d-block w-100"
-      src={Imagen4}
-      alt="Third slide"
-    />
-
-    <Carousel.Caption>
-    </Carousel.Caption>
-  </Carousel.Item>
-</Carousel>
-</div>
-
+              
 <div className="col">
             <div className="contb">
               <div className="col">
