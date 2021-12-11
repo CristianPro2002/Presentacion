@@ -41,6 +41,49 @@
     color: black;
     font-family:'Roboto';
     font-size: 110%;
+    text-align: left;
+}
+
+.labelu{
+    width: 50%;
+    font-weight: 700;
+    padding: 10px;
+    cursor:pointer;
+    color: black;
+    font-family:'Roboto';
+    font-size: 110%;
+    text-align: center;
+}
+
+.labelos{
+    width: 50%;
+    font-weight: 700;
+    padding: 10px;
+    cursor:pointer;
+    color: black;
+    font-family:'Roboto';
+    font-size: 130%;
+    text-align: center;
+    background-color: 157ee0;
+    margin-top: 15px;
+    border-color: black;
+}
+
+.button{
+        width: 10%;
+        font-weight: 700;
+        padding: 10px;
+        cursor:pointer;
+        color: white;
+        font-family:'Roboto';
+        font-size: 130%;
+        text-align: center;
+        background-color: 157ee0;
+        margin-top: 15px;
+        border-color: black;
+        
+      
+    
 }
 
 .titulazo{
@@ -135,6 +178,36 @@
     color: black;
 }
 
+.civil{
+    width: 33%;
+    font-weight: 700;
+    cursor:pointer;
+    color: black;
+    font-family:'Roboto';
+    font-size: 110%;
+    margin-top: 0.10%;
+}
+
+.civi{
+    width: 11%;
+    font-weight: 700;
+    cursor:pointer;
+    color: black;
+    font-family:'Roboto';
+    font-size: 110%;
+    margin-top: 0.10%;
+}
+
+.civilo{
+        width: 3%;
+        font-weight: 700;
+        cursor:pointer;
+        color: black;
+        font-family:'Roboto';
+        font-size: 110%;
+        margin-top: 0.10%;
+}
+
 .jumm{
     width: 12.5%;
     font-weight: 700;
@@ -206,7 +279,26 @@
 .padre{
     background-color: #EBF5FB;
     padding: 30px;
-    display: grid;
+    display: block;
+    width: 100%;
+}
+
+@media screen and (max-width:800px){
+.padre{
+    width: 150%;
+    background-color: #ebf5fb;
+    font-size: 8px;
+}
+
+.input{
+ height: 35px;
+}
+
+.button{
+    width: 130px;
+}
+
+
 }
 
 .select{
@@ -239,7 +331,7 @@
 
 
 .coso{
-    width: 29.8%;
+    width: 30%;
     height: 90px;
     float: left;
     text-align: center;
@@ -248,6 +340,7 @@
 
 .cosito{
     width: 70%;
+    height: 90px;
     float: right;
     text-align: center;
 }
@@ -255,33 +348,15 @@
 .conte{
     float: right;
     width: 50%;
-}
-
-
-.check{
-    width: 30%;
-    float: left;
-   text-align: center;
-   margin-top: -2%;
+    height: 90px;
 }
 
 .check1{
-    width: 30%;
-    float: right;
-    text-align: center;
-    margin-top: -2%;
-}
-
-.check2{
-    width: 40%;
-    display: flex;
-    justify-content: center;
-    margin-top: -1%;
-    text-align: justify
-}
+    margin-top: 11%;
+   }
 
 .seleccion{
-    width: 60%;
+    width: 50%;
     font-family:'Roboto';
     text-align: center;
     font-size: 110%;
@@ -298,7 +373,23 @@
 
 .h5{
     text-align: center;
+    font-weight: 700;
     font-size: 110%;
     font-family:'Roboto';
     margin-top: 13px ;
+}
+
+.letras{
+    width: 142px;
+    padding-top: 12px;
+    font-weight: 700;
+    cursor:pointer;
+    color: black;
+    font-family:'Roboto';
+    font-size: 110%;
+    text-align: center;
+}
+
+.bootoon{
+    text-align: center;
 }

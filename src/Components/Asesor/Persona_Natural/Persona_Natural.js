@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import './Estilos.css'
 import "react-datepicker/dist/react-datepicker.css";
-import Col from 'react-bootstrap/Col'
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button'
 
 
 
@@ -12,13 +13,13 @@ const PersonaNatural = () => {
     <div className="padre">
       <h1 className='titulo'>PERSONA NATURAL</h1>
      
-
+    <div className="hijo">
       <form className="Form">
         <div className="row red-red" >
           <div className="col-md-4">
             <Col className="">
               <h5 className="titulitos">Tipo de solicitud</h5>
-              <label className="labelo">
+              <label className="labelu">
                 <input
                   type="checkbox"
                   name="nombre"
@@ -27,7 +28,7 @@ const PersonaNatural = () => {
                 Vinculación
               </label>
            
-              <label className="labelo">
+              <label className="labelu">
                 <input
                   type="checkbox"
                   name="nombre"
@@ -41,7 +42,7 @@ const PersonaNatural = () => {
           <div className="col-md-4">
             <Col className="">
               <h5 className="titulitos">Tipo de solicitante</h5>
-              <label className="labelo">
+              <label className="labelu">
                 <input
                   type="checkbox"
                   name="nombre"
@@ -55,7 +56,7 @@ const PersonaNatural = () => {
           <div className="col-md-4">
             <Col className="">
               <h5 className="titulitos">Fecha de diligenciamiento</h5>
-              <label className="labelo">
+              <label className="labelu">
                 <input
                   type="date"
                   name="nombre"
@@ -174,8 +175,8 @@ const PersonaNatural = () => {
           <div className="conte">
           <div className="col">
           <div className="coso">
-            <Col className="bordes">
-              <h5 className="h5">Género</h5>
+            <Col className="">
+            <h5 className="letras">Género</h5>
               <label className="labelo">
                 <input
                   type="checkbox"
@@ -199,38 +200,36 @@ const PersonaNatural = () => {
         
           <div className="cosito">
           <div className="col">
-            <div className="bordes estado">
-              <h5 className="h5">Estado civil</h5>
-              <div className="" id="rowsito">
-              <div className="check">
-              <label className="labelo">
+            <div className="">
+              <div className="">
+              <div className="">
+              <Col className="">
+              <h5 className="letras">Estado civil</h5>
+              <label className="civil">
+                <input
+                  type="checkbox"
+                  name="nombre"
+                  className=""
+                />
                 Soltero
+              </label>
+              <label className="civil">
+                <input
+                  type="checkbox"
+                  name="nombre"
+                  className="check1"
+                />
+                Unión libre
+              </label>
+              <label className="civil">
                 <input
                   type="checkbox"
                   name="nombre"
                   className=""
                 />
+                Casado
               </label>
-              </div>
-              <div className="check1">
-              <label className="labelo">
-               Casado
-                <input
-                  type="checkbox"
-                  name="nombre"
-                  className=""
-                />
-              </label>
-              </div>
-              <div className="check2">
-              <label className="labelo">
-               Unión libre
-                <input
-                  type="checkbox"
-                  name="nombre"
-                  className=""
-                />
-              </label>
+            </Col>
               </div>
               </div>
             </div>
@@ -257,7 +256,7 @@ const PersonaNatural = () => {
                 <input
                   type="text"
                   name="nombre"
-                  className=""
+                  className="inpuut"
                 />
               </label>
         
@@ -585,12 +584,12 @@ const PersonaNatural = () => {
           <input 
               type="checkbox"
               name="nombre"
-              className=""
+              className="civi"
             /> Si
              <input 
               type="checkbox"
               name="nombre"
-              className=""
+              className="civi"
             /> No
           </label>
           <label className="cajons">
@@ -598,12 +597,12 @@ const PersonaNatural = () => {
           <input 
               type="checkbox"
               name="nombre"
-              className=""
+              className="civi"
             /> Si
              <input 
               type="checkbox"
               name="nombre"
-              className=""
+              className="civi"
             /> No
           </label>
           <label className="cajonl">
@@ -611,17 +610,17 @@ const PersonaNatural = () => {
           <input 
               type="checkbox"
               name="nombre"
-              className=""
+              className="civilo"
             /> Común
              <input 
               type="checkbox"
               name="nombre"
-              className=""
+              className="civilo"
             /> Simplificado
              <input 
               type="checkbox"
               name="nombre"
-              className=""
+              className="civilo"
             /> Ninguno
           </label>
         </div>
@@ -632,12 +631,12 @@ const PersonaNatural = () => {
           <input 
               type="checkbox"
               name="nombre"
-              className=""
+              className="civi"
             /> Si
              <input 
               type="checkbox"
               name="nombre"
-              className=""
+              className="civi"
             /> No
           </label>
           <label className="otro">
@@ -744,12 +743,12 @@ const PersonaNatural = () => {
           <input 
               type="checkbox"
               name="nombre"
-              className=""
+              className="civi"
             /> Si
              <input 
               type="checkbox"
               name="nombre"
-              className=""
+              className="civi"
             /> No
           </label>
         </div>
@@ -778,7 +777,7 @@ const PersonaNatural = () => {
                 <input
                   type="text"
                   name="nombre"
-                  className=""
+                  className="inpuut"
                 />
               </label>
         </div>
@@ -799,25 +798,25 @@ const PersonaNatural = () => {
                 <input
                   type="checkbox"
                   name="nombre"
-                  className=""
+                  className="civilo"
                 />
                 Cuenta  de ahorro
                 <input
                   type="checkbox"
                   name="nombre"
-                  className=""
+                  className="civilo"
                 />
                 Cuenta corriente
                 <input
                   type="checkbox"
                   name="nombre"
-                  className=""
+                  className="civilo"
                 />
                 Otro, cuál?
                 <input
                   type="text"
                   name="nombre"
-                  className=""
+                  className="inpuut"
                 />
               </label>
 
@@ -865,14 +864,15 @@ const PersonaNatural = () => {
             />
           </label>
         </div>
-
-
-
-
-
         </div>
         </div>
+
+        <div className="bootoon">
+        <Button className="button" variant="primary">Guardar</Button>
+        </div>
+
       </form>
+    </div>
     </div>
 
   )
