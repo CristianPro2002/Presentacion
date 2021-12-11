@@ -23,14 +23,16 @@
 .FONDO {
   background-color: #ebf5fb;
   padding: 30px;
-  display: block;
   width: 100%;
+  columns: 1;
 }
 
 @media screen and (max-width: 700px) {
   .FONDO {
-    width: 168%;
+    width: 100%;
+    columns: 1;
     background-color: #ebf5fb;
+    font-size: 9px;
   }
 }
 
@@ -295,7 +297,6 @@
   border-style: solid;
   font-size: 120%;
 }
-
 .Titulo-3 {
   background-color: #157ee0;
   border-radius: 4px;
@@ -304,7 +305,16 @@
   border-style: solid;
   height: 23.3px;
 }
-
+@media screen and (max-width: 700px) {
+  .Titulo-3 {
+    background-color: #157ee0;
+    border-radius: 4px;
+    border-color: #000000;
+    border-width: 1px;
+    border-style: solid;
+    height: 15px;
+  }
+}
 .Titulo-4 {
   color: white;
   background-color: #157ee0;
@@ -343,7 +353,6 @@
 .Titulo-7 {
   color: #ffffff;
   background-color: #157ee0;
-
   text-align: center;
   border-color: #000000;
   border-radius: 4px;
@@ -352,13 +361,32 @@
   font-size: 52%;
   height: 23.5px;
 }
-
+@media screen and (max-width: 700px) {
+  .Titulo-7 {
+    color: #ffffff;
+    background-color: #157ee0;
+    text-align: center;
+    border-color: #000000;
+    border-radius: 4px;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 80%;
+    height: 23.5px;
+  }
+}
 .Aviso {
   padding: 7px;
   color: grey;
   font-size: small;
 }
 
+@media screen and (max-width: 700px) {
+  .Aviso {
+    padding: 7px;
+    color: grey;
+    font-size: 10px;
+  }
+}
 .Select-One {
   width: 60%;
   border-color: #000000;

@@ -211,20 +211,20 @@ const PersonaJuridica = () => {
 
           <div className="col-md-12" id="Container-1">
             <Col>
-              <label className="label-8">
-                Primer nombre <input type="text" name="" className="Border-2" />{" "}
+              <label className="label">
+                Primer nombre <input type="text" name="" className="Border" />{" "}
               </label>
               <label className="label">
-                Segundo nombre{" "}
-                <input type="text" name="" className="Border-2" />
+                Segundo nombre <input type="text" name="" className="Border" />
               </label>
-              <label className="label-8">
-                Primer apellido{" "}
-                <input type="text" name="" className="Border-2" />{" "}
+            </Col>
+            <Col>
+              <label className="label">
+                Primer apellido <input type="text" name="" className="Border" />{" "}
               </label>
               <label className="label">
                 Segundo apellido{" "}
-                <input type="text" name="" className="Border-2" />
+                <input type="text" name="" className="Border" />
               </label>
             </Col>
           </div>
@@ -396,20 +396,20 @@ const PersonaJuridica = () => {
 
           <div className="col-md-12" id="Container-1">
             <Col>
-              <label className="label-8">
-                Primer nombre <input type="text" name="" className="Border-2" />{" "}
+              <label className="label">
+                Primer nombre <input type="text" name="" className="Border" />{" "}
               </label>
               <label className="label">
-                Segundo nombre{" "}
-                <input type="text" name="" className="Border-2" />
+                Segundo nombre <input type="text" name="" className="Border" />
               </label>
-              <label className="label-8">
-                Primer apellido{" "}
-                <input type="text" name="" className="Border-2" />{" "}
+            </Col>
+            <Col>
+              <label className="label">
+                Primer apellido <input type="text" name="" className="Border" />{" "}
               </label>
               <label className="label">
                 Segundo apellido{" "}
-                <input type="text" name="" className="Border-2" />
+                <input type="text" name="" className="Border" />
               </label>
             </Col>
           </div>
@@ -652,7 +652,7 @@ const PersonaJuridica = () => {
               </label>
               <label className="label float-left">
                 {" "}
-                $ <input type="text" name="" className="Border-4" />
+                $ <input type="text" name="" className="Border" />
               </label>
             </Col>
           </div>
@@ -664,7 +664,7 @@ const PersonaJuridica = () => {
               </label>
               <label className="label float-left">
                 {" "}
-                $ <input type="text" name="" className="Border-4" />
+                $ <input type="text" name="" className="Border" />
               </label>
             </Col>
           </div>
@@ -683,7 +683,7 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-18">
                 Ventas anuales ${" "}
-                <input type="text" name="" className="Border-2" />
+                <input type="text" name="" className="Border" />
               </label>
             </Col>
           </div>
@@ -701,7 +701,7 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-18">
                 Egresos mensuales ${" "}
-                <input type="text" name="" className="Border-2" />
+                <input type="text" name="" className="Border" />
               </label>
             </Col>
           </div>
@@ -709,8 +709,7 @@ const PersonaJuridica = () => {
           <div className="col-md-6" id="Container-1">
             <Col>
               <label className="label-18">
-                Utilidad neta ${" "}
-                <input type="text" name="" className="Border-2" />
+                Utilidad neta $ <input type="text" name="" className="Border" />
               </label>
             </Col>
           </div>
@@ -718,8 +717,7 @@ const PersonaJuridica = () => {
           <div className="col-md-12" id="Container-1">
             <Col>
               <label className="label-18">
-                Total activos ${" "}
-                <input type="text" name="" size="50" className="Border" />
+                Total activos $ <input type="text" name="" className="Border" />
               </label>
             </Col>
           </div>
@@ -861,19 +859,19 @@ const PersonaJuridica = () => {
               <div className="col-md-12">
                 <Col>
                   <label className="label">
-                    <label className="label">
-                      1. <input type="text" name="" className="Border-4" />
-                    </label>
-                    <label className="label">
-                      <p className="Texto-3">N°. Id. Tributario</p>
-                      1. <input type="text" name="" className="Border-4" />
-                    </label>
-                    <label className="label">
-                      2. <input type="text" name="" className="Border-4" />{" "}
-                    </label>
-                    <label className="label">
-                      2. <input type="text" name="" className="Border-4" />
-                    </label>
+                    1. <input type="text" name="" className="Border" />
+                  </label>
+                  <label className="label">
+                    <p className="Texto-3">N°. Id. Tributario</p>
+                    1. <input type="text" name="" className="Border" />
+                  </label>
+                </Col>
+                <Col>
+                  <label className="label">
+                    2. <input type="text" name="" className="Border" />{" "}
+                  </label>
+                  <label className="label">
+                    2. <input type="text" name="" className="Border" />
                   </label>
                 </Col>
               </div>
@@ -1550,7 +1548,7 @@ const PersonaJuridica = () => {
 
             <div className="col-md-8" id="Container-2">
               <Col>
-                <label className="">
+                <label>
                   <p className="label-21">
                     {" "}
                     * Solo diligenciar si actúa en calidad de:{" "}
@@ -1562,15 +1560,15 @@ const PersonaJuridica = () => {
 
                   <div className="float-left">
                     <label className="">
-                      Nombre <input type="text" name="" className="Border-2" />
+                      Nombre <input type="text" name="" className="Border" />
                     </label>
                     <div className="label-19">
-                      <input type="text" name="" className="Border-2" />
+                      <input type="text" name="" className="Border" />
                     </div>
 
                     <label className="label-20">
                       No. Identificación{" "}
-                      <input type="text" name="" className="Border-2" />
+                      <input type="text" name="" className="Border" />
                     </label>
                   </div>
                 </label>
@@ -1615,7 +1613,7 @@ const PersonaJuridica = () => {
             <div>
               <label className="Observaciones">
                 <p> Observaciones</p>
-                <input type="text" className="Border-4" />
+                <input type="text" className="Border" />
               </label>
             </div>
           </div>
