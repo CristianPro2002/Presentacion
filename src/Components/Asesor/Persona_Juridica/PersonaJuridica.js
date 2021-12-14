@@ -22,7 +22,7 @@ const PersonaJuridica = () => {
     <div className="FONDO">
       <div>
         <Button onClick={() => History.push("/Asesor")} className="REGRESAR">
-          {" < "}
+          {" 🡨 "}
         </Button>
       </div>
       <div className="hijo">

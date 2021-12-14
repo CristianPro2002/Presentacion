@@ -1,16 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Estilos.css'
 import "react-datepicker/dist/react-datepicker.css";
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button'
+import Button from 'react-bootstrap/Button';
+import { useHistory } from "react-router-dom";
 
 
 
 
 
 const PersonaNatural = () => {
+  let History = useHistory();
   return (
     <div className="padre">
+      <div> 
+        <Button onClick={() => History.push("/Asesor")} className="flechis"> 
+          {" 🡨 "} 
+        </Button> 
+      </div>
       <h1 className='titulo'>PERSONA NATURAL</h1>
      
     <div className="hijo">

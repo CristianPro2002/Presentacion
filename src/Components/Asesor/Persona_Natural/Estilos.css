@@ -279,15 +279,17 @@
 .padre{
     background-color: #EBF5FB;
     padding: 30px;
-    display: block;
     width: 100%;
+    columns: 1;
 }
 
 @media screen and (max-width:800px){
 .padre{
-    width: 150%;
+    width: 110%;
     background-color: #ebf5fb;
     font-size: 8px;
+    columns: 1;
+    padding: 30px;
 }
 
 .input{
@@ -393,3 +395,18 @@
 .bootoon{
     text-align: center;
 }
+
+.flechis{ 
+    height:50px;
+    width:50px;
+    -moz-border-radius:50px;
+    -webkit-border-radius:50px;
+    border-radius:50px;
+    font-weight: 900;
+    padding: 1px;
+    cursor: pointer;
+    color: white;
+    font-size: 120%;
+    background-color: 157ee0;
+    border-color: black;
+  }
