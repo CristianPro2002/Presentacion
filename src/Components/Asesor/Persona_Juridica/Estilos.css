@@ -1,10 +1,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
+
 .Titulo-principal {
   text-align: center;
   font-family: "Roboto";
   font-size: 400%;
   color: black;
+}
+
+.REGRESAR {
+  width: 50px;
+  border-radius: 8px;
+  font-weight: 900;
+  padding: 1px;
+  cursor: pointer;
+  color: white;
+  font-size: 120%;
+  background-color: 157ee0;
+  border-color: black;
+}
+
+@media screen and (max-width: 700px) {
+.REGRESAR {
+  width: 40px;
+  border-radius: 8px;
+  font-weight: 900;
+  margin-bottom: 10px;
+  padding: 1px;
+  cursor: pointer;
+  color: white;
+  font-size: 120%;
+  background-color: 157ee0;
+  border-color: black;
+}
 }
 
 .inputsito {
@@ -98,9 +126,9 @@
 .label-5 {
   font-weight: 700;
   padding: 10px;
-  cursor: pointer;
   color: rgb(7, 5, 5);
-  width: 40%;
+  width: 40%;  
+
 }
 
 .label-6 {
@@ -466,6 +494,7 @@
   border-width: 1px;
   border-radius: 4px;
   border-style: solid;
+  
 }
 
 #Container-2 {
@@ -558,4 +587,8 @@
   background-color: 157ee0;
   margin-top: 15px;
   border-color: black;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }

@@ -47,7 +47,6 @@ background: #ffffff ;
 }
 
 .fondo2{
-    padding: 20px;
     position: absolute;
     
     background-image: url("../Asesor/Imagens/peakpx.jpg");
@@ -59,10 +58,15 @@ background: #ffffff ;
     width: 100%;
    
 }
+.f2{
+  padding-left: 10px;  
+}
+
 
 .fondo{
     height: 100%;
     width: 100%;
+    
 }
 
 .principal2{
@@ -83,4 +87,9 @@ background: #ffffff ;
     font-family: 'roboto';
     color: rgb(255, 255, 255);
     font-weight: bold;
+}
+
+#colsito{
+    
+    padding-bottom: 10px;
 }

@@ -2,10 +2,29 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import { Col, Row } from "react-bootstrap";
 import "./Estilos.css";
+import { useHistory } from "react-router-dom";
 
 const PersonaJuridica = () => {
+  let History = useHistory();
+
+  let Checked = null;
+  for (let CheckBox of document.getElementsByClassName("only-one")) {
+    CheckBox.onclick = function () {
+      if (Checked != null) {
+        Checked.checked = false;
+        Checked = CheckBox;
+      }
+      Checked = CheckBox;
+    };
+  }
+
   return (
     <div className="FONDO">
+      <div>
+        <Button onClick={() => History.push("/Asesor")} className="REGRESAR">
+          {" < "}
+        </Button>
+      </div>
       <div className="hijo">
         <h1 className="Titulo-principal">PERSONA JURIDICA</h1>
         <form className="row red-red">
@@ -13,10 +32,24 @@ const PersonaJuridica = () => {
             <Col>
               <h5 className="Titulo">Tipo de solicitud</h5>
               <label className="label-5">
-                <input type="checkbox" name="" className="" /> Vinculación
+                <input
+                  type="checkbox"
+                  name="Vinculación"
+                  id="Vinculación"
+                  value="1"
+                  className="only-one cursor-pointer"
+                />{" "}
+                Vinculación
               </label>
               <label className="label-5">
-                <input type="checkbox" name="" className="" /> Actualización
+                <input
+                  type="checkbox"
+                  name="Actualización"
+                  id="Actualización"
+                  value="2"
+                  className="only-one cursor-pointer"
+                />{" "}
+                Actualización
               </label>
             </Col>
           </div>
@@ -25,7 +58,7 @@ const PersonaJuridica = () => {
             <Col>
               <h5 className="Titulo">Fecha diligenciamiento</h5>
               <label className="label">
-                <input type="date" name="" className=" Border" />
+                <input type="date" name="" className="Border" />
               </label>
             </Col>
           </div>

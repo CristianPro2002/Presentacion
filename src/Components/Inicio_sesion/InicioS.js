@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Formulario,  ContenedorBotonCentrado, Boton, MensajeExito, MensajeError, } from './Elementos/Formularios';
+import {Formulario,  ContenedorBotonCentrado, Boton, MensajeError, } from './Elementos/Formularios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import Input from './ComponentesInicio/Input';
@@ -83,7 +83,6 @@ const App = () => {
 				<br/>
 				<ContenedorBotonCentrado>
 					<Boton type="submit" className = "Botonsito" ><span>Ingresar</span></Boton>
-					{/* {formularioValido === true && <MensajeExito>Formulario enviado exitosamente!</MensajeExito>} */}
 				</ContenedorBotonCentrado>
 			</Formulario>
 			</div>

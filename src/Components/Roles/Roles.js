@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React from 'react'
 import Button from 'react-bootstrap/Button'
 import { useHistory } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,21 +11,23 @@ import { useAuth } from '../firebase';
 const Roles = () => {
     let History = useHistory();
 
-    const emailRef = useRef();
-    const passwordRef = useRef();
+    
     const currentUser = useAuth();
 
     return (
         <div className="principal2">
+            
             <div className="fondo">
             
             <div className="fondo2 ">
-            <Button onClick = {()=>History.push('/')}>Regresar</Button>
+            <div className='f2'>
+            <i class="bi bi-arrow-left-circle-fill" id="cir" onClick = {()=>History.push('/')}></i>
+            </div>
             <div className = "Croles">
             <div className = "row">
                 <h3 className="regis">Registrado con: {currentUser?.email} </h3>
                 <h1 className = "TituloR">Escoge tu Rol</h1>
-                        <div className = "col">
+                        <div className = "col" id ="colsito">
                         <div className="Fl">
                             <img className = ""
                                 alt=""
@@ -54,7 +56,7 @@ const Roles = () => {
                             </div>
                         </div>
                         {/* column2 */}
-                         <div className = "col">
+                         <div className = "col" id ="colsito">
                              <div className="Fl">
                             <img className = ""
                                 alt=""
@@ -83,7 +85,7 @@ const Roles = () => {
                             </div>
                         </div>
                         {/* column3 */}
-                        <div className = "col">
+                        <div className = "col" id ="colsito">
                         <div className="Fl">
                             <img className = ""
                                 alt=""
@@ -112,7 +114,7 @@ const Roles = () => {
                             </div>
                         </div>
 
-                        <div className = "col">
+                        <div className = "col" id ="colsito">
                         <div className="Fl">
                             <img className = ""
                                 alt=""

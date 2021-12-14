@@ -4,11 +4,6 @@ import { useHistory } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './Asesor.css'
-import Carousel from 'react-bootstrap/Carousel'
-import Imagen1 from './Imagens/imagen1.jpg'
-import Imagen5 from './Imagens/Imagen5.jpg'
-import Imagen3 from './Imagens/Imagen3.png'
-import Imagen4 from './Imagens/Imagen4.jpg'
 import personaj from './Imagens/personaj.png'
 import personan from './Imagens/personan.jpg'
 
@@ -22,10 +17,7 @@ const Asesor = () => {
             
             
             <div className="inicio">
-            <Button onClick = {()=>History.push('/Roles')} className="ini">Regresar</Button>
-            </div>
-            <div className="regresar">
-            <Button onClick = {()=>History.push('/')} className="regre"> Inicio</Button>
+            <i class="bi bi-arrow-left-circle-fill" id="cir" onClick = {()=>History.push('/Roles')}></i>
             </div>
             
             <div className = "contenedort">
@@ -45,7 +37,7 @@ const Asesor = () => {
                 <h2 className="tp">Selecciona el tipo de Persona</h2>
                 </div>
                 
-                <div className="row">
+                <div className="row" id="con">
                 <div className="contj">
                   <div className="col">
             <img className = "PJ"
