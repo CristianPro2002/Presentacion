@@ -7,7 +7,7 @@ import './Asesor.css'
 import personaj from './Imagens/personaj.png'
 import personan from './Imagens/personan.jpg'
 
-const Asesor = () => {
+const Asesor4 = () => {
 
     let History = useHistory();
 
@@ -21,7 +21,7 @@ const Asesor = () => {
                 </div>
 
                 <div className="contenedort">
-                    <h1 className="titulu">Asesor #1</h1>
+                    <h1 className="titulu4">Asesor #4</h1>
                 </div>
 
 
@@ -46,7 +46,7 @@ const Asesor = () => {
 
                                                 />
                                                 <div className="bj">
-                                                    <button onClick={() => History.push('/PersonaJuridica')} className="pj">Persona Juridica</button>
+                                                    <button onClick={() => History.push('/PersonaJuridica4')} className="pj">Persona Juridica</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -59,7 +59,7 @@ const Asesor = () => {
 
                                                 />
                                                 <div className="bn">
-                                                    <button onClick={() => History.push('/PersonaNatural')} className="pn">Persona Natural</button>
+                                                    <button onClick={() => History.push('/PersonaNatural4')} className="pn">Persona Natural</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -75,4 +75,4 @@ const Asesor = () => {
     )
 }
 
-export default Asesor
+export default Asesor4

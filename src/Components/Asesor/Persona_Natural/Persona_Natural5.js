@@ -6,13 +6,13 @@ import Button from "react-bootstrap/Button";
 import { useHistory } from "react-router-dom";
 import * as yup from "yup";
 
-const PersonaNatural = () => {
+const PersonaNatural5 = () => {
   let History = useHistory();
 
   return (
     <div className="padre">
       <div>
-        <Button onClick={() => History.push("/Asesor")} className="flechis">
+        <Button onClick={() => History.push("/Asesor5")} className="flechis">
           {" ← "}
         </Button>
       </div>
@@ -606,4 +606,4 @@ const PersonaNatural = () => {
   );
 };
 
-export default PersonaNatural;
+export default PersonaNatural5;

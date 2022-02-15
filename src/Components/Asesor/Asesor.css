@@ -35,6 +35,35 @@
     font-weight: bold;
 }
 
+.titulu2 {
+    text-align: center;
+    font-size: 400%;
+    font-family:'Roboto';
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+.titulu3 {
+    text-align: center;
+    font-size: 400%;
+    font-family:'Roboto';
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+.titulu4 {
+    text-align: center;
+    font-size: 400%;
+    font-family:'Roboto';
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+.titulu5 {
+    text-align: center;
+    font-size: 400%;
+    font-family:'Roboto';
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
 .inicio {
     width: 100%;
     float: left;
