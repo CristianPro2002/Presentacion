@@ -4,22 +4,162 @@ import "react-datepicker/dist/react-datepicker.css";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import { useHistory } from "react-router-dom";
-import * as yup from "yup";
+import * as Yup from "yup";
+import { useFormik, ErrorMessage } from "formik";
+import { string } from "yup/lib/locale";
 
 const PersonaNatural = () => {
   let History = useHistory();
+
+  const formik = useFormik({
+    initialValues: {
+      tiposolicitud: "",
+      fecha: "",
+      pnombre: "",
+      snombre: "",
+      panombre: "",
+      sanombre: "",
+      Tdocumento: "",
+      documento: "",
+      fechae: "",
+      lugare: "",
+      nacimiento: "",
+      ciudad: "",
+      genero:"",
+      EstadoCivil:"",
+      Nacionalidad: "",
+      cajon: "",
+      Dir: "",
+      bloq: "",
+      apca: "",
+      Barrio: "",
+      CiuMun: "",
+      depa: "",
+      Pais: "",
+      Tel: "",
+      Cel: "",
+      Email: "",
+      Profesion: "",
+      Sprofesion: "",
+      Dactieco: "",
+      Cciiu: "",
+      Nempleado: "",
+      nombreem: "",
+      Direccion: "",
+      Bar: "",
+      CiMu: "",
+      Depa: "",
+      Pa: "",
+      Phone: "",
+      Ex: "",
+      Cell: "",
+      CorreL: "",
+      IngreMensu: "",
+      Totalact: "",
+      OtrosIngreMensu: "",
+      Totalpas: "",
+      Detalle: "",
+      Totalegre: "",
+      Declarantere: "",
+      Agentere: "",
+      RegimenIva: "",
+      Tributario: "",
+      VentasA: "",
+      FechaCierre: "",
+    },
+
+  validationSchema: Yup.object({
+    fecha: Yup.date().default(function () {
+      return new Date();
+    }),
+    pnombre: Yup.string().required("Este campo es obligatorio")
+    .max(10,`Maximo 10 caracteres`),
+    snombre: Yup.string() .max(10,`Maximo 10 caracteres`),
+    panombre: Yup.string().required("Este campo es obligatorio")
+    .max(10,`Maximo 10 caracteres`),
+    sanombre: Yup.string() .max(10,`Maximo 10 caracteres`),
+    documento: Yup.string().required("Este campo es obligatorio")
+    .max(11,`Maximo 10 caracteres`),
+
+    fechae:  Yup.date().default(function () {
+      return new Date();
+    }),
+    nacimiento:  Yup.date().default(function () {
+      return new Date();
+    }),
+    ciudad: Yup.string().required("Este campo es obligatorio")
+    .max(10,`Maximo 10 caracteres`),
+    lugare: Yup.string().required("Este campo es obligatorio")
+    .max(10,`Maximo 10 caracteres`),
+    Tdocumento: Yup.string().required("Este campo es requerido"),
+    Nacionalidad: Yup.string().required("Este campo es requerido"),
+    cajon: Yup.string(),
+    Dir: Yup.string().required("Este campo es obligatorio")
+    .max(20,`Maximo 20 caracteres`),
+    bloq: Yup.string(),
+    apca: Yup.string(),
+    Barrio: Yup.string().required("Este campo es obligatorio")
+    .max(10,`Maximo 10 caracteres`),
+    CiuMun: Yup.string().required("Este campo es obligatorio")
+    .max(10,`Maximo 10 caracteres`),
+    depa: Yup.string().required("Este campo es obligatorio")
+    .max(15,`Maximo 15 caracteres`),
+    Pais: Yup.string().required("Este campo es obligatorio")
+    .max(10,`Maximo 10 caracteres`),
+    Tel: Yup.string().required("Este campo es obligatorio")
+    .max(11,`Maximo 11 caracteres`),
+    Cel: Yup.string().required("Este campo es obligatorio")
+    .max(12,`Maximo 12 caracteres`),
+    Email: Yup.string().required("Este campo es obligatorio")
+    .max(25,`Maximo 25 caracteres`),
+    Profesion: Yup.string().required("Este campo es obligatorio"),
+    Sprofesion: Yup.string().required("Este campo es obligatorio"),
+    Dactieco: Yup.string().required("Este campo es obligatorio"),
+    Cciiu: Yup.string().required("Este campo es obligatorio")
+    .max(4,`Maximo 4 caracteres`),
+    Nempleado: Yup.string().required("Este campo es obligatorio"),
+    nombreem:  Yup.string().required("Este campo es obligatorio"),
+    Direccion:  Yup.string().required("Este campo es obligatorio"),
+    Bar:  Yup.string().required("Este campo es obligatorio"),
+    CiMu:  Yup.string().required("Este campo es obligatorio"),
+    Depa:  Yup.string().required("Este campo es obligatorio"),
+    Pa:  Yup.string().required("Este campo es obligatorio"),
+    Phone:  Yup.string().required("Este campo es obligatorio")
+    .max(11,`Maximo 11 caracteres`),
+    Ex:  Yup.string().required("Este campo es obligatorio")
+    .max(5,`Maximo 5 caracteres`),
+    Cell:  Yup.string().required("Este campo es obligatorio")
+    .max(12,`Maximo 12 caracteres`),
+    CorreL:  Yup.string().required("Este campo es obligatorio"),
+    IngreMensu:  Yup.string().required("Este campo es obligatorio"),
+    Totalact:  Yup.string().required("Este campo es obligatorio"),
+    OtrosIngreMensu:  Yup.string().required("Este campo es obligatorio"),
+    Totalpas:  Yup.string().required("Este campo es obligatorio"),
+    Detalle:  Yup.string().required("Este campo es obligatorio"),
+    Totalegre:  Yup.string().required("Este campo es obligatorio"),
+    VentasA: Yup.string(),
+    FechaCierre:  Yup.date().default(function () {
+      return new Date();
+    }),
+  }),
+
+    onSubmit: (formData) => {
+      console.log(formData);
+    },
+  });
+
 
   return (
     <div className="padre">
       <div>
         <Button onClick={() => History.push("/Asesor")} className="flechis">
-          {" ← "}
+          {" 🡨 "}
         </Button>
       </div>
       <h1 className="titulo">PERSONA NATURAL</h1>
 
       <div className="hijo">
-        <form className="Form">
+        <form className="Form" onSubmit={formik.handleSubmit}>
           <div className="row red-red">
             <div className="col-md-4">
               <Col className="">
@@ -27,10 +167,12 @@ const PersonaNatural = () => {
                 <label className="labelu">
                   <input
                     type="radio"
-                    name="nombre"
+                    name="tiposolicitud"
                     id="r1"
-                    value="vin"
+                    value="vinculación"
                     className=""
+                    required
+                    onChange={formik.handleChange}
                   />
                   <label for="r1">Vinculación</label>
                 </label>
@@ -38,10 +180,12 @@ const PersonaNatural = () => {
                 <label className="labelu">
                   <input
                     type="radio"
-                    name="nombre"
+                    name="tiposolicitud"
                     className=""
                     id="r2"
-                    value="act"
+                    value="actualización"
+                    required
+                    onChange={formik.handleChange}
                   />
                   <label for="r2">Actualización</label>
                 </label>
@@ -52,7 +196,7 @@ const PersonaNatural = () => {
               <Col className="">
                 <h5 className="titulitos">Tipo de solicitante</h5>
                 <label className="labelu">
-                  <input type="checkbox" name="nombre" className="" required />
+                  <input type="radio" name="nombre" className="" required />
                   Beneficiario/Ordenante de giros
                 </label>
               </Col>
@@ -62,7 +206,7 @@ const PersonaNatural = () => {
               <Col className="">
                 <h5 className="titulitos">Fecha de diligenciamiento</h5>
                 <label className="labelu">
-                  <input type="date" name="fecha" className="select" />
+                  <input type="date" name="fecha" className="select" required onChange={formik.handleChange}/>
                 </label>
               </Col>
             </div>
@@ -72,28 +216,29 @@ const PersonaNatural = () => {
             <h5 className="titulitos">Información personal</h5>
             <label className="labelo">
               Primer Nombre
-              <input type="text" name="nombre" className="input" />
+              <input type="text" name="pnombre" className="input" required onChange={formik.handleChange}
+               />
             </label>
 
             <label className="labelo">
               Segundo Nombre
-              <input type="text" name="nombre" className="input" />
+              <input type="text" name="snombre" className="input" onChange={formik.handleChange}/>
             </label>
 
             <label className="labelo">
               Primer Apellido
-              <input type="text" name="nombre" className="input" />
+              <input type="text" name="panombre" className="input" required onChange={formik.handleChange}/>
             </label>
 
             <label className="labelo">
               Segundo Apellido
-              <input type="text" name="nombre" className="input" />
+              <input type="text" name="sanombre" className="input" onChange={formik.handleChange}/>
             </label>
           </div>
 
           <div className="select">
             <h5 className="h5">Tipo de documento</h5>
-            <select className="selec">
+            <select className="selec" name="Tdocumento" onChange={formik.handleChange} required>
               <option selected value="s">
                 Seleccione su documento de identidad
               </option>
@@ -109,24 +254,24 @@ const PersonaNatural = () => {
           <div className="bordes">
             <label className="labelo">
               Nº documento
-              <input type="text" name="nombre" className="input" />
+              <input type="number" name="documento" className="input" required onChange={formik.handleChange}/>
             </label>
 
             <label className="labelo">
               Fecha de expedición
-              <input type="date" name="nombre" className="input" />
+              <input type="date" name="fechae" className="input" required onChange={formik.handleChange}/>
             </label>
           </div>
 
           <div className="bordes">
             <label className="labelo">
               Lugar de expedición
-              <input type="text" name="nombre" className="input" />
+              <input type="text" name="lugare" className="input" required onChange={formik.handleChange}/>
             </label>
 
             <label className="labelo">
               Fecha de nacimiento
-              <input type="date" name="nombre" className="input" />
+              <input type="date" name="nacimiento" className="input" required onChange={formik.handleChange}/>
             </label>
           </div>
 
@@ -134,7 +279,7 @@ const PersonaNatural = () => {
             <div className="bordes">
               <label className="labelo">
                 Ciudad de nacimiento
-                <input type="text" name="nombre" className="input" />
+                <input type="text" name="ciudad" className="input" required onChange={formik.handleChange} />
               </label>
 
               <div className="conte">
@@ -143,10 +288,28 @@ const PersonaNatural = () => {
                     <Col className="">
                       <h5 className="letras">Género</h5>
                       <label className="labelo">
-                        <input type="radio" name="nombre" id="r3" value="FEM" className="" />F
+                        <input
+                          type="radio"
+                          name="genero"
+                          id="r3"
+                          value="Femenino"
+                          className=""
+                          required
+                          onChange={formik.handleChange}
+                        />
+                        F
                       </label>
                       <label className="labelo">
-                        <input type="radio" name="nombre" id="r4" value="MAS" className="" />M
+                        <input
+                          type="radio"
+                          name="genero"
+                          id="r4"
+                          value="Masculino"
+                          className=""
+                          required
+                          onChange={formik.handleChange}
+                        />
+                        M
                       </label>
                     </Col>
                   </div>
@@ -162,32 +325,38 @@ const PersonaNatural = () => {
                             <label className="civil">
                               <input
                                 type="radio"
-                                name="nombre"
+                                name="EstadoCivil"
                                 className=""
-                                id="r5" 
-                                value="sol"
+                                id="r5"
+                                value="soltero"
+                                required
+                                onChange={formik.handleChange}
                               />
-                            <label for="r5">Soltero</label>
+                              <label for="r5">Soltero</label>
                             </label>
                             <label className="civil">
                               <input
                                 type="radio"
-                                name="nombre"
+                                name="EstadoCivil"
                                 className="check1"
-                                id="r6" 
-                                value="uni"
+                                id="r6"
+                                value="unión libre"
+                                required
+                                onChange={formik.handleChange}
                               />
-                            <label for="r6">Unión Libre</label>
+                              <label for="r6">Unión Libre</label>
                             </label>
                             <label className="civil">
                               <input
                                 type="radio"
-                                name="nombre"
+                                name="EstadoCivil"
                                 className=""
-                                id="r7" 
-                                value="cas"
+                                id="r7"
+                                value="casado"
+                                required
+                                onChange={formik.handleChange}
                               />
-                            <label for="r7">Casado</label>
+                              <label for="r7">Casado</label>
                             </label>
                           </Col>
                         </div>
@@ -201,7 +370,7 @@ const PersonaNatural = () => {
 
           <div className="select">
             <h5 className="h5">Nacionalidad</h5>
-            <select className="seleccion">
+            <select className="seleccion" name="Nacionalidad" onChange={formik.handleChange} required>
               <option selected value="s">
                 Seleccione la nacionalidad
               </option>
@@ -209,61 +378,61 @@ const PersonaNatural = () => {
               <option value="E.U">Estadounidense</option>
             </select>
             <label className="labelo">
-              <input type="checkbox" name="nombre" className="" />
+              <input type="radio" name="otro" className="" required />
               Otro, cuál?
-              <input type="text" name="nombre" className="inpuut" />
+              <input type="text" name="cajon" className="inpuut" />
             </label>
 
             <div className="contenedor4">
               <h5 className="titulitos">Información de contacto personal</h5>
               <label className="labelo">
                 Dirección residencia
-                <input type="text" name="nombre" className="input" />
+                <input type="text" name="Dir" className="input" required onChange={formik.handleChange}/>
               </label>
               <label className="cajon">
                 Bloque/Torre
-                <input type="text" name="nombre" className="input" />
+                <input type="number" name="bloq" className="input" />
               </label>
               <label className="cajon">
                 Apto/Casa
-                <input type="text" name="nombre" className="input" />
+                <input type="number" name="apca" className="input" />
               </label>
             </div>
 
             <div className="contenedor4">
               <label className="labelo">
                 Barrio
-                <input type="text" name="nombre" className="input" />
+                <input type="text" name="Barrio" className="input" required onChange={formik.handleChange}/>
               </label>
               <label className="cajon">
                 Ciudad/Municipio
-                <input type="text" name="nombre" className="input" />
+                <input type="text" name="CiuMun" className="input" required onChange={formik.handleChange}/>
               </label>
               <label className="cajon">
                 Departamento
-                <input type="text" name="nombre" className="input" />
+                <input type="text" name="depa" className="input" required onChange={formik.handleChange}/>
               </label>
             </div>
 
             <div className="contenedor4">
               <label className="labelo">
                 Pais
-                <input type="text" name="nombre" className="input" />
+                <input type="text" name="Pais" className="input" required onChange={formik.handleChange}/>
               </label>
               <label className="cajon">
                 Teléfono
-                <input type="text" name="nombre" className="input" />
+                <input type="number" name="Tel" className="input" required onChange={formik.handleChange} />
               </label>
               <label className="cajon">
                 Celular
-                <input type="text" name="nombre" className="input" />
+                <input type="number" name="Cel" className="input" required onChange={formik.handleChange}/>
               </label>
             </div>
 
             <div className="contenedor4">
               <label className="largos">
                 Correo electrónico
-                <input type="text" name="nombre" className="input" />
+                <input type="email" name="Email" className="input" required onChange={formik.handleChange}/>
               </label>
             </div>
 
@@ -271,28 +440,28 @@ const PersonaNatural = () => {
               <h5 className="titulitos">Actividad económica</h5>
               <label className="largos">
                 Profesión
-                <input type="text" name="nombre" className="input" />
+                <input type="text" name="Profesion" className="input" required onChange={formik.handleChange}/>
               </label>
               <h5 className="tituloos">Ocupacion/Oficio</h5>
 
-              <select className="selec">
+              <select className="selec" name="Sprofesion" onChange={formik.handleChange} required>
                 <option selected value="s">
                   Seleccione su profesión
                 </option>
 
-                <option value="C">Empleado</option>
-                <option value="E.U">Pensionado</option>
-                <option value="C">Ama de casa</option>
-                <option value="E.U">Estudiante</option>
-                <option value="C">Ganadero</option>
-                <option value="E.U">Comerciante</option>
-                <option value="C">Agricultor</option>
-                <option value="E.U">Rentista de capital</option>
-                <option value="C">Independiente</option>
-                <option value="E.U">Desemppleado sin ingresos</option>
-                <option value="E.U">Desempleado con ingresos</option>
-                <option value="C">Profesional independiente</option>
-                <option value="E.U">Socio o Empleado-socio</option>
+                <option value="Empleado">Empleado</option>
+                <option value="Pensionado">Pensionado</option>
+                <option value="Ama casa">Ama de casa</option>
+                <option value="Estudiante">Estudiante</option>
+                <option value="Ganadero">Ganadero</option>
+                <option value="Comerciante">Comerciante</option>
+                <option value="Agricultor">Agricultor</option>
+                <option value="Rentista capital">Rentista de capital</option>
+                <option value="Independiente">Independiente</option>
+                <option value="Desempleado sin Ingresos">Desemppleado sin ingresos</option>
+                <option value="Desempleado con Ingresos">Desempleado con ingresos</option>
+                <option value="Profesional Independiente">Profesional independiente</option>
+                <option value="Socio">Socio o Empleado-socio</option>
               </select>
               <p className="texto">
                 Si su ocupación es independiente, profesional independiente,
@@ -301,15 +470,15 @@ const PersonaNatural = () => {
               </p>
               <label className="lalbelo">
                 Detalle de la actividad económica principal
-                <input type="text" name="nombre" className="input" />
+                <input type="text" name="Dactieco" className="input" onChange={formik.handleChange}/>
               </label>
               <label className="cajoncitos">
                 Código CIIU
-                <input type="text" name="nombre" className="input" />
+                <input type="number" name="Cciiu" className="input" onChange={formik.handleChange}/>
               </label>
               <label className="cajoncitos">
                 Nº. Empleados
-                <input type="text" name="nombre" className="input" />
+                <input type="number" name="Nempleado" className="input" onChange={formik.handleChange}/>
               </label>
 
               <div className="contenedor4">
@@ -318,49 +487,49 @@ const PersonaNatural = () => {
                 </h5>
                 <label className="largos">
                   Nombre de la empresa
-                  <input type="text" name="nombre" className="input" />
+                  <input type="text" name="nombreem" className="input" onChange={formik.handleChange} required/>
                 </label>
                 <label className="largos">
                   Dirección de la empresa o lugar donde desarrolla su actividad
-                  <input type="text" name="nombre" className="input" />
+                  <input type="text" name="Direccion" className="input" onChange={formik.handleChange} required />
                 </label>
               </div>
 
               <div className="contenedor4">
                 <label className="labelo">
                   Barrio
-                  <input type="text" name="nombre" className="input" />
+                  <input type="text" name="Bar" className="input" onChange={formik.handleChange} required />
                 </label>
                 <label className="cajon">
                   Ciudad/Municipio
-                  <input type="text" name="nombre" className="input" />
+                  <input type="text" name="CiMu" className="input" onChange={formik.handleChange} required />
                 </label>
                 <label className="cajon">
                   Departamento
-                  <input type="text" name="nombre" className="input" />
+                  <input type="text" name="Depa" className="input" onChange={formik.handleChange} required />
                 </label>
               </div>
 
               <div className="contenedor4">
                 <label className="labelo">
                   Pais
-                  <input type="text" name="nombre" className="input" />
+                  <input type="text" name="Pa" className="input" onChange={formik.handleChange} required/>
                 </label>
                 <label className="jumm">
                   Teléfono
-                  <input type="text" name="nombre" className="input" />
+                  <input type="number" name="Phone" className="input" onChange={formik.handleChange} required/>
                 </label>
                 <label className="jumm">
                   Ext
-                  <input type="text" name="nombre" className="input" />
+                  <input type="number" name="Ex" className="input" onChange={formik.handleChange} required />
                 </label>
                 <label className="cajon">
                   Celular
-                  <input type="text" name="nombre" className="input" />
+                  <input type="number" name="Cell" className="input" onChange={formik.handleChange} required/>
                 </label>
                 <label className="largos">
                   Correo electrónico laboral
-                  <input type="text" name="nombre" className="input" />
+                  <input type="text" name="CorreL" className="input" onChange={formik.handleChange} required />
                 </label>
               </div>
 
@@ -368,28 +537,28 @@ const PersonaNatural = () => {
                 <h5 className="titulitos">Detalle información financiera</h5>
                 <label className="labelo">
                   Ingresos mensuales $
-                  <input type="text" name="nombre" className="input" />
+                  <input type="number" name="IngreMensu" className="input" onChange={formik.handleChange} required/>
                 </label>
                 <label className="labelo">
                   Total activos $
-                  <input type="text" name="nombre" className="input" />
+                  <input type="number" name="Totalact" className="input" onChange={formik.handleChange} required />
                 </label>
                 <label className="labelo">
                   Otros ingresos mensuales $
-                  <input type="text" name="nombre" className="input" />
+                  <input type="number" name="OtrosIngreMensu" className="input" onChange={formik.handleChange} required />
                 </label>
                 <label className="labelo">
                   Total pasivos $
-                  <input type="text" name="nombre" className="input" />
+                  <input type="number" name="Totalpas" className="input" onChange={formik.handleChange} required />
                 </label>
                 <label className="labelo">
                   Detalle otros ingresos mensuales (diferentes a su actividad
                   económica principal)
-                  <input type="text" name="nombre" className="input" />
+                  <input type="text" name="Detalle" className="input" onChange={formik.handleChange} required />
                 </label>
                 <label className="labelo">
                   Total egresos mensuales $
-                  <input type="text" name="nombre" className="input" />
+                  <input type="number" name="Totalegre" className="input" onChange={formik.handleChange} required/>
                 </label>
               </div>
 
@@ -400,11 +569,11 @@ const PersonaNatural = () => {
                 </label>
                 <label className="cajon">
                   Ventas anuales $
-                  <input type="text" name="nombre" className="input" />
-                </label>
+                  <input type="number" name="VentasA" className="input" onChange={formik.handleChange} required  />
+                </label> 
                 <label className="cajon">
                   Fecha de cierre de ventas
-                  <input type="date" name="nombre" className="input" />
+                  <input type="date" name="FechaCierre" className="input" onChange={formik.handleChange} required />
                 </label>
               </div>
 
@@ -412,48 +581,66 @@ const PersonaNatural = () => {
                 <h5 className="titulitos">Información tributaria</h5>
                 <label className="cajons">
                   ¿Es declarante de renta?
-                  <input type="checkbox" name="nombre" className="civi" /> Si
-                  <input type="checkbox" name="nombre" className="civi" /> No
+                  <input type="radio" name="Declarnatere" value="Si" id="r8" className="civi"  required
+                          onChange={formik.handleChange}/> Si
+                  <input type="radio" name="Declarantere" value="No" id="r9" className="civi"  required
+                          onChange={formik.handleChange}/> No
                 </label>
                 <label className="cajons">
                   Agente retenedor
-                  <input type="checkbox" name="nombre" className="civi" /> Si
-                  <input type="checkbox" name="nombre" className="civi" /> No
+                  <input type="radio" name="Agentere" id="r10" value="Si"className="civi"  required
+                          onChange={formik.handleChange}/> Si
+                  <input type="radio" name="Agentere" id="r11" Value="No" className="civi"  required
+                          onChange={formik.handleChange}/> No
                 </label>
                 <label className="cajonl">
                   Régimen de IVA
                   <input
-                    type="checkbox"
-                    name="nombre"
+                    type="radio"
+                    name="RegimenIva"
                     className="civilo"
+                    Value="Común"
+                    id="r12"
+                    required
+                    onChange={formik.handleChange}
                   />{" "}
-                  Común
+                  <label for="r12">Común</label> 
                   <input
-                    type="checkbox"
-                    name="nombre"
+                    type="radio"
+                    name="RegimenIva"
                     className="civilo"
+                    value="Simplificado"
+                    id="r13"
+                    required
+                    onChange={formik.handleChange}
                   />{" "}
-                  Simplificado
+                  <label for="r13">Simplificado</label>
                   <input
-                    type="checkbox"
-                    name="nombre"
+                    type="radio"
+                    name="RegimenIva"
                     className="civilo"
+                    value="Ninguno"
+                    id="r14"
+                    required
+                    onChange={formik.handleChange}
                   />{" "}
-                  Ninguno
+                  <label for="r14">Ninguno</label>
                 </label>
               </div>
 
               <div className="contenedor4">
                 <label className="lalbelo">
                   Obligado a tributar en Estados Unidos
-                  <input type="checkbox" name="nombre" className="civi" /> Si
-                  <input type="checkbox" name="nombre" className="civi" /> No
+                  <input type="radio" name="TributarEU" id="r15" className="civi"  required
+                          onChange={formik.handleChange} /> Si
+                  <input type="radio" name="TributarEU" id="r16" className="civi"  required
+                          onChange={formik.handleChange}/> No
                 </label>
                 <label className="otro">
                   *Si su respuesta es afirmativa indique el número de ID
                   tributario (TIN)
                 </label>
-                <input type="text" name="nombre" className="inpuut" />
+                <input type="number" name="nombre" className="inpuut" />
               </div>
 
               <div className="contenedor4">
@@ -523,8 +710,8 @@ const PersonaNatural = () => {
                 </h5>
                 <label className="lalbelo">
                   ¿Realiza operaciones en moneda extranjera?
-                  <input type="checkbox" name="nombre" className="civi" /> Si
-                  <input type="checkbox" name="nombre" className="civi" /> No
+                  <input type="radio" name="nombre" className="civi" /> Si
+                  <input type="radio" name="nombre" className="civi" /> No
                 </label>
               </div>
 
@@ -559,11 +746,11 @@ const PersonaNatural = () => {
 
                 <label className="largos">
                   Tipo de producto
-                  <input type="checkbox" name="nombre" className="civilo" />
+                  <input type="radio" name="nombre" className="civilo" />
                   Cuenta de ahorro
-                  <input type="checkbox" name="nombre" className="civilo" />
+                  <input type="radio" name="nombre" className="civilo" />
                   Cuenta corriente
-                  <input type="checkbox" name="nombre" className="civilo" />
+                  <input type="radio" name="nombre" className="civilo" />
                   Otro, cuál?
                   <input type="text" name="nombre" className="inpuut" />
                 </label>

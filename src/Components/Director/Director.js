@@ -12,7 +12,7 @@ let History  = useHistory();
         <div>
             <Navbar id="Nav_color"bg="" variant ="dark" expand="lg">
             <Container fluid>
-                <Navbar.Brand href="/">Inicio</Navbar.Brand>
+                <Navbar.Brand href="Director">Inicio</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                 <Nav
@@ -20,8 +20,8 @@ let History  = useHistory();
                     style={{ maxHeight: '100px' }}
                     navbarScroll
                 >
-                    <Nav.Link href="Roles">Regresar</Nav.Link>
-                    <Nav.Link href="">Tabla de usuarios</Nav.Link>
+                    <Nav.Link href="Roles">Roles</Nav.Link>
+                    <Nav.Link href="Tabla_director">Tabla de usuarios</Nav.Link>
                     <Nav.Link href="#" >
                     Reportes
                     </Nav.Link>

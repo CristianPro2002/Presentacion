@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-
 .Titulo-principal {
   text-align: center;
   font-family: "Roboto";
@@ -8,34 +7,24 @@
   color: black;
 }
 
-.REGRESAR {
-  height:50px;
-  width:50px;
-  -moz-border-radius:50px;
-  -webkit-border-radius:50px;
-  border-radius:50px;
-  font-weight: 900;
-  padding: 1px;
+#CIRCULO {
   cursor: pointer;
-  color: white;
-  font-size: 120%;
-  background-color: 157ee0;
-  border-color: black;
+  font-size: 45px;
+  color: #048eff;
+}
+#CIRCULO:hover {
+  color: hsl(221, 89%, 48%);
 }
 
 @media screen and (max-width: 700px) {
-.REGRESAR {
-  width: 40px;
-  border-radius: 8px;
-  font-weight: 900;
-  margin-bottom: 10px;
-  padding: 1px;
-  cursor: pointer;
-  color: white;
-  font-size: 120%;
-  background-color: 157ee0;
-  border-color: black;
-}
+  #CIRCULO {
+    cursor: pointer;
+    font-size: 35px;
+    color: #048eff;
+  }
+  #CIRCULO:hover {
+    color: hsl(221, 89%, 48%);
+  }
 }
 
 .inputsito {
@@ -96,8 +85,7 @@
 
 .label {
   font-weight: 700;
-  padding: 10px;
-  cursor: pointer;
+  padding: 7px;
   color: rgb(7, 5, 5);
 }
 
@@ -105,7 +93,7 @@
   display: grid;
   font-weight: 700;
   padding: 6px;
-  cursor: pointer;
+
   color: rgb(7, 5, 5);
   text-align: left;
 }
@@ -130,15 +118,14 @@
   font-weight: 700;
   padding: 10px;
   color: rgb(7, 5, 5);
-  width: 40%;  
-
+  width: 40%;
 }
 
 .label-6 {
   display: grid;
   font-weight: 700;
   padding: 10.5px;
-  cursor: pointer;
+
   color: rgb(7, 5, 5);
   text-align: left;
 }
@@ -209,7 +196,7 @@
 .label-14 {
   font-weight: 700;
   margin-top: -0.7%;
-  cursor: pointer;
+
   color: rgb(7, 5, 5);
 }
 
@@ -266,7 +253,7 @@
 }
 
 .label-23 {
-  padding: 10px;
+  padding: 20px;
 }
 
 .center {
@@ -277,7 +264,6 @@
 }
 
 .Border {
-  border-color: #000000;
   border-width: 1px;
   border-radius: 5px;
   border-style: solid;
@@ -440,7 +426,7 @@
 }
 
 .Texto-3 {
-  padding: 5px;
+  padding: 10px;
   text-align: justify;
 }
 
@@ -497,7 +483,6 @@
   border-width: 1px;
   border-radius: 4px;
   border-style: solid;
-  
 }
 
 #Container-2 {

@@ -1,87 +1,80 @@
+.contenedor_formd{
+  box-sizing: border-box;
+  max-width: 1000px;
+  width: 70%;
+  padding: 30px;
+}
 
-.DIRECTOR_CONTENEDOR{
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-  }
-  
-  @media screen and (max-width: 700px) {
-    .DIRECTOR_CONTENEDOR {
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-  
-  .Formularioxd {
-    width: 100%;
-    border-radius: 5px;
-  }
-  
-  .Imagen_bank {
-    width: 110px;
-    height: 110px;
-  }
+.img_usu_creacion{
+  width: 250px;
+  height: 200px;
+}
+/*el cursor:pointer sirve para que la imagen quede como si fuera un boton*/
+#Boton_imagen_eyes{
+  cursor: pointer;
+width: 30px;
+}
+#Contenedor_contraseña{
+ display: flex;
+}
+.Contenedor_contraseña_Arreglo{
+width: 96%;
+}
+.Contenedor_imagen_boton{
+  display: inline;
+  text-align: center;
+  padding-top: 32px;
+ width: 4%;
+}
+.div_img_eye{
+ display: inline;
+  width: 5%;
+}
 
+.Title_and_image{
+  text-align: center;
+}
+#select_sin_react{
+  border-radius: 4px;
+  height: 35px;
+  border: none ;
+  background-color:rgb(2, 18,95);
+  color: white;
+  display: inline-block;
+  width: 100%;
+}
+.center_button{
+  text-align: center;
+}
+#formBasicEmail{
+  background-color:rgb(194, 193, 193);;
+}
+#input_contra_form{
+  background-color:rgb(194, 193, 193);;
+}
+#formBasicontraseña{
+  background-color:rgb(194, 193, 193); ;
   
-  .contenedor-formulario-director {
-    border-bottom: 4%;
-    background-color: rgb(250, 250, 250);
-    border-radius: 10px;
-    box-shadow: 0 0 15px 0 rgb(59, 102, 102);
-    margin-left: 35%;
-    margin-right: 35%;
-  }
-  @media screen and (max-width: 800px) {
-    .contenedor-formulario-director{
-      margin-top: 1%;
-      border-bottom: 4%;
-      background-color: rgb(250, 250, 250);
-      border-radius: 10px;
-      box-shadow: 0 0 15px 0 rgb(46, 78, 78);
-      margin-left: 10%;
-      margin-right: 10%;
-    }
-  }
-  
-  .imgagen_director {
-    margin-top: 1%;
-    text-align: center;
-  }
-  
-  .titulo_creacion_usuarios {
-    text-align: center;
-    font-family: "Times New Roman", Times, serif;
-  }
-  
-  
-  .cajas_director{
-    text-align: center;
-    margin-top: 25px;
-    margin-left: 5%;
-    margin-right: 5%;
-    border-color: black;
-  }
-  
-  .cajas_director2 {
-    text-align: center;
-    margin-top: 25px;
-    align-items: center;
-    margin-left: 5%;
-    margin-right: 5%;
-    border-color: black;
-    margin-bottom: 4%;
-  }
-  
-  
+}
+.contenedor_img_eye{
+  width: 10%;
+  display: block;
+ 
+}
+.fourth {
+  align-items: center;
+  border-radius: 7px;
+  width: 150px;
+  border-color: rgb(2, 18,95);
+  color: rgb(0, 0, 0);
+  background-image: -webkit-linear-gradient(45deg, rgb(2,18,95) 90%, transparent 50%);
+  background-image: linear-gradient(45deg, rgb(2,18,95), transparent 90%);
+  background-position: 100%;
+  background-size: 400%;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
+}
+.fourth:hover {
+  background-position: 0;
+}
+

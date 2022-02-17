@@ -26,21 +26,27 @@ import PersonaJuridica2 from './Components/Asesor/Persona_Juridica/PersonaJuridi
 import PersonaJuridica3 from './Components/Asesor/Persona_Juridica/PersonaJuridica3';
 import PersonaJuridica4 from './Components/Asesor/Persona_Juridica/PersonaJuridica4';
 import PersonaJuridica5 from './Components/Asesor/Persona_Juridica/PersonaJuridica5';
+import {Funcionamiento_form} from './Components/Director/Funcionamiento_form'
+import {Tabla_director} from './Components/Director/Tabla_director';
 
 function App() {
   return (
     <Router>
       <Switch>
-      <Route path="/PersonaJuridica5">
+        <Route path="/Tabla_director">
+          <Director />
+          <Tabla_director />
+        </Route>
+        <Route path="/PersonaJuridica5">
           <PersonaJuridica5 />
         </Route>
-      <Route path="/PersonaJuridica4">
+        <Route path="/PersonaJuridica4">
           <PersonaJuridica4 />
         </Route>
-      <Route path="/PersonaJuridica3">
+        <Route path="/PersonaJuridica3">
           <PersonaJuridica3 />
         </Route>
-      <Route path="/PersonaJuridica2">
+        <Route path="/PersonaJuridica2">
           <PersonaJuridica2 />
         </Route>
         <Route path="/PersonaNatural5">
@@ -78,7 +84,7 @@ function App() {
         </Route>
         <Route path="/Director">
           <Director />
-          <Formulario_Director />
+          <Funcionamiento_form />
         </Route>
         <Route path="/Gerente">
           <Gerente />

@@ -1,64 +1,195 @@
-import React from "react";
 import Button from "react-bootstrap/Button";
 import { Col, Row } from "react-bootstrap";
 import "./Estilos.css";
 import { useHistory } from "react-router-dom";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const PersonaJuridica = () => {
   let History = useHistory();
 
-  let Checked = null;
-  for (let CheckBox of document.getElementsByClassName("only-one")) {
-    CheckBox.onclick = function () {
-      if (Checked != null) {
-        Checked.checked = false;
-        Checked = CheckBox;
-      }
-      Checked = CheckBox;
-    };
-  }
+  const formik = useFormik({
+    initialValues: {
+      Tipo_Solicitud: "",
+      Fecha: "",
+      N_documento: "",
+      Nombre_RazonSocial: "",
+      NombreCorto_Sigla: "",
+      Fecha_Constitucion: "",
+      Ciudad_Constitucion: "",
+      Pais_Constitucion: "",
+      DireccionSedePrincipal: "",
+      Barrio: "",
+      Ciudad_Municipio: "",
+      Departamento: "",
+      Pais: "",
+      Telefono: "",
+      Ext: "",
+      CorreoElectronicoSedePrincipal: "",
+      Tipo_Documento: "",
+      N_Documento2: "",
+      PrimerNombre: "",
+      SegundoNombre: "",
+      PrimerApellido: "",
+      SegundoApellido: "",
+      Cargo: "",
+      DireccionLaboral: "",
+      Barrio2: "",
+      Ciudad_Municipio2: "",
+      Departamento2: "",
+      Pais2: "",
+      TelefonoLaboral: "",
+      Ext2: "",
+      Celular: "",
+      CorreoElectronicoLaboral: "",
+      Socios_Accionistas: "",
+      Socios_Accionistas_Entidad: "",
+      Tipo_Documento2: "",
+      N_Documento3: "",
+      PrimerNombre2: "",
+      SegundoNombre2: "",
+      PrimerApellido2: "",
+      SegundoApellido2: "",
+      Cargo2: "",
+      DireccionLaboral2: "",
+      Barrio3: "",
+      Ciudad_Municipio3: "",
+      Departamento3: "",
+      Pais3: "",
+      TelefonoLaboral2: "",
+      Ext3: "",
+      Celular2: "",
+      CorreoElectronicoLaboral2: "",
+      NaturalezaEntidad: "",
+      CodigoCiiu: "",
+      DetalleActividadEconomicaPrincipal: "",
+      N_Empleados: "",
+      SociedadComercial_Civil: "",
+      TipoEntidad_Asociacion: "",
+      EntidadesEstatales: "",
+      EntidadesEstatalesDescentralizadasOrden: "",
+      IngresosOperacionalesMensuales: "",
+      IngresosNoOperacionalesMensuales: "",
+      DetalleIngresosNoOperacionales: "",
+      VentasAnuales: "",
+      FechaCierreVentas: "",
+      EgresosMensuales: "",
+      UtilidadNeta: "",
+      TotalActivos: "",
+      TotalPasivos: "",
+      TotalPatrimonio: "",
+      TipoContribuyente: "",
+      ClaseContribuyente: "",
+      ResponsableIva: "",
+      AutorretenedorIngresos: "",
+      IntermediarioMercadoCambiario: "",
+      VigiladoSuperintendenciaFinanciera: "",
+      ObligadoTributarEEUU: "",
+      NumeroIdTributario: "",
+      N_Id_Tributario: "",
+      OrigenBienesProviene: "",
+      RecursosEntregueProvienen: "",
+      PaisOrigen: "",
+      CiudadOrigenBienes: "",
+      RecursosPublicosNaturaleza: "",
+      OperacionesMonedaExtranjera: "",
+      CualesOperacionesRealizaMonedaExtranjera: "",
+      NombreEntidad: "",
+      TipoProducto: "",
+      N_Producto: "",
+      MontoMensualPromedio: "",
+      Moneda: "",
+      Ciudad: "",
+      Pais4: "",
+      NombreEntidad2: "",
+      TipoProducto2: "",
+      N_Producto2: "",
+      MontoMensualPromedio2: "",
+      Moneda2: "",
+      Ciudad2: "",
+      Pais5: "",
+      ReporteAnualCostosTotales: "",
+      ActuaEnCalidadDe: "",
+      Nombre: "",
+      N_Identificacion: "",
+      CodigoVendedor: "",
+      Nombre2: "",
+      Oficina: "",
+      Observaciones: "",
+    },
+
+    validationSchema: Yup.object({
+      Fecha: Yup.date().default(function () {
+        return new Date();
+      }),
+      N_documento: Yup.string()
+        .max(10, `Máximo 10 caracteres`)
+        .required("el N° documento es obligatorio"),
+      Nombre_RazonSocial: Yup.string()
+        .max(15, `Máximo 15 caracteres`)
+        .required("Este campo es obligatorio"),
+      Tipo_Documento: Yup.string().required("Este campo es requerido"),
+    }),
+    onSubmit: (formData) => {
+      console.log(formData);
+    },
+  });
 
   return (
     <div className="FONDO">
       <div>
-        <Button onClick={() => History.push("/Asesor")} className="REGRESAR">
-          {" 🡨 "}
-        </Button>
+        <i
+          class="bi bi-arrow-left-circle-fill"
+          id="CIRCULO"
+          onClick={() => History.push("/Asesor")}
+        ></i>
       </div>
       <div className="hijo">
         <h1 className="Titulo-principal">PERSONA JURIDICA</h1>
-        <form className="row red-red">
+        <form className="row red-red" onSubmit={formik.handleSubmit}>
           <div className="col-md-8 mb-1 " id="Container-1">
             <Col>
               <h5 className="Titulo">Tipo de solicitud</h5>
               <label className="label-5">
                 <input
-                  type="checkbox"
-                  name="Vinculación"
-                  id="Vinculación"
-                  value="1"
-                  className="only-one cursor-pointer"
+                  name="Tipo_Solicitud"
+                  type="radio"
+                  id="r1"
+                  value="Vinculacion"
+                  className="cursor-pointer"
+                  onChange={formik.handleChange}
+                  required
                 />{" "}
-                Vinculación
+                <label for="r1">Vinculación</label>
               </label>
               <label className="label-5">
                 <input
-                  type="checkbox"
-                  name="Actualización"
-                  id="Actualización"
-                  value="2"
-                  className="only-one cursor-pointer"
+                  name="Tipo_Solicitud"
+                  type="radio"
+                  id="r2"
+                  value="Actualizacion"
+                  className="cursor-pointer"
+                  onChange={formik.handleChange}
+                  required
                 />{" "}
-                Actualización
+                <label for="r2">Actualización</label>
               </label>
             </Col>
           </div>
 
           <div className="col-md-4 mb-1" id="Container-1">
             <Col>
-              <h5 className="Titulo">Fecha diligenciamiento</h5>
+              <h5 className="Titulo">Fecha diligenciamiento </h5>
+
               <label className="label">
-                <input type="date" name="" className="Border" />
+                <input
+                  type="date"
+                  name="Fecha"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  error={formik.errors.Fecha}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -71,12 +202,20 @@ const PersonaJuridica = () => {
               <div className="label-13">
                 <label className="">
                   Tipo de documento{" "}
-                  <input type="checkbox" name="" className="" /> NIT
+                  <input type="checkbox" name="" className="cursor-pointer" />{" "}
+                  NIT
                 </label>
               </div>
               <label className="label-2">
-                Nº documento
-                <input type="number" name="" className="Border" />
+                <div>Nº documento </div>
+                <input
+                  type="number"
+                  name="N_documento"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  error={formik.errors.N_documento}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -86,7 +225,8 @@ const PersonaJuridica = () => {
               <h5 className="Titulo-3"></h5>
               <div className="label-13">
                 <label className="label-14">
-                  <input type="checkbox" name="" className="" /> Fideicomiso{" "}
+                  <input type="checkbox" name="" className="cursor-pointer" />{" "}
+                  Fideicomiso{" "}
                   <h7 className="Aviso">
                     {" "}
                     Este campo es diligenciado por el Grupo Bancolombia
@@ -95,7 +235,13 @@ const PersonaJuridica = () => {
               </div>
               <label className="label-6">
                 Nº de fideicomiso{" "}
-                <input type="number" name="" className="Border" />
+                <input
+                  type="number"
+                  name="Fideicomiso"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  error={formik.errors.Fideicomiso}
+                />
               </label>
             </Col>
           </div>
@@ -104,7 +250,14 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 Nombre o razón social{" "}
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="Nombre_RazonSocial"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  error={formik.errors.Nombre_RazonSocial}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -113,7 +266,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 Nombre corto o sigla
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="NombreCorto_Sigla"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -122,7 +281,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="center">
                 Fecha de constitución{" "}
-                <input type="date" name="" className="Border" />
+                <input
+                  type="date"
+                  name="Fecha_Constitucion"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -131,7 +296,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 Ciudad de constitución{" "}
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="Ciudad_Constitucion"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -140,7 +311,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 Pais de constitución{" "}
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="Pais_Constitucion"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -149,7 +326,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 Dirección sede principal
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="DireccionSedePrincipal"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -158,7 +341,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 Barrio
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="Barrio"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -167,7 +356,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 Ciudad/Municipio
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="Ciudad_Municipio"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -176,7 +371,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 Departamento
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="Departamento"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -185,7 +386,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-6">
                 País
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="Pais"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -194,11 +401,22 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-4">
                 Teléfono
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="Telefono"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
               <label className="label-4">
                 Ext
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="Ext"
+                  className="Border"
+                  onChange={formik.handleChange}
+                />
               </label>
             </Col>
           </div>
@@ -207,7 +425,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 Correo electrónico sede principal
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="CorreoElectronicoSedePrincipal"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
             <br />
@@ -220,8 +444,13 @@ const PersonaJuridica = () => {
               </div>
               <label className="label-2">
                 {" "}
-                Tipo de documento
-                <select className="Select-One">
+                <div>Tipo de documento </div>
+                <select
+                  className="Select-One"
+                  onChange={formik.handleChange}
+                  name="Tipo_Documento"
+                  required
+                >
                   <option>Seleccione su documento de identidad</option>
                   <option>CC</option>
                   <option>Cédula de extranjeria</option>
@@ -237,7 +466,13 @@ const PersonaJuridica = () => {
               <h5 className="Titulo-3"></h5>
               <label className="label-2">
                 N° de documento
-                <input type="number" name="" className="Border" />
+                <input
+                  type="number"
+                  name="N_Documento2"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -245,19 +480,44 @@ const PersonaJuridica = () => {
           <div className="col-md-12" id="Container-1">
             <Col>
               <label className="label">
-                Primer nombre <input type="text" name="" className="Border" />{" "}
+                Primer nombre{" "}
+                <input
+                  type="text"
+                  name="PrimerNombre"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />{" "}
               </label>
               <label className="label">
-                Segundo nombre <input type="text" name="" className="Border" />
+                Segundo nombre{" "}
+                <input
+                  type="text"
+                  name="SegundoNombre"
+                  className="Border"
+                  onChange={formik.handleChange}
+                />
               </label>
             </Col>
             <Col>
               <label className="label">
-                Primer apellido <input type="text" name="" className="Border" />{" "}
+                Primer apellido{" "}
+                <input
+                  type="text"
+                  name="PrimerApellido"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />{" "}
               </label>
               <label className="label">
                 Segundo apellido{" "}
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="SegundoApellido"
+                  className="Border"
+                  onChange={formik.handleChange}
+                />
               </label>
             </Col>
           </div>
@@ -265,7 +525,14 @@ const PersonaJuridica = () => {
           <div className="col-md-6" id="Container-1">
             <Col>
               <label className="label-2">
-                Cargo <input type="text" name="" className="Border" />
+                Cargo{" "}
+                <input
+                  type="text"
+                  name="Cargo"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -274,7 +541,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 Dirección laboral{" "}
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="DireccionLaboral"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -283,7 +556,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 Barrio
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="Barrio2"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -292,7 +571,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 Ciudad/Municipio
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="Ciudad_Municipio2"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -301,7 +586,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 Departamento
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="Departamento2"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -310,7 +601,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 País
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="Pais2"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -319,11 +616,22 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-4">
                 Teléfono laboral
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="TelefonoLaboral"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
               <label className="label-4">
                 Ext
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="Ext2"
+                  className="Border"
+                  onChange={formik.handleChange}
+                />
               </label>
             </Col>
           </div>
@@ -333,7 +641,13 @@ const PersonaJuridica = () => {
               <div>
                 <label className="label-2">
                   Celular
-                  <input type="text" name="" className="Border-3" />
+                  <input
+                    type="text"
+                    name="Celular"
+                    className="Border-3"
+                    onChange={formik.handleChange}
+                    required
+                  />
                 </label>
               </div>
             </Col>
@@ -343,7 +657,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 Correo electrónico laboral
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="CorreoElectronicoLaboral"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -356,10 +676,26 @@ const PersonaJuridica = () => {
                   ¿Tienes socios o accionistas con participación directa o
                   indirecta superior al 5%?
                   <label className="label-16">
-                    *Sí <input type="checkbox" name="" className="" />
+                    Sí{" "}
+                    <input
+                      type="radio"
+                      name="Socios_Accionistas"
+                      value="Si"
+                      className="cursor-pointer"
+                      onChange={formik.handleChange}
+                      required
+                    />
                   </label>
                   <label className="label">
-                    No <input type="checkbox" name="" className="" />
+                    No{" "}
+                    <input
+                      type="radio"
+                      name="Socios_Accionistas"
+                      value="No"
+                      className="cursor-pointer"
+                      onChange={formik.handleChange}
+                      required
+                    />
                   </label>
                 </p>
               </div>
@@ -373,10 +709,26 @@ const PersonaJuridica = () => {
                   indirecta igual o inferior al 5% y que tengan control sobre la
                   entidad?
                   <label className="label">
-                    *Sí <input type="checkbox" name="" className="" />
+                    Sí{" "}
+                    <input
+                      type="radio"
+                      name="Socios_Accionistas_Entidad"
+                      value="Si"
+                      className="cursor-pointer"
+                      onChange={formik.handleChange}
+                      required
+                    />
                   </label>
                   <label className="label">
-                    No <input type="checkbox" name="" className="" />
+                    No{" "}
+                    <input
+                      type="radio"
+                      name="Socios_Accionistas_Entidad"
+                      value="No"
+                      className="cursor.pointer"
+                      onChange={formik.handleChange}
+                      required
+                    />
                   </label>
                 </p>
               </div>
@@ -386,10 +738,8 @@ const PersonaJuridica = () => {
             <Col>
               <div>
                 <p className="Texto-3">
-                  <label className="label-23">
-                    *Si alguna de las respuestas es afirmativa, adjunte a esta
-                    solicitud el anexo de Conocimiento Socios o Accionistas.
-                  </label>
+                  Si alguna de las respuestas es afirmativa, adjunte a esta
+                  solicitud el anexo de Conocimiento Socios o Accionistas.
                 </p>
               </div>
             </Col>
@@ -402,7 +752,12 @@ const PersonaJuridica = () => {
               <label className="label-2">
                 {" "}
                 Tipo de documento
-                <select className="Select-One">
+                <select
+                  className="Select-One"
+                  name="Tipo_Documento2"
+                  onChange={formik.handleChange}
+                  required
+                >
                   <option>Seleccione su documento de identidad</option>
                   <option>CC</option>
                   <option>Cédula de extranjeria</option>
@@ -422,7 +777,13 @@ const PersonaJuridica = () => {
               </h5>
               <label className="label-2">
                 N° de documento
-                <input type="number" name="" className="Border" />
+                <input
+                  type="number"
+                  name="N_Documento3"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -430,19 +791,44 @@ const PersonaJuridica = () => {
           <div className="col-md-12" id="Container-1">
             <Col>
               <label className="label">
-                Primer nombre <input type="text" name="" className="Border" />{" "}
+                Primer nombre{" "}
+                <input
+                  type="text"
+                  name="PrimerNombre2"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />{" "}
               </label>
               <label className="label">
-                Segundo nombre <input type="text" name="" className="Border" />
+                Segundo nombre{" "}
+                <input
+                  type="text"
+                  name="SegundoNombre2"
+                  className="Border"
+                  onChange={formik.handleChange}
+                />
               </label>
             </Col>
             <Col>
               <label className="label">
-                Primer apellido <input type="text" name="" className="Border" />{" "}
+                Primer apellido{" "}
+                <input
+                  type="text"
+                  name="PrimerApellido2"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />{" "}
               </label>
               <label className="label">
                 Segundo apellido{" "}
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="SegundoApellido2"
+                  className="Border"
+                  onChange={formik.handleChange}
+                />
               </label>
             </Col>
           </div>
@@ -450,7 +836,14 @@ const PersonaJuridica = () => {
           <div className="col-md-6" id="Container-1">
             <Col>
               <label className="label-2">
-                Cargo <input type="text" name="" className="Border" />
+                Cargo{" "}
+                <input
+                  type="text"
+                  name="Cargo2"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -459,7 +852,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 Dirección laboral{" "}
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="DireccionLaboral2"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -468,7 +867,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 Barrio
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="Barrio3"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -477,7 +882,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 Ciudad/Municipio
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="Ciudad_Municipio3"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -486,7 +897,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 Departamento
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="Departamento3"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -495,7 +912,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-9">
                 País
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="Pais3"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -504,11 +927,22 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-4">
                 Teléfono laboral
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="TelefonoLaboral2"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
               <label className="label-4">
                 Ext
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="Ext3"
+                  className="Border"
+                  onChange={formik.handleChange}
+                />
               </label>
             </Col>
           </div>
@@ -517,7 +951,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 Celular
-                <input type="text" name="" className="Border-3" />
+                <input
+                  type="text"
+                  name="Celular2"
+                  className="Border-3"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -526,7 +966,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 Correo electrónico laboral
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="CorreoElectronicoLaboral2"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -538,13 +984,37 @@ const PersonaJuridica = () => {
               <div className="Div">
                 <label className="label">
                   <p className="Texto-2">Naturaleza de la entidad</p>
-                  <input type="checkbox" name="" className="" /> Privada
+                  <input
+                    type="radio"
+                    name="NaturalezaEntidad"
+                    value="Privada"
+                    className="cursor-pointer"
+                    onChange={formik.handleChange}
+                    required
+                  />{" "}
+                  Privada
                 </label>
                 <label className="label">
-                  <input type="checkbox" name="" className="" /> Pública
+                  <input
+                    type="radio"
+                    name="NaturalezaEntidad"
+                    value="Publica"
+                    className="cursor-pointer"
+                    onChange={formik.handleChange}
+                    required
+                  />{" "}
+                  Pública
                 </label>
                 <label className="label">
-                  <input type="checkbox" name="" className="" /> Mixta
+                  <input
+                    type="radio"
+                    name="NaturalezaEntidad"
+                    value="Mixta"
+                    className="cursor-pointer"
+                    onChange={formik.handleChange}
+                    required
+                  />{" "}
+                  Mixta
                 </label>
               </div>
             </Col>
@@ -553,7 +1023,14 @@ const PersonaJuridica = () => {
             <Col>
               <h5 className="Titulo-3"></h5>
               <label className="label">
-                Código CIIU <input type="text" name="" className="Border" />
+                Código CIIU{" "}
+                <input
+                  type="text"
+                  name="CodigoCiiu"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -561,14 +1038,27 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 Detalle de la actividad económica principal{" "}
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="DetalleActividadEconomicaPrincipal"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
           <div className="col-md-3" id="Container-1">
             <Col>
               <label className="label-6">
-                N°. Empleados <input type="text" name="" className="Border-3" />
+                N°. Empleados{" "}
+                <input
+                  type="text"
+                  name="N_Empleados"
+                  className="Border-3"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -578,7 +1068,12 @@ const PersonaJuridica = () => {
               <label className="label-2">
                 {" "}
                 Sociedad comercial o civil
-                <select className="Select-One">
+                <select
+                  className="Select-One"
+                  name="SociedadComercial_Civil"
+                  onChange={formik.handleChange}
+                  required
+                >
                   <option>Por acciones simplificadas S.A.S</option>
                   <option>Anónima</option>
                   <option>Limitada</option>
@@ -594,7 +1089,8 @@ const PersonaJuridica = () => {
                 </select>
                 <Col className="">
                   <label className="label-12">
-                    <input type="checkbox" name="" className="" /> Otra, ¿cuál?{" "}
+                    <input type="checkbox" name="" className="cursor-pointer" />{" "}
+                    Otra, ¿cuál?{" "}
                     <input type="text" name="" className="Border" />
                   </label>
                 </Col>
@@ -606,7 +1102,12 @@ const PersonaJuridica = () => {
               <label className="label-2">
                 {" "}
                 Tipo de entidad/asociación
-                <select className="Select-One">
+                <select
+                  className="Select-One"
+                  name="TipoEntidad_Asociacion"
+                  onChange={formik.handleChange}
+                  required
+                >
                   <option>Establecimiento público</option>
                   <option>Empresa industrial y comercial del estado</option>
                   <option>Sociedad de economía mixta</option>
@@ -630,7 +1131,7 @@ const PersonaJuridica = () => {
                 <Col className="">
                   <label className="label-2">
                     <p className="">
-                      *Si el tipo de entidad es Consorcio o Unión temporal
+                      Si el tipo de entidad es Consorcio o Unión temporal
                       diligencie el anexo Conocimiento del Cliente Consorcio o
                       Unión temporal.
                     </p>
@@ -647,8 +1148,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 {" "}
-                Entidades estatales descentralizadas de orden
-                <select className="Select-One">
+                Entidades estatales
+                <select
+                  className="Select-One"
+                  name="EntidadesEstatales"
+                  onChange={formik.handleChange}
+                  required
+                >
                   <option>Nación</option>
                   <option>Departamento</option>
                   <option>Municipio</option>
@@ -667,7 +1173,12 @@ const PersonaJuridica = () => {
               <label className="label-2">
                 {" "}
                 Entidades estatales descentralizadas de orden
-                <select className="Select-One">
+                <select
+                  className="Select-One"
+                  name="EntidadesEstatalesDescentralizadasOrden"
+                  onChange={formik.handleChange}
+                  required
+                >
                   <option>Nacional</option>
                   <option>Departamental</option>
                   <option>Municipal</option>
@@ -685,7 +1196,14 @@ const PersonaJuridica = () => {
               </label>
               <label className="label float-left">
                 {" "}
-                $ <input type="text" name="" className="Border" />
+                ${" "}
+                <input
+                  type="text"
+                  name="IngresosOperacionalesMensuales"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -697,7 +1215,14 @@ const PersonaJuridica = () => {
               </label>
               <label className="label float-left">
                 {" "}
-                $ <input type="text" name="" className="Border" />
+                ${" "}
+                <input
+                  type="text"
+                  name="IngresosNoOperacionalesMensuales"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -707,7 +1232,13 @@ const PersonaJuridica = () => {
               <label className="label-2">
                 Detalle de ingresos no operacionales u originados en actividades
                 diferentes a la principal
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="DetalleIngresosNoOperacionales"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -716,7 +1247,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-18">
                 Ventas anuales ${" "}
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="VentasAnuales"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -725,7 +1262,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-11">
                 Fecha de cierre de ventas{" "}
-                <input type="date" name="" className="Border" />
+                <input
+                  type="date"
+                  name="FechaCierreVentas"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -734,7 +1277,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-18">
                 Egresos mensuales ${" "}
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="EgresosMensuales"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -742,7 +1291,14 @@ const PersonaJuridica = () => {
           <div className="col-md-6" id="Container-1">
             <Col>
               <label className="label-18">
-                Utilidad neta $ <input type="text" name="" className="Border" />
+                Utilidad neta ${" "}
+                <input
+                  type="text"
+                  name="UtilidadNeta"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -750,7 +1306,14 @@ const PersonaJuridica = () => {
           <div className="col-md-12" id="Container-1">
             <Col>
               <label className="label-18">
-                Total activos $ <input type="text" name="" className="Border" />
+                Total activos ${" "}
+                <input
+                  type="text"
+                  name="TotalActivos"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -760,7 +1323,15 @@ const PersonaJuridica = () => {
               <label className="label-2">Total pasivos</label>
               <label className="label float-left">
                 {" "}
-                $ <input type="text" size="30" name="" className="Border" />
+                ${" "}
+                <input
+                  type="text"
+                  size="30"
+                  name="TotalPasivos"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -769,7 +1340,15 @@ const PersonaJuridica = () => {
               <label className="label-2">Total patrimonio </label>
               <label className="label float-left">
                 {" "}
-                $ <input type="text" size="30" name="" className="Border" />
+                ${" "}
+                <input
+                  type="text"
+                  size="30"
+                  name="TotalPatrimonio"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
             <br />
@@ -781,7 +1360,12 @@ const PersonaJuridica = () => {
               <label className="label-2">
                 {" "}
                 Tipo de contribuyente
-                <select className="Select-One">
+                <select
+                  className="Select-One"
+                  name="TipoContribuyente"
+                  onChange={formik.handleChange}
+                  required
+                >
                   <option>
                     Persona juridicas, comerciales y civiles, consorcios y
                     uniones temporales.
@@ -802,10 +1386,26 @@ const PersonaJuridica = () => {
               <h5 className="Titulo-3"></h5>
               <label className="label">Clase de contribuyente</label>
               <label className="label">
-                <input type="checkbox" name="" className="Border" /> Gran
-                contribuyente{" "}
-                <input type="checkbox" name="" className="Border" /> No gran
-                contribuyente
+                <input
+                  type="radio"
+                  name="ClaseContribuyente"
+                  value="Gran
+                contribuyente"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />{" "}
+                Gran contribuyente{" "}
+                <input
+                  type="radio"
+                  name="ClaseContribuyente"
+                  value="No gran
+                contribuyente"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />{" "}
+                No gran contribuyente
               </label>
             </Col>
           </div>
@@ -814,8 +1414,24 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label">Responsable de iva</label>
               <label className="label">
-                <input type="checkbox" name="" className="Border" /> Si{" "}
-                <input type="checkbox" name="" className="Border" /> No
+                <input
+                  type="radio"
+                  name="ResponsableIva"
+                  value="Si"
+                  className="cursor-pointer"
+                  onChange={formik.handleChange}
+                  required
+                />{" "}
+                Si{" "}
+                <input
+                  type="radio"
+                  name="ResponsableIva"
+                  Value="No"
+                  className="cursor-pointer"
+                  onChange={formik.handleChange}
+                  required
+                />{" "}
+                No
               </label>
             </Col>
           </div>
@@ -824,8 +1440,24 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label">Autorretenedor otros ingresos</label>
               <label className="label">
-                <input type="checkbox" name="" className="Border" /> Si{" "}
-                <input type="checkbox" name="" className="Border" /> No
+                <input
+                  type="radio"
+                  name="AutorretenedorIngresos"
+                  value="Si"
+                  className="cursor-pointer"
+                  onChange={formik.handleChange}
+                  required
+                />{" "}
+                Si{" "}
+                <input
+                  type="radio"
+                  name="AutorretenedorIngresos"
+                  value="No"
+                  className="cursor-pointer"
+                  onChange={formik.handleChange}
+                  required
+                />{" "}
+                No
               </label>
             </Col>
           </div>
@@ -836,8 +1468,24 @@ const PersonaJuridica = () => {
                 Intermediario del mercado cambiario
               </label>
               <label className="label">
-                <input type="checkbox" name="" className="Border" /> Si{" "}
-                <input type="checkbox" name="" className="Border" /> No
+                <input
+                  type="radio"
+                  name="IntermediarioMercadoCambiario"
+                  value="Si"
+                  className="cursor-pointer"
+                  onChange={formik.handleChange}
+                  required
+                />{" "}
+                Si{" "}
+                <input
+                  type="radio"
+                  name="IntermediarioMercadoCambiario"
+                  Value="No"
+                  className="cursor-pointer"
+                  onChange={formik.handleChange}
+                  required
+                />{" "}
+                No
               </label>
             </Col>
           </div>
@@ -848,8 +1496,24 @@ const PersonaJuridica = () => {
                 Es vigilado por la superintendencia financiera
               </label>
               <label className="label">
-                <input type="checkbox" name="" className="Border" /> Si{" "}
-                <input type="checkbox" name="" className="Border" /> No
+                <input
+                  type="radio"
+                  name="VigiladoSuperintendenciaFinanciera"
+                  value="Si"
+                  className="cursor-pointer"
+                  onChange={formik.handleChange}
+                  required
+                />{" "}
+                Si{" "}
+                <input
+                  type="radio"
+                  name="VigiladoSuperintendenciaFinanciera"
+                  value="No"
+                  className="cursor-pointer"
+                  onChange={formik.handleChange}
+                  required
+                />{" "}
+                No
               </label>
             </Col>
           </div>
@@ -861,17 +1525,38 @@ const PersonaJuridica = () => {
               </label>
               <div className="Div">
                 <label className="label">
-                  <input type="checkbox" name="" className="Border" /> *Si{" "}
-                  <input type="checkbox" name="" className="Border" /> No
+                  <input
+                    type="radio"
+                    name="ObligadoTributarEEUU"
+                    value="Si"
+                    className="cursor-pointer"
+                    onChange={formik.handleChange}
+                    required
+                  />{" "}
+                  Si{" "}
+                  <input
+                    type="radio"
+                    name="ObligadoTributarEEUU"
+                    Value="No"
+                    className="cursor-pointer"
+                    onChange={formik.handleChange}
+                    required
+                  />{" "}
+                  No
                 </label>
               </div>
 
               <p>
                 <label className="label-12">
-                  *Si su respuesta es afirmativa indique el número de ID
+                  Si su respuesta es afirmativa indique el número de ID
                   tributario (TIN)
                   <label className="label">
-                    <input type="text" name="" className="Border" />
+                    <input
+                      type="text"
+                      name="NumeroIdTributario"
+                      className="Border"
+                      onChange={formik.handleChange}
+                    />
                   </label>
                 </label>
               </p>
@@ -892,19 +1577,43 @@ const PersonaJuridica = () => {
               <div className="col-md-12">
                 <Col>
                   <label className="label">
-                    1. <input type="text" name="" className="Border" />
+                    1.{" "}
+                    <input
+                      type="text"
+                      name="N_Id_Tributario"
+                      className="Border"
+                      onChange={formik.handleChange}
+                    />
                   </label>
                   <label className="label">
                     <p className="Texto-3">N°. Id. Tributario</p>
-                    1. <input type="text" name="" className="Border" />
+                    1.{" "}
+                    <input
+                      type="text"
+                      name="N_Id_Tributario"
+                      className="Border"
+                      onChange={formik.handleChange}
+                    />
                   </label>
                 </Col>
                 <Col>
                   <label className="label">
-                    2. <input type="text" name="" className="Border" />{" "}
+                    2.{" "}
+                    <input
+                      type="text"
+                      name="N_Id_Tributario"
+                      className="Border"
+                      onChange={formik.handleChange}
+                    />{" "}
                   </label>
                   <label className="label">
-                    2. <input type="text" name="" className="Border" />
+                    2.{" "}
+                    <input
+                      type="text"
+                      name="N_Id_Tributario"
+                      className="Border"
+                      onChange={formik.handleChange}
+                    />
                   </label>
                 </Col>
               </div>
@@ -923,7 +1632,12 @@ const PersonaJuridica = () => {
                   Declaro que: <label className="color">i)</label> El origen de
                   mis bienes proviene de:{" "}
                 </p>
-                <select className="Select-One">
+                <select
+                  className="Select-One"
+                  name="OrigenBienesProviene"
+                  onChange={formik.handleChange}
+                  required
+                >
                   <option>Compraventa</option>
                   <option>Aporte de socios</option>
                   <option>Utilidades</option>
@@ -939,7 +1653,12 @@ const PersonaJuridica = () => {
                   <label className="color">ii)</label> Los recursos que entregue
                   provienen de la siguiente fuente:
                 </p>
-                <select className="Select-One">
+                <select
+                  className="Select-One"
+                  name="RecursosEntregueProvienen"
+                  onChange={formik.handleChange}
+                  required
+                >
                   <option>Capitalización por parte de socios</option>
                   <option>Desarrollo del objeto social</option>
                   <option>Utilidades del negocio</option>
@@ -956,7 +1675,13 @@ const PersonaJuridica = () => {
             <Col>
               <h5 className="Titulo-6">El país origen</h5>
               <label className="label-2">
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="PaisOrigen"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -966,7 +1691,13 @@ const PersonaJuridica = () => {
                 La ciudad origen de bienes y/o fondos
               </h5>
               <label className="label-2">
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="CiudadOrigenBienes"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -994,8 +1725,24 @@ const PersonaJuridica = () => {
                 cuales sea titular mi representada, se manejan recursos públicos
                 de naturaleza inembargable:
                 <label className="padding">
-                  <input type="checkbox" name="" className="Border" /> *Sí{" "}
-                  <input type="checkbox" name="" className="Border" /> No
+                  <input
+                    type="radio"
+                    name="RecursosPublicosNaturaleza"
+                    value="Si"
+                    className="cursor-pointer"
+                    onChange={formik.handleChange}
+                    required
+                  />{" "}
+                  Sí{" "}
+                  <input
+                    type="radio"
+                    name="RecursosPublicosNaturaleza"
+                    value="No"
+                    className="cursor-pointer"
+                    onChange={formik.handleChange}
+                    required
+                  />{" "}
+                  No
                 </label>
                 <br />
                 *En caso de responder afirmativamente favor diligenciar el anexo
@@ -1014,8 +1761,24 @@ const PersonaJuridica = () => {
                 ¿Realiza operaciones en moneda extranjera?
                 <label className="label padding">
                   {" "}
-                  <input type="checkbox" name="" className="Border" /> Sí{" "}
-                  <input type="checkbox" name="" className="Border" /> No
+                  <input
+                    type="radio"
+                    value="Si"
+                    name="OperacionesMonedaExtranjera"
+                    className="cursor-pointer"
+                    onChange={formik.handleChange}
+                    required
+                  />{" "}
+                  Sí{" "}
+                  <input
+                    type="radio"
+                    value="No"
+                    name="OperacionesMonedaExtranjera"
+                    className="cursor-pointer"
+                    onChange={formik.handleChange}
+                    required
+                  />{" "}
+                  No
                 </label>
               </label>
             </Col>
@@ -1028,7 +1791,12 @@ const PersonaJuridica = () => {
                 extranjera?
               </label>
               <label className="label-2">
-                <select className="Select-One">
+                <select
+                  className="Select-One"
+                  name="CualesOperacionesRealizaMonedaExtranjera"
+                  onChange={formik.handleChange}
+                  required
+                >
                   <option>Exportador e importador</option>
                   <option>Pago de servicios</option>
                   <option>Préstamos</option>
@@ -1054,7 +1822,13 @@ const PersonaJuridica = () => {
               </h5>
               <label className="label-2">
                 Nombre de la entidad
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="NombreEntidad"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -1062,7 +1836,12 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 Tipo de producto
-                <select className="Select-One">
+                <select
+                  className="Select-One"
+                  name="TipoProducto"
+                  onChange={formik.handleChange}
+                  required
+                >
                   <option>Cuenta de ahorro</option>
                   <option>Cuenta corriente</option>
                 </select>
@@ -1079,14 +1858,27 @@ const PersonaJuridica = () => {
           <div className="col-md-6">
             <Col className="column">
               <label className="center">
-                N° de Producto <input type="text" name="" className="Border" />
+                N° de Producto{" "}
+                <input
+                  type="text"
+                  name="N_Producto"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
 
             <Col className="Col-4">
               <label className="center">
                 Monto mensual promedio ${" "}
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="MontoMensualPromedio"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -1094,7 +1886,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 Moneda
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="Moneda"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -1103,7 +1901,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 Ciudad
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="Ciudad"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -1112,7 +1916,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 país
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="Pais4"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -1121,7 +1931,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 Nombre de la entidad
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="NombreEntidad2"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -1129,7 +1945,12 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 Tipo de producto
-                <select className="Select-One">
+                <select
+                  className="Select-One"
+                  name="TipoProducto2"
+                  onChange={formik.handleChange}
+                  required
+                >
                   <option>Cuenta de ahorro</option>
                   <option>Cuenta corriente</option>
                 </select>
@@ -1146,14 +1967,28 @@ const PersonaJuridica = () => {
           <div className="col-md-6">
             <Col className="column">
               <label className="center ">
-                N° de Producto <input type="text" name="" className="Border" />
+                N° de Producto{" "}
+                <input
+                  type="text"
+                  name="N_Producto2"
+                  className="Border"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
 
             <Col className="Col-4">
               <label className="center">
                 Monto mensual promedio ${" "}
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="MontoMensualPromedio2"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -1161,7 +1996,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 Moneda
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="Moneda2"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -1170,7 +2011,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 Ciudad
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="Ciudad2"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -1179,7 +2026,13 @@ const PersonaJuridica = () => {
             <Col>
               <label className="label-2">
                 país
-                <input type="text" name="" className="Border" />
+                <input
+                  type="text"
+                  name="Pais5"
+                  className="Border"
+                  onChange={formik.handleChange}
+                  required
+                />
               </label>
             </Col>
           </div>
@@ -1513,8 +2366,24 @@ const PersonaJuridica = () => {
                 de la sucursal telefónica.
                 <br /> El Reporte Anual de Costos Totales lo deseo recibir
                 <label className="padding">
-                  Virtual <input type="checkbox" name="" className="Border" />{" "}
-                  Fisico <input type="checkbox" name="" className="Border" />
+                  Virtual{" "}
+                  <input
+                    type="radio"
+                    value="Virtual"
+                    name="ReporteAnualCostosTotales"
+                    className="cursor-pointer"
+                    onChange={formik.handleChange}
+                    required
+                  />{" "}
+                  Fisico{" "}
+                  <input
+                    type="radio"
+                    value="Fisico"
+                    name="ReporteAnualCostosTotales"
+                    className="cursor-pointer"
+                    onChange={formik.handleChange}
+                    required
+                  />
                 </label>
                 <br />
                 <label className="color"> Firma y huella. </label> Autorizo a
@@ -1587,21 +2456,56 @@ const PersonaJuridica = () => {
                     * Solo diligenciar si actúa en calidad de:{" "}
                   </p>
                   <label className="label-22">
-                    <input type="checkbox" name="" className="" /> Representante{" "}
-                    <input type="checkbox" name="" className="" /> Apoderado
+                    <input
+                      type="radio"
+                      value="Representante"
+                      name="ActuaEnCalidadDe"
+                      className="cursor-pointer"
+                      onChange={formik.handleChange}
+                      required
+                    />{" "}
+                    Representante{" "}
+                    <input
+                      type="radio"
+                      value="Apoderado"
+                      name="ActuaEnCalidadDe"
+                      className="cursor-pointer"
+                      onChange={formik.handleChange}
+                      required
+                    />{" "}
+                    Apoderado
                   </label>
 
                   <div className="float-left">
                     <label className="">
-                      Nombre <input type="text" name="" className="Border" />
+                      Nombre{" "}
+                      <input
+                        type="text"
+                        name="Nombre"
+                        className="Border"
+                        onChange={formik.handleChange}
+                        required
+                      />
                     </label>
                     <div className="label-19">
-                      <input type="text" name="" className="Border" />
+                      <input
+                        type="text"
+                        name=""
+                        className="Border"
+                        onChange={formik.handleChange}
+                        required
+                      />
                     </div>
 
                     <label className="label-20">
                       No. Identificación{" "}
-                      <input type="text" name="" className="Border" />
+                      <input
+                        type="text"
+                        name="N_Identificacion"
+                        className="Border"
+                        onChange={formik.handleChange}
+                        required
+                      />
                     </label>
                   </div>
                 </label>
@@ -1618,19 +2522,37 @@ const PersonaJuridica = () => {
           <div className="col-md-4" id="Container-7">
             <label className="Texto-5">
               Código vendedor
-              <input type="text" className="Border" />
+              <input
+                type="text"
+                name="CodigoVendedor"
+                className="Border"
+                onChange={formik.handleChange}
+                required
+              />
             </label>
           </div>
           <div className="col-md-4" id="Container-7">
             <label className="Texto-5">
               Nombre
-              <input type="text" className="Border" />
+              <input
+                type="text"
+                name="Nombre2"
+                className="Border"
+                onChange={formik.handleChange}
+                required
+              />
             </label>
           </div>
           <div className="col-md-4" id="Container-7">
             <label className="Texto-5">
               Oficina
-              <input type="text" className="Border" />
+              <input
+                type="text"
+                name="Oficina"
+                className="Border"
+                onChange={formik.handleChange}
+                required
+              />
             </label>
           </div>
 
@@ -1646,7 +2568,12 @@ const PersonaJuridica = () => {
             <div>
               <label className="Observaciones">
                 <p> Observaciones</p>
-                <input type="text" className="Border" />
+                <input
+                  type="text"
+                  name="Observaciones"
+                  className="Border"
+                  onChange={formik.handleChange}
+                />
               </label>
             </div>
           </div>
@@ -1662,7 +2589,7 @@ const PersonaJuridica = () => {
             </Col>
           </div>
           <div className="col-md-12" id="">
-            <Button className="BOTON" variant="primary">
+            <Button type="submit" className="BOTON" variant="primary">
               Guardar
             </Button>
           </div>
