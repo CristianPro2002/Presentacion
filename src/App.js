@@ -28,11 +28,19 @@ import PersonaJuridica4 from './Components/Asesor/Persona_Juridica/PersonaJuridi
 import PersonaJuridica5 from './Components/Asesor/Persona_Juridica/PersonaJuridica5';
 import {Funcionamiento_form} from './Components/Director/Funcionamiento_form'
 import {Tabla_director} from './Components/Director/Tabla_director';
+import Consulta from './Components/Asesor/Consulta/Consulta'
+import Consulta2 from './Components/Asesor/Consulta/Consulta2'
 
 function App() {
   return (
     <Router>
       <Switch>
+      <Route path="/Consulta2">
+          <Consulta2/>
+        </Route>
+      <Route path="/Consulta">
+          <Consulta/>
+        </Route>
         <Route path="/Tabla_director">
           <Director />
           <Tabla_director />

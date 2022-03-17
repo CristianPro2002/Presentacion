@@ -73,7 +73,7 @@ const validar2 = (e) => {
                             type="number"
                             className="campo1"
                           ></input>
-                          <button className="consultar1">Consultar</button>
+                          <button className="consultar1"  onClick={() => History.push("/Consulta")}>Consultar</button>
                         </form>
                             <form>
                                 <div className="cdesplegable1">
@@ -115,7 +115,7 @@ const validar2 = (e) => {
                             type="number"
                             className="campo2"
                           ></input>
-                          <button className="consultar2">Consultar</button>
+                          <button className="consultar2"  onClick={() => History.push("/Consulta2")}>Consultar</button>
                         </form>
                         <form>
                         <div className="cdesplegable2">

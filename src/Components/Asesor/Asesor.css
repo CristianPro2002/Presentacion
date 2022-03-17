@@ -314,6 +314,10 @@ padding-right: 5%;
     border-radius: 10px;
 }
 
+.desplegable1:hover{
+    
+}
+
 .cdesplegable1 {
     display: flex;
     align-items: center ;

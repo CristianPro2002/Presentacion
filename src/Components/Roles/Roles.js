@@ -95,7 +95,7 @@ const validar5 = (e) => {
             ></i>
           </div>
           <div className="Croles">
-            <div className="row">
+            <div className="row" id="rows">
               <h3 className="regis">Registrado con: {currentUser?.email} </h3>
               <h1 className="TituloR">Escoge tu Rol</h1>
               <div className="colsito1" id="colsito">
