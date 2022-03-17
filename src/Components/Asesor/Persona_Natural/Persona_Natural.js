@@ -60,12 +60,30 @@ const PersonaNatural = () => {
       Totalpas: "",
       Detalle: "",
       Totalegre: "",
-      Declarantere: "",
+      Declarnatere: "",
       Agentere: "",
       RegimenIva: "",
-      Tributario: "",
+      TributarEU: "",
       VentasA: "",
       FechaCierre: "",
+      respuestaA: "",
+      uno: "",
+      unouno: "",
+      dos: "",
+      dosdos: "",
+      declaracion: "",
+      paisOrigen: "",
+      Ciudadorigen: "",
+      monedaE: "",
+      Operation: "",
+      tipodeproducto: "",
+      Input: "",
+      noProduct: "",
+      Montmensu: "",
+      MoneDa: "",
+      CiudAd: "",
+      PAIIS: "",
+
     },
 
   validationSchema: Yup.object({
@@ -141,6 +159,22 @@ const PersonaNatural = () => {
     FechaCierre:  Yup.date().default(function () {
       return new Date();
     }),
+    respuestaA: Yup.string(),
+    uno: Yup.string(),
+    unouno: Yup.string(),
+    dos: Yup.string(),
+    dosdos: Yup.string(),
+    declaracion: Yup.string().required("Este campo es obligatorio"),
+    paisOrigen: Yup.string().required("Este campo es obligatorio"),
+    Ciudadorigen: Yup.string().required("Este campo es obligatorio"),
+    Operation:  Yup.string().required("Este campo es obligatorio"),
+    Input:  Yup.string(),
+    noProduct:  Yup.string().required("Este campo es obligatorio"),
+    Montmensu:  Yup.string().required("Este campo es obligatorio"),
+    MoneDa:  Yup.string().required("Este campo es obligatorio"),
+    CiudAd:  Yup.string().required("Este campo es obligatorio"),
+    PAIIS:  Yup.string().required("Este campo es obligatorio"),
+
   }),
 
     onSubmit: (formData) => {
@@ -378,7 +412,7 @@ const PersonaNatural = () => {
               <option value="E.U">Estadounidense</option>
             </select>
             <label className="labelo">
-              <input type="radio" name="otro" className="" required />
+              <input type="radio" name="otro" className=""/>
               Otro, cuál?
               <input type="text" name="cajon" className="inpuut" />
             </label>
@@ -416,7 +450,7 @@ const PersonaNatural = () => {
 
             <div className="contenedor4">
               <label className="labelo">
-                Pais
+                País
                 <input type="text" name="Pais" className="input" required onChange={formik.handleChange}/>
               </label>
               <label className="cajon">
@@ -442,7 +476,7 @@ const PersonaNatural = () => {
                 Profesión
                 <input type="text" name="Profesion" className="input" required onChange={formik.handleChange}/>
               </label>
-              <h5 className="tituloos">Ocupacion/Oficio</h5>
+              <h5 className="tituloos">Ocupación/Oficio</h5>
 
               <select className="selec" name="Sprofesion" onChange={formik.handleChange} required>
                 <option selected value="s">
@@ -512,7 +546,7 @@ const PersonaNatural = () => {
 
               <div className="contenedor4">
                 <label className="labelo">
-                  Pais
+                  País
                   <input type="text" name="Pa" className="input" onChange={formik.handleChange} required/>
                 </label>
                 <label className="jumm">
@@ -529,7 +563,7 @@ const PersonaNatural = () => {
                 </label>
                 <label className="largos">
                   Correo electrónico laboral
-                  <input type="text" name="CorreL" className="input" onChange={formik.handleChange} required />
+                  <input type="email" name="CorreL" className="input" onChange={formik.handleChange} required />
                 </label>
               </div>
 
@@ -640,7 +674,8 @@ const PersonaNatural = () => {
                   *Si su respuesta es afirmativa indique el número de ID
                   tributario (TIN)
                 </label>
-                <input type="number" name="nombre" className="inpuut" />
+                <input type="number" name="respuestaA" className="inpuut"
+                          onChange={formik.handleChange} />
               </div>
 
               <div className="contenedor4">
@@ -651,22 +686,26 @@ const PersonaNatural = () => {
                 <label className="labelo">N°.Id.tributario</label>
                 <label className="labelo">
                   1.
-                  <input type="text" name="nombre" className="input" />
+                  <input type="text" name="uno" className="input" 
+                          onChange={formik.handleChange}/>
                 </label>
 
                 <label className="labelo">
                   1.
-                  <input type="text" name="nombre" className="input" />
+                  <input type="text" name="unouno" className="input" 
+                          onChange={formik.handleChange}/>
                 </label>
 
                 <label className="labelo">
                   2.
-                  <input type="text" name="nombre" className="input" />
+                  <input type="text" name="dos" className="input"
+                          onChange={formik.handleChange}/>
                 </label>
 
                 <label className="labelo">
                   2.
-                  <input type="text" name="nombre" className="input" />
+                  <input type="text" name="dosdos" className="input"
+                          onChange={formik.handleChange}/>
                 </label>
               </div>
 
@@ -678,15 +717,18 @@ const PersonaNatural = () => {
                   Declaro que: i) El origen de mis bienes y/o fondos provienen
                   de:
                 </label>
-                <input type="text" name="nombre" className="inpuut" />
+                <input type="text" name="declaracion" className="inpuut" required
+                          onChange={formik.handleChange} />
                 <label className="titulazo">
                   El país origen de bienes y/o fondos
                 </label>
                 <label className="titulazo">
                   La ciudad origen de bienes y/o fondos
                 </label>
-                <input type="text" name="nombre" className="inpuut" />
-                <input type="text" name="nombre" className="inpuut" />
+                <input type="text" name="paisorigen" className="inpuut" required
+                          onChange={formik.handleChange}/>
+                <input type="text" name="ciudadorigen" className="inpuut" required
+                          onChange={formik.handleChange}/>
                 <label className="texto">
                   ii) Los bienes y recursos entregados y a manejar en las
                   cuentas, o aquel producto de giro internacional provienen de
@@ -710,8 +752,10 @@ const PersonaNatural = () => {
                 </h5>
                 <label className="lalbelo">
                   ¿Realiza operaciones en moneda extranjera?
-                  <input type="radio" name="nombre" className="civi" /> Si
-                  <input type="radio" name="nombre" className="civi" /> No
+                  <input type="radio" name="monedaE" id="r17" className="civi" required
+                          onChange={formik.handleChange} /> Si
+                  <input type="radio" name="monedaE" id="r18" className="civi" required
+                          onChange={formik.handleChange}/> No
                 </label>
               </div>
 
@@ -719,7 +763,7 @@ const PersonaNatural = () => {
                 <label className="lalbelo">
                   ¿Cuál(es) de las siguientes operaciones en moneda extranjera?
                 </label>
-                <select className="seleccion">
+                <select className="seleccion" name="operation" onChange={formik.handleChange} required>
                   <option selected value="u">
                     Seleccione la operación
                   </option>
@@ -732,9 +776,9 @@ const PersonaNatural = () => {
                   <option value="EN">Envío/Recepción de giros y remesas</option>
                 </select>
                 <label className="labelo">
-                  <input type="checkbox" name="nombre" className="" />
+                  <input type="checkbox" name="otroOp" className="" />
                   Otro, cuál?
-                  <input type="text" name="nombre" className="inpuut" />
+                  <input type="text" name="Cual" className="inpuut" />
                 </label>
               </div>
 
@@ -746,37 +790,37 @@ const PersonaNatural = () => {
 
                 <label className="largos">
                   Tipo de producto
-                  <input type="radio" name="nombre" className="civilo" />
+                  <input type="radio" name="tipodeproducto" id="r19" className="civilo" onChange={formik.handleChange} required />
                   Cuenta de ahorro
-                  <input type="radio" name="nombre" className="civilo" />
+                  <input type="radio" name="tipodeproducto" id="r20" className="civilo" onChange={formik.handleChange} required />
                   Cuenta corriente
-                  <input type="radio" name="nombre" className="civilo" />
+                  <input type="radio" name="tipodeproducto" id="r21" className="civilo" onChange={formik.handleChange} required />
                   Otro, cuál?
-                  <input type="text" name="nombre" className="inpuut" />
+                  <input type="text" name="Input" className="inpuut" />
                 </label>
 
                 <label className="cajoneto">
                   N° de producto
-                  <input type="text" name="nombre" className="input" />
+                  <input type="number" name="noProduct" className="input" required onChange={formik.handleChange}/>
                 </label>
 
                 <label className="cajoneto">
                   Monto mensual promedio
-                  <input type="text" name="nombre" className="input" />
+                  <input type="number" name="Montmensu" className="input" required onChange={formik.handleChange} />
                 </label>
                 <label className="cajoneto">
                   Moneda
-                  <input type="text" name="nombre" className="input" />
+                  <input type="text" name="MoneDa" className="input" required onChange={formik.handleChange} />
                 </label>
 
                 <label className="labelo">
                   Ciudad
-                  <input type="text" name="nombre" className="input" />
+                  <input type="text" name="CiudAd" className="input"required onChange={formik.handleChange} />
                 </label>
 
                 <label className="labelo">
                   País
-                  <input type="text" name="nombre" className="input" />
+                  <input type="text" name="PAIIS" className="input" required onChange={formik.handleChange}/>
                 </label>
               </div>
             </div>

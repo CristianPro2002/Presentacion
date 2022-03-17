@@ -1,12 +1,19 @@
 .row {
     text-align: center;
-    padding-top: 7%;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
    
 }
 
 .ImagenF {
     filter: hue-rotate(209deg) brightness(200%);
 }
+.ImagenF2 {
+    filter: hue-rotate(209deg) brightness(200%);
+}
+
 
 .TituloR {
     padding: 3%;
@@ -17,9 +24,7 @@
 }
 
 .Croles {
-    position: relative;
-   
-    
+    position: relative; 
 }
 
 .Formu {
@@ -47,16 +52,11 @@ background: #ffffff ;
 }
 
 .fondo2{
-    position: absolute;
-    
-    background-image: url("../Asesor/Imagens/peakpx.jpg");
 	font-family: 'Roboto', sans-serif;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    height: 120vh;
-    width: 100%;
-   
+    
 }
 .f2{
   padding-left: 10px;  
@@ -64,22 +64,55 @@ background: #ffffff ;
 
 
 .fondo{
-    height: 100%;
-    width: 100%;
+    background: linear-gradient(to bottom right, #722BAE,  #4B2CB2, #3036C6);
     
 }
 
 .principal2{
-    height: 100vh;
-  width: 100%;
- 
-  position: relative;
+    
 
 }
+.colsito1{
+    width: 40%;
+    height: 100%;
+}
+.colsito2{
+    width: 40%;
+    height: 100%;
+}
+.colsito3{
+    width: 40%;
+    height: 100%;
+    
+}
+.colsito4{
+    width: 40%;
+    height: 100%;
+}
+.colsito5{
+    width: 80%;
+    height: 100%;
+}
+.ImagenI {
+    width: 20%;
+    height: 20%;
+}
+
 
 @media screen and (max-width: 700px){
     .fondo2{
         height: auto;
+    }
+    .ImagenI {
+        width: 50%;
+        height: 50%;
+    }
+
+    
+
+    .ImagenF {
+        width: 30%;
+        height: 30%;
     }
 }
 
@@ -93,3 +126,5 @@ background: #ffffff ;
     
     padding-bottom: 10px;
 }
+
+

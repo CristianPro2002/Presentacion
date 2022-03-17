@@ -1,6 +1,6 @@
 import Button from "react-bootstrap/Button";
 import { Col, Row } from "react-bootstrap";
-import "./Estilos.css";
+import "./EstilosJ.css";
 import { useHistory } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -140,7 +140,7 @@ const PersonaJuridica = () => {
       <div>
         <i
           class="bi bi-arrow-left-circle-fill"
-          id="CIRCULO"
+          id="cir2"
           onClick={() => History.push("/Asesor")}
         ></i>
       </div>
@@ -213,7 +213,6 @@ const PersonaJuridica = () => {
                   name="N_documento"
                   className="Border"
                   onChange={formik.handleChange}
-                  error={formik.errors.N_documento}
                   required
                 />
               </label>
@@ -240,6 +239,7 @@ const PersonaJuridica = () => {
                   name="Fideicomiso"
                   className="Border"
                   onChange={formik.handleChange}
+                  maxLength={4}
                   error={formik.errors.Fideicomiso}
                 />
               </label>
@@ -1972,7 +1972,6 @@ const PersonaJuridica = () => {
                   type="text"
                   name="N_Producto2"
                   className="Border"
-                  className="Border"
                   onChange={formik.handleChange}
                   required
                 />
@@ -2432,10 +2431,8 @@ const PersonaJuridica = () => {
             </p>
             <div id="Container-6">
               <label className="label">
-                <Col>
-                  <p>______________________________</p>
-                  <p>Firma del Solicitante</p>
-                </Col>
+                <input className="Firma_solicitante" type="text"></input>
+                <p>Firma del Solicitante</p>
               </label>
             </div>
             <div id="Container-5">
@@ -2449,67 +2446,63 @@ const PersonaJuridica = () => {
             </div>
 
             <div className="col-md-8" id="Container-2">
-              <Col>
-                <label>
-                  <p className="label-21">
-                    {" "}
-                    * Solo diligenciar si actúa en calidad de:{" "}
-                  </p>
-                  <label className="label-22">
-                    <input
-                      type="radio"
-                      value="Representante"
-                      name="ActuaEnCalidadDe"
-                      className="cursor-pointer"
-                      onChange={formik.handleChange}
-                      required
-                    />{" "}
-                    Representante{" "}
-                    <input
-                      type="radio"
-                      value="Apoderado"
-                      name="ActuaEnCalidadDe"
-                      className="cursor-pointer"
-                      onChange={formik.handleChange}
-                      required
-                    />{" "}
-                    Apoderado
-                  </label>
+              <p className="label-21">
+                {" "}
+                * Solo diligenciar si actúa en calidad de:{" "}
+              </p>
+              <label className="label-22">
+                <input
+                  type="radio"
+                  value="Representante"
+                  name="ActuaEnCalidadDe"
+                  className="cursor-pointer"
+                  onChange={formik.handleChange}
+                  required
+                />{" "}
+                Representante{" "}
+                <input
+                  type="radio"
+                  value="Apoderado"
+                  name="ActuaEnCalidadDe"
+                  className="cursor-pointer"
+                  onChange={formik.handleChange}
+                  required
+                />{" "}
+                Apoderado
+              </label>
 
-                  <div className="float-left">
-                    <label className="">
-                      Nombre{" "}
-                      <input
-                        type="text"
-                        name="Nombre"
-                        className="Border"
-                        onChange={formik.handleChange}
-                        required
-                      />
-                    </label>
-                    <div className="label-19">
-                      <input
-                        type="text"
-                        name=""
-                        className="Border"
-                        onChange={formik.handleChange}
-                        required
-                      />
-                    </div>
-
-                    <label className="label-20">
-                      No. Identificación{" "}
-                      <input
-                        type="text"
-                        name="N_Identificacion"
-                        className="Border"
-                        onChange={formik.handleChange}
-                        required
-                      />
-                    </label>
-                  </div>
+              <div className="float-left">
+                <label >
+                  Nombre{" "}
+                  <input
+                    type="text"
+                    name="Nombre"
+                    className="Border"
+                    onChange={formik.handleChange}
+                    required
+                  />
                 </label>
-              </Col>
+                <div className="label-19">
+                  <input
+                    type="text"
+                    name=""
+                    className="Border"
+                    onChange={formik.handleChange}
+                    required
+                  />
+                </div>
+
+                <label className="label-20">
+                  No. Identificación{" "}
+                  <input
+                    type="text"
+                    name="N_Identificacion"
+                    className="Border"
+                    onChange={formik.handleChange}
+                    required
+                  />
+                </label>
+              </div>
             </div>
           </div>
 
@@ -2566,27 +2559,27 @@ const PersonaJuridica = () => {
               adelanten dicho proceso.
             </p>
             <div>
-              <label className="Observaciones">
+              <Col>
+              <label className="Observaciones1">
                 <p> Observaciones</p>
                 <input
+                  className="Observaciones"
                   type="text"
                   name="Observaciones"
-                  className="Border"
                   onChange={formik.handleChange}
                 />
               </label>
+              </Col>
             </div>
           </div>
 
           <div className="col-md-3" id="Container-1">
-            <Col>
-              <label>
-                <Row className="Row">
-                  <p>____________________</p>
-                  <p>Firma</p>
-                </Row>
-              </label>
-            </Col>
+            <label>
+              <Row>
+                <input className="Row" type="text"></input>
+                <p>Firma</p>
+              </Row>
+            </label>
           </div>
           <div className="col-md-12" id="">
             <Button type="submit" className="BOTON" variant="primary">

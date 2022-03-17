@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import { Col, Row } from "react-bootstrap";
-import "./Estilos.css";
+import "./EstilosJ.css";
 import { useHistory } from "react-router-dom";
 
 const PersonaJuridica4 = () => {

@@ -175,6 +175,7 @@
     
 }
 
+
 .conn{
 width: 50%;
 display: flex;
@@ -216,6 +217,7 @@ padding-right: 5%;
 .PJ{
     border-radius: 15px;
     width: 100%;
+    
 }
 
 .PN {
@@ -264,4 +266,80 @@ padding-right: 5%;
     .contj{
         width: 100%;
     }
+}
+
+.consultar1 {
+    text-decoration: none;
+    border: none;
+    border-top-right-radius: 7px;
+    background-color: #00CED1;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.consultar2 {
+    text-decoration: none;
+    border: none;
+    border-top-right-radius: 7px;
+    background-color: #00CED1;
+    color: #ffffff;
+    font-weight: bold;
+    
+}
+.consultar1:hover {
+    background-color: #05abad;
+    transition: all 0.4s;
+}
+
+.consultar2:hover {
+    background-color: #05abad;
+    transition: all 0.4s;
+}
+
+.campo1 {
+    border-top-left-radius: 7px;
+    border: none;
+    outline-color: #00CED1;
+}
+.campo2{
+    border-top-left-radius: 7px;
+    border: none;
+    outline-color: #00CED1;
+}
+
+.desplegable1 {
+    padding-top: 10px;
+    height: 40px;
+    width: 50%;
+    border-radius: 10px;
+}
+
+.cdesplegable1 {
+    display: flex;
+    align-items: center ;
+    justify-content: center;
+}
+
+.desplegable2 {
+    padding-top: 10px;
+    height: 40px;
+    width: 50%;
+    border-radius: 10px;
+    
+}
+
+.cdesplegable2 {
+    display: flex;
+    align-items: center ;
+    justify-content: center;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+form {
+    padding-top: 8px;
 }

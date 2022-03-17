@@ -6,8 +6,11 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import Form from "react-bootstrap/Form";
 import "./Roles.css";
 import { useAuth } from "../firebase";
-import imgasesor from '../Asesor/Imagens/asss.png'
-
+import Cajeroimg from './Imagenes_R/cajero.webp'
+import Directorimg from './Imagenes_R/director.webp'
+import Gerenteimg from './Imagenes_R/gerente.webp'
+import Asesorimg from './Imagenes_R/asesor.webp'
+import Cajeropimg from './Imagenes_R/CajeroP.webp'
 const Roles = () => {
   let History = useHistory();
 
@@ -69,6 +72,17 @@ const validar4 = (e) => {
     validacion.focus();
 }
 
+const validar5 = (e) => {
+  var validacion = document.getElementById('CajeroP');
+  if(validacion.value==0 || validacion.value=="")
+  {
+      alert("Selecciona una opcion para continuar");
+      validacion.focus();
+  } else
+  History.push("/CajeroP");
+  validacion.focus();
+}
+
   return (
     <div className="principal2">
       <div className="fondo">
@@ -84,18 +98,18 @@ const validar4 = (e) => {
             <div className="row">
               <h3 className="regis">Registrado con: {currentUser?.email} </h3>
               <h1 className="TituloR">Escoge tu Rol</h1>
-              <div className="col" id="colsito">
+              <div className="colsito1" id="colsito">
                 <div className="Fl">
                   <img
-                    className=""
+                    className="ImagenI"
                     alt=""
-                    src="https://es.seaicons.com/wp-content/uploads/2015/07/Manager-icon.png"
+                    src={Directorimg}
                     width="150"
                     height="150"
                   />
                   <ul className="list-unstyled">
                     <li>
-                      <b>Director Operativo</b>
+                      <b>Director</b>
                     </li>
                     <div className="Formu">
                       <li>
@@ -103,11 +117,11 @@ const validar4 = (e) => {
                           <option value="0" className="Lform">
                             Selecciona el # de Rol
                           </option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
+                          <option value="1">Director #1</option>
+                          <option value="2">Director #2</option>
+                          <option value="3">Director #3</option>
+                          <option value="4">Director #4</option>
+                          <option value="5">Director #5</option>
                         </Form.Select>
                       </li>
                     </div>
@@ -127,12 +141,12 @@ const validar4 = (e) => {
                 </div>
               </div>
               {/* column2 */}
-              <div className="col" id="colsito">
+              <div className="colsito2" id="colsito">
                 <div className="Fl">
                   <img
-                    className=""
+                    className="ImagenI"
                     alt=""
-                    src="https://cdn-icons-png.flaticon.com/512/1802/1802979.png"
+                    src={Gerenteimg}
                     width="150"
                     height="150"
                   />
@@ -146,11 +160,11 @@ const validar4 = (e) => {
                           <option value="0" className="Lform">
                             Selecciona el # de Rol
                           </option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
+                          <option value="1">Gerente #1</option>
+                          <option value="2">Gerente #2</option>
+                          <option value="3">Gerente #3</option>
+                          <option value="4">Gerente #4</option>
+                          <option value="5">Gerente #5</option>
                         </Form.Select>
                       </li>
                     </div>
@@ -170,12 +184,12 @@ const validar4 = (e) => {
                 </div>
               </div>
               {/* column3 */}
-              <div className="col" id="colsito">
+              <div className="colsito3" id="colsito">
                 <div className="Fl">
                   <img
-                    className=""
+                    className="ImagenI"
                     alt=""
-                    src={imgasesor}
+                    src={Asesorimg}
                     width="150"
                     height="150"
                   />
@@ -189,11 +203,11 @@ const validar4 = (e) => {
                           <option value="0" className="Lform">
                             Selecciona el # de Rol
                           </option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
+                          <option value="1">Asesor #1</option>
+                          <option value="2">Asesor #2</option>
+                          <option value="3">Asesor #3</option>
+                          <option value="4">Asesor #4</option>
+                          <option value="5">Asesor #5</option>
                         </Form.Select>
                       </li>
                     </div>
@@ -213,12 +227,12 @@ const validar4 = (e) => {
                 </div>
               </div>
 
-              <div className="col" id="colsito">
+              <div className="colsito4" id="colsito">
                 <div className="Fl">
                   <img
-                    className=""
+                    className="ImagenI"
                     alt=""
-                    src="https://image.flaticon.com/icons/png/512/1059/1059923.png"
+                    src={Cajeroimg}
                     width="150"
                     height="150"
                   />
@@ -232,11 +246,11 @@ const validar4 = (e) => {
                           <option value="0" className="Lform">
                             Selecciona el # de Rol
                           </option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
+                          <option value="1">Cajero #1</option>
+                          <option value="2">Cajero #2</option>
+                          <option value="3">Cajero #3</option>
+                          <option value="4">Cajero #4</option>
+                          <option value="5">Cajero #5</option>
                         </Form.Select>
                       </li>
                     </div>
@@ -245,6 +259,49 @@ const validar4 = (e) => {
                       <a onClick={validar4} value="validar4">
                         <img
                           className="ImagenF"
+                          alt=""
+                          src="http://cenfma.com/img/flecha.png"
+                          width="50"
+                          height="50"
+                        />
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="colsito5" id="colsito">
+                <div className="Fl">
+                  <img
+                    className="ImagenI"
+                    alt=""
+                    src={Cajeropimg}
+                    width="150"
+                    height="150"
+                  />
+                  <ul className="list-unstyled">
+                    <li>
+                      <b>Cajero Principal</b>
+                    </li>
+                    <div className="Formu">
+                      <li>
+                        <Form.Select aria-label="Default select example" id="CajeroP" name="CajeroP">
+                          <option value="0" className="Lform">
+                            Selecciona el # de Rol
+                          </option>
+                          <option value="1">Cajero Principal #1</option>
+                          <option value="2">Cajero Principal #2</option>
+                          <option value="3">Cajero Principal #3</option>
+                          <option value="4">Cajero Principal #4</option>
+                          <option value="5">Cajero Principal #5</option>
+                        </Form.Select>
+                      </li>
+                    </div>
+                    <br />
+                    <li>
+                      <a onClick={validar5} value="validar5">
+                        <img
+                          className="ImagenF2"
                           alt=""
                           src="http://cenfma.com/img/flecha.png"
                           width="50"
