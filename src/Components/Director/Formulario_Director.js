@@ -1,9 +1,8 @@
 import React,{useState} from 'react'
 import './ESTILOS_FORMD/estile_form_d.css'
 import imagen from './Imagenes/Manager-icon.png'
-import imagenxd from './Imagenes/eye-solid.png'
-import { Form} from 'react-bootstrap'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faEyeSlash} from '@fortawesome/free-solid-svg-icons'
 export const Formulario_Director = (props) => {
   
   const [passwordshow,setpasswordshow] = useState(false);
@@ -40,46 +39,47 @@ const enviarDatos = event =>{
 }
 
 return (
-  <div className="container" id="contenedor_formd">
-      <div className="Title_and_image">
-       <img  className="img_usu_creacion" src={imagen}></img>
-        <h3 classname="Titulo_creacion_usuarios">Creacion de usuarios </h3>
-      </div>
-      <Form onSubmit={enviarDatos}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Nombre de usuario</Form.Label>
-          <Form.Control  
-           placeholder="Enter the user name"
-           type="text"
-           name="Nombre_usu_form"
-           onChange={handleInputChange}
-           value={datos.Nombre_usu_form}
-           />
-           </Form.Group>
-           <div className="mb-3" id="Contenedor_contraseña">
-          <div className="Contenedor_contraseña_Arreglo">
-            <Form.Group className="mb-3" controlId="formBasicontraseña">
-              <Form.Label>Contraseña de usuario</Form.Label>
-              <Form.Control
-              id="input_contra_form"
-               placeholder="Enter the password"
-               type={passwordshow ? "text" : "password"}
-                name="Contraseña_usu_form"
-                value={datos.Contraseña_usu_form}
-                onChange={handleInputChange}
-                ></Form.Control>
-            </Form.Group>
+  
+    <div className="contenedor_padre_director">
+      <div className="container_formulario_director">
+        <form onSubmit={enviarDatos} className="">
+          <div className="titulo_creacion_usu">
+          <img  className="img_usu_creacion" src={imagen}></img>
+            <h3>Creacion de Usuarios</h3>
           </div>
-          <div className="Contenedor_imagen_boton">
-          <input onClick ={togglepasword} id="Boton_imagen_eyes" type="image" src={imagenxd}></input>
-         
-          </div> 
-        </div>
-        <div>
-          <label>Seleccione el tipo de rol</label>
-        </div>
-        <div className="mb-3" id="arreglos_desple">
-          <select
+          <div className="Nombre_Usuario">
+            
+            <div className="label_usu">
+              <label>Nombre  de usuario</label>
+            </div>
+            <input 
+            className="input_color1"
+              placeholder="Enter the user name"
+              type="text"
+              name="Nombre_usu_form"
+              onChange={handleInputChange}
+              value={datos.Nombre_usu_form}
+            ></input>
+          </div>
+          <div className="Contraseña_Usuario">
+            <span class="icon_eye"  onClick ={togglepasword} >
+              <FontAwesomeIcon icon={faEyeSlash} />
+            </span>
+            <div className="Contraseña_label_usu">
+              <label>Contraseña de usuario</label>
+            </div>
+            <input
+             className="input_color2"
+              id="input_contra_form"
+              placeholder="Enter the password"
+              type={passwordshow ? "text" : "password"}
+              name="Contraseña_usu_form"
+              value={datos.Contraseña_usu_form}
+              onChange={handleInputChange}
+            ></input>
+          </div>
+          <div id="arreglos_desple">
+          <select className="nashe"
            name="Tipo_de_rol"
             id="select_sin_react"
             onChange={handleInputChange}
@@ -90,23 +90,24 @@ return (
             <option value="Asesor">Asesor</option>
             <option value="Cajero">Cajero</option>
           </select>
-        </div>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check
-            type="checkbox"
-            label="Clic para confirmar la creacion del usuario"
+          </div>
+          <div className="chequeo">
+            <input type="checkbox"
             name="Confirmacion_creacion"
             value="Form_usu.Confirmacion_creacion"
-            onChange={handleChecked}
-          />
-           </Form.Group>
-           <div className="center_button">
-           <button 
-           className="fourth" 
-           type ="submit">crear</button>
-           </div>
-      </Form>
+            onChange={handleChecked}>
+
+              
+            </input>
+            <label className="label_check">Click para confirmar la creacion del usuario</label>
+          </div>
+          <div className="center_button">
+          <button   type ="submit" class="btn third">crear
+          </button>
+          </div>
+        </form>
       </div>
+    </div>
         );
         
       }

@@ -30,11 +30,15 @@ import {Funcionamiento_form} from './Components/Director/Funcionamiento_form'
 import {Tabla_director} from './Components/Director/Tabla_director';
 import Consulta from './Components/Asesor/Consulta/Consulta'
 import Consulta2 from './Components/Asesor/Consulta/Consulta2'
+import CajeroP from './Components/CajeroP/CajeroP'
 
 function App() {
   return (
     <Router>
       <Switch>
+      <Route path="/CajeroP">
+          <CajeroP/>
+        </Route>
       <Route path="/Consulta2">
           <Consulta2/>
         </Route>

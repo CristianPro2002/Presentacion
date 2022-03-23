@@ -83,16 +83,20 @@ const validar5 = (e) => {
   validacion.focus();
 }
 
+
   return (
     <div className="principal2">
-      <div className="fondo">
-        <div className="fondo2 ">
+      <div className="fondo" id="dark-mode">
+        <div className="fondo2">
           <div className="f2">
             <i
               class="bi bi-arrow-left-circle-fill"
               id="cir"
               onClick={() => History.push("/")}
             ></i>
+            <div className="contmodoo">
+            <input type="checkbox" id="input-dark-mode"></input>
+            </div>
           </div>
           <div className="Croles">
             <div className="row" id="rows">

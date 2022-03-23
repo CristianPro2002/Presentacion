@@ -1,3 +1,18 @@
+.modoO{
+    float: right;
+    border-style: none;
+}
+
+.modoO:hover{
+    background: black;
+    border-style: none;
+}
+
+.contmodoo{
+    width: 50%;
+    float: right;
+}
+
 .row {
     text-align: center;
    
@@ -68,6 +83,41 @@ background: #ffffff ;
     
 }
 
+#input-dark-mode{
+    -webkit-appearance: none;
+    width: 100px;
+    height: 50px;
+    position: relative;
+    background: white;
+    background-size: cover;
+    border-radius: 50px;
+    float: right;
+}
+
+#input-dark-mode::before{
+    content: " ";
+    background-color: aqua;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#input-dark-mode:checked{
+    background: black;
+}
+
+#input-dark-mode:checked::before{
+    transform: translate(100%);
+    background-color: blue;
+}
+
+.darkmode {
+    background: black;
+    color: white;
+}
 .principal2{
     
 
@@ -126,5 +176,4 @@ background: #ffffff ;
     
     padding-bottom: 10px;
 }
-
 
