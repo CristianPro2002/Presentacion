@@ -12,7 +12,7 @@ conection.connect( (err)=>{
 })
 
 const insertar =
-"INSERT INTO usuarios (IdUsuario,usuario,contraseña) VALUES ('2', 'Jose', 'Jose123')";
+"INSERT INTO usuarios (IdUsuario,usuario,contraseña) VALUES ('3', 'Sonia', 'Sonia123')";
 conection.query(insertar, (err, rows) =>{
     if(err) throw err;
 });
