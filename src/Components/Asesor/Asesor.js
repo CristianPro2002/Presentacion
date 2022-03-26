@@ -109,7 +109,8 @@ const validar2 = (e) => {
                     <div className="conn">
                       <div className="col" id="contenedor1">
                         <img className="PN" alt="" src={personan} />
-                        <form>
+                        <div className="cont34">
+                        <form className="formulariocon">
                           <input
                             placeholder="Ingrese la cedula"
                             type="number"
@@ -117,6 +118,7 @@ const validar2 = (e) => {
                           ></input>
                           <button className="consultar2"  onClick={() => History.push("/Consulta2")}>Consultar</button>
                         </form>
+                        </div>
                         <form>
                         <div className="cdesplegable2">
                         <Form.Select

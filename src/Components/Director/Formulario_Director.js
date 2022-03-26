@@ -2,9 +2,20 @@ import React,{useState} from 'react'
 import './ESTILOS_FORMD/estile_form_d.css'
 import imagen from './Imagenes/Manager-icon.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faEyeSlash} from '@fortawesome/free-solid-svg-icons'
+import {faAlignCenter, faEyeSlash} from '@fortawesome/free-solid-svg-icons'
+import swal from 'sweetalert';
+
 export const Formulario_Director = (props) => {
-  
+  const mostrarAlerta=()=>{
+    swal({
+      title:"Usuario creado con Exito",
+      icon: "success",
+      button:false,
+      timer: 1300
+     
+    
+     });
+  }
   const [passwordshow,setpasswordshow] = useState(false);
   const togglepasword = () =>{
   setpasswordshow(!passwordshow);
@@ -38,6 +49,8 @@ const enviarDatos = event =>{
     
 }
 
+
+
 return (
   
     <div className="contenedor_padre_director">
@@ -53,6 +66,7 @@ return (
               <label>Nombre  de usuario</label>
             </div>
             <input 
+            required
             className="input_color1"
               placeholder="Enter the user name"
               type="text"
@@ -69,6 +83,7 @@ return (
               <label>Contraseña de usuario</label>
             </div>
             <input
+            required
              className="input_color2"
               id="input_contra_form"
               placeholder="Enter the password"
@@ -80,6 +95,7 @@ return (
           </div>
           <div id="arreglos_desple">
           <select className="nashe"
+          required
            name="Tipo_de_rol"
             id="select_sin_react"
             onChange={handleInputChange}
@@ -93,16 +109,15 @@ return (
           </div>
           <div className="chequeo">
             <input type="checkbox"
+            required
             name="Confirmacion_creacion"
             value="Form_usu.Confirmacion_creacion"
             onChange={handleChecked}>
-
-              
             </input>
-            <label className="label_check">Click para confirmar la creacion del usuario</label>
+            <label className="label_check"> Confirmar  creacion de  usuario</label>
           </div>
           <div className="center_button">
-          <button   type ="submit" class="btn third">crear
+          <button  onClick={()=>mostrarAlerta()} type ="submit" class="btn third">crear
           </button>
           </div>
         </form>

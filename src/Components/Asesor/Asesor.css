@@ -10,7 +10,6 @@
 
 .padresito{
     position: absolute;
-    
     background-image: url("./Imagens/peakpx.jpg");
 	font-family: 'Roboto', sans-serif;
     background-position: center center;
@@ -271,19 +270,23 @@ padding-right: 5%;
 .consultar1 {
     text-decoration: none;
     border: none;
+    border-bottom-right-radius: 7px;
     border-top-right-radius: 7px;
     background-color: #00CED1;
     color: #FFFFFF;
     font-weight: bold;
+   
 }
 
 .consultar2 {
     text-decoration: none;
     border: none;
+    border-bottom-right-radius: 7px;
     border-top-right-radius: 7px;
     background-color: #00CED1;
     color: #ffffff;
     font-weight: bold;
+    
     
 }
 .consultar1:hover {
@@ -297,14 +300,19 @@ padding-right: 5%;
 }
 
 .campo1 {
-    border-top-left-radius: 7px;
+    
     border: none;
     outline-color: #00CED1;
+    border-bottom-left-radius: 7px;
+    border-top-left-radius: 7px;
+
 }
 .campo2{
+    border-bottom-left-radius: 7px;
     border-top-left-radius: 7px;
     border: none;
     outline-color: #00CED1;
+    
 }
 
 .desplegable1 {
@@ -347,3 +355,17 @@ input[type=number]::-webkit-outer-spin-button {
 form {
     padding-top: 8px;
 }
+
+@media (max-width: 400px) {
+   
+    
+    .campo1 {
+        
+       width: 120px;
+    
+    }
+    .campo2{
+        
+        width: 120px; 
+}}
+

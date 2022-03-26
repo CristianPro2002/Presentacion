@@ -4,6 +4,7 @@ import './CajeroP.css'
 import img111 from './imgs/pngwing.com.webp'
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import cajeroimgp from './imgs/cajero-4.webp'
 const CajeroP = () => {
 
 
@@ -29,7 +30,7 @@ const CajeroP = () => {
             <h1>Saldo Actual</h1>
               <p className="letricas">500,000</p>
               <div className="cadministrar">
-            <button className="administrar5" id='administrar'>Administrar</button>
+            <button className="administrar5" id='administrar'>Ver registros</button>
             </div>
           </div>
           <div className="container222" id='contre'>
@@ -38,7 +39,7 @@ const CajeroP = () => {
             <h1>Saldo Actual</h1>
             <p className="letricas">500,000</p>
             <div className="cadministrar">
-            <button className="administrar5" id='administrar'>Administrar</button>
+            <button className="administrar5" id='administrar'>Ver registros</button>
             </div>
           </div>
           <div className="container333" id='contre'>
@@ -47,7 +48,7 @@ const CajeroP = () => {
             <h1>Saldo Actual</h1>
             <p className="letricas">500,000</p>
             <div className="cadministrar">
-            <button className="administrar5" id='administrar'>Administrar</button>
+            <button className="administrar5" id='administrar'>Ver registros</button>
             </div>
           </div>
           <div className="container444" id='contre'>
@@ -56,7 +57,7 @@ const CajeroP = () => {
             <h1>Saldo Actual</h1>
             <p className="letricas">500,000</p>
             <div className="cadministrar">
-            <button className="administrar5" id='administrar'>Administrar</button>
+            <button className="administrar5" id='administrar'>Ver registros</button>
             </div>
           </div>
           <div className="container555" id='contre'>
@@ -65,10 +66,28 @@ const CajeroP = () => {
             <h1>Saldo Actual</h1>
             <p className="letricas">500,000</p>
             <div className="cadministrar">
-            <button className="administrar5" id='administrar'>Administrar</button>
+            <button className="administrar5" id='administrar'>Ver registros</button>
             </div>
           </div>
         </div>
+        </div>
+        <div className="conteinerPri2">
+          <div className="conteinerSec">
+            <div className="buttonreset">
+              <button className="resetb">Resetear Valores</button>
+            </div>
+            <div className="cimgcp">
+            <img src={cajeroimgp} alt="" className="imgcp" />
+            </div>
+            <div className="textointerno">
+              <h3 className="textointernoh3">
+                Valor Total:
+              </h3>
+              <p className="textointernop">
+                2'500,000
+              </p>
+            </div>
+          </div>
         </div>
         </div>
     </div>

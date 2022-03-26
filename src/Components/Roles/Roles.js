@@ -101,7 +101,7 @@ const validar5 = (e) => {
           <div className="Croles">
             <div className="row" id="rows">
               <h3 className="regis">Registrado con: {currentUser?.email} </h3>
-              <h1 className="TituloR">Escoge tu Rol</h1>
+              <h1 className="TituloR">Escoge tu rol</h1>
               <div className="colsito1" id="colsito">
                 <div className="Fl">
                   <img
@@ -119,7 +119,7 @@ const validar5 = (e) => {
                       <li>
                         <Form.Select aria-label="Default select example" id="directorv" name="directorv">
                           <option value="0" className="Lform">
-                            Selecciona el # de Rol
+                            Selecciona el # de rol
                           </option>
                           <option value="1">Director #1</option>
                           <option value="2">Director #2</option>
@@ -162,7 +162,7 @@ const validar5 = (e) => {
                       <li>
                         <Form.Select aria-label="Default select example" id="gerentev" name="gerentov">
                           <option value="0" className="Lform">
-                            Selecciona el # de Rol
+                            Selecciona el # de rol
                           </option>
                           <option value="1">Gerente #1</option>
                           <option value="2">Gerente #2</option>
@@ -205,7 +205,7 @@ const validar5 = (e) => {
                       <li>
                         <Form.Select aria-label="Default select example" id="Asesorv" name="Asesorv">
                           <option value="0" className="Lform">
-                            Selecciona el # de Rol
+                            Selecciona el # de rol
                           </option>
                           <option value="1">Asesor #1</option>
                           <option value="2">Asesor #2</option>
@@ -248,7 +248,7 @@ const validar5 = (e) => {
                       <li>
                         <Form.Select aria-label="Default select example"id="cajerov" name="cajerov">
                           <option value="0" className="Lform">
-                            Selecciona el # de Rol
+                            Selecciona el # de rol
                           </option>
                           <option value="1">Cajero #1</option>
                           <option value="2">Cajero #2</option>
@@ -291,7 +291,7 @@ const validar5 = (e) => {
                       <li>
                         <Form.Select aria-label="Default select example" id="CajeroP" name="CajeroP">
                           <option value="0" className="Lform">
-                            Selecciona el # de Rol
+                            Selecciona el # de rol
                           </option>
                           <option value="1">Cajero Principal #1</option>
                           <option value="2">Cajero Principal #2</option>
