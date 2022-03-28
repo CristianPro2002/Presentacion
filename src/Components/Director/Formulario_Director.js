@@ -61,6 +61,24 @@ const cerrar = (e) => {
   document.getElementById('ventana_modal').setAttribute("style", "display:none;")
 }
 
+const abrir2 = (e) => {
+  e.preventDefault();
+  document.getElementById('ventana_modal2').setAttribute("style", "visibility:visible; top:50%;");
+}
+
+const cerrar2 = (e) => {
+  e.preventDefault();
+  document.getElementById('ventana_modal2').setAttribute("style", "display:none;")
+}
+
+const cerrarT = (e) => {
+  e.preventDefault();
+  document.getElementById('ventana_modal').setAttribute("style", "display:none;")
+  document.getElementById('ventana_modal2').setAttribute("style", "display:none;")
+}
+
+
+
   return (
     <div className="contenedor_padre_director">
       
@@ -132,13 +150,28 @@ const cerrar = (e) => {
   </tbody>
 </Table>
 
-<button>Aceptar</button>
-<button>Cancelar</button>
+<button onClick={cerrar}>Aceptar</button>
+<button onClick={abrir2}>Cancelar</button>
 </div>
 
 </div>
+
+
+<div class="container__modal3"id = "ventana_modal2">
+        <input type="checkbox" id="evento-click3" />
+<div class="header__modal3">
+    <label for="evento-click3" onClick={cerrar2}>X</label>
+</div>
+
+<div class="body__modal3">
+    <h1 class="title__modal3">Solicitud #-Asesor#</h1>
+    <input type="text" className="contenedortext" />
+    <button onClick={cerrarT}>Aceptar</button>
+<button onClick={cerrar2}>Cancelar</button>
+    </div>
 
         
+      </div>
       </div>
       <div className="container_formulario_director">
         <form

@@ -392,3 +392,65 @@ color: rgb(255, 255, 255);
 #evento-click2{
   display: none;
 }
+
+
+
+
+
+
+.container__modal3{
+  max-width: 900px;
+  background: #e9e0e0;
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: -10px 0px 30px -20px rgba(0,0,0,0.4);
+  border-radius: 10px;
+  visibility: hidden;
+  transition: all 300ms;
+  z-index: 10;
+}
+
+
+.header__modal3{
+  height: 40px;
+  padding: 10px;
+  background:  linear-gradient(to top right, #722BAE,  #4B2CB2, #3036C6);
+  border-radius: 10px 10px 0px 0px;
+}
+
+.header__modal3 label{
+  font-size: 20px;
+  position: absolute;
+  right: -20px;
+  top: -16px;
+  background: rgb(165, 155, 155);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.body__modal3{
+  padding: 40px;
+  text-align: center;
+}
+
+.message__modal3{
+  margin-top: 20px;
+}
+
+
+
+#evento-click3{
+  display: none;
+}
+
+.contenedortext{
+  width: 800px;
+  height: 300px;
+}
