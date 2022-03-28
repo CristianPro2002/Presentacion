@@ -3,6 +3,7 @@ const mysql = require('mysql')
 const conection = mysql.createConnection({
     host:'localhost',
     user:'root',
+    password: "",
     database:'banca',
 })
 
@@ -12,12 +13,12 @@ conection.connect( (err)=>{
 })
 
 const insertar =
-"INSERT INTO usuarios (IdUsuario,usuario,contraseña) VALUES ('3', 'Sonia', 'Sonia123')";
+"INSERT INTO reg_usu (IdRusu,usuar,contra,tipo_rol) VALUES ('1', 'SoniaSalas', 'Sonia123', 'Asesor')";
 conection.query(insertar, (err, rows) =>{
     if(err) throw err;
 });
 
-conection.query("SELECT * from usuarios", (err, rows)=>{
+conection.query("SELECT * from reg_usu", (err, rows)=>{
     if(err) throw err;
     console.log("Los datos de la tabla son: ");
     console.log(rows);
