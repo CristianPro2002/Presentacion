@@ -47,7 +47,6 @@ function App() {
           <Consulta/>
         </Route>
         <Route path="/Tabla_director">
-          <Director />
           <Tabla_director />
         </Route>
         <Route path="/PersonaJuridica5">

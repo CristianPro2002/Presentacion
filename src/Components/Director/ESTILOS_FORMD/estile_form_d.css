@@ -3,9 +3,39 @@
   justify-content: center;
  width: 100%;
   
- height: 100vh;
+ height: auto;
  background: linear-gradient(to top right, #722BAE,  #4B2CB2, #3036C6);
  
+}
+
+.Esconder{
+  display: none;
+}
+
+#cir{
+  padding: 10px;
+  color: #00aeff;
+  transition: all 0.5s;
+}
+
+#cir:hover{
+  transition: all 0.5s;
+}
+
+#btnagre{
+  margin: 10px;
+  height: 50px;
+}
+
+.conttable{
+  overflow: scroll;
+}
+
+.titureg{
+    font-family: 'roboto';
+    text-align: center;
+    color: rgb(0, 81, 255);
+    font-weight: bold;
 }
 
 
@@ -170,66 +200,6 @@ color: rgb(255, 255, 255);
 
 
 
-
-@media (max-width:770px){
-  .icon_eye{
-    right: 5px ;
-    padding-bottom: 10px;
-    
-  }
-}
-
-@media (max-width:2000px){
-  .icon_eye{
-  top:80%;
-  right: 70px ;
-
-    
-  }
-}
-
-@media (max-width:832px){
-  .icon_eye{
-  top:80%;
-  right: 40px ;
-
-    
-  }
-}
-
-@media (max-width:445px){
-  .third{
-    width: 130px;
-  }
-  
-}
-
-@media (max-width:445px){
-  .third{
-    width: 150px;
-  }
-  
-}
-
-
-@media (max-width:528px){
-  .icon_eye{
-  top:80%;
-  right: 30px ;
-
-    
-  }
-}
-
-@media (max-width:296px){
-  .container_formulario_director{
-    width: 93%;
-  }
-  .label_check{
-    font-size: 12px;
-  }
-}
-
 .btn__open-modal{
   width: 120px;
   padding: 20px;
@@ -246,6 +216,7 @@ color: rgb(255, 255, 255);
   transition: all 300ms;
   margin-top: 60px;
   border-bottom-right-radius: 10px;
+  display: none;
 }
 
 .btn__open-modal:hover{
@@ -319,12 +290,7 @@ color: rgb(255, 255, 255);
   filter: blur(100px);
 }
 
-@media (max-width:480px){
-  .btn__open-modal{
-    margin-top: 80px;
-  }
-  
-}
+
 
 .listassoli{
   width: 500px;
@@ -453,4 +419,72 @@ color: rgb(255, 255, 255);
 .contenedortext{
   width: 800px;
   height: 300px;
+}
+
+@media (max-width:770px){
+  .icon_eye{
+    right: 5px ;
+    padding-bottom: 10px;
+    
+  }
+}
+
+@media (max-width:2000px){
+  .icon_eye{
+  top:80%;
+  right: 70px ;
+
+    
+  }
+}
+
+@media (max-width:832px){
+  .icon_eye{
+  top:80%;
+  right: 40px ;
+
+    
+  }
+}
+
+@media (max-width:528px){
+  .icon_eye{
+  top:80%;
+  right: 30px ;
+
+    
+  }
+}
+
+@media (max-width:480px){
+  .btn__open-modal{
+    margin-top: 80px;
+  }
+  
+}
+
+@media (max-width:445px){
+  .third{
+    width: 130px;
+  }
+  
+}
+
+@media (max-width:445px){
+  .third{
+    width: 150px;
+  }
+  
+}
+
+
+
+
+@media (max-width:296px){
+  .container_formulario_director{
+    width: 93%;
+  }
+  .label_check{
+    font-size: 12px;
+  }
 }

@@ -23,7 +23,7 @@ const Roles = () => {
           alert("Selecciona una opcion para continuar");
           validacion.focus();
       } else
-      History.push("/Director");
+      History.push("/Tabla_director");
       validacion.focus();
   }
 
