@@ -34,9 +34,9 @@ const Cajero = () => {
                   </div>
                   <Form.Group controlId="sign-in-email-address">
                     <Form.Control
-                      type="email"
+                      type="number"
                       size="lg"
-                      placeholder="Nombre del cliente"
+                      placeholder="Identificacion del cliente"
                       autoComplete="username"
                       className="position-relative mb-2"
                     />
@@ -50,13 +50,6 @@ const Cajero = () => {
                       autoComplete="current-password"
                       className="position-relative"
                     />
-                  </Form.Group>
-
-                  <Form.Group
-                    controlId="recordarme"
-                    className="d-flex justify-content-center mb-4"
-                  >
-                    <Form.Check label="Recordarme" />
                   </Form.Group>
                   <div className="d-grid">
                     <Button className="ingreso">Ingresar</Button>
@@ -92,7 +85,7 @@ const Cajero = () => {
                       />
                     </Form.Group>
                     <Form.Group className="mb-3">
-                      <Form.Label>Cédula del cliente:</Form.Label>
+                      <Form.Label>Identificacion del cliente:</Form.Label>
                       <Form.Control
                         className="cursor"
                         placeholder="Cc. 1006.456.226"
@@ -104,17 +97,17 @@ const Cajero = () => {
                       <div>
                         <select className="SELECT">
                           <option>Seleccione el tipo de producto</option>
-                          <option>Cuenta de ahorro</option>
-                          <option>Cuenta corriente</option>
+                          <option>Apertura de Cuenta</option>
+                          <option>Consignacion</option>
+                          <option>Retiro</option>
                         </select>
                       </div>
                     </Form.Group>
                     <Form.Group className="mb-3">
-                      <Form.Label>Valor a consignar:</Form.Label>
+                      <Form.Label>Valor:</Form.Label>
                       <Form.Control
-                        className="cursor"
+                        className=""
                         placeholder="$100.000"
-                        disabled
                       />
                     </Form.Group>
 

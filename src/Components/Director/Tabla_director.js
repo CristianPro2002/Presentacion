@@ -123,39 +123,50 @@ export const Tabla_director = () => {
 
   let History = useHistory();
 
-  const botonV = document.querySelectorAll('listascss')[0];
-const ventana_modal = document.querySelectorAll('container__modal2')[0];
+  const botonV = document.querySelectorAll("listascss")[0];
+  const ventana_modal = document.querySelectorAll("container__modal2")[0];
 
-const abrir = (e) => {
-  e.preventDefault();
-  document.getElementById('ventana_modal').setAttribute("style", "visibility:visible; top:50%;");
-}
+  const abrir = (e) => {
+    e.preventDefault();
+    document
+      .getElementById("ventana_modal")
+      .setAttribute("style", "visibility:visible; top:50%;");
+  };
 
-const cerrar = (e) => {
-  e.preventDefault();
-  document.getElementById('ventana_modal').setAttribute("style", "display:none;")
-}
+  const cerrar = (e) => {
+    e.preventDefault();
+    document
+      .getElementById("ventana_modal")
+      .setAttribute("style", "display:none;");
+  };
 
-const abrir2 = (e) => {
-  e.preventDefault();
-  document.getElementById('ventana_modal2').setAttribute("style", "visibility:visible; top:50%;");
-}
+  const abrir2 = (e) => {
+    e.preventDefault();
+    document
+      .getElementById("ventana_modal2")
+      .setAttribute("style", "visibility:visible; top:50%;");
+  };
 
-const cerrar2 = (e) => {
-  e.preventDefault();
-  document.getElementById('ventana_modal2').setAttribute("style", "display:none;")
-}
+  const cerrar2 = (e) => {
+    e.preventDefault();
+    document
+      .getElementById("ventana_modal2")
+      .setAttribute("style", "display:none;");
+  };
 
-const cerrarT = (e) => {
-  e.preventDefault();
-  document.getElementById('ventana_modal').setAttribute("style", "display:none;")
-  document.getElementById('ventana_modal2').setAttribute("style", "display:none;")
-}
+  const cerrarT = (e) => {
+    e.preventDefault();
+    document
+      .getElementById("ventana_modal")
+      .setAttribute("style", "display:none;");
+    document
+      .getElementById("ventana_modal2")
+      .setAttribute("style", "display:none;");
+  };
 
   return (
     <div>
-
-<div className="contemodal">
+      <div className="contemodal">
         <input type="checkbox" id="evento-click" />
         <div className="botnomodal">
           <label
@@ -176,75 +187,111 @@ const cerrarT = (e) => {
           <div className="body__modal">
             <h1 className="title__modal">Solicitudes</h1>
             <ListGroup className="listassoli">
-              <ListGroup.Item action onClick={abrir} className="listascss" id="botonV">Solicitud #1-Asesor1</ListGroup.Item>
-              <ListGroup.Item action onClick={abrir} className="listascss" id="botonV">Solicitud #3-Asesor1</ListGroup.Item>
-              <ListGroup.Item action onClick={abrir} className="listascss" id="botonV">Solicitud #3-Asesor2</ListGroup.Item>
-              <ListGroup.Item action onClick={abrir} className="listascss" id="botonV">Solicitud #4-Asesor4</ListGroup.Item>
-              <ListGroup.Item action onClick={abrir} className="listascss" id="botonV">Solicitud #5-Asesor3</ListGroup.Item>
+              <ListGroup.Item
+                action
+                onClick={abrir}
+                className="listascss"
+                id="botonV"
+              >
+                Solicitud #1-Asesor1
+              </ListGroup.Item>
+              <ListGroup.Item
+                action
+                onClick={abrir}
+                className="listascss"
+                id="botonV"
+              >
+                Solicitud #3-Asesor1
+              </ListGroup.Item>
+              <ListGroup.Item
+                action
+                onClick={abrir}
+                className="listascss"
+                id="botonV"
+              >
+                Solicitud #3-Asesor2
+              </ListGroup.Item>
+              <ListGroup.Item
+                action
+                onClick={abrir}
+                className="listascss"
+                id="botonV"
+              >
+                Solicitud #4-Asesor4
+              </ListGroup.Item>
+              <ListGroup.Item
+                action
+                onClick={abrir}
+                className="listascss"
+                id="botonV"
+              >
+                Solicitud #5-Asesor3
+              </ListGroup.Item>
             </ListGroup>
           </div>
         </div>
 
-        <div class="container__modal2"id = "ventana_modal">
-        <input type="checkbox" id="evento-click2" />
-<div class="header__modal2">
-    <label for="evento-click2" onClick={cerrar}>X</label>
-</div>
+        <div class="container__modal2" id="ventana_modal">
+          <input type="checkbox" id="evento-click2" />
+          <div class="header__modal2">
+            <label for="evento-click2" onClick={cerrar}>
+              X
+            </label>
+          </div>
 
-<div class="body__modal2">
-    <h1 class="title__modal2">Solicitud #-Asesor#</h1>
-    <Table striped bordered hover>
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Username</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td colSpan={2}>Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</Table>
+          <div class="body__modal2">
+            <h1 class="title__modal2">Solicitud #-Asesor#</h1>
+            <Table striped bordered hover>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Username</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td colSpan={2}>Larry the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+              </tbody>
+            </Table>
 
-<button onClick={cerrar}>Aceptar</button>
-<button onClick={abrir2}>Cancelar</button>
-</div>
+            <button onClick={cerrar}>Aceptar</button>
+            <button onClick={abrir2}>Cancelar</button>
+          </div>
+        </div>
 
-</div>
+        <div class="container__modal3" id="ventana_modal2">
+          <input type="checkbox" id="evento-click3" />
+          <div class="header__modal3">
+            <label for="evento-click3" onClick={cerrar2}>
+              X
+            </label>
+          </div>
 
-
-<div class="container__modal3"id = "ventana_modal2">
-        <input type="checkbox" id="evento-click3" />
-<div class="header__modal3">
-    <label for="evento-click3" onClick={cerrar2}>X</label>
-</div>
-
-<div class="body__modal3">
-    <h1 class="title__modal3">Solicitud #-Asesor#</h1>
-    <input type="text" className="contenedortext" />
-    <button onClick={cerrarT}>Aceptar</button>
-<button onClick={cerrar2}>Cancelar</button>
-    </div>
+          <div class="body__modal3">
+            <h1 class="title__modal3">Solicitud #-Asesor#</h1>
+            <input type="text" className="contenedortext" />
+            <button onClick={cerrarT}>Aceptar</button>
+            <button onClick={cerrar2}>Cancelar</button>
+          </div>
+        </div>
       </div>
-      </div>
-
 
       <div className="contatras">
         <i
@@ -266,43 +313,42 @@ const cerrarT = (e) => {
         </button>
       </div>
       <div className="conttable">
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Nombre del usuario</th>
-            <th>Contraseña </th>
-            <th>Tipo de rol </th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((Data) => (
-            <tr key={Data.Id_usu}>
-              <td>{Data.Id_usu}</td>
-              <td>{Data.Usuario}</td>
-              <td>{Data.Contra}</td>
-              <td>{Data.Idti_rol}</td>
-              <td>
-                <button
-                  className="btn btn-primary"
-                  onClick={() => seleccionarUsuario(Data, "Editar")}
-                >
-                  Editar
-                </button>
-                &nbsp;
-                <button
-                  className="btn btn-danger"
-                  onClick={() => seleccionarUsuario(Data, "Eliminar")}
-                >
-                  Eliminar
-                </button>
-              </td>
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Nombre del usuario</th>
+              <th>Contraseña </th>
+              <th>Tipo de rol </th>
             </tr>
-          ))}
-        </tbody>
-      </Table>
+          </thead>
+          <tbody>
+            {data.map((Data) => (
+              <tr key={Data.Id_usu}>
+                <td>{Data.Id_usu}</td>
+                <td>{Data.Usuario}</td>
+                <td>{Data.Contra}</td>
+                <td>{Data.Nom_rol}</td>
+                <td>
+                  <button
+                    className="btn btn-primary"
+                    onClick={() => seleccionarUsuario(Data, "Editar")}
+                  >
+                    Editar
+                  </button>
+                  &nbsp;
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => seleccionarUsuario(Data, "Eliminar")}
+                  >
+                    Eliminar
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
       </div>
-
 
       <Modal isOpen={modalInsertar}>
         <ModalHeader></ModalHeader>
@@ -412,15 +458,23 @@ const cerrarT = (e) => {
               onChange={handleChange}
               value={dataUsuario && dataUsuario.Contra}
             ></input>
-            <label>Identificación del Rol:</label>
+            <label>Tipo de rol:</label>
             <br></br>
-            <input
-              type="text"
-              className="form-control"
+            <select
+              class="form-select"
+              aria-label="Default select example"
               name="Idti_rol"
               onChange={handleChange}
-              value={dataUsuario && dataUsuario.Idti_rol}
-            ></input>
+            >
+              <option>
+                {dataUsuario && dataUsuario.Nom_rol}
+              </option>
+              {data.map((Data) => (
+                <option value={Data.Idti_rol}>
+                  {Data.Nom_rol}
+                </option>
+              ))}
+            </select>
           </div>
         </ModalBody>
         <ModalFooter>
