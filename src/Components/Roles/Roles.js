@@ -6,83 +6,45 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import Form from "react-bootstrap/Form";
 import "./Roles.css";
 import { useAuth } from "../firebase";
-import Cajeroimg from './Imagenes_R/cajero.webp'
-import Directorimg from './Imagenes_R/director.webp'
-import Gerenteimg from './Imagenes_R/gerente.webp'
-import Asesorimg from './Imagenes_R/asesor.webp'
-import Cajeropimg from './Imagenes_R/CajeroP.webp'
+import Cajeroimg from "./Imagenes_R/cajero.webp";
+import Directorimg from "./Imagenes_R/director.webp";
+import Gerenteimg from "./Imagenes_R/gerente.webp";
+import Asesorimg from "./Imagenes_R/asesor.webp";
+import Cajeropimg from "./Imagenes_R/CajeroP.webp";
 const Roles = () => {
   let History = useHistory();
 
   const currentUser = useAuth();
 
-  const validar = (e) => {
-      var validacion = document.getElementById('directorv');
-      if(validacion.value==0 || validacion.value=="")
-      {
-          alert("Selecciona una opcion para continuar");
-          validacion.focus();
-      } else
-      History.push("/Tabla_director");
-      validacion.focus();
-  }
-
-  const validar2 = (e) => {
-    var validacion = document.getElementById('gerentev');
-    if(validacion.value==0 || validacion.value=="")
-    {
-        alert("Selecciona una opcion para continuar");
-        validacion.focus();
-    } else
-    History.push("/Gerente");
-    validacion.focus();
-}
-
-const validar3 = (e) => {
-    var validacion = document.getElementById('Asesorv');
-    if(validacion.value==1 || validacion.value=="")
-    {
+  const validar3 = (e) => {
+    var validacion = document.getElementById("Asesorv");
+    if (validacion.value == 1 || validacion.value == "") {
       History.push("/Asesor");
       validacion.focus();
-    } else if (validacion.value==2 || validacion.value=="")
-          { History.push("/Asesor2");
-            validacion.focus();}
-    else if (validacion.value==3 || validacion.value=="")
-    { History.push("/Asesor3");
-            validacion.focus();}
-            else if (validacion.value==4 || validacion.value=="")
-    { History.push("/Asesor4");
-            validacion.focus();}
-            else if (validacion.value==5 || validacion.value=="")
-    { History.push("/Asesor5");
-            validacion.focus();}
-           else 
-           alert("Por favor seleccione una opcion"); 
-           validacion.focus();
-}
-
-const validar4 = (e) => {
-    var validacion = document.getElementById('cajerov');
-    if(validacion.value==0 || validacion.value=="")
-    {
-        alert("Selecciona una opcion para continuar");
-        validacion.focus();
-    } else
-    History.push("/Cajero");
+    } else if (validacion.value == 2 || validacion.value == "") {
+      History.push("/Asesor2");
+      validacion.focus();
+    } else if (validacion.value == 3 || validacion.value == "") {
+      History.push("/Asesor3");
+      validacion.focus();
+    } else if (validacion.value == 4 || validacion.value == "") {
+      History.push("/Asesor4");
+      validacion.focus();
+    } else if (validacion.value == 5 || validacion.value == "") {
+      History.push("/Asesor5");
+      validacion.focus();
+    } else alert("Por favor seleccione una opcion");
     validacion.focus();
-}
+  };
 
-const validar5 = (e) => {
-  var validacion = document.getElementById('CajeroP');
-  if(validacion.value==0 || validacion.value=="")
-  {
+  const validar4 = (e) => {
+    var validacion = document.getElementById("cajerov");
+    if (validacion.value == 0 || validacion.value == "") {
       alert("Selecciona una opcion para continuar");
       validacion.focus();
-  } else
-  History.push("/CajeroP");
-  validacion.focus();
-}
-
+    } else History.push("/Cajero");
+    validacion.focus();
+  };
 
   return (
     <div className="principal2">
@@ -95,7 +57,7 @@ const validar5 = (e) => {
               onClick={() => History.push("/")}
             ></i>
             <div className="contmodoo">
-            <input type="checkbox" id="input-dark-mode"></input>
+              <input type="checkbox" id="input-dark-mode"></input>
             </div>
           </div>
           <div className="Croles">
@@ -117,21 +79,19 @@ const validar5 = (e) => {
                     </li>
                     <div className="Formu">
                       <li>
-                        <Form.Select aria-label="Default select example" id="directorv" name="directorv">
-                          <option value="0" className="Lform">
-                            Selecciona el # de rol
-                          </option>
-                          <option value="1">Director #1</option>
-                          <option value="2">Director #2</option>
-                          <option value="3">Director #3</option>
-                          <option value="4">Director #4</option>
-                          <option value="5">Director #5</option>
-                        </Form.Select>
+                        <input
+                          type="text"
+                          className="form-control"
+                          value="Director Operativo"
+                          id="inputsdisables"
+                          readonly
+                          disabled
+                        ></input>
                       </li>
                     </div>
                     <br />
                     <li>
-                      <a onClick={validar} value="validar">
+                      <a onClick={() => History.push("/Tabla_director")} value="validar">
                         <img
                           className="ImagenF"
                           alt=""
@@ -160,21 +120,21 @@ const validar5 = (e) => {
                     </li>
                     <div className="Formu">
                       <li>
-                        <Form.Select aria-label="Default select example" id="gerentev" name="gerentov">
-                          <option value="0" className="Lform">
-                            Selecciona el # de rol
-                          </option>
-                          <option value="1">Gerente #1</option>
-                          <option value="2">Gerente #2</option>
-                          <option value="3">Gerente #3</option>
-                          <option value="4">Gerente #4</option>
-                          <option value="5">Gerente #5</option>
-                        </Form.Select>
+                        <li>
+                          <input
+                            type="text"
+                            className="form-control"
+                            value="Gerente"
+                            id="inputsdisables"
+                            readonly
+                            disabled
+                          ></input>
+                        </li>
                       </li>
                     </div>
                     <br />
                     <li>
-                      <a onClick={validar2} value="validar2">
+                      <a onClick={()=> History.push("/Gerente")} value="validar2">
                         <img
                           className="ImagenF"
                           alt=""
@@ -203,7 +163,11 @@ const validar5 = (e) => {
                     </li>
                     <div className="Formu">
                       <li>
-                        <Form.Select aria-label="Default select example" id="Asesorv" name="Asesorv">
+                        <Form.Select
+                          aria-label="Default select example"
+                          id="Asesorv"
+                          name="Asesorv"
+                        >
                           <option value="0" className="Lform">
                             Selecciona el # de rol
                           </option>
@@ -246,7 +210,11 @@ const validar5 = (e) => {
                     </li>
                     <div className="Formu">
                       <li>
-                        <Form.Select aria-label="Default select example"id="cajerov" name="cajerov">
+                        <Form.Select
+                          aria-label="Default select example"
+                          id="cajerov"
+                          name="cajerov"
+                        >
                           <option value="0" className="Lform">
                             Selecciona el # de rol
                           </option>
@@ -289,21 +257,19 @@ const validar5 = (e) => {
                     </li>
                     <div className="Formu">
                       <li>
-                        <Form.Select aria-label="Default select example" id="CajeroP" name="CajeroP">
-                          <option value="0" className="Lform">
-                            Selecciona el # de rol
-                          </option>
-                          <option value="1">Cajero Principal #1</option>
-                          <option value="2">Cajero Principal #2</option>
-                          <option value="3">Cajero Principal #3</option>
-                          <option value="4">Cajero Principal #4</option>
-                          <option value="5">Cajero Principal #5</option>
-                        </Form.Select>
+                        <input
+                          type="text"
+                          className="form-control"
+                          value="Cajero Principal"
+                          id="inputsdisables"
+                          readonly
+                          disabled
+                        ></input>
                       </li>
                     </div>
                     <br />
                     <li>
-                      <a onClick={validar5} value="validar5">
+                      <a onClick={()=> History.push("/CajeroP")} value="validar5">
                         <img
                           className="ImagenF2"
                           alt=""
