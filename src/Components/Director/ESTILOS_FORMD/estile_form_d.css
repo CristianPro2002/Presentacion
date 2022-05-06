@@ -94,6 +94,7 @@ color: rgb(0, 0, 0);
 }
 
 .Nombre_Usuario  input{
+  padding-left: 10px;
   outline-color: rgb(27, 85, 85);
   height: 40px;
  margin-left: 4%;
@@ -117,7 +118,7 @@ position:relative;
 
 .Contraseña_Usuario input{
 height: 40px;
-
+padding-left: 10px;
 margin-left: 4%;
   width: 92%;
   background: #C4F2F2;
@@ -431,8 +432,8 @@ color: rgb(255, 255, 255);
 
 @media (max-width:2000px){
   .icon_eye{
-  top:80%;
-  right: 70px ;
+  top:70%;
+  right: 30px ;
 
     
   }

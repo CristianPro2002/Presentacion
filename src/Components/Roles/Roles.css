@@ -29,9 +29,11 @@
 
 .ImagenF {
     filter: hue-rotate(209deg) brightness(200%);
+    cursor: pointer;
 }
 .ImagenF2 {
     filter: hue-rotate(209deg) brightness(200%);
+    cursor: pointer;
 }
 
 
@@ -60,7 +62,7 @@
 
 .Fl{
     
-    box-shadow: 2px 0px 20px rgb(41, 37, 37);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 border-radius: 10px;
 padding: 10px;
 background: #ffffff ;
