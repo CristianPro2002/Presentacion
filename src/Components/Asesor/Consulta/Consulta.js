@@ -7,6 +7,7 @@ const Consulta = () => {
   let History = useHistory();
   return (
     <div><button  onClick={() => History.push("/Asesor")}>salir</button>
+   
 
 <div className='Tabla'>
 <Table striped bordered hover >

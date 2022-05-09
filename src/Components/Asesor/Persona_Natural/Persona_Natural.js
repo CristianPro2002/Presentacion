@@ -199,9 +199,11 @@ const PersonaNatural = () => {
   return (
     <div className="padre">
       <div>
-        <Button onClick={() => History.push("/Asesor")} className="flechis">
-          {" 🡨 "}
-        </Button>
+        <i
+          class="bi bi-arrow-left-circle-fill"
+          id="cir2"
+          onClick={() => History.push("/Asesor")}
+        ></i>
       </div>
       <h1 className="titulo">PERSONA NATURAL</h1>
 
@@ -492,9 +494,15 @@ const PersonaNatural = () => {
               <option value="E.U">Estadounidense</option>
             </select>
             <label className="labelo">
-              <input type="radio" name="otro" className="" />
+              <input 
+              type="radio" 
+              name="otro" 
+              className="" />
               Otro, cuál?
-              <input type="text" name="cajon" className="inpuut" />
+              <input 
+              type="text" 
+              name="cajon" 
+              className="inpuut" />
             </label>
 
             <div className="contenedor4">
@@ -511,11 +519,17 @@ const PersonaNatural = () => {
               </label>
               <label className="cajon">
                 Bloque/Torre
-                <input type="number" name="bloq" className="input" />
+                <input 
+                type="number" 
+                name="bloq" 
+                className="input" />
               </label>
               <label className="cajon">
                 Apto/Casa
-                <input type="number" name="apca" className="input" />
+                <input 
+                type="number" 
+                name="apca" 
+                className="input" />
               </label>
             </div>
 
@@ -1144,27 +1158,22 @@ const PersonaNatural = () => {
                   <option value="EN">Envío/Recepción de giros y remesas</option>
                 </select>
                 <label className="labelo">
-                  <input 
-                  type="checkbox" 
-                  name="otroOp" 
-                  className="" />
+                  <input type="checkbox" name="otroOp" className="" />
                   Otro, cuál?
-                  <input 
-                  type="text" 
-                  name="Cual" 
-                  className="inpuut" />
+                  <input type="text" name="Cual" className="inpuut" />
                 </label>
               </div>
 
               <div className="contenedor4">
                 <label className="largos">
                   Nombre de la entidad
-                  <input 
-                  type="text" 
-                  name="nombre" 
-                  className="input"
-                  onChange={formik.handleChange}
-                  required />
+                  <input
+                    type="text"
+                    name="nombre"
+                    className="input"
+                    onChange={formik.handleChange}
+                    required
+                  />
                 </label>
 
                 <label className="largos">

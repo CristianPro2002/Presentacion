@@ -9,6 +9,7 @@ import imagen from "./Imagenes/Manager-icon.png";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { useHistory } from "react-router-dom";
 import ListGroup from "react-bootstrap/ListGroup";
+import MUIDataTable from "mui-datatables";
 
 export const Tabla_director = () => {
   const baseUrl = "http://localhost:8080/Banca/";
@@ -164,6 +165,23 @@ export const Tabla_director = () => {
       .setAttribute("style", "display:none;");
   };
 
+  const columns = [{
+    name:"Id_usu",
+    label:"ID"
+  },
+  {
+    name:"Usuario",
+    label:"Usuario"
+  },{
+    name:"Contra",
+    label:"Contraseña"
+  },{
+    name:"Nom_rol",
+    label:"Tipo de rol"
+  }]
+ 
+  const options = {filterType: 'checkbox', actionsColumnIndex:-1}
+
   return (
     <div>
       <div className="contemodal">
@@ -312,6 +330,29 @@ export const Tabla_director = () => {
           Agregar contacto
         </button>
       </div>
+
+      <MUIDataTable
+      title={"Lista de Usuarios"}
+      data={data}
+      columns={columns}
+      options={options}
+      actions={[
+        {
+            icon: 'edit',
+            tooltip: 'Editar usuario',
+            
+            onClick: data.map((Data) => (() => seleccionarUsuario(Data, "Editar")
+            ))
+      },
+      {
+        icon: 'delete',
+        tooltip: 'Eliminar Usuario',
+        onClick: data.map((Data) => (() => seleccionarUsuario(Data, "Eliminar")
+        ))
+  }]
+        
+    }
+      />
       <div className="conttable">
         <Table striped bordered hover>
           <thead>
@@ -493,8 +534,8 @@ export const Tabla_director = () => {
 
       <Modal isOpen={modalEliminar}>
         <ModalBody>
-          ¿Estás seguro que deseas eliminar el Usuario{" "}
-          {dataUsuario && dataUsuario.Usuario}?
+          ¿Estás seguro que deseas eliminar el Usuario <b>
+          {dataUsuario && dataUsuario.Usuario}</b>?
         </ModalBody>
         <ModalFooter>
           <button className="btn btn-danger" onClick={() => peticionDelete()}>

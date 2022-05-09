@@ -7,7 +7,9 @@ const Consulta2 = () => {
     let History = useHistory();
   return (
     <div><button  onClick={() => History.push("/Asesor")}>salir</button>
-
+      <button variant="primary" type="submit" size="lg" active>
+    Actualizar
+  </button>{' '}
     <div className='contenT'>
         <h1>Registros de persona natural: 1192719887</h1>
     </div>
