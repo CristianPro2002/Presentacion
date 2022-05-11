@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import {Input, Label, GrupoInput, LeyendaError, IconoValidacion} from './../Elementos/Formularios';
-import { faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle, faTimesCircle, faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 
-const ComponenteInput = ({estado, cambiarEstado, tipo, label, placeholder, name, leyendaError, expresionRegular, funcion}) => {
+const ComponenteInput = ({estado, cambiarEstado, tipo, label, placeholder, Referencia, name, leyendaError, expresionRegular, funcion}) => {
 	const onChange = (e) => {
 		cambiarEstado({...estado, campo: e.target.value});
 	}
@@ -34,9 +34,10 @@ const ComponenteInput = ({estado, cambiarEstado, tipo, label, placeholder, name,
 					onKeyUp={validacion}
 					onBlur={validacion}
 					valido={estado.valido}
+					ref={Referencia}
 				/>
 				<IconoValidacion 
-					icon={estado.valido === 'true' ? faCheckCircle : faTimesCircle}
+					icon={estado.valido === 'true' ? faCheckCircle : faEllipsisH}
 					valido={estado.valido}
 				/>
 			</GrupoInput>

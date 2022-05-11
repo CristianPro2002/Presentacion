@@ -3,7 +3,7 @@ import { Table } from "react-bootstrap";
 import axios from "axios";
 import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { faAlignCenter, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import imagen from "./Imagenes/Manager-icon.png";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -12,7 +12,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import MUIDataTable from "mui-datatables";
 
 export const Tabla_director = () => {
-  const baseUrl = "http://localhost:8080/Banca/";
+  const baseUrl = "http://localhost:8080/Banca/bd_crud/index.php";
 
   const [data, setData] = useState([]);
   const [modalInsertar, setModalInsetar] = useState(false);
@@ -117,10 +117,18 @@ export const Tabla_director = () => {
     peticionGet();
   }, [data]);
 
-  const [passwordshow, setpasswordshow] = useState(false);
-  const togglepasword = () => {
-    setpasswordshow(!passwordshow);
-  };
+  const [type,setType]=useState("text");
+  const [icon,setIcon]=useState(faEyeSlash);
+  const handleToggle=()=>{
+    if(type==='password'){
+      setIcon(faEye);
+      setType('text')
+    }
+    else{
+      setIcon(faEyeSlash);
+      setType('password');
+    }
+  }
 
   let History = useHistory();
 
@@ -289,8 +297,8 @@ export const Tabla_director = () => {
               </tbody>
             </Table>
 
-            <button onClick={cerrar}>Aceptar</button>
-            <button onClick={abrir2}>Cancelar</button>
+            <button onClick={cerrar} className="btn btn-success">Aceptar</button>
+            <button onClick={abrir2} className="btn btn-danger">Cancelar</button>
           </div>
         </div>
 
@@ -305,8 +313,8 @@ export const Tabla_director = () => {
           <div class="body__modal3">
             <h1 class="title__modal3">Solicitud #-Asesor#</h1>
             <input type="text" className="contenedortext" />
-            <button onClick={cerrarT}>Aceptar</button>
-            <button onClick={cerrar2}>Cancelar</button>
+            <button onClick={cerrarT} className="btn btn-success">Aceptar</button>
+            <button onClick={cerrar2} className="btn btn-danger">Cancelar</button>
           </div>
         </div>
       </div>
@@ -415,8 +423,8 @@ export const Tabla_director = () => {
                   ></input>
                 </div>
                 <div className="Contraseña_Usuario">
-                  <span class="icon_eye" onClick={togglepasword}>
-                    <FontAwesomeIcon icon={faEyeSlash} />
+                  <span class="icon_eye" onClick={handleToggle}>
+                    <FontAwesomeIcon icon={icon} />
                   </span>
                   <div className="Contraseña_label_usu">
                     <label>Contraseña:</label>
@@ -426,7 +434,7 @@ export const Tabla_director = () => {
                     className="input_color2"
                     id="input_contra_form"
                     placeholder="Enter the password"
-                    type={passwordshow ? "text" : "password"}
+                    type={type}
                     name="Contra"
                     onChange={handleChange}
                   ></input>

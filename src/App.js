@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Index from './Components/Index'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
@@ -31,7 +31,6 @@ import {Tabla_director} from './Components/Director/Tabla_director';
 import Consulta from './Components/Asesor/Consulta/Consulta'
 import Consulta2 from './Components/Asesor/Consulta/Consulta2'
 import CajeroP from './Components/CajeroP/CajeroP'
-
 
 function App() {
   return (

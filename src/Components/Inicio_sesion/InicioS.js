@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   Formulario,
   ContenedorBotonCentrado,
@@ -12,10 +12,31 @@ import "./InicioS.css";
 import logo from "../Inicio_sesion/Logo/logo.webp";
 import { useHistory } from "react-router-dom";
 
+
+const URL_LOGIN ="http://localhost:8080/banca/bd_sesion/login.php"
+
+const enviarData = async (url, datos)=>{
+
+  const resp = await fetch (url, {
+    method: 'POST',
+    body: JSON.stringify(datos),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+
+  //console.log(resp);
+  const json = await resp.json();
+  //console.log(json)
+
+  return json;
+}
+
 const App = () => {
   const [usuario, cambiarUsuario] = useState({ campo: "", valido: null });
   const [password, cambiarPassword] = useState({ campo: "", valido: null });
   const [formularioValido, cambiarFormularioValido] = useState(null);
+
   let history = useHistory();
 
   const expresiones = {
@@ -25,16 +46,43 @@ const App = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-
-    if (usuario.valido === "true" && password.valido === "true") {
-      cambiarFormularioValido(true);
-      cambiarUsuario({ campo: "", valido: "" });
-      cambiarPassword({ campo: "", valido: null });
-      history.push("/Roles");
-    } else {
-      cambiarFormularioValido(false);
-    }
   };
+
+  
+
+
+  
+  const refUsuario = useRef(null);
+
+  const refContraseña = useRef(null)
+
+  const handleLogin = async() =>{
+
+      const datos = {
+        "Usuario" : refUsuario.current.value,
+        "Contra" : refContraseña.current.value
+      }
+
+      //console.log(datos);
+      const respuestaJson = await enviarData( URL_LOGIN, datos );
+      console.log("respuesta desde el evento", respuestaJson);
+
+      const conectado = (respuestaJson.conectado)
+
+      if(conectado === true){
+        cambiarFormularioValido(true);
+        cambiarUsuario({ campo: "", valido: "" });
+        cambiarPassword({ campo: "", valido: null });
+        history.push("/Roles");}
+          else if (usuario.valido === "true" && password.valido === "true" ) {
+            cambiarFormularioValido(true);
+            cambiarUsuario({ campo: "", valido: "" });
+            cambiarPassword({ campo: "", valido: null });
+            history.push("/Roles");
+          }else {
+            cambiarFormularioValido(false);
+          }
+  }
 
   return (
     <div className="Fondo">
@@ -56,8 +104,8 @@ const App = () => {
                   label="Usuario"
                   placeholder="john123"
                   name="usuario"
-                  leyendaError="Usuario Incorrecto"
                   expresionRegular={expresiones.usuario}
+                  Referencia={refUsuario}
                 />
 
                 <Input
@@ -66,8 +114,8 @@ const App = () => {
                   tipo="password"
                   label="Contraseña"
                   name="password1"
-                  leyendaError="Contraseña Incorrecta"
                   expresionRegular={expresiones.password}
+                  Referencia={refContraseña}
                 />
 
                 {formularioValido === false && (
@@ -80,7 +128,7 @@ const App = () => {
                 )}
                 <br />
                 <ContenedorBotonCentrado>
-                  <Boton type="submit" className="Botonsito">
+                  <Boton type="submit" className="Botonsito" onClick={handleLogin}>
                     <span>Ingresar</span>
                   </Boton>
                 </ContenedorBotonCentrado>

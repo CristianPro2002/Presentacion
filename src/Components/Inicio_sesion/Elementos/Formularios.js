@@ -2,8 +2,8 @@ import styled, {css} from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const colores = {
-	borde: "#0075FF",
-	error: "#bb2929",
+	borde: "#19C764",
+	error: "#07A2F3",
 	exito: "#1ed12d"
 }
 
@@ -41,7 +41,7 @@ const Input = styled.input`
     
 
 	&:focus {
-		border: 3px solid ${colores.borde};
+		border: 3px solid ${colores.error};
 		outline: none;
 		box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
 	}
