@@ -31,11 +31,31 @@ import {Tabla_director} from './Components/Director/Tabla_director';
 import Consulta from './Components/Asesor/Consulta/Consulta'
 import Consulta2 from './Components/Asesor/Consulta/Consulta2'
 import CajeroP from './Components/CajeroP/CajeroP'
+import Cajero1 from './Components/Cajero/Cajero/Cajero'
+import Cajero2 from './Components/Cajero/Cajero/Cajero2'
+import Cajero3 from './Components/Cajero/Cajero/Cajero3'
+import Cajero4 from './Components/Cajero/Cajero/Cajero4'
+import Cajero5 from './Components/Cajero/Cajero/Cajero5'
 
 function App() {
   return (
     <Router>
       <Switch>
+      <Route path="/Cajero5">
+          <Cajero5/>
+        </Route>
+      <Route path="/Cajero4">
+          <Cajero4/>
+        </Route>
+      <Route path="/Cajero3">
+          <Cajero3/>
+        </Route>
+      <Route path="/Cajero2">
+          <Cajero2/>
+        </Route>
+        <Route path="/Cajero1">
+          <Cajero1/>
+        </Route>
       <Route path="/CajeroP">
           <CajeroP/>
         </Route>

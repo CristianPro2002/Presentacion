@@ -39,12 +39,26 @@ const Roles = () => {
 
   const validar4 = (e) => {
     var validacion = document.getElementById("cajerov");
-    if (validacion.value == 0 || validacion.value == "") {
-      alert("Selecciona una opcion para continuar");
+    if (validacion.value == 1 || validacion.value == "") {
+      History.push("/Cajero1");
       validacion.focus();
-    } else History.push("/Cajero");
+    } else if (validacion.value == 2 || validacion.value == "") {
+      History.push("/Cajero2");
+      validacion.focus();
+    } else if (validacion.value == 3 || validacion.value == "") {
+      History.push("/Cajero3");
+      validacion.focus();
+    } else if (validacion.value == 4 || validacion.value == "") {
+      History.push("/Cajero4");
+      validacion.focus();
+    } else if (validacion.value == 5 || validacion.value == "") {
+      History.push("/Cajero5");
+      validacion.focus();
+    } else alert("Por favor seleccione una opcion");
     validacion.focus();
   };
+
+
 
   return (
     <div className="principal2">

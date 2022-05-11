@@ -1,208 +1,102 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-.Contenedores {
-  width: 100%;
-  display: flex;
-  padding-top: 80px;
-}
-
-.Fondito {
-  columns: 1;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right top, #00eeffde, blue);
-}
-
-.TITULO {
-  font-family: "Roboto";
-  color: white;
-  margin: 30px;
-  font-size: 60px;
-  font-weight: 600;
-  text-align: center;
-}
-
-.Center {
-  text-align: center;
-}
-
-.ingreso:hover {
-  background: linear-gradient(
-    to right,
-    hsl(229, 100%, 55%),
-    #48cbff,
-    hsl(235, 75%, 47%)
-  );
-  color: white;
-}
 .Contenedor-Principal {
-  height: 100vh;
+  background-image: url("../Asesor//Imagens/peakpx.jpg");
+  text-align: center;
+ 
+  height: 180vh;
 }
 
-.title {
-  text-transform: uppercase;
-  font-size: 18px;
-  padding: 10px;
+.FLECHA {
+  height:50px;
+  width:50px;
+  -moz-border-radius:50px;
+  -webkit-border-radius:50px;
+  border-radius:50px;
+  font-weight: 900;
+  padding: 1px;
+  cursor: pointer;
+  color: white;
+  font-size: 120%;
+  background-color: 157ee0;
+  border-color: black;
 }
 
-.title2 {
-  text-transform: uppercase;
-  font-size: 30px;
+.Botones {
+  text-align: left;
+ 
 }
 
-@media screen and (max-width: 624px) {
-  .title2 {
-    text-transform: uppercase;
-    font-size: 20px;
-  }
+.hola{
+  width: 80%;
+  float: right;
 }
-
-@media screen and (max-width: 378px) {
-  .title2 {
-    text-transform: uppercase;
-    font-size: 18px;
-  }
-}
-
-.cursor {
-  cursor: no-drop;
-}
-
-.Contenedor1 {
-  width: 50%;
+.Contenedor1{
+  width: 20%;
   float: left;
-  padding: 50px;
 }
 
 .main-container {
   background-color: white;
+  
+
+  
   border-radius: 10px;
   border-width: 2px;
   display: inline-block;
-  padding: 30px;
+  padding: 35px;
   text-align: left;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-}
 
-.Container-2 {
-  padding: 50px;
-  width: 80%;
-  float: right;
-}
-
-@media screen and (max-width: 1340px) {
-  .Contenedor1 {
-    text-align: center;
-    width: 100%;
-  }
-  .Container-2 {
-    width: 100%;
-    display: grid;
-  }
-  .Contenedores {
-    width: 100%;
-    display: block;
-  }
 }
 
 .container2 {
-  padding: 11px;
   background-color: white;
+ box-shadow: 300px black;
   border-radius: 10px;
+  border-width: 2px;
+  display: inline-block;
+  padding: 35px;
   text-align: left;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  width: 50%;
 }
+
 
 .SELECT {
   width: 100%;
   height: 40px;
-  cursor: pointer;
 }
+
 
 .form-control:focus {
   z-index: 5;
 }
-.Datos {
-  text-align: center;
-  width: 70%;
-}
+
 .logo {
   width: 100px;
   height: 100px;
 }
-.Contenedor-logo-second {
-  width: 30%;
-  text-align: center;
+
+.logo-second {
+  width: 45px;
+  height: 45px;
   float: left;
-}
-
-.margin {
-  margin-top: 50px;
-}
-.Contenedores2 {
-  width: 100%;
-  display: flex;
-}
-
-@media screen and (max-width: 340px) {
-  .Contenedor-logo-second {
-    width: 100%;
-  }
-
-  .Datos {
-    width: 100%;
-  }
-  .Contenedores2 {
-    width: 100%;
-    display: block;
-  }
+  margin-top: 4px;
+  margin-left: 35px;
+  margin-right: 7px;
 }
 
 .BUTTON {
   text-align: center;
 }
 
-.BOTON2 {
-  border-radius: 5px;
-  border-style: ridge;
-}
 
-.BOTON2:hover {
-  background: linear-gradient(
-    to right,
-    hsl(229, 100%, 55%),
-    #3096be,
-    hsl(235, 75%, 47%)
-  );
-  color: white;
+.example-collapse-text {
+
 }
 
 .mb-5 {
   text-align: left;
 }
 
+
 .Contenedor2 {
   padding: 30px;
-}
-
-#circulito {
-  cursor: pointer;
-  font-size: 50px;
-  color: hsl(0, 0%, 100%);
-}
-
-@media screen and (max-width: 700px) {
-  #circulito {
-    cursor: pointer;
-    font-size: 35px;
-  }
-}
-#circulito:hover {
-  color: hsl(220, 7%, 24%);
-}
-
-.position-relative {
-  border-radius: 5px;
 }
