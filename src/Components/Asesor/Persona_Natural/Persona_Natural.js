@@ -75,6 +75,7 @@ const PersonaNatural = () => {
       Ciudadorigen: "",
       monedaE: "",
       Operation: "",
+      nombreentidad: "",
       tipodeproducto: "",
       Input: "",
       noProduct: "",
@@ -125,7 +126,7 @@ const PersonaNatural = () => {
         .max(10, `Maximo 10 caracteres`),
       CiuMun: Yup.string()
         .required("Este campo es obligatorio")
-        .max(10, `Maximo 10 caracteres`),
+        .max(15, `Maximo 15 caracteres`),
       depa: Yup.string()
         .required("Este campo es obligatorio")
         .max(15, `Maximo 15 caracteres`),
@@ -183,6 +184,7 @@ const PersonaNatural = () => {
       paisOrigen: Yup.string().required("Este campo es obligatorio"),
       Ciudadorigen: Yup.string().required("Este campo es obligatorio"),
       Operation: Yup.string().required("Este campo es obligatorio"),
+      nombreentidad: Yup.string().required("Este campo es obligatorio"),
       Input: Yup.string(),
       noProduct: Yup.string().required("Este campo es obligatorio"),
       Montmensu: Yup.string().required("Este campo es obligatorio"),
@@ -195,6 +197,15 @@ const PersonaNatural = () => {
       console.log(formData);
     },
   });
+  
+  const [documento, setdocumento] = useState("");
+  const [telefono, settelefono] = useState("");
+  const [celular, setcelular] = useState("");
+  const [ciu, setciu] = useState("");
+  const [telefono2, settelefono2] = useState("");
+  const [celular2, setcelular2] = useState("");
+
+
 
   return (
     <div className="padre">
@@ -320,8 +331,8 @@ const PersonaNatural = () => {
               name="Tdocumento"
               required
             >
-              <option selected value="s">
-                Seleccione su documento de identidad
+              <option value="">
+                Seleccione su tipo de documento de identidad
               </option>
               <option value="C.C">Cédula de Ciudadania</option>
               <option value="T.I">Tarjeta de identidad</option>
@@ -340,7 +351,14 @@ const PersonaNatural = () => {
                 name="documento"
                 className="input"
                 required
-                onChange={formik.handleChange}
+                /*onChange={formik.handleChange}*/
+                value={documento}
+                onChange={(event) => {
+
+                  if(event.target.value.length==11) return false;
+                  setdocumento(event?.target.value);
+                  
+                }} 
               />
             </label>
 
@@ -487,7 +505,7 @@ const PersonaNatural = () => {
               onChange={formik.handleChange}
               required
             >
-              <option selected value="s">
+              <option  value="">
                 Seleccione la nacionalidad
               </option>
               <option value="C">Colombiano</option>
@@ -583,8 +601,14 @@ const PersonaNatural = () => {
                   type="number"
                   name="Tel"
                   className="input"
-                  required
-                  onChange={formik.handleChange}
+                  required              
+                  /*onChange={formik.handleChange}*/
+                  value={telefono}
+                  onChange={(event) => {
+  
+                    if(event.target.value.length==8) return false;
+                    settelefono(event?.target.value);
+                  }} 
                 />
               </label>
               <label className="cajon">
@@ -594,7 +618,14 @@ const PersonaNatural = () => {
                   name="Cel"
                   className="input"
                   required
-                  onChange={formik.handleChange}
+                  /*onChange={formik.handleChange}*/
+                  value={celular}
+                  onChange={(event) => {
+
+                  if(event.target.value.length==11) return false;
+                  setcelular(event?.target.value);
+                }}
+                
                 />
               </label>
             </div>
@@ -632,7 +663,7 @@ const PersonaNatural = () => {
                 onChange={formik.handleChange}
                 required
               >
-                <option selected value="s">
+                <option  value="">
                   Seleccione su profesión
                 </option>
 
@@ -676,7 +707,13 @@ const PersonaNatural = () => {
                   type="number"
                   name="Cciiu"
                   className="input"
-                  onChange={formik.handleChange}
+                  /*onChange={formik.handleChange}*/
+                  value={ciu}       
+                 onChange={(event) => {
+
+                  if(event.target.value.length==5) return false;
+                  setciu(event?.target.value);
+                }} 
                 />
               </label>
               <label className="cajoncitos">
@@ -765,7 +802,13 @@ const PersonaNatural = () => {
                     type="number"
                     name="Phone"
                     className="input"
-                    onChange={formik.handleChange}
+                    /*onChange={formik.handleChange}*/
+                    value={telefono2}
+                  onChange={(event) => {
+  
+                    if(event.target.value.length==8) return false;
+                    settelefono2(event?.target.value);
+                  }} 
                     required
                   />
                 </label>
@@ -784,8 +827,13 @@ const PersonaNatural = () => {
                   <input
                     type="number"
                     name="Cell"
-                    className="input"
-                    onChange={formik.handleChange}
+                    className="input"                
+                   /* onChange={formik.handleChange}*/
+                    value={celular2}
+                    onChange={(event)  => {
+                    if(event.target.value.length==11) return false;
+                    setcelular2(event?.target.value);
+                  }} 
                     required
                   />
                 </label>
@@ -1080,14 +1128,14 @@ const PersonaNatural = () => {
                 </label>
                 <input
                   type="text"
-                  name="paisorigen"
+                  name="paisOrigen"
                   className="inpuut"
                   required
                   onChange={formik.handleChange}
                 />
-                <input
+                 <input
                   type="text"
-                  name="ciudadorigen"
+                  name="Ciudadorigen"
                   className="inpuut"
                   required
                   onChange={formik.handleChange}
@@ -1142,11 +1190,11 @@ const PersonaNatural = () => {
                 </label>
                 <select
                   className="seleccion"
-                  name="operation"
+                  name="Operation"
                   onChange={formik.handleChange}
                   required
                 >
-                  <option selected value="u">
+                  <option  value="">
                     Seleccione la operación
                   </option>
                   <option value="E.X">Exportador e importador</option>
@@ -1157,8 +1205,9 @@ const PersonaNatural = () => {
                   <option value="IM">Importador</option>
                   <option value="EN">Envío/Recepción de giros y remesas</option>
                 </select>
+
                 <label className="labelo">
-                  <input type="checkbox" name="otroOp" className="" />
+                  <input type="radio" name="otroOp" className="" />
                   Otro, cuál?
                   <input type="text" name="Cual" className="inpuut" />
                 </label>
@@ -1169,7 +1218,7 @@ const PersonaNatural = () => {
                   Nombre de la entidad
                   <input
                     type="text"
-                    name="nombre"
+                    name="nombreentidad"
                     className="input"
                     onChange={formik.handleChange}
                     required

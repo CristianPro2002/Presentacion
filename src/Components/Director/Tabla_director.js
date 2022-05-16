@@ -14,7 +14,8 @@ import MUIDataTable from "mui-datatables";
 export const Tabla_director = () => {
   const baseUrl = "http://localhost:8080/Banca/bd_crud/index.php";
 
-  const [data, setData] = useState([]);
+  const [data2, setData2] = useState([]);
+  const [dato, setDato] = useState([]);
   const [modalInsertar, setModalInsetar] = useState(false);
   const [modalEditar, setModalEditar] = useState(false);
   const [modalEliminar, setModalEliminar] = useState(false);
@@ -27,9 +28,24 @@ export const Tabla_director = () => {
 
   const peticionGet = async () => {
     await axios.get(baseUrl).then((response) => {
-      setData(response.data);
+      setData2(response.data);
     });
   };
+
+
+
+
+useEffect(() => {
+  peticionGet2();
+}, [dato]);
+
+const peticionGet2 = async () => {
+  var f = new FormData();
+  f.append("METHOD", "POSTO");
+  await axios.post(baseUrl, f).then((response) => {
+    setDato(response.data);
+  });
+};
 
   const peticionPost = async () => {
     var f = new FormData();
@@ -39,10 +55,12 @@ export const Tabla_director = () => {
     f.append("Idti_rol", dataUsuario.Idti_rol);
     f.append("METHOD", "POST");
     await axios.post(baseUrl, f).then((response) => {
-      setData(data.concat(response.data));
+      setData2(data2.concat(response.data));
       abrirCerrarModalInsertar();
     });
   };
+
+
 
   const abrirCerrarModalInsertar = () => {
     setModalInsetar(!modalInsertar);
@@ -73,7 +91,7 @@ export const Tabla_director = () => {
     await axios
       .post(baseUrl, f, { params: { Id_usu: dataUsuario.Id_usu } })
       .then((response) => {
-        var dataNueva = data;
+        var dataNueva = data2;
         dataNueva.map((Usuario) => {
           if (Usuario.Id_usu === dataUsuario.Id_usu) {
             Usuario.Id_usu = dataUsuario.Id_usu;
@@ -82,7 +100,7 @@ export const Tabla_director = () => {
             Usuario.Idti_rol = dataUsuario.Idti_rol;
           }
         });
-        setData(dataNueva);
+        setData2(dataNueva);
         abrirCerrarModalEditar();
       })
       .catch((error) => {
@@ -103,8 +121,8 @@ export const Tabla_director = () => {
     await axios
       .post(baseUrl, f, { params: { Id_usu: dataUsuario.Id_usu } })
       .then((response) => {
-        setData(
-          data.filter((Usuario) => Usuario.Id_usu !== dataUsuario.Id_usu)
+        setData2(
+          data2.filter((Usuario) => Usuario.Id_usu !== dataUsuario.Id_usu)
         );
         abrirCerrarModalEliminar();
       })
@@ -115,7 +133,7 @@ export const Tabla_director = () => {
 
   useEffect(() => {
     peticionGet();
-  }, [data]);
+  }, [data2]);
 
   const [type,setType]=useState("text");
   const [icon,setIcon]=useState(faEyeSlash);
@@ -341,7 +359,7 @@ export const Tabla_director = () => {
 
       <MUIDataTable
       title={"Lista de Usuarios"}
-      data={data}
+      data={data2}
       columns={columns}
       options={options}
       actions={[
@@ -349,13 +367,13 @@ export const Tabla_director = () => {
             icon: 'edit',
             tooltip: 'Editar usuario',
             
-            onClick: data.map((Data) => (() => seleccionarUsuario(Data, "Editar")
+            onClick: data2.map((Data) => (() => seleccionarUsuario(Data, "Editar")
             ))
       },
       {
         icon: 'delete',
         tooltip: 'Eliminar Usuario',
-        onClick: data.map((Data) => (() => seleccionarUsuario(Data, "Eliminar")
+        onClick: data2.map((Data) => (() => seleccionarUsuario(Data, "Eliminar")
         ))
   }]
         
@@ -372,7 +390,7 @@ export const Tabla_director = () => {
             </tr>
           </thead>
           <tbody>
-            {data.map((Data) => (
+            {data2.map((Data) => (
               <tr key={Data.Id_usu}>
                 <td>{Data.Id_usu}</td>
                 <td>{Data.Usuario}</td>
@@ -450,11 +468,9 @@ export const Tabla_director = () => {
                     {" "}
                     Tipo de rol
                     <option value="">Seleccione un rol </option>
-                    <option value="1">Director </option>
-                    <option value="2">Asesor</option>
-                    <option value="3">Gerente</option>
-                    <option value="4">Cajero</option>
-                    <option value="5">Cajero Principal</option>
+                    {dato.map((Usuario) => (
+                    <option value={Usuario.Idti_rol}>{Usuario.Nom_rol}</option>
+                    ))}
                   </select>
                 </div>
 
@@ -518,9 +534,9 @@ export const Tabla_director = () => {
               <option>
                 {dataUsuario && dataUsuario.Nom_rol}
               </option>
-              {data.map((Data) => (
-                <option value={Data.Idti_rol}>
-                  {Data.Nom_rol}
+              {dato.map((Usuario) => (
+                <option value={Usuario.Idti_rol}>
+                  {Usuario.Nom_rol}
                 </option>
               ))}
             </select>

@@ -8,12 +8,23 @@ if($_SERVER['REQUEST_METHOD']=='GET'){
     if(isset($_GET['Id_usu'])){
         $query="select * from reg_usu where Id_usu=".$_GET['Id_usu'];
         $resultado=metodoGet($query);
-        echo json_encode($resultado->fetch(PDO::FETCH_ASSOC));
-    }else{
-        $query="select * from reg_usu, tip_rol where tip_rol.Idti_rol=reg_usu.Idti_rol";
+         echo json_encode($resultado->fetch(PDO::FETCH_ASSOC));
+     }else{
+         $query="select * from reg_usu, tip_rol where tip_rol.Idti_rol=reg_usu.Idti_rol";
         $resultado=metodoGet($query);
         echo json_encode($resultado->fetchAll()); 
-    }
+        
+     }
+    header("HTTP/1.1 200 OK");
+     exit();
+}
+
+
+if($_POST['METHOD']=='POSTO'){
+    unset($_POST['METHOD']);
+    $query="select * from tip_rol";
+    $resultado=metodoGet($query);
+    echo json_encode($resultado->fetchAll());
     header("HTTP/1.1 200 OK");
     exit();
 }
