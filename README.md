@@ -5,10 +5,10 @@ Instalación
 1 Paso
 1 forma. Dar clic en Code y luego en Donwload Zip 2 forma. Crear una carpeta, ingresar a git bash y ejecutar
 
-git clone https://github.com/Logicainformatica18/bodegainformatica.git
+git clone https://github.com/CristianPro2002/Presentacion.git
 2 Paso
-Crear una base de datos con el nombre bodega
-Luego restaurar la base de datos "BASE DE DATOS.sql"
+Crear una base de datos con el nombre cancaadsi
+Luego restaurar la base de datos "bancaadsi.sql"
 3 Paso
 Configurar la contraseña en el archivo Conexion.php
 Configurar el usuario en el archivo Conexion.php
