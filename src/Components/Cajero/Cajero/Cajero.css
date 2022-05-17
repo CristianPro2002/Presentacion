@@ -156,14 +156,17 @@
 }
 
 .BUTTON {
-  text-align: center;
+ text-align: center;
 }
 
 .BOTON2 {
   border-radius: 5px;
   border-style: ridge;
+  
 }
-
+#Caje{
+  display: none;
+}
 .BOTON2:hover {
   background: linear-gradient(
     to right,
@@ -197,3 +200,26 @@
 .position-relative {
   border-radius: 5px;
 }
+
+.Cajero{
+  display: none;
+}
+
+.button {
+  background-color: #fa8d20;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.button:hover{
+  background: linear-gradient(
+    to right,
+    hsl(34, 100%, 55%),
+    #ff8809,
+    hsl(30, 93%, 52%)
+  );
+  color: white;
+}
+

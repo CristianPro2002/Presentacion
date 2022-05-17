@@ -10,6 +10,10 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import { useHistory } from "react-router-dom";
 import ListGroup from "react-bootstrap/ListGroup";
 import MUIDataTable from "mui-datatables";
+import ModalEliminar from "../Modal/Meliminar";
+import ModalEditar from "../Modal/Meditar";
+import ModalInsertar from "../Modal/Minsertar"
+import ModalSolicitud from "../Modal/Msolicitud"
 
 export const Tabla_director = () => {
   const baseUrl = "http://localhost:8080/Banca/bd_crud/index.php";
@@ -32,20 +36,17 @@ export const Tabla_director = () => {
     });
   };
 
+  useEffect(() => {
+    peticionGet2();
+  }, [dato]);
 
-
-
-useEffect(() => {
-  peticionGet2();
-}, [dato]);
-
-const peticionGet2 = async () => {
-  var f = new FormData();
-  f.append("METHOD", "POSTO");
-  await axios.post(baseUrl, f).then((response) => {
-    setDato(response.data);
-  });
-};
+  const peticionGet2 = async () => {
+    var f = new FormData();
+    f.append("METHOD", "POSTO");
+    await axios.post(baseUrl, f).then((response) => {
+      setDato(response.data);
+    });
+  };
 
   const peticionPost = async () => {
     var f = new FormData();
@@ -59,8 +60,6 @@ const peticionGet2 = async () => {
       abrirCerrarModalInsertar();
     });
   };
-
-
 
   const abrirCerrarModalInsertar = () => {
     setModalInsetar(!modalInsertar);
@@ -135,18 +134,17 @@ const peticionGet2 = async () => {
     peticionGet();
   }, [data2]);
 
-  const [type,setType]=useState("text");
-  const [icon,setIcon]=useState(faEyeSlash);
-  const handleToggle=()=>{
-    if(type==='password'){
+  const [type, setType] = useState("text");
+  const [icon, setIcon] = useState(faEyeSlash);
+  const handleToggle = () => {
+    if (type === "password") {
       setIcon(faEye);
-      setType('text')
-    }
-    else{
+      setType("text");
+    } else {
       setIcon(faEyeSlash);
-      setType('password');
+      setType("password");
     }
-  }
+  };
 
   let History = useHistory();
 
@@ -191,22 +189,26 @@ const peticionGet2 = async () => {
       .setAttribute("style", "display:none;");
   };
 
-  const columns = [{
-    name:"Id_usu",
-    label:"ID"
-  },
-  {
-    name:"Usuario",
-    label:"Usuario"
-  },{
-    name:"Contra",
-    label:"Contraseña"
-  },{
-    name:"Nom_rol",
-    label:"Tipo de rol"
-  }]
- 
-  const options = {filterType: 'checkbox', actionsColumnIndex:-1}
+  const columns = [
+    {
+      name: "Id_usu",
+      label: "ID",
+    },
+    {
+      name: "Usuario",
+      label: "Usuario",
+    },
+    {
+      name: "Contra",
+      label: "Contraseña",
+    },
+    {
+      name: "Nom_rol",
+      label: "Tipo de rol",
+    },
+  ];
+
+  const options = { filterType: "checkbox", actionsColumnIndex: -1 };
 
   return (
     <div>
@@ -223,57 +225,7 @@ const peticionGet2 = async () => {
         </div>
         <div className="background__blur"></div>
 
-        <div className="container__modal">
-          <div className="header__modal">
-            <label for="evento-click">X</label>
-          </div>
-
-          <div className="body__modal">
-            <h1 className="title__modal">Solicitudes</h1>
-            <ListGroup className="listassoli">
-              <ListGroup.Item
-                action
-                onClick={abrir}
-                className="listascss"
-                id="botonV"
-              >
-                Solicitud #1-Asesor1
-              </ListGroup.Item>
-              <ListGroup.Item
-                action
-                onClick={abrir}
-                className="listascss"
-                id="botonV"
-              >
-                Solicitud #3-Asesor1
-              </ListGroup.Item>
-              <ListGroup.Item
-                action
-                onClick={abrir}
-                className="listascss"
-                id="botonV"
-              >
-                Solicitud #3-Asesor2
-              </ListGroup.Item>
-              <ListGroup.Item
-                action
-                onClick={abrir}
-                className="listascss"
-                id="botonV"
-              >
-                Solicitud #4-Asesor4
-              </ListGroup.Item>
-              <ListGroup.Item
-                action
-                onClick={abrir}
-                className="listascss"
-                id="botonV"
-              >
-                Solicitud #5-Asesor3
-              </ListGroup.Item>
-            </ListGroup>
-          </div>
-        </div>
+       
 
         <div class="container__modal2" id="ventana_modal">
           <input type="checkbox" id="evento-click2" />
@@ -315,8 +267,12 @@ const peticionGet2 = async () => {
               </tbody>
             </Table>
 
-            <button onClick={cerrar} className="btn btn-success">Aceptar</button>
-            <button onClick={abrir2} className="btn btn-danger">Cancelar</button>
+            <button onClick={cerrar} className="btn btn-success">
+              Aceptar
+            </button>
+            <button onClick={abrir2} className="btn btn-danger">
+              Cancelar
+            </button>
           </div>
         </div>
 
@@ -331,8 +287,12 @@ const peticionGet2 = async () => {
           <div class="body__modal3">
             <h1 class="title__modal3">Solicitud #-Asesor#</h1>
             <input type="text" className="contenedortext" />
-            <button onClick={cerrarT} className="btn btn-success">Aceptar</button>
-            <button onClick={cerrar2} className="btn btn-danger">Cancelar</button>
+            <button onClick={cerrarT} className="btn btn-success">
+              Aceptar
+            </button>
+            <button onClick={cerrar2} className="btn btn-danger">
+              Cancelar
+            </button>
           </div>
         </div>
       </div>
@@ -358,26 +318,27 @@ const peticionGet2 = async () => {
       </div>
 
       <MUIDataTable
-      title={"Lista de Usuarios"}
-      data={data2}
-      columns={columns}
-      options={options}
-      actions={[
-        {
-            icon: 'edit',
-            tooltip: 'Editar usuario',
-            
-            onClick: data2.map((Data) => (() => seleccionarUsuario(Data, "Editar")
-            ))
-      },
-      {
-        icon: 'delete',
-        tooltip: 'Eliminar Usuario',
-        onClick: data2.map((Data) => (() => seleccionarUsuario(Data, "Eliminar")
-        ))
-  }]
-        
-    }
+        title={"Lista de Usuarios"}
+        data={data2}
+        columns={columns}
+        options={options}
+        actions={[
+          {
+            icon: "edit",
+            tooltip: "Editar usuario",
+
+            onClick: data2.map(
+              (Data) => () => seleccionarUsuario(Data, "Editar")
+            ),
+          },
+          {
+            icon: "delete",
+            tooltip: "Eliminar Usuario",
+            onClick: data2.map(
+              (Data) => () => seleccionarUsuario(Data, "Eliminar")
+            ),
+          },
+        ]}
       />
       <div className="conttable">
         <Table striped bordered hover>
@@ -417,162 +378,35 @@ const peticionGet2 = async () => {
         </Table>
       </div>
 
-      <Modal isOpen={modalInsertar}>
-        <ModalHeader></ModalHeader>
-        <ModalBody>
-          <div className="contenedor_padre_director">
-            <div className="container_formulario_director">
-              <form>
-                <div className="titulo_creacion_usu">
-                  <img className="img_usu_creacion" src={imagen}></img>
-                  <h3>Creacion de Usuarios</h3>
-                </div>
-                <div className="Nombre_Usuario">
-                  <div className="label_usu">
-                    <label>Usuario:</label>
-                  </div>
-                  <input
-                    required
-                    className="input_color1"
-                    placeholder="Enter the user name"
-                    type="text"
-                    name="Usuario"
-                    onChange={handleChange}
-                  ></input>
-                </div>
-                <div className="Contraseña_Usuario">
-                  <span class="icon_eye" onClick={handleToggle}>
-                    <FontAwesomeIcon icon={icon} />
-                  </span>
-                  <div className="Contraseña_label_usu">
-                    <label>Contraseña:</label>
-                  </div>
-                  <input
-                    required
-                    className="input_color2"
-                    id="input_contra_form"
-                    placeholder="Enter the password"
-                    type={type}
-                    name="Contra"
-                    onChange={handleChange}
-                  ></input>
-                </div>
-                <div id="arreglos_desple">
-                  <select
-                    className="nashe"
-                    required
-                    name="Idti_rol"
-                    id="select_sin_react"
-                    onChange={handleChange}
-                  >
-                    {" "}
-                    Tipo de rol
-                    <option value="">Seleccione un rol </option>
-                    {dato.map((Usuario) => (
-                    <option value={Usuario.Idti_rol}>{Usuario.Nom_rol}</option>
-                    ))}
-                  </select>
-                </div>
+      <ModalSolicitud
+      abrir={abrir}
+      />
 
-                <div className="center_button">
-                  <button className="btn third" onClick={() => peticionPost()}>
-                    Crear
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </ModalBody>
-        <ModalFooter>
-          <button
-            className="btn btn-danger"
-            onClick={() => abrirCerrarModalInsertar()}
-          >
-            Cancelar
-          </button>
-        </ModalFooter>
-      </Modal>
+     <ModalInsertar
+     handleChange={handleChange}
+     handleToggle={handleToggle}
+     icon={icon}
+     type={type}
+     dato={dato}
+     peticionPost={peticionPost}
+     abrirCerrarModalInsertar={abrirCerrarModalInsertar}
+     modalInsertar={modalInsertar}
+     />
+      <ModalEditar 
+      dataUsuario={dataUsuario}
+      handleChange={handleChange}
+      modalEditar={modalEditar} 
+      dato={dato}
+      peticionPut={peticionPut}
+      abrirCerrarModalEditar={abrirCerrarModalEditar}
+      />
 
-      <Modal isOpen={modalEditar}>
-        <ModalHeader>Editar Contacto</ModalHeader>
-        <ModalBody>
-          <div className="form-group">
-            <label className="Esconder">ID:</label>
-            <input
-              type="text"
-              className="form-control Esconder"
-              name="Id_usu"
-              onChange={handleChange}
-              value={dataUsuario && dataUsuario.Id_usu}
-            ></input>
-            <label>Usuario:</label>
-            <br></br>
-            <input
-              type="text"
-              className="form-control"
-              name="Usuario"
-              onChange={handleChange}
-              value={dataUsuario && dataUsuario.Usuario}
-            ></input>
-            <label>Contraseña:</label>
-            <br></br>
-            <input
-              type="text"
-              className="form-control"
-              name="Contra"
-              onChange={handleChange}
-              value={dataUsuario && dataUsuario.Contra}
-            ></input>
-            <label>Tipo de rol:</label>
-            <br></br>
-            <select
-              class="form-select"
-              aria-label="Default select example"
-              name="Idti_rol"
-              onChange={handleChange}
-            >
-              <option>
-                {dataUsuario && dataUsuario.Nom_rol}
-              </option>
-              {dato.map((Usuario) => (
-                <option value={Usuario.Idti_rol}>
-                  {Usuario.Nom_rol}
-                </option>
-              ))}
-            </select>
-          </div>
-        </ModalBody>
-        <ModalFooter>
-          <button className="btn btn-primary" onClick={() => peticionPut()}>
-            Insertar
-          </button>
-          &nbsp;
-          <button
-            className="btn btn-danger"
-            onClick={() => abrirCerrarModalEditar()}
-          >
-            Cancelar
-          </button>
-        </ModalFooter>
-      </Modal>
-
-      <Modal isOpen={modalEliminar}>
-        <ModalBody>
-          ¿Estás seguro que deseas eliminar el Usuario <b>
-          {dataUsuario && dataUsuario.Usuario}</b>?
-        </ModalBody>
-        <ModalFooter>
-          <button className="btn btn-danger" onClick={() => peticionDelete()}>
-            Sí
-          </button>
-          <button
-            className="btn btn-secondary"
-            onClick={() => abrirCerrarModalEliminar()}
-          >
-            No
-          </button>
-        </ModalFooter>
-      </Modal>
+      <ModalEliminar
+        modalEliminar={modalEliminar}
+        dataUsuario={dataUsuario}
+        peticionDelete={peticionDelete}
+        abrirCerrarModalEliminar={abrirCerrarModalEliminar}
+      />
     </div>
   );
 };

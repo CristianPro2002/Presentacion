@@ -5,30 +5,18 @@ include './BD.php';
 header('Access-Control-Allow-Origin: *');
 
 if($_SERVER['REQUEST_METHOD']=='GET'){
-    if(isset($_GET['Id_usu'])){
-        $query="select * from reg_usu where Id_usu=".$_GET['Id_usu'];
+    if(isset($_GET['Id_act'])){
+        $query="select * from prueba where Id_act=".$_GET['Id_act'];
         $resultado=metodoGet($query);
-         echo json_encode($resultado->fetch(PDO::FETCH_ASSOC));
-     }else{
-         $query="select * from reg_usu, tip_rol where tip_rol.Idti_rol=reg_usu.Idti_rol";
+        echo json_encode($resultado->fetch(PDO::FETCH_ASSOC));
+    }else{
+        $query="select * from prueba where Id_act";
         $resultado=metodoGet($query);
         echo json_encode($resultado->fetchAll()); 
-        
-     }
-    header("HTTP/1.1 200 OK");
-     exit();
-}
-
-
-if($_POST['METHOD']=='POSTO'){
-    unset($_POST['METHOD']);
-    $query="select * from tip_rol";
-    $resultado=metodoGet($query);
-    echo json_encode($resultado->fetchAll());
+    }
     header("HTTP/1.1 200 OK");
     exit();
 }
-
 
 if($_POST['METHOD']=='POST'){
     unset($_POST['METHOD']);
@@ -43,6 +31,22 @@ if($_POST['METHOD']=='POST'){
     header("HTTP/1.1 200 OK");
     exit();
 }
+
+if($_POST['METHOD']=='POSET'){
+    unset($_POST['METHOD']);
+    $Id_act=$_POST['Id_act'];
+    $Fecha_act=$_POST['Fecha_act'];
+    $Tip_pro=$_POST['Tip_pro'];
+    $Valor_act=$_POST['Valor_act'];
+    $Cajero=$_POST['Cajero'];
+    $query="insert into prueba(Id_act, Fecha_act, Tip_pro, Valor_act, Cajero) values ('$Id_act', '$Fecha_act', '$Tip_pro','$Valor_act', '$Cajero')";
+    $queryAutoIncrement="select MAX(Id_act) as Id_act from frameworks";
+    $resultado=metodoPost($query, $queryAutoIncrement);
+    echo json_encode($resultado);
+    header("HTTP/1.1 200 OK");
+    exit();
+}
+
 
 if($_POST['METHOD']=='PUT'){
     unset($_POST['METHOD']);
