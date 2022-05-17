@@ -36,11 +36,15 @@ import Cajero2 from './Components/Cajero/Cajero/Cajero2'
 import Cajero3 from './Components/Cajero/Cajero/Cajero3'
 import Cajero4 from './Components/Cajero/Cajero/Cajero4'
 import Cajero5 from './Components/Cajero/Cajero/Cajero5'
+import Tabla from './Components/Cajero/Cajero/Tabla'
 
 function App() {
   return (
     <Router>
       <Switch>
+      <Route path="/Tabla">
+          <Tabla/>
+        </Route>
       <Route path="/Cajero5">
           <Cajero5/>
         </Route>
