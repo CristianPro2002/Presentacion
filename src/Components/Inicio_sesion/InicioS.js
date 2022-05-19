@@ -11,6 +11,8 @@ import Input from "./ComponentesInicio/Input";
 import "./InicioS.css";
 import logo from "../Inicio_sesion/Logo/logo.webp";
 import { useHistory } from "react-router-dom";
+import  Roles from "../Roles/Roles"
+import reactDom from "react-dom";
 
 
 const URL_LOGIN ="http://localhost:8080/banca/bd_sesion/login.php"
@@ -48,27 +50,23 @@ const App = () => {
     e.preventDefault();
   };
 
-  
 
-
-  
   const refUsuario = useRef(null);
 
   const refContraseña = useRef(null)
 
   const handleLogin = async() =>{
-
       const datos = {
         "Usuario" : refUsuario.current.value,
         "Contra" : refContraseña.current.value
       }
-
       //console.log(datos);
       const respuestaJson = await enviarData( URL_LOGIN, datos );
       console.log("respuesta desde el evento", respuestaJson);
-
+     
+      const Usuario = (respuestaJson.Usuario)
+      console.log(Usuario)
       const conectado = (respuestaJson.conectado)
-
       if(conectado === true){
         cambiarFormularioValido(true);
         cambiarUsuario({ campo: "", valido: "" });
@@ -81,9 +79,10 @@ const App = () => {
             history.push("/Roles");
           }else {
             cambiarFormularioValido(false);
-          }
+          } 
   }
 
+  
   return (
     <div className="Fondo">
       <div className="Fondo2">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Button from "react-bootstrap/Button";
 import { useHistory } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -11,7 +11,10 @@ import Directorimg from "./Imagenes_R/director.webp";
 import Gerenteimg from "./Imagenes_R/gerente.webp";
 import Asesorimg from "./Imagenes_R/asesor.webp";
 import Cajeropimg from "./Imagenes_R/CajeroP.webp";
+
 const Roles = () => {
+
+
   let History = useHistory();
 
   const currentUser = useAuth();
@@ -59,7 +62,6 @@ const Roles = () => {
   };
 
 
-
   return (
     <div className="principal2">
       <div className="fondo" id="dark-mode">
@@ -76,7 +78,7 @@ const Roles = () => {
           </div>
           <div className="Croles">
             <div className="row" id="rows">
-              <h3 className="regis">Registrado con: {currentUser?.email} </h3>
+              <h3 className="regis">Registrado con: {"hola"} </h3>
               <h1 className="TituloR">Escoge tu rol</h1>
               <div className="colsito1" id="colsito">
                 <div className="Fl">

@@ -3,7 +3,7 @@ $pdo=null;
 $host="localhost";
 $user="root";
 $password="";
-$bd="sena";
+$bd="banca4.0";
 
 function conectar(){
     try{

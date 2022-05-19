@@ -9,7 +9,7 @@ function conectarBD(){
   $servidor = "localhost";
   $usuario = "root";
   $password = "";
-  $bd = "sena";
+  $bd = "banca4.0";
   //$bd = "cajaherr_datos";
   
 

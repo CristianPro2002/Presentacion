@@ -10,7 +10,6 @@ import Roles from './Components/Roles/Roles';
 import Director from './Components/Director/Director'
 import Gerente from './Components/Gerente/Gerente'
 import Asesor from './Components/Asesor/Asesor'
-import Cajero from './Components/Cajero/Cajero'
 import PersonaJuridica from './Components/Asesor/Persona_Juridica/PersonaJuridica'
 import PersonaNatural from './Components/Asesor/Persona_Natural/Persona_Natural'
 import Formulario_Director from './Components/Director/Formulario_Director'
@@ -31,12 +30,12 @@ import {Tabla_director} from './Components/Director/Tabla_director';
 import Consulta from './Components/Asesor/Consulta/Consulta'
 import Consulta2 from './Components/Asesor/Consulta/Consulta2'
 import CajeroP from './Components/CajeroP/CajeroP'
-import Cajero1 from './Components/Cajero/Cajero/Cajero'
-import Cajero2 from './Components/Cajero/Cajero/Cajero2'
-import Cajero3 from './Components/Cajero/Cajero/Cajero3'
-import Cajero4 from './Components/Cajero/Cajero/Cajero4'
-import Cajero5 from './Components/Cajero/Cajero/Cajero5'
-import Tabla from './Components/Cajero/Cajero/Tabla'
+import Cajero1 from './Components/Cajero/Cajero'
+import Cajero2 from './Components/Cajero/Cajero2'
+import Cajero3 from './Components/Cajero/Cajero3'
+import Cajero4 from './Components/Cajero/Cajero4'
+import Cajero5 from './Components/Cajero/Cajero5'
+import Tabla from './Components/Cajero/Tabla'
 
 function App() {
   return (
@@ -126,9 +125,6 @@ function App() {
         </Route>
         <Route path="/Asesor">
           <Asesor />
-        </Route>
-        <Route path="/Cajero">
-          <Cajero />
         </Route>
         <Route path="/">
           <Index />
