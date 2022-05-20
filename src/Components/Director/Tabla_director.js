@@ -9,7 +9,7 @@ import imagen from "./Imagenes/Manager-icon.png";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { useHistory } from "react-router-dom";
 import ListGroup from "react-bootstrap/ListGroup";
-import MUIDataTable from "mui-datatables";
+//import MUIDataTable from "mui-datatables";
 import ModalEliminar from "../Modal/Meliminar";
 import ModalEditar from "../Modal/Meditar";
 import ModalInsertar from "../Modal/Minsertar"
@@ -212,91 +212,6 @@ export const Tabla_director = () => {
 
   return (
     <div>
-      <div className="contemodal">
-        <input type="checkbox" id="evento-click" />
-        <div className="botnomodal">
-          <label
-            for="evento-click"
-            title="Abrir modal"
-            className="btn__open-modal"
-          >
-            <p>Solicitudes</p>
-          </label>
-        </div>
-        <div className="background__blur"></div>
-
-       
-
-        <div class="container__modal2" id="ventana_modal">
-          <input type="checkbox" id="evento-click2" />
-          <div class="header__modal2">
-            <label for="evento-click2" onClick={cerrar}>
-              X
-            </label>
-          </div>
-
-          <div class="body__modal2">
-            <h1 class="title__modal2">Solicitud #-Asesor#</h1>
-            <Table striped bordered hover>
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Username</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td colSpan={2}>Larry the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
-            </Table>
-
-            <button onClick={cerrar} className="btn btn-success">
-              Aceptar
-            </button>
-            <button onClick={abrir2} className="btn btn-danger">
-              Cancelar
-            </button>
-          </div>
-        </div>
-
-        <div class="container__modal3" id="ventana_modal2">
-          <input type="checkbox" id="evento-click3" />
-          <div class="header__modal3">
-            <label for="evento-click3" onClick={cerrar2}>
-              X
-            </label>
-          </div>
-
-          <div class="body__modal3">
-            <h1 class="title__modal3">Solicitud #-Asesor#</h1>
-            <input type="text" className="contenedortext" />
-            <button onClick={cerrarT} className="btn btn-success">
-              Aceptar
-            </button>
-            <button onClick={cerrar2} className="btn btn-danger">
-              Cancelar
-            </button>
-          </div>
-        </div>
-      </div>
-
       <div className="contatras">
         <i
           class="bi bi-arrow-left-circle-fill"
@@ -317,29 +232,7 @@ export const Tabla_director = () => {
         </button>
       </div>
 
-      <MUIDataTable
-        title={"Lista de Usuarios"}
-        data={data2}
-        columns={columns}
-        options={options}
-        actions={[
-          {
-            icon: "edit",
-            tooltip: "Editar usuario",
-
-            onClick: data2.map(
-              (Data) => () => seleccionarUsuario(Data, "Editar")
-            ),
-          },
-          {
-            icon: "delete",
-            tooltip: "Eliminar Usuario",
-            onClick: data2.map(
-              (Data) => () => seleccionarUsuario(Data, "Eliminar")
-            ),
-          },
-        ]}
-      />
+     
       <div className="conttable">
         <Table striped bordered hover>
           <thead>
@@ -380,6 +273,10 @@ export const Tabla_director = () => {
 
       <ModalSolicitud
       abrir={abrir}
+      cerrar={cerrar}
+      abrir2={abrir2}
+      cerrar2={cerrar2}
+      cerrarT={cerrarT}
       />
 
      <ModalInsertar

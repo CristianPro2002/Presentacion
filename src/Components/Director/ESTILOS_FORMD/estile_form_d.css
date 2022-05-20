@@ -213,19 +213,21 @@ color: rgb(255, 255, 255);
   top: -20px;
   transform: translateX(100%);
   text-align: center;
-  background-color: #00aeff;
+  background-color: #000000;
   color: white;
   cursor: pointer;
   z-index: 2;
   transition: all 300ms;
   margin-top: 60px;
   border-bottom-right-radius: 10px;
-  display: none;
+  
 
 }
 
 .btn__open-modal:hover{
   padding-top: 35px;
+  background-color: rgb(1, 165, 1);
+
 }
 
 .container__modal{
@@ -268,8 +270,21 @@ color: rgb(255, 255, 255);
 .body__modal{
   padding: 40px;
   text-align: center;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+  
 }
 
+#boton_modal_verde{
+  margin-right: 10px;
+}
+
+#boton_Modal_2_0{
+  margin-top: 10px;
+  margin-right: 10px;
+}
+#boton_Modal_2_1{
+  margin-top: 10px;
+}
 .message__modal{
   margin-top: 20px;
 }
@@ -364,7 +379,9 @@ color: rgb(255, 255, 255);
   display: none;
 }
 
-
+.title__modal{
+  font-family: serif;
+}
 
 
 
@@ -493,3 +510,4 @@ color: rgb(255, 255, 255);
     font-size: 12px;
   }
 }
+
