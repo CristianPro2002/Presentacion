@@ -4,6 +4,7 @@ import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 import imagen from "../Director/Imagenes/Manager-icon.png";
 
 const Minsertar = ({modalInsertar, handleChange,handleToggle, icon, type, dato, peticionPost, abrirCerrarModalInsertar}) => {
+
   return (
     <div>
 <Modal isOpen={modalInsertar}>
@@ -66,7 +67,7 @@ const Minsertar = ({modalInsertar, handleChange,handleToggle, icon, type, dato, 
         </div>
 
         <div className="center_button">
-          <button className="btn third" onClick={() => peticionPost()}>
+          <button className="btn third" type='submit' onClick={() => peticionPost()}>
             Crear
           </button>
         </div>

@@ -14,7 +14,7 @@ const Gerente = () => {
             <Button onClick = {()=>History.push('/home')}>Inicio</Button>
             <br/>
             <br/>
-            <Button onClick = {()=>History.push('/Roles')}> Regresar</Button>
+            <Button onClick = {() => History.goBack()}> Regresar</Button>
             
         </div>
     )

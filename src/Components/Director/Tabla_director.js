@@ -1,15 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Table } from "react-bootstrap";
 import axios from "axios";
-import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import imagen from "./Imagenes/Manager-icon.png";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import { useHistory } from "react-router-dom";
-import ListGroup from "react-bootstrap/ListGroup";
-//import MUIDataTable from "mui-datatables";
 import ModalEliminar from "../Modal/Meliminar";
 import ModalEditar from "../Modal/Meditar";
 import ModalInsertar from "../Modal/Minsertar"
@@ -146,10 +140,7 @@ export const Tabla_director = () => {
     }
   };
 
-  let History = useHistory();
 
-  const botonV = document.querySelectorAll("listascss")[0];
-  const ventana_modal = document.querySelectorAll("container__modal2")[0];
 
   const abrir = (e) => {
     e.preventDefault();
@@ -189,35 +180,18 @@ export const Tabla_director = () => {
       .setAttribute("style", "display:none;");
   };
 
-  const columns = [
-    {
-      name: "Id_usu",
-      label: "ID",
-    },
-    {
-      name: "Usuario",
-      label: "Usuario",
-    },
-    {
-      name: "Contra",
-      label: "Contraseña",
-    },
-    {
-      name: "Nom_rol",
-      label: "Tipo de rol",
-    },
-  ];
-
-  const options = { filterType: "checkbox", actionsColumnIndex: -1 };
-
   return (
     <div>
+      
       <div className="contatras">
-        <i
-          class="bi bi-arrow-left-circle-fill"
-          id="cir"
-          onClick={() => History.push("/Roles")}
-        ></i>
+        
+            <ModalSolicitud
+      abrir={abrir}
+      cerrar={cerrar}
+      abrir2={abrir2}
+      cerrar2={cerrar2}
+      cerrarT={cerrarT}
+      />
       </div>
 
       <h1 className="titureg">Registros de cuentas de usuario</h1>
@@ -252,6 +226,7 @@ export const Tabla_director = () => {
                 <td>{Data.Nom_rol}</td>
                 <td>
                   <button
+                  id="boton_verde_tabla"
                     className="btn btn-primary"
                     onClick={() => seleccionarUsuario(Data, "Editar")}
                   >
@@ -259,6 +234,7 @@ export const Tabla_director = () => {
                   </button>
                   &nbsp;
                   <button
+                  id="boton_danger_rojo"
                     className="btn btn-danger"
                     onClick={() => seleccionarUsuario(Data, "Eliminar")}
                   >
@@ -271,13 +247,7 @@ export const Tabla_director = () => {
         </Table>
       </div>
 
-      <ModalSolicitud
-      abrir={abrir}
-      cerrar={cerrar}
-      abrir2={abrir2}
-      cerrar2={cerrar2}
-      cerrarT={cerrarT}
-      />
+  
 
      <ModalInsertar
      handleChange={handleChange}

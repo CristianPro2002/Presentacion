@@ -16,7 +16,7 @@ const CajeroP = () => {
       <i
               class="bi bi-arrow-left-circle-fill"
               id="cir"
-              onClick={() => History.push("/Roles")}
+              onClick={() => History.goBack()}
             ></i>
             </div>
         <div className="titulocajerop">

@@ -1,12 +1,23 @@
 import React from 'react'
 import ListGroup from "react-bootstrap/ListGroup";
 import { Table } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 const Msolicitud = ({abrir, cerrar, abrir2, cerrar2,cerrarT}) => {
+  let History = useHistory();
   return (
     <div>
       <div className="contemodal">
+     
         <input type="checkbox" id="evento-click" />
         <div className="botnomodal">
+         
+        <i
+          class="bi bi-arrow-left-circle-fill"
+          id="cir"
+          onClick={() => History.goBack()}
+        ></i>
+       
+       
           <label
             for="evento-click"
             title="Abrir modal"
@@ -14,6 +25,7 @@ const Msolicitud = ({abrir, cerrar, abrir2, cerrar2,cerrarT}) => {
           >
             <p>Solicitudes</p>
           </label>
+          
         </div>
         <div className="background__blur"></div>
 

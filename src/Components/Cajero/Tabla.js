@@ -8,6 +8,7 @@ import { useHistory } from "react-router-dom";
 import "./Tabla.css";
 import { AiFillPrinter } from "react-icons/ai";
 
+
 const Tabla = () => {
   const baseUrl = "http://localhost:8080/Banca/bd_crud/cajero.php";
 

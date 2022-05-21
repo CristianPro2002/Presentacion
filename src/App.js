@@ -36,11 +36,32 @@ import Cajero3 from './Components/Cajero/Cajero3'
 import Cajero4 from './Components/Cajero/Cajero4'
 import Cajero5 from './Components/Cajero/Cajero5'
 import Tabla from './Components/Cajero/Tabla'
+import Rolasesor from './Components/Roles/Rasesor/Rolasesor'
+import Rolgerente from './Components/Roles/Rgerente/Rolgerente'
+import Rolcajero from './Components/Roles/Rcajero/Rolcajero'
+import Rolcajerop from './Components/Roles/Rcajerop/Rolcajerop'
+import Factura from './Components/Cajero/Factura'
+
 
 function App() {
   return (
     <Router>
       <Switch>
+      <Route path="/Factura">
+          <Factura/>
+        </Route>
+      <Route path="/Rasesor">
+          <Rolasesor/>
+        </Route>
+        <Route path="/Rgerente">
+          <Rolgerente/>
+        </Route>
+        <Route path="/Rcajero">
+          <Rolcajero/>
+        </Route>
+        <Route path="/Rcajerop">
+          <Rolcajerop/>
+        </Route>
       <Route path="/Tabla">
           <Tabla/>
         </Route>

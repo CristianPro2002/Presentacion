@@ -6,7 +6,7 @@ import './Consulta.css'
 const Consulta = () => {
   let History = useHistory();
   return (
-    <div><button  onClick={() => History.push("/Asesor")}>salir</button>
+    <div><button  onClick={() => History.goBack()}>salir</button>
    
 
 <div className='Tabla'>

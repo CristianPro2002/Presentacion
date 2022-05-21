@@ -63,15 +63,41 @@ const App = () => {
       //console.log(datos);
       const respuestaJson = await enviarData( URL_LOGIN, datos );
       console.log("respuesta desde el evento", respuestaJson);
-     
+      const Rol = (respuestaJson.Idti_rol)
+      console.log(Rol)
       const Usuario = (respuestaJson.Usuario)
       console.log(Usuario)
       const conectado = (respuestaJson.conectado)
-      if(conectado === true){
+      if(conectado === true & Rol == "1"){
         cambiarFormularioValido(true);
         cambiarUsuario({ campo: "", valido: "" });
         cambiarPassword({ campo: "", valido: null });
         history.push("/Roles");}
+
+        else if (conectado === true & Rol == "2"){
+          cambiarFormularioValido(true);
+        cambiarUsuario({ campo: "", valido: "" });
+        cambiarPassword({ campo: "", valido: null });
+        history.push("/Rasesor");
+        }
+        else if (conectado === true & Rol == "3"){
+          cambiarFormularioValido(true);
+        cambiarUsuario({ campo: "", valido: "" });
+        cambiarPassword({ campo: "", valido: null });
+        history.push("/Rgerente");
+        }
+        else if (conectado === true & Rol == "4"){
+          cambiarFormularioValido(true);
+          cambiarUsuario({ campo: "", valido: "" });
+          cambiarPassword({ campo: "", valido: null });
+          history.push("/Rcajero");
+        }
+        else if (conectado === true & Rol == "5"){
+          cambiarFormularioValido(true);
+          cambiarUsuario({ campo: "", valido: "" });
+          cambiarPassword({ campo: "", valido: null });
+          history.push("/rcajerop");
+        }
           else if (usuario.valido === "true" && password.valido === "true" ) {
             cambiarFormularioValido(true);
             cambiarUsuario({ campo: "", valido: "" });

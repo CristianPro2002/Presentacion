@@ -141,7 +141,7 @@ const PersonaJuridica = () => {
         <i
           class="bi bi-arrow-left-circle-fill"
           id="cir2"
-          onClick={() => History.push("/Asesor")}
+          onClick={() => History.goBack()}
         ></i>
       </div>
       <div className="hijo">

@@ -156,15 +156,17 @@
 }
 
 .BUTTON {
- text-align: center;
+  text-align: center;
 }
 
 .BOTON2 {
   border-radius: 5px;
   border-style: ridge;
-  
 }
-#Caje{
+.btn-space {
+  margin-right: 15px;
+}
+#Caje {
   display: none;
 }
 .BOTON2:hover {
@@ -201,7 +203,5 @@
   border-radius: 5px;
 }
 
-.Cajero{
-  display: none;
-}
+
 

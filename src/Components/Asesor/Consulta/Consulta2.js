@@ -6,7 +6,7 @@ import Table from 'react-bootstrap/Table'
 const Consulta2 = () => {
     let History = useHistory();
   return (
-    <div><button  onClick={() => History.push("/Asesor")}>salir</button>
+    <div><button  onClick={() => History.goBack()}>salir</button>
       <button variant="primary" type="submit" size="lg" active>
     Actualizar
   </button>{' '}

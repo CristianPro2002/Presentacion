@@ -7,8 +7,16 @@ import "./Cajero.css";
 import { useState, useEffect } from "react";
 import imagen from "../Cajero/imagen/User-Login.png";
 import axios from "axios";
+import { useRef } from "react";
+import { useReactToPrint } from "react-to-print";
 
-export const Cajero = () => {
+export const Cajero = (props) => {
+
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
+
   let History = useHistory();
 
   const baseUrl = "http://localhost:8080/Banca/bd_crud/cajero.php";
@@ -54,6 +62,9 @@ export const Cajero = () => {
     peticionGet();
   }, [data]);
 
+
+ 
+  
   return (
     <div className="Fondito">
       <div className="Contenedor-Principal">
@@ -61,7 +72,7 @@ export const Cajero = () => {
           <i
             class="bi bi-arrow-left-circle-fill"
             id="circulito"
-            onClick={() => History.push("/Roles")}
+            onClick={() => History.goBack()}
           ></i>
         </div>
         <div>
@@ -71,7 +82,10 @@ export const Cajero = () => {
           <div className="Contenedor1">
             <div className="main-container">
               <Container className="d-grid h-100">
-                <Form id="sign-in-form" className="text-center w-100">
+                <Form
+                  id="sign-in-form"
+                  className="text-center w-100"
+                >
                   <img className="mb-4 logo" src={imagen} />
                   <div className="Center">
                     <h1 className=" title">Apertura de ahorro</h1>
@@ -139,6 +153,7 @@ export const Cajero = () => {
                         onChange={handleChange}
                         required
                       />
+                    
                     </Form.Group>
                     <Form.Group className="mb-3">
                       <Form.Label>Fecha de apertura:</Form.Label>
@@ -173,6 +188,7 @@ export const Cajero = () => {
                     <Form.Group className="mb-3">
                       <Form.Label>Valor:</Form.Label>
                       <Form.Control
+                       id="valor"
                         name="Valor_act"
                         className="cursor"
                         type="number"
@@ -183,12 +199,19 @@ export const Cajero = () => {
                     </Form.Group>
                     <div className="BUTTON">
                       <Button
-                        className="BOTON2"
+                        className="BOTON2 btn-space"
                         onClick={() => peticionPost()}
                         type="submit"
                       >
                         {" "}
-                        Imprimir recibo{" "}
+                        Guardar{" "}
+                      </Button>
+                      <Button
+                        href="/Factura"
+                        className="BOTON2 btn-space"
+                      >
+                        Ver factura
+                        
                       </Button>
                     </div>
                     <div>
