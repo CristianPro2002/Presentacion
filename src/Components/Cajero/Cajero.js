@@ -7,15 +7,9 @@ import "./Cajero.css";
 import { useState, useEffect } from "react";
 import imagen from "../Cajero/imagen/User-Login.png";
 import axios from "axios";
-import { useRef } from "react";
-import { useReactToPrint } from "react-to-print";
+
 
 export const Cajero = (props) => {
-
-  const componentRef = useRef();
-  const handlePrint = useReactToPrint({
-    content: () => componentRef.current,
-  });
 
   let History = useHistory();
 
@@ -63,8 +57,6 @@ export const Cajero = (props) => {
   }, [data]);
 
 
- 
-  
   return (
     <div className="Fondito">
       <div className="Contenedor-Principal">
@@ -72,7 +64,7 @@ export const Cajero = (props) => {
           <i
             class="bi bi-arrow-left-circle-fill"
             id="circulito"
-            onClick={() => History.goBack()}
+            onClick={() => History.push("/Roles")}
           ></i>
         </div>
         <div>
@@ -120,7 +112,7 @@ export const Cajero = (props) => {
           <div className="Container-2">
             <div className="container2">
               <Container>
-                <Form className="">
+                <Form action="http://localhost/Recibo/Recibo.php" method="post">
                   <div className="Contenedores2">
                     <div className="Contenedor-logo-second">
                       <img
@@ -180,7 +172,7 @@ export const Cajero = (props) => {
                           <option value="Apertura de Cuenta">
                             Apertura de Cuenta
                           </option>
-                          <option value="Consignacion">Consignacion</option>
+                          <option value="Consignación">Consignación</option>
                           <option value="Retiro">Retiro</option>
                         </select>
                       </div>
@@ -188,7 +180,6 @@ export const Cajero = (props) => {
                     <Form.Group className="mb-3">
                       <Form.Label>Valor:</Form.Label>
                       <Form.Control
-                       id="valor"
                         name="Valor_act"
                         className="cursor"
                         type="number"
@@ -207,7 +198,7 @@ export const Cajero = (props) => {
                         Guardar{" "}
                       </Button>
                       <Button
-                        href="/Factura"
+                        type="submit"
                         className="BOTON2 btn-space"
                       >
                         Ver factura
