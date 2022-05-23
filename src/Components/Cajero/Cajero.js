@@ -112,7 +112,7 @@ export const Cajero = (props) => {
           <div className="Container-2">
             <div className="container2">
               <Container>
-                <Form action="http://localhost/Recibo/Recibo.php" method="post">
+                <Form action="http://localhost:8080/Recibo/Recibo.php" method="post">
                   <div className="Contenedores2">
                     <div className="Contenedor-logo-second">
                       <img
