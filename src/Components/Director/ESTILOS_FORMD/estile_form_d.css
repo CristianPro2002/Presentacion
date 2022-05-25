@@ -28,7 +28,6 @@
 }
 
 .conttable{
-  overflow: scroll;
   width: 100%;
 }
 
@@ -251,7 +250,21 @@ justify-content: end;
   transition: all 300ms;
   z-index: 10;
 }
+.contbtns{
+  display: flex;
+  width: 100%;
+}
 
+.congoback{
+  width: 50%;
+}
+
+.contabrir{
+  width: 50%;
+ display: flex;
+ justify-content: flex-end;
+ align-items: center;
+}
 
 .header__modal{
   height: 40px;

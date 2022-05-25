@@ -3,6 +3,7 @@ $Id_act = $_POST['Id_act'];
 $Fecha_act = $_POST['Fecha_act'];
 $Tip_pro = $_POST['Tip_pro'];
 $Valor_act = $_POST['Valor_act'];
+$Cajero = $_POST['Cajero'];
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +13,7 @@ $Valor_act = $_POST['Valor_act'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Recibo.css">
+    <link rel="stylesheet" href="Reci.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" />
     <title>Factura</title>
     <style type="text/css" media="print">
@@ -38,32 +39,36 @@ $Valor_act = $_POST['Valor_act'];
                             </div>
                             <div class="float__infoss">
                                 <div class="texto-cont ">
-                                    <label>
+                                    <label class="Black">
                                         Nombre del cliente:
-                                        <span class="span"> Pepito perez</span>
                                     </label>
+                                    <span> Pepito perez</span>
                                     <br></br>
-                                    <label>
+                                    <label class="Black">
                                         Identificación del cliente:
-                                        <span class="span"><?php echo $Id_act ?></span>
                                     </label>
+                                    <span><?php echo $Id_act ?></span>
                                     <br></br>
-                                    <label>
+                                    <label class="Black">
                                         Fecha de apertura:
-                                        <span class="span"><?php echo $Fecha_act ?> </span>
                                     </label>
+                                    <span><?php echo $Fecha_act ?> </span>
                                     <br></br>
-                                    <label>
+                                    <label class="Black">
                                         Tipo de producto:
-                                        <span class="span"> <?php echo $Tip_pro ?></span>
                                     </label>
+                                    <span> <?php echo $Tip_pro ?></span>
                                     <br></br>
-                                    <label>
-                                        N° Cajero: <span class="span">Cajero1</span>
+                                    <label class="Black">
+                                        N° Cajero:
                                     </label>
+                                    <span><?php echo $Cajero ?></span>
+
                                     <div class="linea"></div>
                                     <br></br>
-                                    <p class="Valor">VALOR TOTAL: $<?php echo $Valor_act ?></p>
+                                    <div class="value">
+                                        <label class="Valor">Valor: $<?php echo $Valor_act ?></label>
+                                    </div>
                                 </div>
                             </div>
                             <footer class="bg-light text-center text-lg-start">
@@ -72,20 +77,16 @@ $Valor_act = $_POST['Valor_act'];
                                     <a class="text-dark" href="http://localhost:3000/">
                                         Banca 4.0
                                     </a>
-                                </div>
+                                </div>                    
                             </footer>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>       
         <div class="print">
-            <input type="button" value="Imprimir" onclick="window.print()" class="print__button nover" />
-            <a href="javascript: history.go(-1)" class="printa nover">
-                Cerrar
-            </a>
-            <br>
-            <br>
+            <input type="button" value="Imprimir" onclick="window.print()" class="print__button nover"/>
+            <a  href="javascript:history.go(-1)" class="printa nover">Cerrar </a>        
         </div>
     </div>
 </body>

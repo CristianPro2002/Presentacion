@@ -8,7 +8,9 @@ import { useState, useEffect } from "react";
 import imagen from "../Cajero/imagen/User-Login.png";
 import axios from "axios";
 
+
 export const Cajero = (props) => {
+
   let History = useHistory();
 
   const baseUrl = "http://localhost:8080/Banca/bd_crud/cajero.php";
@@ -22,7 +24,7 @@ export const Cajero = (props) => {
     Cajero: "Cajero5",
   });
 
-  const peticionPost = async () => {
+  const peticionPost = async (e) => {
     var f = new FormData();
     f.append("Id_act", dataUsuario.Id_act);
     f.append("Fecha_act", dataUsuario.Fecha_act);
@@ -32,6 +34,7 @@ export const Cajero = (props) => {
     f.append("METHOD", "POSET");
     await axios.post(baseUrl, f).then((response) => {
       setData(data.concat(response.data));
+      e.preventDefault();
     });
   };
 
@@ -41,7 +44,6 @@ export const Cajero = (props) => {
       ...prevState,
       [name]: value,
     }));
-    console.log(dataUsuario);
   };
 
   const peticionGet = async () => {
@@ -54,22 +56,6 @@ export const Cajero = (props) => {
     peticionGet();
   }, [data]);
 
-  const initialStateDatos = {
-    Id_act: "",
-    Fecha_act: "",
-    Tip_pro: "",
-    Valor_act: "",
-    Cajero: "",
-  };
-
-  const [datos, setDatos] = useState(initialStateDatos);
-
-  const enviarDatos = (event) => {
-    event.preventDefault();
-    console.log(datos);
-    props.addoredit(datos);
-    setDatos({ ...initialStateDatos });
-  };
 
   return (
     <div className="Fondito">
@@ -91,7 +77,6 @@ export const Cajero = (props) => {
                 <Form
                   id="sign-in-form"
                   className="text-center w-100"
-                  onSubmit={enviarDatos}
                 >
                   <img className="mb-4 logo" src={imagen} />
                   <div className="Center">
@@ -127,7 +112,7 @@ export const Cajero = (props) => {
           <div className="Container-2">
             <div className="container2">
               <Container>
-                <Form className="">
+                <Form action="http://localhost:8080/Recibo/Recibo.php" method="post">
                   <div className="Contenedores2">
                     <div className="Contenedor-logo-second">
                       <img
@@ -160,6 +145,7 @@ export const Cajero = (props) => {
                         onChange={handleChange}
                         required
                       />
+                    
                     </Form.Group>
                     <Form.Group className="mb-3">
                       <Form.Label>Fecha de apertura:</Form.Label>
@@ -186,7 +172,7 @@ export const Cajero = (props) => {
                           <option value="Apertura de Cuenta">
                             Apertura de Cuenta
                           </option>
-                          <option value="Consignacion">Consignacion</option>
+                          <option value="Consignación">Consignación</option>
                           <option value="Retiro">Retiro</option>
                         </select>
                       </div>
@@ -202,21 +188,36 @@ export const Cajero = (props) => {
                         required
                       />
                     </Form.Group>
+                    <Form.Group className="mb-3" id="Caje">
+                      <Form.Label>cajero:</Form.Label>
+                      <Form.Control
+                        name="Cajero"
+                        className="cursor"
+                        type="text"
+                        value="Cajero5"
+                        onChange={handleChange}
+                      />
+                    </Form.Group>
                     <div className="BUTTON">
                       <Button
-                        className="BOTON2"
+                        className="BOTON2 btn-space"
                         onClick={() => peticionPost()}
                         type="submit"
                       >
                         {" "}
-                        Imprimir recibo{" "}
+                        Guardar{" "}
+                      </Button>
+                      <Button
+                        type="submit"
+                        className="BOTON2 btn-space"
+                      >
+                        Ver factura
+                        
                       </Button>
                     </div>
                     <div>
-                        <a href="/Tabla">
-                          Ver tabla de registro
-                        </a>
-                      </div>
+                      <a href="/Tabla">Ver tabla de registro</a>
+                    </div>
                   </div>
                 </Form>
               </Container>

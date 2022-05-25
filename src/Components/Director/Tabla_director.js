@@ -140,6 +140,18 @@ export const Tabla_director = () => {
     }
   };
 
+  const abrirp = (e) => {
+    e.preventDefault();
+    document
+      .getElementById("ventana_modalp")
+      .setAttribute("style", "visibility:visible; top:50%;");
+  };
+  const cerrarp = (e) => {
+    e.preventDefault();
+    document
+      .getElementById("ventana_modalp")
+      .setAttribute("style", "display:none;");
+  };
 
 
   const abrir = (e) => {
@@ -191,6 +203,8 @@ export const Tabla_director = () => {
       abrir2={abrir2}
       cerrar2={cerrar2}
       cerrarT={cerrarT}
+      abrirp={abrirp}
+      cerrarp={cerrarp}
       />
       </div>
 
@@ -208,7 +222,7 @@ export const Tabla_director = () => {
 
      
       <div className="conttable">
-        <Table striped bordered hover>
+        <Table striped bordered hover responsive="sm">
           <thead>
             <tr>
               <th>Id</th>

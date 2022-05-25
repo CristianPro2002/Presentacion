@@ -188,6 +188,16 @@ export const Cajero = (props) => {
                         required
                       />
                     </Form.Group>
+                    <Form.Group className="mb-3" id="Caje">
+                      <Form.Label>cajero:</Form.Label>
+                      <Form.Control
+                        name="Cajero"
+                        className="cursor"
+                        type="text"
+                        value="Cajero1"
+                        onChange={handleChange}
+                      />
+                    </Form.Group>
                     <div className="BUTTON">
                       <Button
                         className="BOTON2 btn-space"
@@ -196,13 +206,6 @@ export const Cajero = (props) => {
                       >
                         {" "}
                         Guardar{" "}
-                      </Button>
-                      <Button
-                        type="submit"
-                        className="BOTON2 btn-space"
-                      >
-                        Ver factura
-                        
                       </Button>
                     </div>
                     <div>
