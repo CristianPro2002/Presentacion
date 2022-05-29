@@ -258,6 +258,9 @@ justify-content: end;
 .congoback{
   width: 50%;
 }
+.contemodal{
+  z-index: 100;
+}
 
 .contabrir{
   width: 50%;

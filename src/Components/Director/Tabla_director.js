@@ -2,12 +2,16 @@ import React, { useState, useEffect } from "react";
 import { Table } from "react-bootstrap";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { faEye, faEyeSlash,faPen,faTrash,faSearch } from "@fortawesome/free-solid-svg-icons";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import ModalEliminar from "../Modal/Meliminar";
 import ModalEditar from "../Modal/Meditar";
-import ModalInsertar from "../Modal/Minsertar"
-import ModalSolicitud from "../Modal/Msolicitud"
+import ModalInsertar from "../Modal/Minsertar";
+import ModalSolicitud from "../Modal/Msolicitud";
+import MaterialTable from "material-table";
+import GetAppIcon from "@material-ui/icons/GetApp";
+import AddIcon from "@material-ui/icons/Add";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Tabla_director = () => {
   const baseUrl = "http://localhost:8080/Banca/bd_crud/index.php";
@@ -124,11 +128,7 @@ export const Tabla_director = () => {
       });
   };
 
-  useEffect(() => {
-    peticionGet();
-  }, [data2]);
-
-  const [type, setType] = useState("text");
+  const [type, setType] = useState("password");
   const [icon, setIcon] = useState(faEyeSlash);
   const handleToggle = () => {
     if (type === "password") {
@@ -152,7 +152,6 @@ export const Tabla_director = () => {
       .getElementById("ventana_modalp")
       .setAttribute("style", "display:none;");
   };
-
 
   const abrir = (e) => {
     e.preventDefault();
@@ -192,20 +191,32 @@ export const Tabla_director = () => {
       .setAttribute("style", "display:none;");
   };
 
+  const columns = [
+    {
+      title: "Usuario",
+      field: "Usuario",
+      filterPlaceholder: "filter",
+      cellStyle: { background: "#009688" },
+      headerStyle: { color: "#fff" },
+    },
+    { title: "Contraseña", field: "Contra", filterPlaceholder: "filter" },
+    { title: "Rol", field: "Nom_rol", filterPlaceholder: "filter" },
+  ];
+  useEffect(() => {
+    peticionGet();
+  }, []);
   return (
     <div>
-      
       <div className="contatras">
-        
-            <ModalSolicitud
-      abrir={abrir}
-      cerrar={cerrar}
-      abrir2={abrir2}
-      cerrar2={cerrar2}
-      cerrarT={cerrarT}
-      abrirp={abrirp}
-      cerrarp={cerrarp}
-      />
+        <ModalSolicitud
+          abrir={abrir}
+          cerrar={cerrar}
+          abrir2={abrir2}
+          cerrar2={cerrar2}
+          cerrarT={cerrarT}
+          abrirp={abrirp}
+          cerrarp={cerrarp}
+        />
       </div>
 
       <h1 className="titureg">Registros de cuentas de usuario</h1>
@@ -220,7 +231,47 @@ export const Tabla_director = () => {
         </button>
       </div>
 
-     
+      <MaterialTable
+        columns={columns}
+        data={data2}
+        actions={[
+          {
+            icon: () => <GetAppIcon />,
+            tooltip: "Click me",
+            onClick: (e, data) => console.log(data),
+            // isFreeAction:true
+          },
+        ]}
+        options={{
+          sorting: true,
+          search: true,
+          searchFieldAlignment: "right",
+          searchAutoFocus: true,
+          searchFieldVariant: "standard",
+          filtering: true,
+          paging: true,
+          pageSizeOptions: [2, 5, 10, 20, 25, 50, 100],
+          pageSize: 5,
+          paginationType: "stepped",
+          showFirstLastPageButtons: false,
+          paginationPosition: "both",
+          exportButton: true,
+          exportAllData: true,
+          exportFileName: "Usuarios",
+          addRowPosition: "first",
+          actionsColumnIndex: -1,
+          selection: true,
+          showSelectAllCheckbox: true,
+          showTextRowsSelected: true,
+          grouping: false,
+          columnsButton: true,
+          headerStyle: { background: "#f44336", color: "#fff" },
+        }}
+        title="Registro de Usuarios"
+        icons={{ Add: () => <AddIcon /> }}
+        style={{zIndex:"1"}}
+      />
+
       <div className="conttable">
         <Table striped bordered hover responsive="sm">
           <thead>
@@ -240,19 +291,19 @@ export const Tabla_director = () => {
                 <td>{Data.Nom_rol}</td>
                 <td>
                   <button
-                  id="boton_verde_tabla"
+                    id="boton_verde_tabla"
                     className="btn btn-primary"
                     onClick={() => seleccionarUsuario(Data, "Editar")}
                   >
-                    Editar
+                    <FontAwesomeIcon icon={faPen} />
                   </button>
                   &nbsp;
                   <button
-                  id="boton_danger_rojo"
+                    id="boton_danger_rojo"
                     className="btn btn-danger"
                     onClick={() => seleccionarUsuario(Data, "Eliminar")}
                   >
-                    Eliminar
+                    <FontAwesomeIcon icon={faTrash} />
                   </button>
                 </td>
               </tr>
@@ -261,25 +312,23 @@ export const Tabla_director = () => {
         </Table>
       </div>
 
-  
-
-     <ModalInsertar
-     handleChange={handleChange}
-     handleToggle={handleToggle}
-     icon={icon}
-     type={type}
-     dato={dato}
-     peticionPost={peticionPost}
-     abrirCerrarModalInsertar={abrirCerrarModalInsertar}
-     modalInsertar={modalInsertar}
-     />
-      <ModalEditar 
-      dataUsuario={dataUsuario}
-      handleChange={handleChange}
-      modalEditar={modalEditar} 
-      dato={dato}
-      peticionPut={peticionPut}
-      abrirCerrarModalEditar={abrirCerrarModalEditar}
+      <ModalInsertar
+        handleChange={handleChange}
+        handleToggle={handleToggle}
+        icon={icon}
+        type={type}
+        dato={dato}
+        peticionPost={peticionPost}
+        abrirCerrarModalInsertar={abrirCerrarModalInsertar}
+        modalInsertar={modalInsertar}
+      />
+      <ModalEditar
+        dataUsuario={dataUsuario}
+        handleChange={handleChange}
+        modalEditar={modalEditar}
+        dato={dato}
+        peticionPut={peticionPut}
+        abrirCerrarModalEditar={abrirCerrarModalEditar}
       />
 
       <ModalEliminar
