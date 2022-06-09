@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-06-2022 a las 10:29:55
+-- Tiempo de generación: 09-06-2022 a las 05:31:10
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.5
 
@@ -24,25 +24,16 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `actcli_clico`
---
-
-CREATE TABLE `actcli_clico` (
-  `Idact_cli` int(11) NOT NULL COMMENT 'Identificacion de actividad de cliente',
-  `No_ide` double NOT NULL COMMENT 'Nunero de identificacion del cliente'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Intermedia entre actividad del cliente comun y cliente comun';
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `act_cli`
 --
 
 CREATE TABLE `act_cli` (
   `Idact_cli` int(11) NOT NULL COMMENT 'Identificacion de actividad de cliente',
-  `Fe_act` date NOT NULL COMMENT 'Fecha de actividad',
+  `Fe_act` datetime NOT NULL COMMENT 'Fecha de actividad',
   `Idti_pro` int(11) NOT NULL COMMENT 'Identificacion de tipo de producto',
-  `Valor` double NOT NULL COMMENT 'Valor de actividad'
+  `Valor` decimal(10,0) NOT NULL COMMENT 'Valor de actividad',
+  `No_cajero` varchar(60) NOT NULL COMMENT 'Numero de cajero',
+  `No_cue` int(11) NOT NULL COMMENT 'Numero de cuenta'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Actividad de cliente';
 
 -- --------------------------------------------------------
@@ -145,7 +136,8 @@ CREATE TABLE `client_co` (
 --
 
 INSERT INTO `client_co` (`No_ide`, `Idti_solicit`, `Fec_dil`, `Pri_nom`, `Seg_nom`, `Pri_ape`, `Seg_ape`, `Idti_doc`, `Lug_exp`, `Fec_exp`, `Fec_nac`, `Ciu_nac`, `Id_gen`, `Idest_ci`, `Id_nac`, `Otr_nac`, `Dir_re`, `Blo_to`, `Ap_ca`, `Barrio`, `Ciu_mu`, `Depart`, `Pais`, `Telef`, `Celular`, `Corr_ele`, `Profe`, `Idocu_ofii`, `Det_act`, `Cod_ciuu`, `No_emp`, `Nom_emp`, `Dir_emp`, `Barr_lab`, `Ciu_lab`, `Dep_lab`, `Pais_lab`, `Tel_lab`, `Ext`, `Cel_lab`, `Corr_lab`, `Ing_men`, `Otr_ing`, `Det_otr`, `To_act`, `To_pa`, `To_egr`, `Vent_a`, `Fe_ci`, `Dec_rent`, `Age_ret`, `Idtireg_iva`, `Ob_tri`, `Notri_est`, `Pais_1`, `Pais_2`, `No_tri1`, `No_tri2`, `Prov_bie`, `Pais_bi`, `Ciu_bie`, `Op_ext`, `Idtiop_m`, `Otro_mo`, `Nom_ent`, `Idtipro_m`, `Otro_mo2`, `No_pro`, `Mo_pro`, `Moneda`, `Ciu_ent`, `Pa_ent`, `Idtien_re`, `No_solicit`, `Cod_vend`) VALUES
-(353453, 1, '2022-06-01', 'DFGD', 'GDFGD', 'GDFG', 'GFDGD', 1, 'DSFSS', '2022-06-15', '2022-06-01', 'DFGDFGD', 2, 1, 2, 'FDGDGFGGF', 'FGDGDG', 3535, 53453, 'FDVDFF', 'DVFVD', 'DVFV', 'DFVDV', 4353, 53453, 'DVFVDVD', 'SDFSDFSFSDc', 3, 'DFGDG', 3424, 3242, 'DDFGDF', 'DFGDGDF', 'GDFGDG', 'DFGDG', 'DGDGF', 'GDGD', 435, 435, 53453, 'DGFDGD', 354, 65455, 'DFGGDFG', 3534, 53453, 53453, 5345, '2022-06-20', 'Si', 'Si', 1, 'Si', 435353, 'DFGFDG', 'GDFGDG', 453, 53452, 'DFDGD', 'GDFGD', 'GDFGD', 'Si', 5, 'FDGDFG', 'GDFGDG', 2, 'GFDFGDG', 5464, 6456, 'fdgdgd', 'GDFGD', 'GDFGD', 1, 456456, 564435);
+(353453, 1, '2022-06-01', 'DFGD', 'GDFGD', 'GDFG', 'GFDGD', 1, 'DSFSS', '2022-06-15', '2022-06-01', 'DFGDFGD', 2, 1, 2, 'FDGDGFGGF', 'FGDGDG', 3535, 53453, 'FDVDFF', 'DVFVD', 'DVFV', 'DFVDV', 4353, 53453, 'DVFVDVD', 'SDFSDFSFSDc', 3, 'DFGDG', 3424, 3242, 'DDFGDF', 'DFGDGDF', 'GDFGDG', 'DFGDG', 'DGDGF', 'GDGD', 435, 435, 53453, 'DGFDGD', 354, 65455, 'DFGGDFG', 3534, 53453, 53453, 5345, '2022-06-20', 'Si', 'Si', 1, 'Si', 435353, 'DFGFDG', 'GDFGDG', 453, 53452, 'DFDGD', 'GDFGD', 'GDFGD', 'Si', 5, 'FDGDFG', 'GDFGDG', 2, 'GFDFGDG', 5464, 6456, 'fdgdgd', 'GDFGD', 'GDFGD', 1, 456456, 564435),
+(1192719887, 1, '2022-06-07', 'cristian', 'andres', 'castaño', 'salas', 1, 'Palmira', '2020-07-16', '2002-07-13', 'Florida', 2, 1, 1, 'Colombiano', 'Calle 47a # 11a18', 1118, 1118, 'Poblado Comfaunion', 'Palmira', 'Valle', 'Colombia', 3172527140, 3172527139, 'cristian.0713.cs@gmail.com', 'Estudiante', 4, 'Nada', 2345, 1, 'Cristian lo mejorsito', 'Cristian3k', 'Mercedes', 'Palmira', 'Valle', 'Colombia', 31321232, 32, 213131323, 'cristian@gmail.com', 50000000, 5000, 'otros', 50000, 5000, 499999, 50000000, '2022-06-08', 'Si', 'Si', 1, 'Si', 34242424242, 'colombia', 'colombia', 324234, 324325, 'Esta', 'Colombia', 'Palmira', 'Si', 8, 'La plata', 'La plata 3k', 1, 'Si claro', 3234, 4234, '42342', 'Palmira', 'Colombia', 1, 1192719887, 324234);
 
 -- --------------------------------------------------------
 
@@ -164,7 +156,8 @@ CREATE TABLE `clien_tip` (
 --
 
 INSERT INTO `clien_tip` (`Idclien_tip`, `Idti_sol`, `No_ide`) VALUES
-(2, 2, 353453);
+(2, 2, 353453),
+(3, 1, 1192719887);
 
 -- --------------------------------------------------------
 
@@ -190,6 +183,18 @@ CREATE TABLE `cont_ent` (
   `Celular` double NOT NULL COMMENT 'Celular del contacto de la entidad',
   `Corr_lab` varchar(40) NOT NULL COMMENT 'Correo laboral del contacto de la entidad'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Informacion de un contacto de la entidad';
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cuenta_c`
+--
+
+CREATE TABLE `cuenta_c` (
+  `No_cuenta` int(11) NOT NULL COMMENT 'Numero de cuenta',
+  `No_ide` double NOT NULL COMMENT 'Numero de identificacion del cliente comun',
+  `Idti_cue` int(11) NOT NULL COMMENT 'Identificacion de tipo de cuenta'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Cuentas del cliente comun';
 
 -- --------------------------------------------------------
 
@@ -275,17 +280,6 @@ CREATE TABLE `entidad` (
   `No_solicit` double NOT NULL COMMENT 'Numero de identificacion del solicitante',
   `Cod_vend` int(11) NOT NULL COMMENT 'Código vendedor'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Informacion de la entidad';
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `ent_actcli`
---
-
-CREATE TABLE `ent_actcli` (
-  `Nit` double NOT NULL COMMENT 'Nit de la entidad',
-  `Idact_cli` int(11) NOT NULL COMMENT 'Identificacion de actividad de cliente'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Intermedia entre entidad (pj) y la actividad de la entidad';
 
 -- --------------------------------------------------------
 
@@ -413,7 +407,8 @@ CREATE TABLE `solicitante` (
 --
 
 INSERT INTO `solicitante` (`Idti_soli`, `No_solicit`, `Nom_solicit`, `Firma`) VALUES
-(1, 456456, 'FDGDGD', 'FGDFGD');
+(1, 456456, 'FDGDGD', 'FGDFGD'),
+(2, 1192719887, 'Cristian', 'Cristian');
 
 -- --------------------------------------------------------
 
@@ -543,6 +538,25 @@ INSERT INTO `tipro_mo` (`Idtipro_mo`, `Nom_promo`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `tip_cue`
+--
+
+CREATE TABLE `tip_cue` (
+  `Idti_cue` int(11) NOT NULL COMMENT 'Identificacion de tipo de cuenta',
+  `Nom_cue` varchar(60) NOT NULL COMMENT 'Nombre del tipo de cuenta'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tipo de cuenta ';
+
+--
+-- Volcado de datos para la tabla `tip_cue`
+--
+
+INSERT INTO `tip_cue` (`Idti_cue`, `Nom_cue`) VALUES
+(1, 'Cuenta de ahorro'),
+(2, 'Cuenta corriente');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `tip_pro`
 --
 
@@ -550,6 +564,15 @@ CREATE TABLE `tip_pro` (
   `Idti_pro` int(11) NOT NULL COMMENT 'Identificacion de tipo de producto',
   `Nom_pro` varchar(40) NOT NULL COMMENT 'Nombre del producto'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tipo de producto';
+
+--
+-- Volcado de datos para la tabla `tip_pro`
+--
+
+INSERT INTO `tip_pro` (`Idti_pro`, `Nom_pro`) VALUES
+(1, 'Apertura de cuenta'),
+(2, 'Consignacion'),
+(3, 'Retiro');
 
 -- --------------------------------------------------------
 
@@ -777,6 +800,7 @@ CREATE TABLE `vendedor` (
 --
 
 INSERT INTO `vendedor` (`Cod_vend`, `Nom_vend`, `Oficina`, `Obser`, `Firma_vend`) VALUES
+(324234, 'Valentina Bandida', 'Sus ex', 'Ojo con ella', 'Siempre Bandida'),
 (564435, 'DGDFDG', 'GFDGD', 'GDFGD', 'DFGDGfd');
 
 --
@@ -784,18 +808,12 @@ INSERT INTO `vendedor` (`Cod_vend`, `Nom_vend`, `Oficina`, `Obser`, `Firma_vend`
 --
 
 --
--- Indices de la tabla `actcli_clico`
---
-ALTER TABLE `actcli_clico`
-  ADD KEY `Idact_cli` (`Idact_cli`),
-  ADD KEY `No_ide` (`No_ide`);
-
---
 -- Indices de la tabla `act_cli`
 --
 ALTER TABLE `act_cli`
   ADD PRIMARY KEY (`Idact_cli`),
-  ADD KEY `Idti_pro` (`Idti_pro`);
+  ADD KEY `Idti_pro` (`Idti_pro`),
+  ADD KEY `No_cue` (`No_cue`);
 
 --
 -- Indices de la tabla `cla_contr`
@@ -838,6 +856,14 @@ ALTER TABLE `cont_ent`
   ADD KEY `Idti_doc` (`Idti_doc`);
 
 --
+-- Indices de la tabla `cuenta_c`
+--
+ALTER TABLE `cuenta_c`
+  ADD PRIMARY KEY (`No_cuenta`),
+  ADD KEY `No_ide` (`No_ide`),
+  ADD KEY `Idti_cue` (`Idti_cue`);
+
+--
 -- Indices de la tabla `entidad`
 --
 ALTER TABLE `entidad`
@@ -859,13 +885,6 @@ ALTER TABLE `entidad`
   ADD KEY `Idfue_rec` (`Idfue_rec`),
   ADD KEY `Idtiop_m` (`Idtiop_m`),
   ADD KEY `Idtipro_m` (`Idtipro_m`);
-
---
--- Indices de la tabla `ent_actcli`
---
-ALTER TABLE `ent_actcli`
-  ADD KEY `Nit` (`Nit`),
-  ADD KEY `Idact_cli` (`Idact_cli`);
 
 --
 -- Indices de la tabla `ent_ti`
@@ -948,6 +967,12 @@ ALTER TABLE `tipro_bie`
 --
 ALTER TABLE `tipro_mo`
   ADD PRIMARY KEY (`Idtipro_mo`);
+
+--
+-- Indices de la tabla `tip_cue`
+--
+ALTER TABLE `tip_cue`
+  ADD PRIMARY KEY (`Idti_cue`);
 
 --
 -- Indices de la tabla `tip_pro`
@@ -1053,7 +1078,13 @@ ALTER TABLE `act_cli`
 -- AUTO_INCREMENT de la tabla `clien_tip`
 --
 ALTER TABLE `clien_tip`
-  MODIFY `Idclien_tip` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificacion de intermedia clien_tip', AUTO_INCREMENT=3;
+  MODIFY `Idclien_tip` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificacion de intermedia clien_tip', AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `cuenta_c`
+--
+ALTER TABLE `cuenta_c`
+  MODIFY `No_cuenta` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Numero de cuenta';
 
 --
 -- AUTO_INCREMENT de la tabla `reg_usu`
@@ -1066,17 +1097,11 @@ ALTER TABLE `reg_usu`
 --
 
 --
--- Filtros para la tabla `actcli_clico`
---
-ALTER TABLE `actcli_clico`
-  ADD CONSTRAINT `actcli_clico_ibfk_1` FOREIGN KEY (`Idact_cli`) REFERENCES `act_cli` (`Idact_cli`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `actcli_clico_ibfk_2` FOREIGN KEY (`No_ide`) REFERENCES `client_co` (`No_ide`) ON UPDATE CASCADE;
-
---
 -- Filtros para la tabla `act_cli`
 --
 ALTER TABLE `act_cli`
-  ADD CONSTRAINT `act_cli_ibfk_1` FOREIGN KEY (`Idti_pro`) REFERENCES `tip_pro` (`Idti_pro`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `act_cli_ibfk_1` FOREIGN KEY (`Idti_pro`) REFERENCES `tip_pro` (`Idti_pro`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `act_cli_ibfk_2` FOREIGN KEY (`No_cue`) REFERENCES `cuenta_c` (`No_cuenta`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `client_co`
@@ -1109,6 +1134,13 @@ ALTER TABLE `cont_ent`
   ADD CONSTRAINT `cont_ent_ibfk_1` FOREIGN KEY (`Idti_doc`) REFERENCES `ti_doc` (`Idti_doc`) ON UPDATE CASCADE;
 
 --
+-- Filtros para la tabla `cuenta_c`
+--
+ALTER TABLE `cuenta_c`
+  ADD CONSTRAINT `cuenta_c_ibfk_1` FOREIGN KEY (`No_ide`) REFERENCES `client_co` (`No_ide`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `cuenta_c_ibfk_2` FOREIGN KEY (`Idti_cue`) REFERENCES `tip_cue` (`Idti_cue`) ON UPDATE CASCADE;
+
+--
 -- Filtros para la tabla `entidad`
 --
 ALTER TABLE `entidad`
@@ -1129,13 +1161,6 @@ ALTER TABLE `entidad`
   ADD CONSTRAINT `entidad_ibfk_24` FOREIGN KEY (`Idtipro_m`) REFERENCES `tipro_mo` (`Idtipro_mo`) ON UPDATE CASCADE,
   ADD CONSTRAINT `entidad_ibfk_3` FOREIGN KEY (`No_doc`) REFERENCES `repr_le` (`No_doc`) ON UPDATE CASCADE,
   ADD CONSTRAINT `entidad_ibfk_5` FOREIGN KEY (`No_docu`) REFERENCES `cont_ent` (`No_docu`) ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `ent_actcli`
---
-ALTER TABLE `ent_actcli`
-  ADD CONSTRAINT `ent_actcli_ibfk_1` FOREIGN KEY (`Nit`) REFERENCES `entidad` (`Nit`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `ent_actcli_ibfk_2` FOREIGN KEY (`Idact_cli`) REFERENCES `act_cli` (`Idact_cli`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `ent_ti`

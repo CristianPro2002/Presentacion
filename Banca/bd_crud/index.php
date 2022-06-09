@@ -21,7 +21,7 @@ if($_SERVER['REQUEST_METHOD']=='GET'){
      exit();
 }
 
-
+//  Desplegable de tipo de rol
 if($_POST['METHOD']=='POSTO'){
     unset($_POST['METHOD']);
     $query="select * from tip_rol";
@@ -31,21 +31,20 @@ if($_POST['METHOD']=='POSTO'){
     exit();
 }
 
+//Consulta de informacion de persona natural
 
-if($_POST['METHOD']=='POST'){
+if($_POST['METHOD']=='CONSULTAID'){
     unset($_POST['METHOD']);
-    $Id_usu=$_POST['Id_usu'];
-    $Usuario=$_POST['Usuario'];
-    $Contra=$_POST['Contra'];
-    $Idti_rol=$_POST['Idti_rol'];
-    $query="insert into reg_usu(Id_usu, Usuario, Contra, Idti_rol) values ('$Id_usu', '$Usuario', '$Contra','$Idti_rol')";
-    $queryAutoIncrement="select MAX(Id_usu) as Id_usu from frameworks";
-    $resultado=metodoPost($query, $queryAutoIncrement);
-    echo json_encode($resultado);
+    $query="select * from client_co where No_ide=".$_POST['No_ide'];
+    $resultado=metodoGet($query);
+    echo json_encode($resultado->fetch(PDO::FETCH_ASSOC));
     header("HTTP/1.1 200 OK");
     exit();
 }
 
+
+
+//Registro de Fomulario persona natural
 if($_POST['METHOD']=='FORMN'){
     unset($_POST['METHOD']);
     $No_ide =$_POST['No_ide'];
@@ -53,6 +52,8 @@ if($_POST['METHOD']=='FORMN'){
     $Idti_solicit =$_POST['Idti_solicit'];
     $Fec_dil =$_POST['Fec_dil'];
     $Pri_nom =$_POST['Pri_nom'];
+    $No_cuenta =$_POST['No_cuenta'];
+    $Idti_cue =$_POST['Idti_cue'];
     $Seg_nom =$_POST['Seg_nom'];
     $Pri_ape =$_POST['Pri_ape'];
     $Seg_ape =$_POST['Seg_ape'];
@@ -157,6 +158,25 @@ if($_POST['METHOD']=='FORMN'){
     exit();
 }
 
+//Crud Completa
+
+//Registro de Usuarios
+
+if($_POST['METHOD']=='POST'){
+    unset($_POST['METHOD']);
+    $Id_usu=$_POST['Id_usu'];
+    $Usuario=$_POST['Usuario'];
+    $Contra=$_POST['Contra'];
+    $Idti_rol=$_POST['Idti_rol'];
+    $query="insert into reg_usu(Id_usu, Usuario, Contra, Idti_rol) values ('$Id_usu', '$Usuario', '$Contra','$Idti_rol')";
+    $queryAutoIncrement="select MAX(Id_usu) as Id_usu from frameworks";
+    $resultado=metodoPost($query, $queryAutoIncrement);
+    echo json_encode($resultado);
+    header("HTTP/1.1 200 OK");
+    exit();
+}
+//Actualizacion de usuarios
+
 if($_POST['METHOD']=='PUT'){
     unset($_POST['METHOD']);
     $Id_usu=$_POST['Id_usu'];
@@ -169,6 +189,8 @@ if($_POST['METHOD']=='PUT'){
     header("HTTP/1.1 200 OK");
     exit();
 }
+
+//Eliminacion de usuarios
 
 if($_POST['METHOD']=='DELETE'){
     unset($_POST['METHOD']);

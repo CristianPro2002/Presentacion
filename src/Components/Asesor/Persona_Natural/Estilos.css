@@ -292,6 +292,10 @@
   columns: 1;
 }
 
+.inputoculto{
+  display: none;
+}
+
 @media screen and (max-width: 800px) {
   .padre {
     width: 110%;

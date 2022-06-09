@@ -202,6 +202,8 @@ const PersonaNatural = () => {
     Idti_solicit: "",
     Fec_dil: "",
     Pri_nom: "",
+    No_cuenta: "",
+    Idti_cue: "",
     Seg_nom: "",
     Pri_ape: "",
     Seg_ape: "",
@@ -282,7 +284,6 @@ const PersonaNatural = () => {
     Firma_vend: "",
 
   });
-
   const peticionPost = async () => {
     var f = new FormData();
     f.append("No_ide", dataUsuario.No_ide);
@@ -290,6 +291,8 @@ const PersonaNatural = () => {
     f.append("Idti_solicit", dataUsuario.Idti_solicit);
     f.append("Fec_dil", dataUsuario.Fec_dil);
     f.append("Pri_nom", dataUsuario.Pri_nom);
+    f.append("No_cuenta", dataUsuario.No_cuenta);
+    f.append("Idti_cue", dataUsuario.Idti_cue);
     f.append("Seg_nom", dataUsuario.Seg_nom);
     f.append("Pri_ape", dataUsuario.Pri_ape);
     f.append("Seg_ape", dataUsuario.Seg_ape);
@@ -383,7 +386,7 @@ const PersonaNatural = () => {
       ...prevState,
       [name]: value,
     }));
-    console.log(dataUsuario);
+    //console.log(dataUsuario);
   };
 
 
@@ -471,6 +474,20 @@ const PersonaNatural = () => {
                 onChange={handleChange}
               />
             </label>
+
+            <input
+                type="number"
+                name="No_cuenta"
+                className="inputoculto"
+                onChange={handleChange}
+              />
+
+              <input
+                type="text"
+                name="Idti_cue"
+                className="inputoculto"
+                onChange={handleChange}
+              />
 
             <label className="labelo">
               Segundo Nombre

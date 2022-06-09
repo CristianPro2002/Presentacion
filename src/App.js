@@ -41,10 +41,12 @@ import Rolgerente from './Components/Roles/Rgerente/Rolgerente'
 import Rolcajero from './Components/Roles/Rcajero/Rolcajero'
 import Rolcajerop from './Components/Roles/Rcajerop/Rolcajerop'
 import Factura from './Components/Cajero/Factura'
+import MyProvider from './Components/application/provider';
 
 
 function App() {
   return (
+    <MyProvider>
     <Router>
       <Switch>
       <Route path="/Factura">
@@ -152,6 +154,7 @@ function App() {
         </Route>
       </Switch>
     </Router>
+    </MyProvider>
   );
 }
 

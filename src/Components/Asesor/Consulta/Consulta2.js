@@ -1,10 +1,14 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import './Consulta2.css'
 import { useHistory } from "react-router-dom";
 import Table from 'react-bootstrap/Table'
+import {AppContext} from '../../application/provider'
 
 const Consulta2 = () => {
+
+  const [data, setData] = useContext(AppContext);
     let History = useHistory();
+    console.log(data);
   return (
     <div><button  onClick={() => History.goBack()}>salir</button>
       <button variant="primary" type="submit" size="lg" active>
@@ -26,11 +30,11 @@ const Consulta2 = () => {
   </thead>
   <tbody>
     <tr>
-      <td>1</td>
-      <td>Cristian</td>
-      <td>Andres</td>
-      <td>Castaño</td>
-      <td>Salas</td>
+      <td>{data.No_ide}</td>
+      <td>{data.Pri_nom}</td>
+      <td>{data.Seg_nom}</td>
+      <td>{data.Pri_ape}</td>
+      <td>{data.Seg_ape}</td>
     </tr>
   </tbody>
 </Table>
