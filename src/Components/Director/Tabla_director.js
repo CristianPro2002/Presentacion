@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Table } from "react-bootstrap";
+import { Table,Button} from "react-bootstrap";
+import { AiFillPrinter } from "react-icons/ai";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { faEye, faEyeSlash,faPen,faTrash,faSearch } from "@fortawesome/free-solid-svg-icons";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import ModalEliminar from "../Modal/Meliminar";
 import ModalEditar from "../Modal/Meditar";
-import ModalInsertar from "../Modal/Minsertar";
-import ModalSolicitud from "../Modal/Msolicitud";
-import MaterialTable from "material-table";
-import GetAppIcon from "@material-ui/icons/GetApp";
-import AddIcon from "@material-ui/icons/Add";
+import ModalInsertar from "../Modal/Minsertar"
+import ModalSolicitud from "../Modal/Msolicitud"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Tabla_director = () => {
@@ -18,6 +16,10 @@ export const Tabla_director = () => {
 
   const [data2, setData2] = useState([]);
   const [dato, setDato] = useState([]);
+
+  const [tablaUsuarios, setTablaUsuarios]= useState([]);
+  const [busqueda, setBusqueda]= useState("");
+
   const [modalInsertar, setModalInsetar] = useState(false);
   const [modalEditar, setModalEditar] = useState(false);
   const [modalEliminar, setModalEliminar] = useState(false);
@@ -29,8 +31,11 @@ export const Tabla_director = () => {
   });
 
   const peticionGet = async () => {
-    await axios.get(baseUrl).then((response) => {
+    await axios.get(baseUrl).then(response => {
       setData2(response.data);
+      setTablaUsuarios(response.data);
+    }).catch(error=>{
+      console.log(error);
     });
   };
 
@@ -45,6 +50,8 @@ export const Tabla_director = () => {
       setDato(response.data);
     });
   };
+
+
 
   const peticionPost = async () => {
     var f = new FormData();
@@ -69,9 +76,26 @@ export const Tabla_director = () => {
       ...prevState,
       [name]: value,
     }));
-    console.log(dataUsuario);
-  };
 
+    console.log(dataUsuario);
+ 
+  };
+  const handleChange2=(e)=>{
+    setBusqueda(e.target.value);
+    filtrar(e.target.value);
+  }
+  const filtrar=(terminoBusqueda)=>{
+    var resultadosBusqueda=tablaUsuarios.filter((elemento)=>{
+      if(elemento.Usuario.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
+      ||elemento.Id_usu.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
+      || elemento.Nom_rol.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
+      
+      ){
+        return elemento;
+      }
+    });
+    setData2(resultadosBusqueda);
+  }
   const seleccionarUsuario = (usuario, caso) => {
     setDataUsuario(usuario);
 
@@ -128,6 +152,10 @@ export const Tabla_director = () => {
       });
   };
 
+  useEffect(() => {
+    peticionGet();
+  }, []);
+
   const [type, setType] = useState("password");
   const [icon, setIcon] = useState(faEyeSlash);
   const handleToggle = () => {
@@ -152,6 +180,7 @@ export const Tabla_director = () => {
       .getElementById("ventana_modalp")
       .setAttribute("style", "display:none;");
   };
+
 
   const abrir = (e) => {
     e.preventDefault();
@@ -191,36 +220,41 @@ export const Tabla_director = () => {
       .setAttribute("style", "display:none;");
   };
 
-  const columns = [
-    {
-      title: "Usuario",
-      field: "Usuario",
-      filterPlaceholder: "filter",
-      cellStyle: { background: "#009688" },
-      headerStyle: { color: "#fff" },
-    },
-    { title: "Contraseña", field: "Contra", filterPlaceholder: "filter" },
-    { title: "Rol", field: "Nom_rol", filterPlaceholder: "filter" },
-  ];
-  useEffect(() => {
-    peticionGet();
-  }, []);
   return (
     <div>
+      
       <div className="contatras">
-        <ModalSolicitud
-          abrir={abrir}
-          cerrar={cerrar}
-          abrir2={abrir2}
-          cerrar2={cerrar2}
-          cerrarT={cerrarT}
-          abrirp={abrirp}
-          cerrarp={cerrarp}
-        />
+        
+      <ModalSolicitud
+      abrir={abrir}
+      cerrar={cerrar}
+      abrir2={abrir2}
+      cerrar2={cerrar2}
+      cerrarT={cerrarT}
+      abrirp={abrirp}
+      cerrarp={cerrarp}
+      />
       </div>
-
       <h1 className="titureg">Registros de cuentas de usuario</h1>
-
+      <div className="containerInput">
+        <div className="div_report">
+      <a className="report" href="http://localhost:8080/imprimir_roles"><AiFillPrinter/></a>
+      </div>
+      <div className="input_buscadorsito">
+        <input
+        id="input_buscador"
+          className="form-control inputBuscar"
+          value={busqueda}
+          placeholder="Búsqueda por Nombre  de usuario o nombre de rol"
+          onChange={handleChange2}
+        />
+        </div>
+        <div className="boton_buscar"> 
+        <button id="icono_buscar" className="btn btn-dark">
+          <FontAwesomeIcon icon={faSearch}/>
+        </button>
+        </div>
+      </div>
       <div className="d-grid gap-2">
         <button
           id="btnagre"
@@ -230,68 +264,30 @@ export const Tabla_director = () => {
           Agregar contacto
         </button>
       </div>
-
-      <MaterialTable
-        columns={columns}
-        data={data2}
-        actions={[
-          {
-            icon: () => <GetAppIcon />,
-            tooltip: "Click me",
-            onClick: (e, data) => console.log(data),
-            // isFreeAction:true
-          },
-        ]}
-        options={{
-          sorting: true,
-          search: true,
-          searchFieldAlignment: "right",
-          searchAutoFocus: true,
-          searchFieldVariant: "standard",
-          filtering: true,
-          paging: true,
-          pageSizeOptions: [2, 5, 10, 20, 25, 50, 100],
-          pageSize: 5,
-          paginationType: "stepped",
-          showFirstLastPageButtons: false,
-          paginationPosition: "both",
-          exportButton: true,
-          exportAllData: true,
-          exportFileName: "Usuarios",
-          addRowPosition: "first",
-          actionsColumnIndex: -1,
-          selection: true,
-          showSelectAllCheckbox: true,
-          showTextRowsSelected: true,
-          grouping: false,
-          columnsButton: true,
-          headerStyle: { background: "#f44336", color: "#fff" },
-        }}
-        title="Registro de Usuarios"
-        icons={{ Add: () => <AddIcon /> }}
-        style={{zIndex:"1"}}
-      />
-
+     
+     
       <div className="conttable">
         <Table striped bordered hover responsive="sm">
           <thead>
             <tr>
-              <th>Id</th>
+              <th className="ocultarid">Id</th>
               <th>Nombre del usuario</th>
               <th>Contraseña </th>
               <th>Tipo de rol </th>
+              <th>Funcionalidades</th>
             </tr>
           </thead>
           <tbody>
             {data2.map((Data) => (
-              <tr key={Data.Id_usu}>
-                <td>{Data.Id_usu}</td>
+              <tr  key={Data.Id_usu}>
+                <td className="ocultarid">{Data.Id_usu}</td>
                 <td>{Data.Usuario}</td>
                 <td>{Data.Contra}</td>
                 <td>{Data.Nom_rol}</td>
                 <td>
-                  <button
-                    id="boton_verde_tabla"
+                  
+                <button
+                  id="boton_verde_tabla"
                     className="btn btn-primary"
                     onClick={() => seleccionarUsuario(Data, "Editar")}
                   >
@@ -299,11 +295,11 @@ export const Tabla_director = () => {
                   </button>
                   &nbsp;
                   <button
-                    id="boton_danger_rojo"
+                  id="boton_danger_rojo"
                     className="btn btn-danger"
                     onClick={() => seleccionarUsuario(Data, "Eliminar")}
                   >
-                    <FontAwesomeIcon icon={faTrash} />
+                  <FontAwesomeIcon icon={faTrash} />
                   </button>
                 </td>
               </tr>
@@ -312,23 +308,25 @@ export const Tabla_director = () => {
         </Table>
       </div>
 
-      <ModalInsertar
-        handleChange={handleChange}
-        handleToggle={handleToggle}
-        icon={icon}
-        type={type}
-        dato={dato}
-        peticionPost={peticionPost}
-        abrirCerrarModalInsertar={abrirCerrarModalInsertar}
-        modalInsertar={modalInsertar}
-      />
-      <ModalEditar
-        dataUsuario={dataUsuario}
-        handleChange={handleChange}
-        modalEditar={modalEditar}
-        dato={dato}
-        peticionPut={peticionPut}
-        abrirCerrarModalEditar={abrirCerrarModalEditar}
+  
+
+     <ModalInsertar
+     handleChange={handleChange}
+     handleToggle={handleToggle}
+     icon={icon}
+     type={type}
+     dato={dato}
+     peticionPost={peticionPost}
+     abrirCerrarModalInsertar={abrirCerrarModalInsertar}
+     modalInsertar={modalInsertar}
+     />
+      <ModalEditar 
+      dataUsuario={dataUsuario}
+      handleChange={handleChange}
+      modalEditar={modalEditar} 
+      dato={dato}
+      peticionPut={peticionPut}
+      abrirCerrarModalEditar={abrirCerrarModalEditar}
       />
 
       <ModalEliminar

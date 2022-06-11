@@ -49,9 +49,8 @@ const Asesor = () => {
     f.append("METHOD", "CONSULTAID");
     await axios.post(baseUrl, f).then((response) => {
       setData(response.data);
-      History.push("/Consulta2")
-    });
-    
+      History.push("/Consulta2");
+    });  
   };
   
 

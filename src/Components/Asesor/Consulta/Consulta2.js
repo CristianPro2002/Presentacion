@@ -15,17 +15,22 @@ const Consulta2 = () => {
     Actualizar
   </button>{' '}
     <div className='contenT'>
-        <h1>Registros de persona natural: 1192719887</h1>
+        <h1>Registros de persona natural: {data.No_ide}</h1>
     </div>
     <div className='Tabla2'>
-<Table striped bordered hover >
+      <div>
+        <label><h3>Tipo de solicitud:</h3>{data.Nom_sol}</label>
+      </div>
+      <center><label><h2>Datos Personales</h2></label></center>
+<Table  striped bordered hover responsive="sm">
   <thead>
     <tr>
-      <th>Id</th>
+      <th>Identificacion</th>
       <th>Primer Nombre</th>
       <th>Segundo Nombre</th>
       <th>Primer Apellido</th>
       <th>Segundo Apellido</th>
+      <th>Tipo de Documento</th>
     </tr>
   </thead>
   <tbody>
@@ -35,6 +40,7 @@ const Consulta2 = () => {
       <td>{data.Seg_nom}</td>
       <td>{data.Pri_ape}</td>
       <td>{data.Seg_ape}</td>
+      <td>{data.Nom_doc}</td>
     </tr>
   </tbody>
 </Table>

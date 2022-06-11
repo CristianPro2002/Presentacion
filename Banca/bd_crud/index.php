@@ -35,13 +35,16 @@ if($_POST['METHOD']=='POSTO'){
 
 if($_POST['METHOD']=='CONSULTAID'){
     unset($_POST['METHOD']);
-    $query="select * from client_co where No_ide=".$_POST['No_ide'];
+    $query="select * from client_co inner join ti_doc on client_co.Idti_doc = ti_doc.Idti_doc where No_ide=".$_POST['No_ide'];
     $resultado=metodoGet($query);
+    if($resultado==true){
+        $query2="select * from clien_tip inner join ti_sol on clien_tip.Idti_sol=ti_sol.Idti_sol where No_ide=".$_POST['No_ide'];
+        $resultado2=metodoGet($query2);
+    }
     echo json_encode($resultado->fetch(PDO::FETCH_ASSOC));
     header("HTTP/1.1 200 OK");
     exit();
 }
-
 
 
 //Registro de Fomulario persona natural

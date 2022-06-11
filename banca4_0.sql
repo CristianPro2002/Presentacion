@@ -2,8 +2,8 @@
 -- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 09-06-2022 a las 05:31:10
+-- Servidor: localhost
+-- Tiempo de generación: 11-06-2022 a las 23:43:26
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.5
 
@@ -136,6 +136,7 @@ CREATE TABLE `client_co` (
 --
 
 INSERT INTO `client_co` (`No_ide`, `Idti_solicit`, `Fec_dil`, `Pri_nom`, `Seg_nom`, `Pri_ape`, `Seg_ape`, `Idti_doc`, `Lug_exp`, `Fec_exp`, `Fec_nac`, `Ciu_nac`, `Id_gen`, `Idest_ci`, `Id_nac`, `Otr_nac`, `Dir_re`, `Blo_to`, `Ap_ca`, `Barrio`, `Ciu_mu`, `Depart`, `Pais`, `Telef`, `Celular`, `Corr_ele`, `Profe`, `Idocu_ofii`, `Det_act`, `Cod_ciuu`, `No_emp`, `Nom_emp`, `Dir_emp`, `Barr_lab`, `Ciu_lab`, `Dep_lab`, `Pais_lab`, `Tel_lab`, `Ext`, `Cel_lab`, `Corr_lab`, `Ing_men`, `Otr_ing`, `Det_otr`, `To_act`, `To_pa`, `To_egr`, `Vent_a`, `Fe_ci`, `Dec_rent`, `Age_ret`, `Idtireg_iva`, `Ob_tri`, `Notri_est`, `Pais_1`, `Pais_2`, `No_tri1`, `No_tri2`, `Prov_bie`, `Pais_bi`, `Ciu_bie`, `Op_ext`, `Idtiop_m`, `Otro_mo`, `Nom_ent`, `Idtipro_m`, `Otro_mo2`, `No_pro`, `Mo_pro`, `Moneda`, `Ciu_ent`, `Pa_ent`, `Idtien_re`, `No_solicit`, `Cod_vend`) VALUES
+(123, 1, '2022-06-10', 'sonia', 'maria', 'salas', 'sanchez', 4, 'dfdgfg', '2022-06-09', '2022-06-17', 'dfgdfgdf', 1, 3, 2, 'dgfdgd', 'dgfgdgd', 345, 534, 'dfgdg', 'dfgdfg', 'gdgdf', 'gdfgd', 3453, 53453, 'fdgdfg', 'gdfgd', 6, 'dfgdgd', 2342, 34, 'dsgsdg', 'dsfsdf', 'dsffs', 'fsdfs', 'fsdf', 'fdsf', 324, 43, 3242, 'dssfsfd', 3455, 5345, 'dgddfg', 54353, 5435, 3453, 53453, '2022-06-14', 'Si', 'No', 2, 'Si', 34535, 'fgdfgd', 'gdfgfd', 3453, 5344, 'dsfsdfs', 'dsfsf', 'sdfsf', 'Si', 5, 'gfhfh', 'dfhdhfhdhd', 2, 'dfgdfgd', 345, 3453, '5345', 'dgfdgd', 'gdfgd', 1, 3453, 4353),
 (353453, 1, '2022-06-01', 'DFGD', 'GDFGD', 'GDFG', 'GFDGD', 1, 'DSFSS', '2022-06-15', '2022-06-01', 'DFGDFGD', 2, 1, 2, 'FDGDGFGGF', 'FGDGDG', 3535, 53453, 'FDVDFF', 'DVFVD', 'DVFV', 'DFVDV', 4353, 53453, 'DVFVDVD', 'SDFSDFSFSDc', 3, 'DFGDG', 3424, 3242, 'DDFGDF', 'DFGDGDF', 'GDFGDG', 'DFGDG', 'DGDGF', 'GDGD', 435, 435, 53453, 'DGFDGD', 354, 65455, 'DFGGDFG', 3534, 53453, 53453, 5345, '2022-06-20', 'Si', 'Si', 1, 'Si', 435353, 'DFGFDG', 'GDFGDG', 453, 53452, 'DFDGD', 'GDFGD', 'GDFGD', 'Si', 5, 'FDGDFG', 'GDFGDG', 2, 'GFDFGDG', 5464, 6456, 'fdgdgd', 'GDFGD', 'GDFGD', 1, 456456, 564435),
 (1192719887, 1, '2022-06-07', 'cristian', 'andres', 'castaño', 'salas', 1, 'Palmira', '2020-07-16', '2002-07-13', 'Florida', 2, 1, 1, 'Colombiano', 'Calle 47a # 11a18', 1118, 1118, 'Poblado Comfaunion', 'Palmira', 'Valle', 'Colombia', 3172527140, 3172527139, 'cristian.0713.cs@gmail.com', 'Estudiante', 4, 'Nada', 2345, 1, 'Cristian lo mejorsito', 'Cristian3k', 'Mercedes', 'Palmira', 'Valle', 'Colombia', 31321232, 32, 213131323, 'cristian@gmail.com', 50000000, 5000, 'otros', 50000, 5000, 499999, 50000000, '2022-06-08', 'Si', 'Si', 1, 'Si', 34242424242, 'colombia', 'colombia', 324234, 324325, 'Esta', 'Colombia', 'Palmira', 'Si', 8, 'La plata', 'La plata 3k', 1, 'Si claro', 3234, 4234, '42342', 'Palmira', 'Colombia', 1, 1192719887, 324234);
 
@@ -157,7 +158,8 @@ CREATE TABLE `clien_tip` (
 
 INSERT INTO `clien_tip` (`Idclien_tip`, `Idti_sol`, `No_ide`) VALUES
 (2, 2, 353453),
-(3, 1, 1192719887);
+(3, 1, 1192719887),
+(4, 1, 123);
 
 -- --------------------------------------------------------
 
@@ -407,6 +409,7 @@ CREATE TABLE `solicitante` (
 --
 
 INSERT INTO `solicitante` (`Idti_soli`, `No_solicit`, `Nom_solicit`, `Firma`) VALUES
+(2, 3453, 'fgdgd', 'dfgfgd'),
 (1, 456456, 'FDGDGD', 'FGDFGD'),
 (2, 1192719887, 'Cristian', 'Cristian');
 
@@ -800,6 +803,7 @@ CREATE TABLE `vendedor` (
 --
 
 INSERT INTO `vendedor` (`Cod_vend`, `Nom_vend`, `Oficina`, `Obser`, `Firma_vend`) VALUES
+(4353, 'dfgdfg', 'gfdgd', 'gdfgdf', 'dfgdgdf'),
 (324234, 'Valentina Bandida', 'Sus ex', 'Ojo con ella', 'Siempre Bandida'),
 (564435, 'DGDFDG', 'GFDGD', 'GDFGD', 'DFGDGfd');
 
@@ -1078,7 +1082,7 @@ ALTER TABLE `act_cli`
 -- AUTO_INCREMENT de la tabla `clien_tip`
 --
 ALTER TABLE `clien_tip`
-  MODIFY `Idclien_tip` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificacion de intermedia clien_tip', AUTO_INCREMENT=4;
+  MODIFY `Idclien_tip` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificacion de intermedia clien_tip', AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `cuenta_c`

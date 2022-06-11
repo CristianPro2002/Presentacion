@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useContext, useState} from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import { Table } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
+import {AppContext} from '.././application/provider'
 const Msolicitud = ({
   abrir,
   cerrar,
@@ -12,6 +13,8 @@ const Msolicitud = ({
   abrirp,
 }) => {
   let History = useHistory();
+  const [data, setData] = useContext(AppContext);
+  
   return (
     <div>
       <div className="contbtns">
@@ -45,23 +48,26 @@ const Msolicitud = ({
                   <tr>
                     <th>#</th>
                     <th>Nombre del cliente</th>
-                    <th>Tipo de solicitud</th>
-                    <th>Producto</th>
+                    <th>Apellido del cliente</th>
+                    <th>Tipo de documento</th>
                     <th>Detalle</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Cristian</td>
-                    <td>Apertura de cuenta</td>
-                    <td>Cuenta de ahorro</td>
+                  {/* {data.map((Data)=>( */}
+                    <tr key={data.No_ide}>
+                    <td>{data.No_ide}</td>
+                    <td>{data.Pri_nom}</td>
+                    <td>{data.Pri_ape}</td>
+                    <td>{data.Nom_doc}</td>
                     <td>
                       <button onClick={abrir} className="btn btn-danger">
                         Detalle
                       </button>
                     </td>
                   </tr>
+                    {/* )
+                  )} */}
                 </tbody>
               </Table>
             </div>

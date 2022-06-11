@@ -1,4 +1,5 @@
 .contenedor_padre_director{
+  /*Contenedor principal del Formulario_Director*/
   display: flex;
   justify-content: center;
  width: 100%;
@@ -257,9 +258,6 @@ justify-content: end;
 
 .congoback{
   width: 50%;
-}
-.contemodal{
-  z-index: 100;
 }
 
 .contabrir{
@@ -541,8 +539,35 @@ justify-content: end;
   
 }
 
+/* barra buscadora */
+.containerInput{
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.input_buscadorsito{
+  width: 70%;
+}
+.report{
+  margin-left: 10px;
+  font-size: 35px;
+  color: #000000;
+}
+.report:hover{
+  color: rgb(117, 205, 29);
+}
+#input_buscador{
+ border-right: none;
+ border-bottom-right-radius: none;
+}
+#icono_buscar{
+  border-top: none;
+}
 
 
+/*mediaqueri de el contenedor del formulario, ubicado en Formulario_Director*/
 @media (max-width:296px){
   .container_formulario_director{
     width: 93%;
@@ -551,22 +576,15 @@ justify-content: end;
     font-size: 12px;
   }
 }
-@media (max-width:566px){
-  #boton_verde_tabla{
-    width: 80px;
-  }
-}
 
-@media (max-width:400px){
-  #boton_danger_rojo{
-    font-size: 13px;
-    width: 70px;
-  }
-  #boton_verde_tabla{
-    width: 70px;
-  }
-}
+  
+    /*mediaqueri del input de busqueda*/
 
-.boton_modal_flecha{
-display: flex;
-}
+/*Conteneodor del input de busqueda*/
+    .containerInput{
+      padding-bottom: 15px;
+    }
+/*ocultar la id de los roles*/
+    .ocultarid{
+      display: none;
+    }
