@@ -13,7 +13,7 @@ export const Cajero = (props) => {
 
   let History = useHistory();
 
-  const baseUrl = "http://localhost:8080/Banca/bd_crud/cajero.php";
+  const baseUrl = "http://localhost/Banca/bd_crud/cajero.php";
 
   const [data, setData] = useState([]);
   const [dataUsuario, setDataUsuario] = useState({
@@ -24,7 +24,7 @@ export const Cajero = (props) => {
     Cajero: "Cajero1",
   });
 
-  const peticionPost = async (e) => {
+  const peticionPost = async () => {
     var f = new FormData();
     f.append("Id_act", dataUsuario.Id_act);
     f.append("Fecha_act", dataUsuario.Fecha_act);
@@ -34,7 +34,6 @@ export const Cajero = (props) => {
     f.append("METHOD", "POSET");
     await axios.post(baseUrl, f).then((response) => {
       setData(data.concat(response.data));
-      e.preventDefault();
     });
   };
 
@@ -112,7 +111,7 @@ export const Cajero = (props) => {
           <div className="Container-2">
             <div className="container2">
               <Container>
-                <Form action="http://localhost:8080/Recibo/Recibo.php" method="post">
+                <Form action="http://localhost/Recibo/Recibo.php" method="post">
                   <div className="Contenedores2">
                     <div className="Contenedor-logo-second">
                       <img
