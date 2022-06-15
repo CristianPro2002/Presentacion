@@ -45,11 +45,11 @@ const paginacionOpciones = {
 };
 
 const Tabla = () => {
-  const baseUrl = "http://localhost/Banca/bd_crud/cajero.php";
-
+  const baseUrl = "http://localhost:8080/Banca/bd_crud/cajero.php";
+  const [busqueda, setBusqueda]= useState("");
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
-  const [filtereddata, setFiltereddata] = useState([]);
+  const [tablaUsuarios, setTablaUsuarios]= useState([]);
   const [modalEliminar, setModalEliminar] = useState(false);
   const [dataUsuario, setDataUsuario] = useState({
     Id_act: "",
@@ -62,7 +62,7 @@ const Tabla = () => {
   const peticionGet = async () => {
     await axios.get(baseUrl).then((response) => {
       setData(response.data);
-      setFiltereddata(response.data);
+      setTablaUsuarios(response.data);
     });
   };
 
@@ -70,14 +70,21 @@ const Tabla = () => {
     peticionGet();
   }, []);
 
-  useEffect(() => {
-    const result = data.filter((datos) => {
-      return datos.Id_act.toLowerCase().match(search.toLowerCase());
+  const handleChange=(e)=>{
+    setBusqueda(e.target.value);
+    filtrar(e.target.value);
+  }
+
+
+  const filtrar=(terminoBusqueda)=>{
+    var resultadosBusqueda=tablaUsuarios.filter((elemento)=>{
+      if(elemento.Id_act.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
+      ){
+        return elemento;
+      }
     });
-
-    setFiltereddata(result);
-  }, [search]);
-
+    setData(resultadosBusqueda);
+  }
   let History = useHistory();
 
   return (
@@ -98,7 +105,7 @@ const Tabla = () => {
       <div className="crud">
         <DataTable
           columns={columnas}
-          data={filtereddata}
+          data={data}
           pagination
           paginationComponentOptions={paginacionOpciones}
           fixedHeader
@@ -111,18 +118,20 @@ const Tabla = () => {
                   type="number"
                   placeholder="Buscar documento"
                   className="w-40 form-control"
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
+                  value={busqueda}
+                  onChange={handleChange}
                 />
               </div>
               <div className="col-md-3">
-                <a className="reporte" href="http://localhost/documen">
+                <a className="reporte" href="http://localhost:8080/documen">
                   <AiFillPrinter />
                 </a>
               </div>
             </div>
           }
           subHeaderAlign="right"
+          noDataComponent="No se encuentra resultados." 
+        
           /* <input type="number"
          placeholder="Buscar documento" 
          className="w-25 form-control search"

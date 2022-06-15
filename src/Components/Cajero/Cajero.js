@@ -13,7 +13,7 @@ export const Cajero = (props) => {
 
   let History = useHistory();
 
-  const baseUrl = "http://localhost/Banca/bd_crud/cajero.php";
+  const baseUrl = "http://localhost:8080/Banca/bd_crud/cajero.php";
 
   const [data, setData] = useState([]);
   const [dataUsuario, setDataUsuario] = useState({
@@ -111,7 +111,7 @@ export const Cajero = (props) => {
           <div className="Container-2">
             <div className="container2">
               <Container>
-                <Form action="http://localhost/Recibo/Recibo.php" method="post">
+                <Form action="http://localhost:8080/Recibo/Recibo.php" method="post">
                   <div className="Contenedores2">
                     <div className="Contenedor-logo-second">
                       <img
