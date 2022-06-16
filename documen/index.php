@@ -2,7 +2,7 @@
 
 require 'FPDF/fpdf.php';
 
-$mysqli = new mysqli("localhost","root","","bancaadsi");
+$mysqli = new mysqli("localhost","root","","banca4.0");
 
 if(mysqli_connect_errno()){
     echo 'Conexion fallida: ', mysqli_connect_errno();

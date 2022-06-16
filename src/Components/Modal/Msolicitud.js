@@ -1,8 +1,9 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useState, useEffect} from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import { Table } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import {AppContext} from '.././application/provider'
+import axios from "axios";
 const Msolicitud = ({
   abrir,
   cerrar,
@@ -11,10 +12,10 @@ const Msolicitud = ({
   cerrarT,
   cerrarp,
   abrirp,
+  solicitud
 }) => {
   let History = useHistory();
-  const [data, setData] = useContext(AppContext);
-  
+
   return (
     <div>
       <div className="contbtns">
@@ -49,25 +50,25 @@ const Msolicitud = ({
                     <th>#</th>
                     <th>Nombre del cliente</th>
                     <th>Apellido del cliente</th>
-                    <th>Tipo de documento</th>
+                    <th>Telefono</th>
                     <th>Detalle</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {/* {data.map((Data)=>( */}
-                    <tr key={data.No_ide}>
-                    <td>{data.No_ide}</td>
-                    <td>{data.Pri_nom}</td>
-                    <td>{data.Pri_ape}</td>
-                    <td>{data.Nom_doc}</td>
+                  {solicitud.map((Data)=>( 
+                    <tr key={Data.No_ide}>
+                    <td>{Data.No_ide}</td>
+                    <td>{Data.Pri_nom}</td>
+                    <td>{Data.Pri_ape}</td>
+                    <td>{Data.Telef}</td>
                     <td>
                       <button onClick={abrir} className="btn btn-danger">
                         Detalle
                       </button>
                     </td>
                   </tr>
-                    {/* )
-                  )} */}
+                    )
+                  )} 
                 </tbody>
               </Table>
             </div>

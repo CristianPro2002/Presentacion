@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 11-06-2022 a las 23:43:26
+-- Tiempo de generación: 16-06-2022 a las 09:29:02
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.5
 
@@ -54,6 +54,7 @@ CREATE TABLE `cla_contr` (
 --
 
 CREATE TABLE `client_co` (
+  `Id_client` int(11) NOT NULL COMMENT 'Identificacion aleatorio de cada cliente',
   `No_ide` double NOT NULL COMMENT 'Nunero de identificacion del cliente',
   `Idti_solicit` int(11) DEFAULT NULL COMMENT 'Identificacion de Tipo de solicitante',
   `Fec_dil` date DEFAULT NULL COMMENT 'Fecha de diligenciamiento',
@@ -135,10 +136,11 @@ CREATE TABLE `client_co` (
 -- Volcado de datos para la tabla `client_co`
 --
 
-INSERT INTO `client_co` (`No_ide`, `Idti_solicit`, `Fec_dil`, `Pri_nom`, `Seg_nom`, `Pri_ape`, `Seg_ape`, `Idti_doc`, `Lug_exp`, `Fec_exp`, `Fec_nac`, `Ciu_nac`, `Id_gen`, `Idest_ci`, `Id_nac`, `Otr_nac`, `Dir_re`, `Blo_to`, `Ap_ca`, `Barrio`, `Ciu_mu`, `Depart`, `Pais`, `Telef`, `Celular`, `Corr_ele`, `Profe`, `Idocu_ofii`, `Det_act`, `Cod_ciuu`, `No_emp`, `Nom_emp`, `Dir_emp`, `Barr_lab`, `Ciu_lab`, `Dep_lab`, `Pais_lab`, `Tel_lab`, `Ext`, `Cel_lab`, `Corr_lab`, `Ing_men`, `Otr_ing`, `Det_otr`, `To_act`, `To_pa`, `To_egr`, `Vent_a`, `Fe_ci`, `Dec_rent`, `Age_ret`, `Idtireg_iva`, `Ob_tri`, `Notri_est`, `Pais_1`, `Pais_2`, `No_tri1`, `No_tri2`, `Prov_bie`, `Pais_bi`, `Ciu_bie`, `Op_ext`, `Idtiop_m`, `Otro_mo`, `Nom_ent`, `Idtipro_m`, `Otro_mo2`, `No_pro`, `Mo_pro`, `Moneda`, `Ciu_ent`, `Pa_ent`, `Idtien_re`, `No_solicit`, `Cod_vend`) VALUES
-(123, 1, '2022-06-10', 'sonia', 'maria', 'salas', 'sanchez', 4, 'dfdgfg', '2022-06-09', '2022-06-17', 'dfgdfgdf', 1, 3, 2, 'dgfdgd', 'dgfgdgd', 345, 534, 'dfgdg', 'dfgdfg', 'gdgdf', 'gdfgd', 3453, 53453, 'fdgdfg', 'gdfgd', 6, 'dfgdgd', 2342, 34, 'dsgsdg', 'dsfsdf', 'dsffs', 'fsdfs', 'fsdf', 'fdsf', 324, 43, 3242, 'dssfsfd', 3455, 5345, 'dgddfg', 54353, 5435, 3453, 53453, '2022-06-14', 'Si', 'No', 2, 'Si', 34535, 'fgdfgd', 'gdfgfd', 3453, 5344, 'dsfsdfs', 'dsfsf', 'sdfsf', 'Si', 5, 'gfhfh', 'dfhdhfhdhd', 2, 'dfgdfgd', 345, 3453, '5345', 'dgfdgd', 'gdfgd', 1, 3453, 4353),
-(353453, 1, '2022-06-01', 'DFGD', 'GDFGD', 'GDFG', 'GFDGD', 1, 'DSFSS', '2022-06-15', '2022-06-01', 'DFGDFGD', 2, 1, 2, 'FDGDGFGGF', 'FGDGDG', 3535, 53453, 'FDVDFF', 'DVFVD', 'DVFV', 'DFVDV', 4353, 53453, 'DVFVDVD', 'SDFSDFSFSDc', 3, 'DFGDG', 3424, 3242, 'DDFGDF', 'DFGDGDF', 'GDFGDG', 'DFGDG', 'DGDGF', 'GDGD', 435, 435, 53453, 'DGFDGD', 354, 65455, 'DFGGDFG', 3534, 53453, 53453, 5345, '2022-06-20', 'Si', 'Si', 1, 'Si', 435353, 'DFGFDG', 'GDFGDG', 453, 53452, 'DFDGD', 'GDFGD', 'GDFGD', 'Si', 5, 'FDGDFG', 'GDFGDG', 2, 'GFDFGDG', 5464, 6456, 'fdgdgd', 'GDFGD', 'GDFGD', 1, 456456, 564435),
-(1192719887, 1, '2022-06-07', 'cristian', 'andres', 'castaño', 'salas', 1, 'Palmira', '2020-07-16', '2002-07-13', 'Florida', 2, 1, 1, 'Colombiano', 'Calle 47a # 11a18', 1118, 1118, 'Poblado Comfaunion', 'Palmira', 'Valle', 'Colombia', 3172527140, 3172527139, 'cristian.0713.cs@gmail.com', 'Estudiante', 4, 'Nada', 2345, 1, 'Cristian lo mejorsito', 'Cristian3k', 'Mercedes', 'Palmira', 'Valle', 'Colombia', 31321232, 32, 213131323, 'cristian@gmail.com', 50000000, 5000, 'otros', 50000, 5000, 499999, 50000000, '2022-06-08', 'Si', 'Si', 1, 'Si', 34242424242, 'colombia', 'colombia', 324234, 324325, 'Esta', 'Colombia', 'Palmira', 'Si', 8, 'La plata', 'La plata 3k', 1, 'Si claro', 3234, 4234, '42342', 'Palmira', 'Colombia', 1, 1192719887, 324234);
+INSERT INTO `client_co` (`Id_client`, `No_ide`, `Idti_solicit`, `Fec_dil`, `Pri_nom`, `Seg_nom`, `Pri_ape`, `Seg_ape`, `Idti_doc`, `Lug_exp`, `Fec_exp`, `Fec_nac`, `Ciu_nac`, `Id_gen`, `Idest_ci`, `Id_nac`, `Otr_nac`, `Dir_re`, `Blo_to`, `Ap_ca`, `Barrio`, `Ciu_mu`, `Depart`, `Pais`, `Telef`, `Celular`, `Corr_ele`, `Profe`, `Idocu_ofii`, `Det_act`, `Cod_ciuu`, `No_emp`, `Nom_emp`, `Dir_emp`, `Barr_lab`, `Ciu_lab`, `Dep_lab`, `Pais_lab`, `Tel_lab`, `Ext`, `Cel_lab`, `Corr_lab`, `Ing_men`, `Otr_ing`, `Det_otr`, `To_act`, `To_pa`, `To_egr`, `Vent_a`, `Fe_ci`, `Dec_rent`, `Age_ret`, `Idtireg_iva`, `Ob_tri`, `Notri_est`, `Pais_1`, `Pais_2`, `No_tri1`, `No_tri2`, `Prov_bie`, `Pais_bi`, `Ciu_bie`, `Op_ext`, `Idtiop_m`, `Otro_mo`, `Nom_ent`, `Idtipro_m`, `Otro_mo2`, `No_pro`, `Mo_pro`, `Moneda`, `Ciu_ent`, `Pa_ent`, `Idtien_re`, `No_solicit`, `Cod_vend`) VALUES
+(1, 123, 1, '2022-06-10', 'sonia', 'maria', 'salas', 'sanchez', 4, 'dfdgfg', '2022-06-09', '2022-06-17', 'dfgdfgdf', 1, 3, 2, 'dgfdgd', 'dgfgdgd', 345, 534, 'dfgdg', 'dfgdfg', 'gdgdf', 'gdfgd', 3453, 53453, 'fdgdfg', 'gdfgd', 6, 'dfgdgd', 2342, 34, 'dsgsdg', 'dsfsdf', 'dsffs', 'fsdfs', 'fsdf', 'fdsf', 324, 43, 3242, 'dssfsfd', 3455, 5345, 'dgddfg', 54353, 5435, 3453, 53453, '2022-06-14', 'Si', 'No', 2, 'Si', 34535, 'fgdfgd', 'gdfgfd', 3453, 5344, 'dsfsdfs', 'dsfsf', 'sdfsf', 'Si', 5, 'gfhfh', 'dfhdhfhdhd', 2, 'dfgdfgd', 345, 3453, '5345', 'dgfdgd', 'gdfgd', 1, 3453, 4353),
+(2, 353453, 1, '2022-06-01', 'DFGD', 'GDFGD', 'GDFG', 'GFDGD', 1, 'DSFSS', '2022-06-15', '2022-06-01', 'DFGDFGD', 2, 1, 2, 'FDGDGFGGF', 'FGDGDG', 3535, 53453, 'FDVDFF', 'DVFVD', 'DVFV', 'DFVDV', 4353, 53453, 'DVFVDVD', 'SDFSDFSFSDc', 3, 'DFGDG', 3424, 3242, 'DDFGDF', 'DFGDGDF', 'GDFGDG', 'DFGDG', 'DGDGF', 'GDGD', 435, 435, 53453, 'DGFDGD', 354, 65455, 'DFGGDFG', 3534, 53453, 53453, 5345, '2022-06-20', 'Si', 'Si', 1, 'Si', 435353, 'DFGFDG', 'GDFGDG', 453, 53452, 'DFDGD', 'GDFGD', 'GDFGD', 'Si', 5, 'FDGDFG', 'GDFGDG', 2, 'GFDFGDG', 5464, 6456, 'fdgdgd', 'GDFGD', 'GDFGD', 1, 456456, 564435),
+(3, 1192719887, 1, '2022-06-07', 'cristian', 'andres', 'castaño', 'salas', 1, 'Palmira', '2020-07-16', '2002-07-13', 'Florida', 2, 1, 1, 'Colombiano', 'Calle 47a # 11a18', 1118, 1118, 'Poblado Comfaunion', 'Palmira', 'Valle', 'Colombia', 3172527140, 3172527139, 'cristian.0713.cs@gmail.com', 'Estudiante', 4, 'Nada', 2345, 1, 'Cristian lo mejorsito', 'Cristian3k', 'Mercedes', 'Palmira', 'Valle', 'Colombia', 31321232, 32, 213131323, 'cristian@gmail.com', 50000000, 5000, 'otros', 50000, 5000, 499999, 50000000, '2022-06-08', 'Si', 'Si', 1, 'Si', 34242424242, 'colombia', 'colombia', 324234, 324325, 'Esta', 'Colombia', 'Palmira', 'Si', 8, 'La plata', 'La plata 3k', 1, 'Si claro', 3234, 4234, '42342', 'Palmira', 'Colombia', 1, 1192719887, 324234),
+(5, 323, 1, '2022-06-15', 'dfsd', 'fdsf', 'sfdsd', 'fdsf', 2, 'dfgdg', '2022-06-22', '2022-06-17', 'dfgdgff', 2, 2, 3, 'fdgdfgd', 'fdgdgd', 43, 343, 'dfgdg', 'gdfgd', 'gdfgd', 'gdfgd', 3453, 53453, 'dgdg', 'ddgfg', 2, 'dgdfgd', 3242, 43, 'dfgdfg', 'fdgdfg', 'gdfgd', 'gdfg', 'dfgd', 'gdfg', 342, 4342, 422, 'dsfsfs', 4234, 4234, 'dfdgdfg', 4234, 4234, 32422, 324234, '2022-06-15', 'No', 'Si', 1, 'Si', 343432, 'dsfsf', 'dsffsdf', 3242, 43242, 'dsfsdf', 'fdsf', 'dsfsd', 'Si', 8, 'dfsdfs', 'fdgfdgdf', 1, 'fdgdfgd', 4534, 534, '53453', 'fdgdfgg', 'dfgdfg', 1, 435345, 435353);
 
 -- --------------------------------------------------------
 
@@ -159,7 +161,7 @@ CREATE TABLE `clien_tip` (
 INSERT INTO `clien_tip` (`Idclien_tip`, `Idti_sol`, `No_ide`) VALUES
 (2, 2, 353453),
 (3, 1, 1192719887),
-(4, 1, 123);
+(5, 2, 323);
 
 -- --------------------------------------------------------
 
@@ -348,6 +350,24 @@ INSERT INTO `prueba` (`Id_act`, `Fecha_act`, `Tip_pro`, `Valor_act`, `Cajero`) V
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `reg_soli`
+--
+
+CREATE TABLE `reg_soli` (
+  `Id_reg` int(11) NOT NULL COMMENT 'Identificacion de los registros de las solicitudes',
+  `No_ide` double NOT NULL COMMENT 'Numero de identificacion del cliente'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Registros de solicitudes';
+
+--
+-- Volcado de datos para la tabla `reg_soli`
+--
+
+INSERT INTO `reg_soli` (`Id_reg`, `No_ide`) VALUES
+(1, 323);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `reg_usu`
 --
 
@@ -410,6 +430,7 @@ CREATE TABLE `solicitante` (
 
 INSERT INTO `solicitante` (`Idti_soli`, `No_solicit`, `Nom_solicit`, `Firma`) VALUES
 (2, 3453, 'fgdgd', 'dfgfgd'),
+(1, 435345, 'fdgdf', 'fdgdfg'),
 (1, 456456, 'FDGDGD', 'FGDFGD'),
 (2, 1192719887, 'Cristian', 'Cristian');
 
@@ -805,6 +826,7 @@ CREATE TABLE `vendedor` (
 INSERT INTO `vendedor` (`Cod_vend`, `Nom_vend`, `Oficina`, `Obser`, `Firma_vend`) VALUES
 (4353, 'dfgdfg', 'gfdgd', 'gdfgdf', 'dfgdgdf'),
 (324234, 'Valentina Bandida', 'Sus ex', 'Ojo con ella', 'Siempre Bandida'),
+(435353, 'dfgdgd', 'dgdfgd', 'gdfgdfgd', 'dfgdg'),
 (564435, 'DGDFDG', 'GFDGD', 'GDFGD', 'DFGDGfd');
 
 --
@@ -829,7 +851,7 @@ ALTER TABLE `cla_contr`
 -- Indices de la tabla `client_co`
 --
 ALTER TABLE `client_co`
-  ADD PRIMARY KEY (`No_ide`),
+  ADD PRIMARY KEY (`Id_client`),
   ADD KEY `Idti_solicit` (`Idti_solicit`),
   ADD KEY `Idti_doc` (`Idti_doc`),
   ADD KEY `Id_gen` (`Id_gen`),
@@ -841,7 +863,8 @@ ALTER TABLE `client_co`
   ADD KEY `Idocu_ofii` (`Idocu_ofii`),
   ADD KEY `Idtireg_iva` (`Idtireg_iva`),
   ADD KEY `Idtipro_m` (`Idtipro_m`),
-  ADD KEY `Idtiop_m` (`Idtiop_m`);
+  ADD KEY `Idtiop_m` (`Idtiop_m`),
+  ADD KEY `No_ide` (`No_ide`);
 
 --
 -- Indices de la tabla `clien_tip`
@@ -914,6 +937,13 @@ ALTER TABLE `genero`
 --
 ALTER TABLE `prueba`
   ADD PRIMARY KEY (`Id_act`);
+
+--
+-- Indices de la tabla `reg_soli`
+--
+ALTER TABLE `reg_soli`
+  ADD PRIMARY KEY (`Id_reg`),
+  ADD KEY `No_ide` (`No_ide`);
 
 --
 -- Indices de la tabla `reg_usu`
@@ -1079,16 +1109,28 @@ ALTER TABLE `act_cli`
   MODIFY `Idact_cli` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificacion de actividad de cliente';
 
 --
+-- AUTO_INCREMENT de la tabla `client_co`
+--
+ALTER TABLE `client_co`
+  MODIFY `Id_client` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificacion aleatorio de cada cliente', AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT de la tabla `clien_tip`
 --
 ALTER TABLE `clien_tip`
-  MODIFY `Idclien_tip` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificacion de intermedia clien_tip', AUTO_INCREMENT=5;
+  MODIFY `Idclien_tip` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificacion de intermedia clien_tip', AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `cuenta_c`
 --
 ALTER TABLE `cuenta_c`
   MODIFY `No_cuenta` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Numero de cuenta';
+
+--
+-- AUTO_INCREMENT de la tabla `reg_soli`
+--
+ALTER TABLE `reg_soli`
+  MODIFY `Id_reg` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificacion de los registros de las solicitudes', AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `reg_usu`
@@ -1129,7 +1171,7 @@ ALTER TABLE `client_co`
 --
 ALTER TABLE `clien_tip`
   ADD CONSTRAINT `clien_tip_ibfk_1` FOREIGN KEY (`Idti_sol`) REFERENCES `ti_sol` (`Idti_sol`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `clien_tip_ibfk_2` FOREIGN KEY (`No_ide`) REFERENCES `client_co` (`No_ide`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `clien_tip_ibfk_2` FOREIGN KEY (`No_ide`) REFERENCES `client_co` (`No_ide`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `cont_ent`
@@ -1172,6 +1214,12 @@ ALTER TABLE `entidad`
 ALTER TABLE `ent_ti`
   ADD CONSTRAINT `ent_ti_ibfk_1` FOREIGN KEY (`Nit`) REFERENCES `entidad` (`Nit`) ON UPDATE CASCADE,
   ADD CONSTRAINT `ent_ti_ibfk_2` FOREIGN KEY (`Idti_sol`) REFERENCES `ti_sol` (`Idti_sol`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `reg_soli`
+--
+ALTER TABLE `reg_soli`
+  ADD CONSTRAINT `reg_soli_ibfk_1` FOREIGN KEY (`No_ide`) REFERENCES `client_co` (`No_ide`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `reg_usu`

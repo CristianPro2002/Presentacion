@@ -22,9 +22,19 @@ if($_SERVER['REQUEST_METHOD']=='GET'){
 }
 
 //  Desplegable de tipo de rol
-if($_POST['METHOD']=='POSTO'){
+if($_POST['METHOD']=='ROLES'){
     unset($_POST['METHOD']);
     $query="select * from tip_rol";
+    $resultado=metodoGet($query);
+    echo json_encode($resultado->fetchAll());
+    header("HTTP/1.1 200 OK");
+    exit();
+}
+
+//  Modal de solicitudes
+if($_POST['METHOD']=='SOLICITUD'){
+    unset($_POST['METHOD']);
+    $query="select * from reg_soli inner join client_co on reg_soli.No_ide = client_co.No_ide";
     $resultado=metodoGet($query);
     echo json_encode($resultado->fetchAll());
     header("HTTP/1.1 200 OK");
@@ -148,6 +158,14 @@ if($_POST['METHOD']=='FORMN'){
         //intermedia tipo de solicitud
             $query ="insert into clien_tip(Idti_sol,No_ide) values ('$Idti_sol','$No_ide')";
             $resultado4 = mysqli_query($conexion, $query);
+
+            if($resultado4 == 1){
+                $query= "insert into reg_soli(No_ide) values ('$No_ide')";
+                $resultado5 = mysqli_query($conexion, $query);
+            }else{
+                echo("error en la cuarta insersion");
+            }
+
             }else{
                 echo("error en la tercera insersion");
             }

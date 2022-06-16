@@ -16,7 +16,7 @@ export const Tabla_director = () => {
 
   const [data2, setData2] = useState([]);
   const [dato, setDato] = useState([]);
-
+  const [solicitud, setSolicitud] = useState([]);
   const [tablaUsuarios, setTablaUsuarios]= useState([]);
   const [busqueda, setBusqueda]= useState("");
 
@@ -41,16 +41,29 @@ export const Tabla_director = () => {
 
   useEffect(() => {
     peticionGet2();
-  }, [dato]);
+  }, []);
 
   const peticionGet2 = async () => {
     var f = new FormData();
-    f.append("METHOD", "POSTO");
+    f.append("METHOD", "ROLES");
     await axios.post(baseUrl, f).then((response) => {
       setDato(response.data);
     });
   };
 
+
+
+  const peticionGet3 = async () => {
+    var f = new FormData();
+    f.append("METHOD", "SOLICITUD");
+    await axios.post(baseUrl, f).then((response) => {
+      setSolicitud(response.data);
+    });
+  };
+
+  useEffect(() => {
+    peticionGet3();
+  }, []);
 
 
   const peticionPost = async () => {
@@ -76,9 +89,6 @@ export const Tabla_director = () => {
       ...prevState,
       [name]: value,
     }));
-
-    console.log(dataUsuario);
- 
   };
   const handleChange2=(e)=>{
     setBusqueda(e.target.value);
@@ -233,6 +243,7 @@ export const Tabla_director = () => {
       cerrarT={cerrarT}
       abrirp={abrirp}
       cerrarp={cerrarp}
+      solicitud={solicitud}
       />
       </div>
       <h1 className="titureg">Registros de cuentas de usuario</h1>
