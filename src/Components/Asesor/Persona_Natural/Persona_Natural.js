@@ -5,8 +5,7 @@ import { Col, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-import { useFormik } from "formik";
-import * as Yup from "yup";
+
 
 const PersonaNatural = () => {
   let History = useHistory();

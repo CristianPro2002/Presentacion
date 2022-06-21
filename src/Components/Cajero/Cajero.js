@@ -77,7 +77,7 @@ export const Cajero = (props) => {
                   id="sign-in-form"
                   className="text-center w-100"
                 >
-                  <img className="mb-4 logo" src={imagen} />
+                  <img className="mb-4 logo" src={imagen} alt="" />
                   <div className="Center">
                     <h1 className=" title">Apertura de ahorro</h1>
                   </div>
@@ -118,6 +118,7 @@ export const Cajero = (props) => {
                         className="mb-4 logo-second"
                         width={50}
                         src={imagen}
+                        alt=""
                       />
                     </div>
                     <div className="Datos">

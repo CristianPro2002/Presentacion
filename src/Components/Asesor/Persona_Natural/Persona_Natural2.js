@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Estilos.css";
 import "react-datepicker/dist/react-datepicker.css";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import { useHistory } from "react-router-dom";
-import * as yup from "yup";
 
 const PersonaNatural2 = () => {
   let History = useHistory();

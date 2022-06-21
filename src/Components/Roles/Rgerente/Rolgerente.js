@@ -1,5 +1,4 @@
-import React, {useState} from "react";
-import Button from "react-bootstrap/Button";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -77,7 +76,7 @@ const Rolgerente = () => {
                     </div>
                     <br />
                     <li>
-                      <a onClick={Vdirector} value="validar">
+                      <button onClick={Vdirector} value="validar" className="button01">
                         <img
                           className=""
                           alt=""
@@ -85,7 +84,7 @@ const Rolgerente = () => {
                           width="50"
                           height="50"
                         />
-                      </a>
+                      </button>
                     </li>
                   </ul>
                 </div>
@@ -120,7 +119,7 @@ const Rolgerente = () => {
                     </div>
                     <br />
                     <li>
-                      <a onClick={()=> History.push("/Gerente")} value="validar2">
+                      <button onClick={()=> History.push("/Gerente")} value="validar2" className="button01">
                         <img
                           className="ImagenF"
                           alt=""
@@ -128,7 +127,7 @@ const Rolgerente = () => {
                           width="50"
                           height="50"
                         />
-                      </a>
+                      </button>
                     </li>
                   </ul>
                 </div>
@@ -168,7 +167,7 @@ const Rolgerente = () => {
                     </div>
                     <br />
                     <li>
-                      <a onClick={Vasesor} value="validar3">
+                      <button onClick={Vasesor} value="validar3" className="button01">
                         <img
                           className=""
                           alt=""
@@ -176,7 +175,7 @@ const Rolgerente = () => {
                           width="50"
                           height="50"
                         />
-                      </a>
+                      </button>
                     </li>
                   </ul>
                 </div>
@@ -216,7 +215,7 @@ const Rolgerente = () => {
                     </div>
                     <br />
                     <li>
-                      <a onClick={Vcajero} value="validar4">
+                      <button onClick={Vcajero} value="validar4" className="button01">
                         <img
                           className=""
                           alt=""
@@ -224,7 +223,7 @@ const Rolgerente = () => {
                           width="50"
                           height="50"
                         />
-                      </a>
+                      </button>
                     </li>
                   </ul>
                 </div>
@@ -257,7 +256,7 @@ const Rolgerente = () => {
                     </div>
                     <br />
                     <li>
-                      <a onClick={Vcajerop} value="validar5">
+                      <button onClick={Vcajerop} value="validar5" className="button01">
                         <img
                           className=""
                           alt=""
@@ -265,7 +264,7 @@ const Rolgerente = () => {
                           width="50"
                           height="50"
                         />
-                      </a>
+                      </button>
                     </li>
                   </ul>
                 </div>

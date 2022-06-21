@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Table } from "react-bootstrap";
 import axios from "axios";
-import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { useHistory } from "react-router-dom";
@@ -48,9 +46,7 @@ const Tabla = () => {
   const baseUrl = "http://localhost:8080/Banca/bd_crud/cajero.php";
   const [busqueda, setBusqueda]= useState("");
   const [data, setData] = useState([]);
-  const [search, setSearch] = useState("");
   const [tablaUsuarios, setTablaUsuarios]= useState([]);
-  const [modalEliminar, setModalEliminar] = useState(false);
   const [dataUsuario, setDataUsuario] = useState({
     Id_act: "",
     Fecha_act: "",

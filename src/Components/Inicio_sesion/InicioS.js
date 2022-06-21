@@ -11,8 +11,6 @@ import Input from "./ComponentesInicio/Input";
 import "./InicioS.css";
 import logo from "../Inicio_sesion/Logo/logo.webp";
 import { useHistory } from "react-router-dom";
-import  Roles from "../Roles/Roles"
-import reactDom from "react-dom";
 
 
 const URL_LOGIN ="http://localhost:8080/banca/bd_sesion/login.php"

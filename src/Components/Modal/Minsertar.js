@@ -14,7 +14,7 @@ const Minsertar = ({modalInsertar, handleChange,handleToggle, icon, type, dato, 
     <div className="container_formulario_director">
       <form>
         <div className="titulo_creacion_usu">
-          <img className="img_usu_creacion" src={imagen}></img>
+          <img className="img_usu_creacion" src={imagen} alt=""></img>
           <h3>Creacion de Usuarios</h3>
         </div>
         <div className="Nombre_Usuario">

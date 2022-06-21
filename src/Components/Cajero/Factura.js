@@ -22,15 +22,6 @@ const Factura = () => {
     content: () => componentRef.current,
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setDataUsuario((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-    console.log(dataUsuario);
-  };
-
   const peticionGet = async () => {
     await axios.get(baseUrl).then((response) => {
       setData(response.data);
@@ -41,8 +32,6 @@ const Factura = () => {
     peticionGet();
   }, [data]);
 
-  let history = useHistory();
-
   return (
     <>
       <div class="print__section" ref={componentRef}>
@@ -52,7 +41,7 @@ const Factura = () => {
               <div>
                 <Col className="img-text">
                 <h3 className="titulo">Factura</h3>
-                <img className="imagen" src={logo}/>
+                <img className="imagen" src={logo} alt=""/>
                 </Col>
               </div>
 
@@ -122,10 +111,10 @@ const Factura = () => {
       </div>
       <br></br>
       <div className="print">
-        <a onClick={handlePrint} className="print__button">
+        <button onClick={handlePrint} className="print__button">
           {" "}
           Imprimir{" "}
-        </a>
+        </button>
         <a href="javascript: history.go(-1)" className="print_button printa">
           Cerrar
         </a>

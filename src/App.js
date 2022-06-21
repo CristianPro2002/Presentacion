@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Index from './Components/Index'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
@@ -12,15 +12,14 @@ import Gerente from './Components/Gerente/Gerente'
 import Asesor from './Components/Asesor/Asesor'
 import PersonaJuridica from './Components/Asesor/Persona_Juridica/PersonaJuridica'
 import PersonaNatural from './Components/Asesor/Persona_Natural/Persona_Natural'
-import Formulario_Director from './Components/Director/Formulario_Director'
 import Asesor2 from './Components/Asesor/Asesor2'
 import Asesor3 from './Components/Asesor/Asesor3'
 import Asesor4 from './Components/Asesor/Asesor4'
 import Asesor5 from './Components/Asesor/Asesor5'
-import Persona_Natural2 from './Components/Asesor/Persona_Natural/Persona_Natural2';
-import Persona_Natural3 from './Components/Asesor/Persona_Natural/Persona_Natural3';
-import Persona_Natural4 from './Components/Asesor/Persona_Natural/Persona_Natural4';
-import Persona_Natural5 from './Components/Asesor/Persona_Natural/Persona_Natural5';
+import PersonaNatural2 from './Components/Asesor/Persona_Natural/Persona_Natural2';
+import PersonaNatural3 from './Components/Asesor/Persona_Natural/Persona_Natural3';
+import PersonaNatural4 from './Components/Asesor/Persona_Natural/Persona_Natural4';
+import PersonaNatural5 from './Components/Asesor/Persona_Natural/Persona_Natural5';
 import PersonaJuridica2 from './Components/Asesor/Persona_Juridica/PersonaJuridica2';
 import PersonaJuridica3 from './Components/Asesor/Persona_Juridica/PersonaJuridica3';
 import PersonaJuridica4 from './Components/Asesor/Persona_Juridica/PersonaJuridica4';
@@ -92,7 +91,7 @@ function App() {
           <Consulta/>
         </Route>
         <Route path="/Tabla_director">
-          <Tabla_director />
+          <Tabla_director/>
         </Route>
         <Route path="/PersonaJuridica5">
           <PersonaJuridica5 />
@@ -107,16 +106,16 @@ function App() {
           <PersonaJuridica2 />
         </Route>
         <Route path="/PersonaNatural5">
-          <Persona_Natural5 />
+          <PersonaNatural5 />
         </Route>
         <Route path="/PersonaNatural4">
-          <Persona_Natural4 />
+          <PersonaNatural4 />
         </Route>
         <Route path="/PersonaNatural3">
-          <Persona_Natural3 />
+          <PersonaNatural3 />
         </Route>
         <Route path="/PersonaNatural2">
-          <Persona_Natural2 />
+          <PersonaNatural2 />
         </Route>
         <Route path="/Asesor5">
           <Asesor5 />

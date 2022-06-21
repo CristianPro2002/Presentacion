@@ -5,19 +5,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Form from "react-bootstrap/Form";
 import "./Roles.css";
-import { useAuth } from "../firebase";
 import Cajeroimg from "./Imagenes_R/cajero.webp";
 import Directorimg from "./Imagenes_R/director.webp";
 import Gerenteimg from "./Imagenes_R/gerente.webp";
 import Asesorimg from "./Imagenes_R/asesor.webp";
 import Cajeropimg from "./Imagenes_R/CajeroP.webp";
+import Usuariecito from "./Imagenes_R/usuario.webp";
 
 const Roles = () => {
 
 
   let History = useHistory();
-
-  const currentUser = useAuth();
 
   const validar3 = (e) => {
     var validacion = document.getElementById("Asesorv");
@@ -72,9 +70,18 @@ const Roles = () => {
               id="cir"
               onClick={() => History.push("/")}
             ></i>
-            <div className="contmodoo">
-              <input type="checkbox" id="input-dark-mode"></input>
-            </div>
+            <div class="dropdown">
+  <button className="btn  dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+  <img
+                    className="imagen01"
+                    alt=""
+                    src={Usuariecito}
+                  />
+  </button>
+  <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a className="dropdown-item" href="#">Cerrar Sesión</a></li>
+  </ul>
+</div>
           </div>
           <div className="Croles">
             <div className="row" id="rows">
@@ -107,7 +114,7 @@ const Roles = () => {
                     </div>
                     <br />
                     <li>
-                      <a onClick={() => History.push("/Tabla_director")} value="validar">
+                      <button onClick={() => History.push("/Tabla_director")} value="validar" className="button01">
                         <img
                           className="ImagenF"
                           alt=""
@@ -115,7 +122,7 @@ const Roles = () => {
                           width="50"
                           height="50"
                         />
-                      </a>
+                      </button>
                     </li>
                   </ul>
                 </div>
@@ -150,7 +157,7 @@ const Roles = () => {
                     </div>
                     <br />
                     <li>
-                      <a onClick={()=> History.push("/Gerente")} value="validar2">
+                      <button onClick={()=> History.push("/Gerente")} value="validar2" className="button01">
                         <img
                           className="ImagenF"
                           alt=""
@@ -158,7 +165,7 @@ const Roles = () => {
                           width="50"
                           height="50"
                         />
-                      </a>
+                      </button>
                     </li>
                   </ul>
                 </div>
@@ -197,7 +204,7 @@ const Roles = () => {
                     </div>
                     <br />
                     <li>
-                      <a onClick={validar3} value="validar3">
+                      <button onClick={validar3} value="validar3" className="button01">
                         <img
                           className="ImagenF"
                           alt=""
@@ -205,7 +212,7 @@ const Roles = () => {
                           width="50"
                           height="50"
                         />
-                      </a>
+                      </button>
                     </li>
                   </ul>
                 </div>
@@ -244,7 +251,7 @@ const Roles = () => {
                     </div>
                     <br />
                     <li>
-                      <a onClick={validar4} value="validar4">
+                      <button onClick={validar4} value="validar4" className="button01">
                         <img
                           className="ImagenF"
                           alt=""
@@ -252,7 +259,7 @@ const Roles = () => {
                           width="50"
                           height="50"
                         />
-                      </a>
+                      </button>
                     </li>
                   </ul>
                 </div>
@@ -285,7 +292,7 @@ const Roles = () => {
                     </div>
                     <br />
                     <li>
-                      <a onClick={()=> History.push("/CajeroP")} value="validar5">
+                      <button onClick={()=> History.push("/CajeroP")} value="validar5" className="button01">
                         <img
                           className="ImagenF2"
                           alt=""
@@ -293,7 +300,7 @@ const Roles = () => {
                           width="50"
                           height="50"
                         />
-                      </a>
+                      </button>
                     </li>
                   </ul>
                 </div>

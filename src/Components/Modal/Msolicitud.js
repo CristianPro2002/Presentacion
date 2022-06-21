@@ -1,9 +1,6 @@
-import React, {useContext, useState, useEffect} from "react";
-import ListGroup from "react-bootstrap/ListGroup";
+import React from "react";
 import { Table } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
-import {AppContext} from '.././application/provider'
-import axios from "axios";
 const Msolicitud = ({
   abrir,
   cerrar,

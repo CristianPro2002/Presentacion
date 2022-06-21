@@ -2,6 +2,9 @@
     float: right;
     border-style: none;
 }
+.button01{
+    border:none;
+}
 
 .modoO:hover{
     background: black;

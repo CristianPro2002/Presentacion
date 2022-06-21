@@ -2,12 +2,9 @@ import React, { useState } from "react";
 import "./ESTILOS_FORMD/estile_form_d.css";
 import imagen from "./Imagenes/Manager-icon.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAlignCenter, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import ListGroup from "react-bootstrap/ListGroup";
 import swal from "sweetalert";
-import Modal from 'react-bootstrap/Modal'
-import { Button } from "bootstrap";
-import { Alert } from "bootstrap";
 import Table from 'react-bootstrap/Table'
 
 export const Formulario_Director = (props) => {
@@ -47,9 +44,6 @@ export const Formulario_Director = (props) => {
     props.addoredit(datos);
     setDatos({ ...initialStateDatos });
   };
-
-const botonV = document.querySelectorAll('listascss')[0];
-const ventana_modal = document.querySelectorAll('container__modal2')[0];
 
 const abrir = (e) => {
   e.preventDefault();
@@ -181,7 +175,7 @@ const cerrarT = (e) => {
           action="Index.php"
         >
           <div className="titulo_creacion_usu">
-            <img className="img_usu_creacion" src={imagen}></img>
+            <img className="img_usu_creacion" src={imagen} alt=""></img>
             <h3>Creacion de Usuarios</h3>
           </div>
           <div className="Nombre_Usuario">
