@@ -57,6 +57,16 @@ if($_POST['METHOD']=='CONSULTAID'){
 }
 
 
+if($_POST['METHOD']=='CONSULTAID2'){
+    unset($_POST['METHOD']);
+    $query="select * from client_co where No_ide=".$_POST['No_ide'];
+    $resultado=metodoGet($query);
+    echo json_encode($resultado->fetch(PDO::FETCH_ASSOC));
+    header("HTTP/1.1 200 OK");
+    exit();
+}
+
+
 //Registro de Fomulario persona natural
 if($_POST['METHOD']=='FORMN'){
     unset($_POST['METHOD']);
