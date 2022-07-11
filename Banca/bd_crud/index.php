@@ -41,6 +41,15 @@ if($_POST['METHOD']=='SOLICITUD'){
     exit();
 }
 
+if($_POST['METHOD']=='SOLICITUD2'){
+    unset($_POST['METHOD']);
+    $query="select * from reg_soli inner join client_co on reg_soli.No_ide = client_co.No_ide where No_ide=".$_POST['No_ide'];
+    $resultado=metodoGet($query);
+    echo json_encode($resultado->fetchAll(PDO::FETCH_ASSOC));
+    header("HTTP/1.1 200 OK");
+    exit();
+}
+
 //Consulta de informacion de persona natural
 
 if($_POST['METHOD']=='CONSULTAID'){
@@ -58,6 +67,16 @@ if($_POST['METHOD']=='CONSULTAID'){
 
 
 if($_POST['METHOD']=='CONSULTAID2'){
+    unset($_POST['METHOD']);
+    $query="select * from client_co where No_ide=".$_POST['No_ide'];
+    $resultado=metodoGet($query);
+    echo json_encode($resultado->fetch(PDO::FETCH_ASSOC));
+    header("HTTP/1.1 200 OK");
+    exit();
+}
+
+
+if($_POST['METHOD']=='CONSULTAID3'){
     unset($_POST['METHOD']);
     $query="select * from client_co where No_ide=".$_POST['No_ide'];
     $resultado=metodoGet($query);
@@ -172,6 +191,12 @@ if($_POST['METHOD']=='FORMN'){
             if($resultado4 == 1){
                 $query= "insert into reg_soli(No_ide) values ('$No_ide')";
                 $resultado5 = mysqli_query($conexion, $query);
+                if($resultado5 == 1){
+                    $query = "insert into cuenta_c(No_cuenta,No_ide) values ('$No_cuenta', '$No_ide')";
+                    $resultado6 = mysqli_query($conexion, $query);
+                }  else{
+                    echo("error en la quinta insersion");
+                } 
             }else{
                 echo("error en la cuarta insersion");
             }
@@ -188,6 +213,142 @@ if($_POST['METHOD']=='FORMN'){
     header("HTTP/1.1 200 OK");
     exit();
 }
+
+//Registro de Formulario de persona jurídica
+if ($_POST['METHOD'] == 'FORMJ') {
+    unset($_POST['METHOD']);
+    $Fe_dil = $_POST['Fe_dil'];
+    $Nit = $_POST['Nit'];
+    $Idti_sol = $_POST['Idti_sol'];
+    $Idti_doc = $_POST['Idti_doc'];
+    $Fidei = $_POST['Fidei'];
+    $No_fide = $_POST['No_fide'];
+    $Nom_ra = $_POST['Nom_ra'];
+    $Nom_cor = $_POST['Nom_cor'];
+    $Fe_cons = $_POST['Fe_cons'];
+    $Ciu_cons = $_POST['Ciu_cons'];
+    $Pai_cons = $_POST['Pai_cons'];
+    $Dir_se = $_POST['Dir_se'];
+    $Telefono = $_POST['Telefono'];
+    $Corr_se = $_POST['Corr_se'];
+    $No_doc = $_POST['No_doc'];
+    $Pri_no = $_POST['Pri_no'];
+    $Seg_no = $_POST['Seg_no'];
+    $Pri_ape = $_POST['Pri_ape'];
+    $Seg_ape = $_POST['Seg_ape'];
+    $Cargo = $_POST['Cargo'];
+    $Dir_lab = $_POST['Dir_lab'];
+    $Barrio = $_POST['Barrio'];
+    $Ciu_mu = $_POST['Ciu_mu'];
+    $Depart = $_POST['Depart'];
+    $Pais = $_POST['Pais'];
+    $Tel_lab = $_POST['Tel_lab'];
+    $Ext = $_POST['Ext'];
+    $Celular = $_POST['Celular'];
+    $Corr_lab = $_POST['Corr_lab'];
+    $Pre_1 = $_POST['Pre_1'];
+    $Pre_2 = $_POST['Pre_2'];
+    $No_docu = $_POST['No_docu'];
+    $Pri_nom = $_POST['Pri_nom'];
+    $Seg_nom = $_POST['Seg_nom'];
+    $Idti_na = $_POST['Idti_na'];
+    $Co_ciuu = $_POST['Co_ciuu'];
+    $Det_act = $_POST['Det_act'];
+    $No_emp = $_POST['No_emp'];
+    $Idti_soci = $_POST['Idti_soci'];
+    $Otro_com = $_POST['Otro_com'];
+    $Idti_en = $_POST['Idti_en'];
+    $Otro_ent = $_POST['Otro_ent'];
+    $Idti_es = $_POST['Idti_es'];
+    $Otro_est = $_POST['Otro_est'];
+    $Idti_des = $_POST['Idti_des'];
+    $Ing_op = $_POST['Ing_op'];
+    $Ino_op = $_POST['Ino_op'];
+    $Detno = $_POST['Detno'];
+    $vent_an = $_POST['vent_an'];
+    $Fe_ci = $_POST['Fe_ci'];
+    $Egre_me = $_POST['Egre_me'];
+    $Util_ne = $_POST['Util_ne'];
+    $Tot_act = $_POST['Tot_act'];
+    $Tot_pas = $_POST['Tot_pas'];
+    $Tot_pat = $_POST['Tot_pat'];
+    $Idti_cont = $_POST['Idti_cont'];
+    $Idcla_cont = $_POST['Idcla_cont'];
+    $Res_iva = $_POST['Res_iva'];
+    $Aut_ing = $_POST['Aut_ing'];
+    $Int_merc = $_POST['Int_merc'];
+    $Vig_sup = $_POST['Vig_sup'];
+    $Obli_est = $_POST['Obli_est'];
+    $No_id_tr = $_POST['No_id_tr'];
+    $Patri_1 = $_POST['Patri_1'];
+    $Patri_2 = $_POST['Patri_2'];
+    $NoidTrib_1 = $_POST['NoidTrib_1'];
+    $NoidTrib_2 = $_POST['NoidTrib_2'];
+    $Idtripro_bi = $_POST['Idtripro_bi'];
+    $Otro_fue = $_POST['Otro_fue'];
+    $Idfue_rec = $_POST['Idfue_rec'];
+    $Otro_pro = $_POST['Otro_pro'];
+    $Pais_or = $_POST['Pais_or'];
+    $Ciu_or = $_POST['Ciu_or'];
+    $Nat_recu = $_POST['Nat_recu'];
+    $Op_ext = $_POST['Op_ext'];
+    $Idtiop_m = $_POST['Idtiop_m'];
+    $Otro_mo = $_POST['Otro_mo'];
+    $Nom_ent = $_POST['Nom_ent'];
+    $Idtipro_m = $_POST['Idtipro_m'];
+    $Otro_mo2 = $_POST['Otro_mo2'];
+    $No_pro = $_POST['No_pro'];
+    $Mo_pro = $_POST['Mo_pro'];
+    $Moneda = $_POST['Moneda'];
+    $Ciu_ent = $_POST['Ciu_ent'];
+    $Pa_ent = $_POST['Pa_ent'];
+    $Idtien_re = $_POST['Idtien_re'];
+    $Idti_soli = $_POST['Idti_soli'];
+    $No_solicit = $_POST['No_solicit'];
+    $Nom_solicit = $_POST['Nom_solicit'];
+    $Firma = $_POST['Firma'];
+    $Cod_vend = $_POST['Cod_vend'];
+    $Nom_vend = $_POST['Nom_vend'];
+    $Oficina = $_POST['Oficina'];
+    $Obser = $_POST['Obser'];
+    $Firma_vend = $_POST['Firma_vend'];
+    $query = "insert into vendedor(Cod_vend,Nom_vend,Oficina,Obser,Firma_vend) values ('$Cod_vend','$Nom_vend','$Oficina','$Obser','$Firma_vend')";
+    $resultado5 = mysqli_query($conexion, $query);
+    if ($resultado5 == 1) {
+        $query = "insert into solicitante(Idti_soli,No_solicit,Nom_solicit, Firma) values ('$Idti_soli','$No_solicit','$Nom_solicit','$Firma')";
+        $resultado6 = mysqli_query($conexion, $query);
+        if ($resultado6 == 1) {
+            $query = "insert into repr_le(No_doc,Idti_doc,Pri_no,Seg_no,Pri_ape,Seg_ape,Cargo,Dir_lab,Barrio,Ciu_mu,Depart,Pais,Tel_lab,Ext,Celular,Corr_lab) values 
+            ('$No_doc','$Idti_doc','$Pri_no','$Seg_no','$Pri_ape','$Seg_ape','$Cargo','$Dir_lab','$Barrio','$Ciu_mu','$Depart','$Pais','$Tel_lab','$Ext','$Celular','$Corr_lab')";
+            $resultado7 = mysqli_query($conexion, $query);
+            if ($resultado7 == 1) {
+                $query = "insert into entidad(Fe_dil,Fidei,No_fide,Nom_ra,Nom_cor,Fe_cons,Ciu_cons,Pai_cons,Dir_se,Telefono,Ext,Corr_se,Pre_1,Pre_2,Idti_na,Co_ciuu,Det_act,No_emp,Idti_soci,Otro_com,Idti_en,Otro_ent,Idti_es,Otro_est,Idti_des,Ing_op,Ino_op,Detno,vent_an,Fe_ci,Egre_me,Util_ne,Tot_act,Tot_pas,Tot_pat,Idti_cont,Idcla_cont,Res_iva,Aut_ing,Int_merc,Vig_sup,Obli_est,No_id_tr,Patri_1,Patri_2,NoidTrib_1,NoidTrib_2,Idtripro_bi,Otro_fue,Idfue_rec,Otro_pro,Ciu_or,Nat_recu,Op_ext,Otro_mo,Nom_ent,Idtipro_m,Otro_mo2,No_pro,Mo_pro,Moneda,Ciu_ent,Pa_ent,Idtien_re,No_solicit,Cod_vend) 
+                values ('$Fe_dil','$Fidei','$No_fide','$Nom_ra','$Nom_cor','$Fe_cons','$Ciu_cons','$Pai_cons','$Dir_se','$Telefono','$Corr_se','$Pre_1','$Pre_2',','$Idti_na','$Co_ciuu','$Det_act','$No_emp','$Idti_soci','$Otro_com','$Idti_en','$Otro_ent','$Idti_es','$Otro_est','$Idti_des','$Ing_op','$Ino_op','$Detno','$vent_an','$Fe_ci','$Egre_me','$Util_ne','$Tot_act','$Tot_pas','$Tot_pat','$Idti_cont','$Idcla_cont','$Res_iva','$Aut_ing','$Int_merc','$Vig_sup','$Obli_est','$No_id_tr','$Patri_1','$Patri_2','$NoidTrib_1','$NoidTrib_2','$Idtripro_bi','$Otro_fue','$Idfue_rec','$Otro_pro','$Pais_or','$Ciu_or','$Nat_recu','$Op_ext','$Idtiop_m','$Otro_mo','$Nom_ent','$Idtipro_m','$Otro_mo2','$No_pro','$Mo_pro','$Moneda','$Ciu_ent','$Pa_ent','$Idtien_re','$No_solicit','$Cod_vend')"; 
+                $resultado8 = mysqli_query($conexion, $query);         
+                if ($resultado8 == 1) {
+                    $query = "insert into cont_ent(No_docu,Idti_doc,Pri_nom,Seg_nom,Pri_ape,Seg_ape,Cargo,Dir_lab,Barrio,Ciu_mu,Depart,Pais,Tel_lab,Ext,Celular,Corr_lab) values 
+                    ('$No_docu','$Idti_doc','$Pri_nom','$Seg_nom','$Pri_ape','$Seg_ape','$Cargo','$Dir_lab','$Barrio','$Ciu_mu','$Depart','$Pais','$Tel_lab','$Ext','$Celular','$Corr_lab')";   
+                    $resultado9 = mysqli_query($conexion, $query);  
+                    if ($resultado9 == 1) {
+                        $query = "insert into ent_ti(Nit, Idti_sol) values ('$Nit', '$Idti_sol')";
+                        $resultado10 = mysqli_query($conexion, $query);   
+                    }
+                } else {
+                    echo ("error en la cuarta insersion");
+                }
+            } else {
+                echo ("error en la tercera insersion");
+            }
+        } else {
+            echo ("error en la segunda insersion");
+        }
+    } else {
+        echo ("error en la primera insersion");
+    }
+    header("HTTP/1.1 200 OK");
+    exit();
+}
+
 
 //Crud Completa
 
@@ -227,6 +388,18 @@ if($_POST['METHOD']=='DELETE'){
     unset($_POST['METHOD']);
     $Id_usu=$_GET['Id_usu'];
     $query="DELETE FROM reg_usu WHERE Id_usu='$Id_usu'";
+    $resultado=metodoDelete($query);
+    echo json_encode($resultado);
+    header("HTTP/1.1 200 OK");
+    exit();
+}
+
+//Eliminacion de solicitudes
+
+if($_POST['METHOD']=='DELETESOLI'){
+    unset($_POST['METHOD']);
+    $No_ide=$_GET['No_ide'];
+    $query="DELETE FROM reg_soli WHERE No_ide='$No_ide'";
     $resultado=metodoDelete($query);
     echo json_encode($resultado);
     header("HTTP/1.1 200 OK");

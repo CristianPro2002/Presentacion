@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 16-06-2022 a las 09:29:02
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 11-07-2022 a las 02:40:10
 -- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.5
+-- Versión de PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `banca4.0`
+-- Base de datos: `gd`
 --
 
 -- --------------------------------------------------------
@@ -46,6 +46,14 @@ CREATE TABLE `cla_contr` (
   `Idcla_contr` int(11) NOT NULL COMMENT 'Identificacion de clase de contribuyente',
   `Nom_cla` varchar(60) NOT NULL COMMENT 'Nombre de clase de contribuyente'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Clase de contribuyente';
+
+--
+-- Volcado de datos para la tabla `cla_contr`
+--
+
+INSERT INTO `cla_contr` (`Idcla_contr`, `Nom_cla`) VALUES
+(1, 'Gran contribuyente'),
+(2, 'No gran contribuyente');
 
 -- --------------------------------------------------------
 
@@ -140,7 +148,10 @@ INSERT INTO `client_co` (`Id_client`, `No_ide`, `Idti_solicit`, `Fec_dil`, `Pri_
 (1, 123, 1, '2022-06-10', 'sonia', 'maria', 'salas', 'sanchez', 4, 'dfdgfg', '2022-06-09', '2022-06-17', 'dfgdfgdf', 1, 3, 2, 'dgfdgd', 'dgfgdgd', 345, 534, 'dfgdg', 'dfgdfg', 'gdgdf', 'gdfgd', 3453, 53453, 'fdgdfg', 'gdfgd', 6, 'dfgdgd', 2342, 34, 'dsgsdg', 'dsfsdf', 'dsffs', 'fsdfs', 'fsdf', 'fdsf', 324, 43, 3242, 'dssfsfd', 3455, 5345, 'dgddfg', 54353, 5435, 3453, 53453, '2022-06-14', 'Si', 'No', 2, 'Si', 34535, 'fgdfgd', 'gdfgfd', 3453, 5344, 'dsfsdfs', 'dsfsf', 'sdfsf', 'Si', 5, 'gfhfh', 'dfhdhfhdhd', 2, 'dfgdfgd', 345, 3453, '5345', 'dgfdgd', 'gdfgd', 1, 3453, 4353),
 (2, 353453, 1, '2022-06-01', 'DFGD', 'GDFGD', 'GDFG', 'GFDGD', 1, 'DSFSS', '2022-06-15', '2022-06-01', 'DFGDFGD', 2, 1, 2, 'FDGDGFGGF', 'FGDGDG', 3535, 53453, 'FDVDFF', 'DVFVD', 'DVFV', 'DFVDV', 4353, 53453, 'DVFVDVD', 'SDFSDFSFSDc', 3, 'DFGDG', 3424, 3242, 'DDFGDF', 'DFGDGDF', 'GDFGDG', 'DFGDG', 'DGDGF', 'GDGD', 435, 435, 53453, 'DGFDGD', 354, 65455, 'DFGGDFG', 3534, 53453, 53453, 5345, '2022-06-20', 'Si', 'Si', 1, 'Si', 435353, 'DFGFDG', 'GDFGDG', 453, 53452, 'DFDGD', 'GDFGD', 'GDFGD', 'Si', 5, 'FDGDFG', 'GDFGDG', 2, 'GFDFGDG', 5464, 6456, 'fdgdgd', 'GDFGD', 'GDFGD', 1, 456456, 564435),
 (3, 1192719887, 1, '2022-06-07', 'cristian', 'andres', 'castaño', 'salas', 1, 'Palmira', '2020-07-16', '2002-07-13', 'Florida', 2, 1, 1, 'Colombiano', 'Calle 47a # 11a18', 1118, 1118, 'Poblado Comfaunion', 'Palmira', 'Valle', 'Colombia', 3172527140, 3172527139, 'cristian.0713.cs@gmail.com', 'Estudiante', 4, 'Nada', 2345, 1, 'Cristian lo mejorsito', 'Cristian3k', 'Mercedes', 'Palmira', 'Valle', 'Colombia', 31321232, 32, 213131323, 'cristian@gmail.com', 50000000, 5000, 'otros', 50000, 5000, 499999, 50000000, '2022-06-08', 'Si', 'Si', 1, 'Si', 34242424242, 'colombia', 'colombia', 324234, 324325, 'Esta', 'Colombia', 'Palmira', 'Si', 8, 'La plata', 'La plata 3k', 1, 'Si claro', 3234, 4234, '42342', 'Palmira', 'Colombia', 1, 1192719887, 324234),
-(5, 323, 1, '2022-06-15', 'dfsd', 'fdsf', 'sfdsd', 'fdsf', 2, 'dfgdg', '2022-06-22', '2022-06-17', 'dfgdgff', 2, 2, 3, 'fdgdfgd', 'fdgdgd', 43, 343, 'dfgdg', 'gdfgd', 'gdfgd', 'gdfgd', 3453, 53453, 'dgdg', 'ddgfg', 2, 'dgdfgd', 3242, 43, 'dfgdfg', 'fdgdfg', 'gdfgd', 'gdfg', 'dfgd', 'gdfg', 342, 4342, 422, 'dsfsfs', 4234, 4234, 'dfdgdfg', 4234, 4234, 32422, 324234, '2022-06-15', 'No', 'Si', 1, 'Si', 343432, 'dsfsf', 'dsffsdf', 3242, 43242, 'dsfsdf', 'fdsf', 'dsfsd', 'Si', 8, 'dfsdfs', 'fdgfdgdf', 1, 'fdgdfgd', 4534, 534, '53453', 'fdgdfgg', 'dfgdfg', 1, 435345, 435353);
+(7, 45, 1, '2022-07-08', 'fgdf', 'gfdgd', 'gdfg', 'gdfg', 1, 'fgdfgf', '2022-07-08', '2022-07-08', 'ddfgdf', 2, 2, 1, 'fdgd', 'fdgdf', 453, 534, 'fdgdf', 'gfdg', 'dfg', 'dfgdf', 4353, 5345, 'fdgdfg', 'fdgdfg', 10, 'fdgdfgd', 3453, 54, 'dgfdfgdf', 'dfgdfgdf', 'fgdf', 'dfgdf', 'gdf', 'fgdfg', 435, 435, 453, 'dfgdf', 4353, 3453, 'fdgd', 5435, 534, 43534, 3453, '2022-07-08', 'Si', 'Si', 3, 'No', 13453443, 'dfgdf', 'gdfgd', 435, 3451, 'dfgdf', 'dfgdf', 'gdfg', 'Si', 5, 'fdgdf', 'fdgdf', 1, 'dfgdfg', 3453, 5345, '3453', 'dfgd', 'gdfg', 1, 43, 23),
+(8, 13, 1, '2022-07-08', 'fdg', 'ddfgd', 'gdf', 'gdf', 4, 'dfgdf', '2022-07-08', '2022-07-08', 'fdgdf', 1, 2, 1, 'fdgdf', 'fddgdf', 433, 534, 'dfgd', 'gdf', 'gdf', 'fdgd', 543, 45, 'dfdfg', 'dfgfdg', 7, 'fdgdfg', 543, 534, 'dfgdfg', 'fgdgd', 'gfdfg', 'fgdfg', 'df', 'gdfg', 4334545, 54, 543, 'dfgdfgd', 43534, 5345, 'dfgdfg', 534, 3453, 34534, 5345, '2022-07-08', 'No', 'No', 3, 'Si', 43534, 'dfdf', 'dfgdf', 5435, 3544, 'dfgdf', 'fdggd', 'gd', 'Si', 2, 'dfgdf', 'gdfgd', 1, 'dfgdf', 3453, 5345, '345', 'dfgdf', 'gdfg', 1, 34432, 34532),
+(9, 32234, 1, '2022-07-08', 'fgd', 'gdfgd', 'gdfgd', 'fdgd', 1, 'sfdsfs', '2022-07-08', '2022-07-08', 'dsfs', 2, 2, 2, 'dfsd', 'dsfsdf', 453, 4534, 'dsfsd', 'dsfs', 'fsd', 'dsfs', 435, 435, 'dsfsdf', 'dsfsd', 7, 'dfsdfs', 343, 434, 'dsfsd', 'dssfsdf', 'dfsd', 'dfsf', 'dsf', 'dfd', 34, 343, 40, 'dfdfd', 424, 324, 'dsfsd', 3432, 342, 343, 43, '2022-07-07', 'Si', 'No', 2, 'Si', 342332, 'dfsd', 'dsfs', 232, 324, 'dsfds', 'dfsfds', 'dfsd', 'Si', 4, 'dsfsd', 'dfsfs', 1, 'dsfs', 34, 2432, '423', 'dsfs', 'dsfsd', 1, 3242345, 46878),
+(11, 2578, 1, '2022-07-05', 'dgfd', 'gdfgd', 'fdgd', 'gdfgd', 2, 'ddgd', '2022-07-14', '2022-07-15', 'dfgdfg', 2, 1, 1, 'fdgdf', 'fdgdfgd', 45, 454, 'fgdg', 'dfgd', 'dgfgd', 'gdfdg', 45, 454, 'fdgd', 'dgfgd', 7, 'fdgdfgd', 876, 55, 'dfsd', 'fdsfsf', 'dfsdf', 'sdfs', 'fs', 'fdsf', 454, 54, 45, 'dfsdsf', 6657, 76567, 'fghfhf', 675675, 6575, 76866, 6575, '2022-07-20', 'Si', 'Si', 1, 'Si', 54645, 'fdgdfjh', 'hjkhk', 54645, 645643, 'hgjgjg', 'hghjg', 'ghjhg', 'Si', 3, 'hjkhjk', 'jhkhkh', 1, 'hjkhkh', 7867, 8768, '87686', 'jkjkkj', 'kjkkj', 1, 76537, 12345);
 
 -- --------------------------------------------------------
 
@@ -161,7 +172,10 @@ CREATE TABLE `clien_tip` (
 INSERT INTO `clien_tip` (`Idclien_tip`, `Idti_sol`, `No_ide`) VALUES
 (2, 2, 353453),
 (3, 1, 1192719887),
-(5, 2, 323);
+(7, 1, 45),
+(8, 2, 13),
+(9, 2, 32234),
+(10, 1, 2578);
 
 -- --------------------------------------------------------
 
@@ -196,9 +210,17 @@ CREATE TABLE `cont_ent` (
 
 CREATE TABLE `cuenta_c` (
   `No_cuenta` int(11) NOT NULL COMMENT 'Numero de cuenta',
-  `No_ide` double NOT NULL COMMENT 'Numero de identificacion del cliente comun',
-  `Idti_cue` int(11) NOT NULL COMMENT 'Identificacion de tipo de cuenta'
+  `No_ide` double DEFAULT NULL COMMENT 'Numero de identificacion del cliente comun',
+  `Idti_cue` int(11) DEFAULT NULL COMMENT 'Identificacion de tipo de cuenta'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Cuentas del cliente comun';
+
+--
+-- Volcado de datos para la tabla `cuenta_c`
+--
+
+INSERT INTO `cuenta_c` (`No_cuenta`, `No_ide`, `Idti_cue`) VALUES
+(6264, 32234, NULL),
+(9183, 2578, NULL);
 
 -- --------------------------------------------------------
 
@@ -207,9 +229,10 @@ CREATE TABLE `cuenta_c` (
 --
 
 CREATE TABLE `entidad` (
+  `Id_ent` int(11) NOT NULL,
   `Fe_dil` date NOT NULL COMMENT 'Fecha de diligenciamiento',
+  `tidoc_ent` varchar(40) NOT NULL COMMENT 'tipo de documento de la entidad',
   `Nit` double NOT NULL COMMENT 'Nit de la entidad',
-  `Idti_doc` int(11) NOT NULL COMMENT 'Identificacion de tipo de documento',
   `Fidei` varchar(15) NOT NULL COMMENT 'fideicomiso',
   `No_fide` double NOT NULL COMMENT 'Numero de fideicomiso',
   `Nom_ra` varchar(45) NOT NULL COMMENT 'Nombre o razon social de la entidad',
@@ -307,6 +330,15 @@ CREATE TABLE `fue_recu` (
   `Nom_rec` varchar(100) NOT NULL COMMENT 'Nombre de los tipos de proveniencia de los recursos entregados'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tipos de proveniencia de los recursos entregados';
 
+--
+-- Volcado de datos para la tabla `fue_recu`
+--
+
+INSERT INTO `fue_recu` (`Idfue_recu`, `Nom_rec`) VALUES
+(1, 'Capitalización por parte de socios'),
+(2, 'Desarrollo del objeto social'),
+(3, 'Utilidades del negocio');
+
 -- --------------------------------------------------------
 
 --
@@ -345,6 +377,8 @@ CREATE TABLE `prueba` (
 --
 
 INSERT INTO `prueba` (`Id_act`, `Fecha_act`, `Tip_pro`, `Valor_act`, `Cajero`) VALUES
+(342, '2022-06-13 21:48:00', 'Consignación', '324324', 'Cajero1'),
+(12345, '2022-06-18 18:11:00', 'Retiro', '500000', 'Cajero1'),
 (324324, '2022-05-18 00:27:00', 'Apertura de Cuenta', '20000', 'Cajero1');
 
 -- --------------------------------------------------------
@@ -363,7 +397,9 @@ CREATE TABLE `reg_soli` (
 --
 
 INSERT INTO `reg_soli` (`Id_reg`, `No_ide`) VALUES
-(1, 323);
+(12, 13),
+(14, 2578),
+(9, 1192719887);
 
 -- --------------------------------------------------------
 
@@ -383,7 +419,7 @@ CREATE TABLE `reg_usu` (
 --
 
 INSERT INTO `reg_usu` (`Id_usu`, `Usuario`, `Contra`, `Idti_rol`) VALUES
-(6, 'cristian31', 'cristian', 2),
+(6, 'cristian31', 'cristian31', 2),
 (12, 'sfd', 'fsdfs', 1);
 
 -- --------------------------------------------------------
@@ -429,9 +465,15 @@ CREATE TABLE `solicitante` (
 --
 
 INSERT INTO `solicitante` (`Idti_soli`, `No_solicit`, `Nom_solicit`, `Firma`) VALUES
+(1, 43, 'dfgdfg', 'dgdfgd'),
 (2, 3453, 'fgdgd', 'dfgfgd'),
+(1, 8967, 'fgdfg', 'fgfdgfd'),
+(1, 34432, 'dfgdfg', 'fdgdfgd'),
+(1, 43242, 'dfgdfg', 'dgdfgd'),
+(2, 76537, 'jjkljl', 'fddgfh'),
 (1, 435345, 'fdgdf', 'fdgdfg'),
 (1, 456456, 'FDGDGD', 'FGDFGD'),
+(1, 3242345, 'dsfsdf', 'dsfsfs'),
 (2, 1192719887, 'Cristian', 'Cristian');
 
 -- --------------------------------------------------------
@@ -538,6 +580,15 @@ CREATE TABLE `tipro_bie` (
   `Idtripro_bie` int(11) NOT NULL COMMENT 'Identificacion de tipos de proveniencia de bienes',
   `Nomti_bie` varchar(60) NOT NULL COMMENT 'Nombre de tipos de proveniencia de bienes'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='tipos de proveniencia de bienes';
+
+--
+-- Volcado de datos para la tabla `tipro_bie`
+--
+
+INSERT INTO `tipro_bie` (`Idtripro_bie`, `Nomti_bie`) VALUES
+(1, 'Compraventa'),
+(2, 'Aporte de socios'),
+(3, 'Utilidades');
 
 -- --------------------------------------------------------
 
@@ -651,6 +702,17 @@ CREATE TABLE `ti_contr` (
   `Nom_contr` varchar(300) NOT NULL COMMENT 'Nombre de tipo de contribuyente'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tipo de contribuyente';
 
+--
+-- Volcado de datos para la tabla `ti_contr`
+--
+
+INSERT INTO `ti_contr` (`Idti_contr`, `Nom_contr`) VALUES
+(1, 'Persona juridicas, comerciales y civiles, consorcios y uniones temporales'),
+(2, 'Corporaciones, fundaciones y asociaciones sin ánimo de lucro'),
+(3, 'Entidad pública nacional o territorial'),
+(4, 'Cooperativa'),
+(5, 'No contribuyente');
+
 -- --------------------------------------------------------
 
 --
@@ -659,8 +721,17 @@ CREATE TABLE `ti_contr` (
 
 CREATE TABLE `ti_desc` (
   `Idti_desc` int(11) NOT NULL COMMENT 'identificacion de tipos de entidades estatales descentralizadas de orden',
-  `Nom_desc` int(11) NOT NULL COMMENT 'Nombre de tipos de entidades estatales descentralizadas de orden'
+  `Nom_desc` varchar(80) NOT NULL COMMENT 'Nombre de tipos de entidades estatales descentralizadas de orden'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tipos de entidades estatales descentralizadas de orden';
+
+--
+-- Volcado de datos para la tabla `ti_desc`
+--
+
+INSERT INTO `ti_desc` (`Idti_desc`, `Nom_desc`) VALUES
+(1, 'Nacional'),
+(2, 'Departamental'),
+(3, 'Municipal');
 
 -- --------------------------------------------------------
 
@@ -693,8 +764,33 @@ INSERT INTO `ti_doc` (`Idti_doc`, `Nom_doc`) VALUES
 
 CREATE TABLE `ti_ent` (
   `Idti_ent` int(11) NOT NULL COMMENT 'Identificacion de tipo de entidad o asociacion',
-  `Noti_ent` varchar(40) NOT NULL COMMENT 'Nombre de tipo de entidad o asociacion'
+  `Noti_ent` varchar(300) NOT NULL COMMENT 'Nombre de tipo de entidad o asociacion'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tipo de entidad o asociacion';
+
+--
+-- Volcado de datos para la tabla `ti_ent`
+--
+
+INSERT INTO `ti_ent` (`Idti_ent`, `Noti_ent`) VALUES
+(1, 'Establecimiento público'),
+(2, 'Empresa industrial y comercial del estado'),
+(3, 'Sociedad de economía mixta'),
+(4, 'Empresa social del estado'),
+(5, 'Empresa servicios públicos domiciliarios'),
+(6, 'Entidades financieras'),
+(7, 'Fondos mutuos de inversión'),
+(8, 'Fondos de empleados'),
+(9, 'Cooperativas'),
+(10, 'Precooperativas'),
+(11, 'Copropiedades'),
+(12, 'Personas jurídicas de derecho canónico'),
+(13, 'Entidades religiosas no católicas'),
+(14, 'Sindicatos'),
+(15, 'Fundaciones'),
+(16, 'Corporaciones y asociaciones'),
+(17, 'Partido político'),
+(18, '*Consorcio'),
+(19, '*Unión temporal');
 
 -- --------------------------------------------------------
 
@@ -704,8 +800,17 @@ CREATE TABLE `ti_ent` (
 
 CREATE TABLE `ti_est` (
   `Idti_est` int(11) NOT NULL COMMENT 'Identificacion de tipos de entidades estatales',
-  `Nom_est` int(11) NOT NULL COMMENT 'Nombre de tipo de entidades estatales'
+  `Nom_est` varchar(80) NOT NULL COMMENT 'Nombre de tipo de entidades estatales'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tipos de entidades estatales';
+
+--
+-- Volcado de datos para la tabla `ti_est`
+--
+
+INSERT INTO `ti_est` (`Idti_est`, `Nom_est`) VALUES
+(1, 'Nación'),
+(2, 'Departamento'),
+(3, 'Municipio');
 
 -- --------------------------------------------------------
 
@@ -738,6 +843,15 @@ CREATE TABLE `ti_nat` (
   `Nom_nat` varchar(30) NOT NULL COMMENT 'Nombre del tipo de naturaleza'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tipo de naturaleza de la entidad';
 
+--
+-- Volcado de datos para la tabla `ti_nat`
+--
+
+INSERT INTO `ti_nat` (`Idti_nat`, `Nom_nat`) VALUES
+(1, 'Privada'),
+(2, 'Pública'),
+(3, 'Mixta');
+
 -- --------------------------------------------------------
 
 --
@@ -746,8 +860,26 @@ CREATE TABLE `ti_nat` (
 
 CREATE TABLE `ti_soc` (
   `Idti_soc` int(11) NOT NULL COMMENT 'Identificacion del tipo de sociedad comercial o civil',
-  `nom_ti` varchar(30) NOT NULL COMMENT 'Nombre de tipo de sociedad comercial o civil'
+  `nom_ti` varchar(100) NOT NULL COMMENT 'Nombre de tipo de sociedad comercial o civil'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='tipo de sociedad comercial o civil';
+
+--
+-- Volcado de datos para la tabla `ti_soc`
+--
+
+INSERT INTO `ti_soc` (`Idti_soc`, `nom_ti`) VALUES
+(1, 'Por acciones simplificadas S.A.S'),
+(2, 'Anónima'),
+(3, 'Limitada'),
+(4, 'En comandita simple'),
+(5, 'En comandita por acciones'),
+(6, 'Sin animo de lucro'),
+(7, 'Surcusal de sociedad extranjera'),
+(8, 'Empresa unipersonal'),
+(9, 'Asociación civil'),
+(10, 'Sociedad de hecho'),
+(11, 'Colectiva'),
+(12, 'Ninguna');
 
 -- --------------------------------------------------------
 
@@ -824,7 +956,14 @@ CREATE TABLE `vendedor` (
 --
 
 INSERT INTO `vendedor` (`Cod_vend`, `Nom_vend`, `Oficina`, `Obser`, `Firma_vend`) VALUES
+(0, '', '', '', ''),
+(23, 'sdfsd', 'dsfsd', 'dsfsdfsdf', 'fdsfs'),
 (4353, 'dfgdfg', 'gfdgd', 'gdfgdf', 'dfgdgdf'),
+(7705, 'fdgdf', 'fdgdf', 'fdgdgfd', 'gdfgd'),
+(12345, 'dfdgd', 'fdgfd', 'gdfgdf', 'fdgfdg'),
+(23423, 'sdfsd', 'dsfsd', 'dsfsdfsdf', 'fdsfs'),
+(34532, 'dsf', 'fsdf', 'fsdfs', 'fdfsdf'),
+(46878, 'dsdf', 'fsds', 'dsfs', 'dsfsdd'),
 (324234, 'Valentina Bandida', 'Sus ex', 'Ojo con ella', 'Siempre Bandida'),
 (435353, 'dfgdgd', 'dgdfgd', 'gdfgdfgd', 'dfgdg'),
 (564435, 'DGDFDG', 'GFDGD', 'GDFGD', 'DFGDGfd');
@@ -894,8 +1033,7 @@ ALTER TABLE `cuenta_c`
 -- Indices de la tabla `entidad`
 --
 ALTER TABLE `entidad`
-  ADD PRIMARY KEY (`Nit`),
-  ADD KEY `Idti_doc` (`Idti_doc`),
+  ADD PRIMARY KEY (`Id_ent`),
   ADD KEY `No_doc` (`No_doc`),
   ADD KEY `No_docu` (`No_docu`),
   ADD KEY `Idtien_re` (`Idtien_re`),
@@ -911,7 +1049,8 @@ ALTER TABLE `entidad`
   ADD KEY `Idtripro_bi` (`Idtripro_bi`),
   ADD KEY `Idfue_rec` (`Idfue_rec`),
   ADD KEY `Idtiop_m` (`Idtiop_m`),
-  ADD KEY `Idtipro_m` (`Idtipro_m`);
+  ADD KEY `Idtipro_m` (`Idtipro_m`),
+  ADD KEY `Nit` (`Nit`);
 
 --
 -- Indices de la tabla `ent_ti`
@@ -1112,25 +1251,25 @@ ALTER TABLE `act_cli`
 -- AUTO_INCREMENT de la tabla `client_co`
 --
 ALTER TABLE `client_co`
-  MODIFY `Id_client` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificacion aleatorio de cada cliente', AUTO_INCREMENT=6;
+  MODIFY `Id_client` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificacion aleatorio de cada cliente', AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `clien_tip`
 --
 ALTER TABLE `clien_tip`
-  MODIFY `Idclien_tip` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificacion de intermedia clien_tip', AUTO_INCREMENT=6;
+  MODIFY `Idclien_tip` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificacion de intermedia clien_tip', AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT de la tabla `cuenta_c`
+-- AUTO_INCREMENT de la tabla `entidad`
 --
-ALTER TABLE `cuenta_c`
-  MODIFY `No_cuenta` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Numero de cuenta';
+ALTER TABLE `entidad`
+  MODIFY `Id_ent` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `reg_soli`
 --
 ALTER TABLE `reg_soli`
-  MODIFY `Id_reg` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificacion de los registros de las solicitudes', AUTO_INCREMENT=2;
+  MODIFY `Id_reg` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificacion de los registros de las solicitudes', AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `reg_usu`
@@ -1190,7 +1329,6 @@ ALTER TABLE `cuenta_c`
 -- Filtros para la tabla `entidad`
 --
 ALTER TABLE `entidad`
-  ADD CONSTRAINT `entidad_ibfk_1` FOREIGN KEY (`Idti_doc`) REFERENCES `ti_doc` (`Idti_doc`) ON UPDATE CASCADE,
   ADD CONSTRAINT `entidad_ibfk_11` FOREIGN KEY (`Idtien_re`) REFERENCES `tien_re` (`Idtien_re`) ON UPDATE CASCADE,
   ADD CONSTRAINT `entidad_ibfk_12` FOREIGN KEY (`No_solicit`) REFERENCES `solicitante` (`No_solicit`) ON UPDATE CASCADE,
   ADD CONSTRAINT `entidad_ibfk_13` FOREIGN KEY (`Cod_vend`) REFERENCES `vendedor` (`Cod_vend`) ON UPDATE CASCADE,

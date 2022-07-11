@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 import { Table } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 const Msolicitud = ({
   abrir,
   cerrar,
@@ -9,9 +10,43 @@ const Msolicitud = ({
   cerrarT,
   cerrarp,
   abrirp,
-  solicitud
+  solicitud,
+  setSolicitud
 }) => {
   let History = useHistory();
+
+  const baseUrl = "http://localhost:8080/Banca/bd_crud/index.php";
+  const [detalle, setDetalle] = useState([])
+
+  const Detalleid = async(value) => {
+    const No_ide = value;
+    var f = new FormData();
+    f.append("No_ide", No_ide);
+    f.append("METHOD", "CONSULTAID3");
+    await axios.post(baseUrl, f).then((response)=>{
+      setDetalle(response.data)
+      abrir()
+    }) 
+  }
+
+  const peticionDeleteSoli = async (value) => {
+    const eliminarSoli = value;
+    var f = new FormData();
+    f.append("METHOD", "DELETESOLI");
+    await axios
+      .post(baseUrl, f, { params: { No_ide: eliminarSoli } })
+      .then((response) => {
+        setSolicitud(
+          solicitud.filter((Usuario) => Usuario.No_ide !== eliminarSoli)
+        );
+        document
+          .getElementById("ventana_modal")
+          .setAttribute("style", "display:none;");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <div>
@@ -44,7 +79,8 @@ const Msolicitud = ({
               <Table striped bordered hover variant="dark" responsive="sm">
                 <thead>
                   <tr>
-                    <th>#</th>
+                  <th>#</th>
+                    <th>No identificacion</th>
                     <th>Nombre del cliente</th>
                     <th>Apellido del cliente</th>
                     <th>Telefono</th>
@@ -54,12 +90,13 @@ const Msolicitud = ({
                 <tbody>
                   {solicitud.map((Data)=>( 
                     <tr key={Data.No_ide}>
+                      <td>{Data.Id_reg}</td>
                     <td>{Data.No_ide}</td>
                     <td>{Data.Pri_nom}</td>
                     <td>{Data.Pri_ape}</td>
                     <td>{Data.Telef}</td>
                     <td>
-                      <button onClick={abrir} className="btn btn-danger">
+                      <button onClick={()=> Detalleid(Data.No_ide)} className="btn btn-danger">
                         Detalle
                       </button>
                     </td>
@@ -81,33 +118,31 @@ const Msolicitud = ({
           </div>
 
           <div class="body__modal2">
-            <h1 class="title__modal2">Solicitud #-Asesor#</h1>
+            <h1 class="title__modal2">Solicitud de <b style={{textTransform: "capitalize"}}>{detalle.Pri_nom}</b> </h1>
             <Table striped bordered hover>
               <thead>
                 <tr>
-                  <th>#</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Username</th>
+                  <th>Numero de documento</th>
+                  <th>Primer Nombre</th>
+                  <th>Segundo Nombre</th>
+                  <th>Primer Apellido</th>
+                  <th>Segundo Apellido</th>
+                  <th>Ciudad</th>
+                  <th>Barrio</th>
+                  <th>Ingresos Mensuales</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td colSpan={2}>Larry the Bird</td>
-                  <td>@twitter</td>
+           
+                <tr key={detalle.No_ide}>
+                  <td>{detalle.No_ide}</td>
+                  <td>{detalle.Pri_nom}</td>
+                  <td>{detalle.Seg_nom}</td>
+                  <td>{detalle.Pri_ape}</td>
+                  <td>{detalle.Seg_ape}</td>
+                  <td>{detalle.Ciu_mu}</td>
+                  <td>{detalle.Barrio}</td>
+                  <td>{detalle.Ing_men}</td>
                 </tr>
               </tbody>
             </Table>
@@ -115,7 +150,7 @@ const Msolicitud = ({
             <button
               id="boton_modal_verde"
               className="btn btn-success"
-              onClick={cerrar}
+              onClick={()=> peticionDeleteSoli(detalle.No_ide)}
             >
               Aceptar
             </button>

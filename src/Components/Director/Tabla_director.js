@@ -46,7 +46,7 @@ export const Tabla_director = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, [data2])
+  }, [])
   
   useEffect(() => {
     var f = new FormData();
@@ -63,6 +63,7 @@ export const Tabla_director = () => {
       setSolicitud(response.data);
     });
   };
+
 
   useEffect(() => {
     peticionGet3();
@@ -171,7 +172,6 @@ export const Tabla_director = () => {
   };
 
 
-
   const [type, setType] = useState("password");
   const [icon, setIcon] = useState(faEyeSlash);
   const handleToggle = () => {
@@ -198,7 +198,6 @@ export const Tabla_director = () => {
   };
 
   const abrir = (e) => {
-    e.preventDefault();
     document
       .getElementById("ventana_modal")
       .setAttribute("style", "visibility:visible; top:50%;");
@@ -247,6 +246,7 @@ export const Tabla_director = () => {
           abrirp={abrirp}
           cerrarp={cerrarp}
           solicitud={solicitud}
+          setSolicitud={setSolicitud}
         />
       </div>
       <h1 className="titureg">Registros de cuentas de usuario</h1>

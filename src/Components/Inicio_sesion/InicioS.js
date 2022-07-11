@@ -47,8 +47,6 @@ const App = () => {
   const onSubmit = (e) => {
     e.preventDefault();
   };
-
-
   const refUsuario = useRef(null);
 
   const refContraseña = useRef(null)
@@ -62,9 +60,7 @@ const App = () => {
       const respuestaJson = await enviarData( URL_LOGIN, datos );
       console.log("respuesta desde el evento", respuestaJson);
       const Rol = (respuestaJson.Idti_rol)
-      console.log(Rol)
       const Usuario = (respuestaJson.Usuario)
-      console.log(Usuario)
       const conectado = (respuestaJson.conectado)
       if(conectado === true & Rol == "1"){
         cambiarFormularioValido(true);

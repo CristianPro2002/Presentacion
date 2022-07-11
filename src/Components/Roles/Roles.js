@@ -20,19 +20,19 @@ const Roles = () => {
   const validar3 = (e) => {
     var validacion = document.getElementById("Asesorv");
     if (validacion.value == 1 || validacion.value == "") {
-      History.push("/Asesor");
+      History.push("/AsesorD1");
       validacion.focus();
     } else if (validacion.value == 2 || validacion.value == "") {
-      History.push("/Asesor2");
+      History.push("/AsesorD2");
       validacion.focus();
     } else if (validacion.value == 3 || validacion.value == "") {
-      History.push("/Asesor3");
+      History.push("/AsesorD3");
       validacion.focus();
     } else if (validacion.value == 4 || validacion.value == "") {
-      History.push("/Asesor4");
+      History.push("/AsesorD4");
       validacion.focus();
     } else if (validacion.value == 5 || validacion.value == "") {
-      History.push("/Asesor5");
+      History.push("/AsesorD5");
       validacion.focus();
     } else alert("Por favor seleccione una opcion");
     validacion.focus();

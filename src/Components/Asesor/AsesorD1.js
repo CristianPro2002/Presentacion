@@ -75,7 +75,7 @@ const Asesor = () => {
           <i
             class="bi bi-arrow-left-circle-fill"
             id="cir"
-            onClick={()=> History.push("/Rasesor")}
+            onClick={()=> History.push("/Roles")}
           ></i>
         </div>
 

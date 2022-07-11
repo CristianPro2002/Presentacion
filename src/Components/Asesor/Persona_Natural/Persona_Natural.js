@@ -194,6 +194,11 @@ const PersonaNatural = () => {
   //   }),
   const baseUrl = "http://localhost:8080/Banca/bd_crud/index.php";
 
+  var min=1000; 
+  var max=9999;  
+  var random =Math.floor(Math.random() * (+max - +min)) + +min; 
+  //console.log("el valor random es:"+ random)
+
   const [data, setData] = useState([]);
   const [dataUsuario, setDataUsuario] = useState({
     No_ide: "",
@@ -201,7 +206,7 @@ const PersonaNatural = () => {
     Idti_solicit: "",
     Fec_dil: "",
     Pri_nom: "",
-    No_cuenta: "",
+    No_cuenta: random,
     Idti_cue: "",
     Seg_nom: "",
     Pri_ape: "",
@@ -280,9 +285,10 @@ const PersonaNatural = () => {
     Nom_vend: "",
     Oficina: "",
     Obser: "",
-    Firma_vend: "",
+    Firma_vend: ""
 
   });
+
   const peticionPost = async () => {
     var f = new FormData();
     f.append("No_ide", dataUsuario.No_ide);
@@ -373,6 +379,7 @@ const PersonaNatural = () => {
     f.append("METHOD", "FORMN");
     await axios.post(baseUrl, f).then((response) => {
       setData(data.concat(response.data));
+      History.goBack();
     })
     .catch(error => {
         alert("Error en el post")
@@ -385,10 +392,8 @@ const PersonaNatural = () => {
       ...prevState,
       [name]: value,
     }));
-    //console.log(dataUsuario);
+    console.log(dataUsuario);
   };
-
-
 
   return (
     <div className="padre">
@@ -495,6 +500,14 @@ const PersonaNatural = () => {
                 name="Seg_nom"
                 className="input"
                 onChange={handleChange}
+              />
+               <input
+                type="text"
+                name="No_cuenta"
+                className="input"
+                value={random}
+                onChange={handleChange}
+                style={{display: "none"}}
               />
             </label>
 

@@ -6,7 +6,7 @@ import './Asesor.css'
 import personaj from './Imagens/personaj.png'
 import personan from './Imagens/personan.jpg'
 
-const Asesor5 = () => {
+const Asesor2 = () => {
 
     let History = useHistory();
 
@@ -16,11 +16,11 @@ const Asesor5 = () => {
 
 
                 <div className="inicio">
-                    <i class="bi bi-arrow-left-circle-fill" id="cir" onClick={() => History.push('/Rasesor')}></i>
+                    <i class="bi bi-arrow-left-circle-fill" id="cir" onClick={() => History.push('/Roles')}></i>
                 </div>
 
                 <div className="contenedort">
-                    <h1 className="titulu5">Asesor #5</h1>
+                    <h1 className="titulu2">Asesor #2</h1>
                 </div>
 
 
@@ -45,7 +45,7 @@ const Asesor5 = () => {
 
                                                 />
                                                 <div className="bj">
-                                                    <button onClick={() => History.push('/PersonaJuridica5')} className="pj">Persona Juridica</button>
+                                                    <button onClick={() => History.push('/PersonaJuridica2')} className="pj">Persona Juridica</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -58,7 +58,7 @@ const Asesor5 = () => {
 
                                                 />
                                                 <div className="bn">
-                                                    <button onClick={() => History.push('/PersonaNatural5')} className="pn">Persona Natural</button>
+                                                    <button onClick={() => History.push('/PersonaNatural2')} className="pn">Persona Natural</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -74,4 +74,4 @@ const Asesor5 = () => {
     )
 }
 
-export default Asesor5
+export default Asesor2
