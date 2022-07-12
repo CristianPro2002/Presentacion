@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-07-2022 a las 02:40:10
+-- Tiempo de generación: 12-07-2022 a las 03:41:16
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `gd`
+-- Base de datos: `banca4.0`
 --
 
 -- --------------------------------------------------------
@@ -145,13 +145,7 @@ CREATE TABLE `client_co` (
 --
 
 INSERT INTO `client_co` (`Id_client`, `No_ide`, `Idti_solicit`, `Fec_dil`, `Pri_nom`, `Seg_nom`, `Pri_ape`, `Seg_ape`, `Idti_doc`, `Lug_exp`, `Fec_exp`, `Fec_nac`, `Ciu_nac`, `Id_gen`, `Idest_ci`, `Id_nac`, `Otr_nac`, `Dir_re`, `Blo_to`, `Ap_ca`, `Barrio`, `Ciu_mu`, `Depart`, `Pais`, `Telef`, `Celular`, `Corr_ele`, `Profe`, `Idocu_ofii`, `Det_act`, `Cod_ciuu`, `No_emp`, `Nom_emp`, `Dir_emp`, `Barr_lab`, `Ciu_lab`, `Dep_lab`, `Pais_lab`, `Tel_lab`, `Ext`, `Cel_lab`, `Corr_lab`, `Ing_men`, `Otr_ing`, `Det_otr`, `To_act`, `To_pa`, `To_egr`, `Vent_a`, `Fe_ci`, `Dec_rent`, `Age_ret`, `Idtireg_iva`, `Ob_tri`, `Notri_est`, `Pais_1`, `Pais_2`, `No_tri1`, `No_tri2`, `Prov_bie`, `Pais_bi`, `Ciu_bie`, `Op_ext`, `Idtiop_m`, `Otro_mo`, `Nom_ent`, `Idtipro_m`, `Otro_mo2`, `No_pro`, `Mo_pro`, `Moneda`, `Ciu_ent`, `Pa_ent`, `Idtien_re`, `No_solicit`, `Cod_vend`) VALUES
-(1, 123, 1, '2022-06-10', 'sonia', 'maria', 'salas', 'sanchez', 4, 'dfdgfg', '2022-06-09', '2022-06-17', 'dfgdfgdf', 1, 3, 2, 'dgfdgd', 'dgfgdgd', 345, 534, 'dfgdg', 'dfgdfg', 'gdgdf', 'gdfgd', 3453, 53453, 'fdgdfg', 'gdfgd', 6, 'dfgdgd', 2342, 34, 'dsgsdg', 'dsfsdf', 'dsffs', 'fsdfs', 'fsdf', 'fdsf', 324, 43, 3242, 'dssfsfd', 3455, 5345, 'dgddfg', 54353, 5435, 3453, 53453, '2022-06-14', 'Si', 'No', 2, 'Si', 34535, 'fgdfgd', 'gdfgfd', 3453, 5344, 'dsfsdfs', 'dsfsf', 'sdfsf', 'Si', 5, 'gfhfh', 'dfhdhfhdhd', 2, 'dfgdfgd', 345, 3453, '5345', 'dgfdgd', 'gdfgd', 1, 3453, 4353),
-(2, 353453, 1, '2022-06-01', 'DFGD', 'GDFGD', 'GDFG', 'GFDGD', 1, 'DSFSS', '2022-06-15', '2022-06-01', 'DFGDFGD', 2, 1, 2, 'FDGDGFGGF', 'FGDGDG', 3535, 53453, 'FDVDFF', 'DVFVD', 'DVFV', 'DFVDV', 4353, 53453, 'DVFVDVD', 'SDFSDFSFSDc', 3, 'DFGDG', 3424, 3242, 'DDFGDF', 'DFGDGDF', 'GDFGDG', 'DFGDG', 'DGDGF', 'GDGD', 435, 435, 53453, 'DGFDGD', 354, 65455, 'DFGGDFG', 3534, 53453, 53453, 5345, '2022-06-20', 'Si', 'Si', 1, 'Si', 435353, 'DFGFDG', 'GDFGDG', 453, 53452, 'DFDGD', 'GDFGD', 'GDFGD', 'Si', 5, 'FDGDFG', 'GDFGDG', 2, 'GFDFGDG', 5464, 6456, 'fdgdgd', 'GDFGD', 'GDFGD', 1, 456456, 564435),
-(3, 1192719887, 1, '2022-06-07', 'cristian', 'andres', 'castaño', 'salas', 1, 'Palmira', '2020-07-16', '2002-07-13', 'Florida', 2, 1, 1, 'Colombiano', 'Calle 47a # 11a18', 1118, 1118, 'Poblado Comfaunion', 'Palmira', 'Valle', 'Colombia', 3172527140, 3172527139, 'cristian.0713.cs@gmail.com', 'Estudiante', 4, 'Nada', 2345, 1, 'Cristian lo mejorsito', 'Cristian3k', 'Mercedes', 'Palmira', 'Valle', 'Colombia', 31321232, 32, 213131323, 'cristian@gmail.com', 50000000, 5000, 'otros', 50000, 5000, 499999, 50000000, '2022-06-08', 'Si', 'Si', 1, 'Si', 34242424242, 'colombia', 'colombia', 324234, 324325, 'Esta', 'Colombia', 'Palmira', 'Si', 8, 'La plata', 'La plata 3k', 1, 'Si claro', 3234, 4234, '42342', 'Palmira', 'Colombia', 1, 1192719887, 324234),
-(7, 45, 1, '2022-07-08', 'fgdf', 'gfdgd', 'gdfg', 'gdfg', 1, 'fgdfgf', '2022-07-08', '2022-07-08', 'ddfgdf', 2, 2, 1, 'fdgd', 'fdgdf', 453, 534, 'fdgdf', 'gfdg', 'dfg', 'dfgdf', 4353, 5345, 'fdgdfg', 'fdgdfg', 10, 'fdgdfgd', 3453, 54, 'dgfdfgdf', 'dfgdfgdf', 'fgdf', 'dfgdf', 'gdf', 'fgdfg', 435, 435, 453, 'dfgdf', 4353, 3453, 'fdgd', 5435, 534, 43534, 3453, '2022-07-08', 'Si', 'Si', 3, 'No', 13453443, 'dfgdf', 'gdfgd', 435, 3451, 'dfgdf', 'dfgdf', 'gdfg', 'Si', 5, 'fdgdf', 'fdgdf', 1, 'dfgdfg', 3453, 5345, '3453', 'dfgd', 'gdfg', 1, 43, 23),
-(8, 13, 1, '2022-07-08', 'fdg', 'ddfgd', 'gdf', 'gdf', 4, 'dfgdf', '2022-07-08', '2022-07-08', 'fdgdf', 1, 2, 1, 'fdgdf', 'fddgdf', 433, 534, 'dfgd', 'gdf', 'gdf', 'fdgd', 543, 45, 'dfdfg', 'dfgfdg', 7, 'fdgdfg', 543, 534, 'dfgdfg', 'fgdgd', 'gfdfg', 'fgdfg', 'df', 'gdfg', 4334545, 54, 543, 'dfgdfgd', 43534, 5345, 'dfgdfg', 534, 3453, 34534, 5345, '2022-07-08', 'No', 'No', 3, 'Si', 43534, 'dfdf', 'dfgdf', 5435, 3544, 'dfgdf', 'fdggd', 'gd', 'Si', 2, 'dfgdf', 'gdfgd', 1, 'dfgdf', 3453, 5345, '345', 'dfgdf', 'gdfg', 1, 34432, 34532),
-(9, 32234, 1, '2022-07-08', 'fgd', 'gdfgd', 'gdfgd', 'fdgd', 1, 'sfdsfs', '2022-07-08', '2022-07-08', 'dsfs', 2, 2, 2, 'dfsd', 'dsfsdf', 453, 4534, 'dsfsd', 'dsfs', 'fsd', 'dsfs', 435, 435, 'dsfsdf', 'dsfsd', 7, 'dfsdfs', 343, 434, 'dsfsd', 'dssfsdf', 'dfsd', 'dfsf', 'dsf', 'dfd', 34, 343, 40, 'dfdfd', 424, 324, 'dsfsd', 3432, 342, 343, 43, '2022-07-07', 'Si', 'No', 2, 'Si', 342332, 'dfsd', 'dsfs', 232, 324, 'dsfds', 'dfsfds', 'dfsd', 'Si', 4, 'dsfsd', 'dfsfs', 1, 'dsfs', 34, 2432, '423', 'dsfs', 'dsfsd', 1, 3242345, 46878),
-(11, 2578, 1, '2022-07-05', 'dgfd', 'gdfgd', 'fdgd', 'gdfgd', 2, 'ddgd', '2022-07-14', '2022-07-15', 'dfgdfg', 2, 1, 1, 'fdgdf', 'fdgdfgd', 45, 454, 'fgdg', 'dfgd', 'dgfgd', 'gdfdg', 45, 454, 'fdgd', 'dgfgd', 7, 'fdgdfgd', 876, 55, 'dfsd', 'fdsfsf', 'dfsdf', 'sdfs', 'fs', 'fdsf', 454, 54, 45, 'dfsdsf', 6657, 76567, 'fghfhf', 675675, 6575, 76866, 6575, '2022-07-20', 'Si', 'Si', 1, 'Si', 54645, 'fdgdfjh', 'hjkhk', 54645, 645643, 'hgjgjg', 'hghjg', 'ghjhg', 'Si', 3, 'hjkhjk', 'jhkhkh', 1, 'hjkhkh', 7867, 8768, '87686', 'jkjkkj', 'kjkkj', 1, 76537, 12345);
+(1, 123, 1, '2022-06-10', 'sonia', 'maria', 'salas', 'sanchez', 4, 'dfdgfg', '2022-06-09', '2022-06-17', 'dfgdfgdf', 1, 3, 2, 'dgfdgd', 'dgfgdgd', 345, 534, 'dfgdg', 'dfgdfg', 'gdgdf', 'gdfgd', 3453, 53453, 'fdgdfg', 'gdfgd', 6, 'dfgdgd', 2342, 34, 'dsgsdg', 'dsfsdf', 'dsffs', 'fsdfs', 'fsdf', 'fdsf', 324, 43, 3242, 'dssfsfd', 3455, 5345, 'dgddfg', 54353, 5435, 3453, 53453, '2022-06-14', 'Si', 'No', 2, 'Si', 34535, 'fgdfgd', 'gdfgfd', 3453, 5344, 'dsfsdfs', 'dsfsf', 'sdfsf', 'Si', 5, 'gfhfh', 'dfhdhfhdhd', 2, 'dfgdfgd', 345, 3453, '5345', 'dgfdgd', 'gdfgd', 1, 3453, 4353);
 
 -- --------------------------------------------------------
 
@@ -165,18 +159,6 @@ CREATE TABLE `clien_tip` (
   `No_ide` double NOT NULL COMMENT 'Nunero de identificacion del cliente'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Intermedia entre cliente comun y tipo de solicitud';
 
---
--- Volcado de datos para la tabla `clien_tip`
---
-
-INSERT INTO `clien_tip` (`Idclien_tip`, `Idti_sol`, `No_ide`) VALUES
-(2, 2, 353453),
-(3, 1, 1192719887),
-(7, 1, 45),
-(8, 2, 13),
-(9, 2, 32234),
-(10, 1, 2578);
-
 -- --------------------------------------------------------
 
 --
@@ -185,22 +167,29 @@ INSERT INTO `clien_tip` (`Idclien_tip`, `Idti_sol`, `No_ide`) VALUES
 
 CREATE TABLE `cont_ent` (
   `No_docu` double NOT NULL COMMENT 'Nunero de documento del contacto de la entidad',
-  `Idti_doc` int(11) NOT NULL COMMENT 'Identificacion del tipo de documento',
-  `Pri_nom` varchar(30) NOT NULL COMMENT 'Primer nombre del contacto de la entidad',
-  `Seg_nom` varchar(30) NOT NULL COMMENT 'Segundo nombre del contacto de la entidad',
-  `Pri_ape` varchar(30) NOT NULL COMMENT 'Primer apellido del contacto de la entidad',
-  `Seg_ape` varchar(30) NOT NULL COMMENT 'Segundo apellido del contacto de la entidad',
-  `Cargo` varchar(30) NOT NULL COMMENT 'Cargo del contacto de la entidad',
-  `Dir_lab` varchar(40) NOT NULL COMMENT 'Direccion laboral del contacto de la entidad',
-  `Barrio` varchar(30) NOT NULL COMMENT 'Barrio del contacto de la entidad',
-  `Ciu_mu` varchar(30) NOT NULL COMMENT 'Ciudad o municipio del contacto de la entidad',
-  `Depart` varchar(30) NOT NULL COMMENT 'Departamento del contacto de la entidad',
-  `Pais` varchar(30) NOT NULL COMMENT 'Pais del contacto de la entidad',
-  `Tel_lab` double NOT NULL COMMENT 'Telefono laboral del contacto de la entidad',
-  `Ext` int(11) NOT NULL COMMENT 'Extension de numero',
-  `Celular` double NOT NULL COMMENT 'Celular del contacto de la entidad',
-  `Corr_lab` varchar(40) NOT NULL COMMENT 'Correo laboral del contacto de la entidad'
+  `Idti_doc` int(11) DEFAULT NULL COMMENT 'Identificacion del tipo de documento',
+  `Pri_nom` varchar(30) DEFAULT NULL COMMENT 'Primer nombre del contacto de la entidad',
+  `Seg_nom` varchar(30) DEFAULT NULL COMMENT 'Segundo nombre del contacto de la entidad',
+  `Pri_ape` varchar(30) DEFAULT NULL COMMENT 'Primer apellido del contacto de la entidad',
+  `Seg_ape` varchar(30) DEFAULT NULL COMMENT 'Segundo apellido del contacto de la entidad',
+  `Cargo` varchar(30) DEFAULT NULL COMMENT 'Cargo del contacto de la entidad',
+  `Dir_lab` varchar(40) DEFAULT NULL COMMENT 'Direccion laboral del contacto de la entidad',
+  `Barrio` varchar(30) DEFAULT NULL COMMENT 'Barrio del contacto de la entidad',
+  `Ciu_mu` varchar(30) DEFAULT NULL COMMENT 'Ciudad o municipio del contacto de la entidad',
+  `Depart` varchar(30) DEFAULT NULL COMMENT 'Departamento del contacto de la entidad',
+  `Pais` varchar(30) DEFAULT NULL COMMENT 'Pais del contacto de la entidad',
+  `Tel_lab` double DEFAULT NULL COMMENT 'Telefono laboral del contacto de la entidad',
+  `Ext` int(11) DEFAULT NULL COMMENT 'Extension de numero',
+  `Celular` double DEFAULT NULL COMMENT 'Celular del contacto de la entidad',
+  `Corr_lab` varchar(40) DEFAULT NULL COMMENT 'Correo laboral del contacto de la entidad'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Informacion de un contacto de la entidad';
+
+--
+-- Volcado de datos para la tabla `cont_ent`
+--
+
+INSERT INTO `cont_ent` (`No_docu`, `Idti_doc`, `Pri_nom`, `Seg_nom`, `Pri_ape`, `Seg_ape`, `Cargo`, `Dir_lab`, `Barrio`, `Ciu_mu`, `Depart`, `Pais`, `Tel_lab`, `Ext`, `Celular`, `Corr_lab`) VALUES
+(22222, 4, '22222', '2222', '2222', '2222', '22222', '22222', '2222', '2222', '2222', '2222', 2222, 222222, 2222, '22222');
 
 -- --------------------------------------------------------
 
@@ -214,14 +203,6 @@ CREATE TABLE `cuenta_c` (
   `Idti_cue` int(11) DEFAULT NULL COMMENT 'Identificacion de tipo de cuenta'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Cuentas del cliente comun';
 
---
--- Volcado de datos para la tabla `cuenta_c`
---
-
-INSERT INTO `cuenta_c` (`No_cuenta`, `No_ide`, `Idti_cue`) VALUES
-(6264, 32234, NULL),
-(9183, 2578, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -230,83 +211,90 @@ INSERT INTO `cuenta_c` (`No_cuenta`, `No_ide`, `Idti_cue`) VALUES
 
 CREATE TABLE `entidad` (
   `Id_ent` int(11) NOT NULL,
-  `Fe_dil` date NOT NULL COMMENT 'Fecha de diligenciamiento',
-  `tidoc_ent` varchar(40) NOT NULL COMMENT 'tipo de documento de la entidad',
-  `Nit` double NOT NULL COMMENT 'Nit de la entidad',
-  `Fidei` varchar(15) NOT NULL COMMENT 'fideicomiso',
-  `No_fide` double NOT NULL COMMENT 'Numero de fideicomiso',
-  `Nom_ra` varchar(45) NOT NULL COMMENT 'Nombre o razon social de la entidad',
-  `Nom_cor` varchar(45) NOT NULL COMMENT 'Nombre corto o sigla',
-  `Fe_cons` date NOT NULL COMMENT 'Fecha de constitucion de la entidad',
-  `Ciu_cons` varchar(30) NOT NULL COMMENT 'Ciudad de constitucion de la entidad',
-  `Pai_cons` varchar(30) NOT NULL COMMENT 'Pais de constitucion de la entidad',
-  `Dir_se` varchar(40) NOT NULL COMMENT 'Direccion de sede principal de la entidad',
-  `Barrio` varchar(30) NOT NULL COMMENT 'Barrio de la entidad',
-  `Ciu_mu` varchar(30) NOT NULL COMMENT 'Ciudad de la entidad',
-  `Depart` varchar(30) NOT NULL COMMENT 'Departamento de la entidad',
-  `Pais` varchar(30) NOT NULL COMMENT 'Pais de la entidad',
-  `Telefono` double NOT NULL COMMENT 'Telefono de la entidad',
-  `Ext` int(11) NOT NULL COMMENT 'Extension de numero ',
-  `Corr_se` varchar(40) NOT NULL COMMENT 'Correo de la sede principal',
-  `No_doc` double NOT NULL COMMENT 'Numero de documento del representante legal',
-  `Pre_1` tinyint(1) NOT NULL COMMENT '¿Tiene socios o accionistas con participación directa o indirecta superior al 5%?	',
-  `Pre_2` tinyint(1) NOT NULL COMMENT '¿Tiene socios o accionistas con participación directa o indirecta igual o inferior al 5% y que tengan control sobre la entidad?	',
-  `No_docu` double NOT NULL COMMENT 'Nunero de documento del contacto de la entidad',
-  `Idti_na` int(11) NOT NULL COMMENT 'Identificacion de tipo de naturaleza	',
-  `Co_ciuu` double NOT NULL COMMENT 'Codigo CIUU	',
-  `Det_act` varchar(200) NOT NULL COMMENT 'Detalle de la actividad economica principal	',
-  `No_emp` int(11) NOT NULL COMMENT 'Numero de empleados	',
-  `Idti_soci` int(11) NOT NULL COMMENT 'Identificacion del tipo de sociedad comercial o civil	',
-  `Otro_com` varchar(300) NOT NULL COMMENT 'Otro tipo de sociedad comercial o civil	',
-  `Idti_en` int(11) NOT NULL COMMENT 'Identificacion de tipo de entidad o asociacion	',
-  `Otro_ent` varchar(300) NOT NULL COMMENT 'Otro tipo de entidad o asociacion	',
-  `Idti_es` int(11) NOT NULL COMMENT 'Identificacion de tipos de entidades estatales	',
-  `Otro_est` varchar(300) NOT NULL COMMENT 'otro tipo de entidad estatal	',
-  `Idti_des` int(11) NOT NULL COMMENT 'identificacion de tipos de entidades estatales descentralizadas de orden	',
-  `Ing_op` double NOT NULL COMMENT 'Ingresos operacionales mensuales	',
-  `Ino_op` double NOT NULL COMMENT 'ngresos no operacionales mensuales	',
-  `Detno` double NOT NULL COMMENT 'Detalle de ingresos no operacionales u originados en actividades diferentes a la principal	',
-  `vent_an` double NOT NULL COMMENT 'Ventas anuales	',
-  `Fe_ci` date NOT NULL COMMENT 'Fecha de cierre de ventas	',
-  `Egre_me` double NOT NULL COMMENT 'Egresos mensuales	',
-  `Util_ne` double NOT NULL COMMENT 'Utilidad neta	',
-  `Tot_act` double NOT NULL COMMENT 'Total activos	',
-  `Tot_pas` double NOT NULL COMMENT 'Total pasivos	',
-  `Tot_pat` double NOT NULL COMMENT 'Total patrimonio	',
-  `Idti_cont` int(11) NOT NULL COMMENT 'Identificacion de tipo de contribuyente	',
-  `Idcla_cont` int(11) NOT NULL COMMENT 'Identificacion de clase de contribuyente	',
-  `Res_iva` tinyint(1) NOT NULL COMMENT 'Responsable de iva	',
-  `Aut_ing` tinyint(1) NOT NULL COMMENT 'Autorretenedor otros ingresos	',
-  `Int_merc` tinyint(1) NOT NULL COMMENT 'Intermediario del mercado cambiario	',
-  `Vig_sup` tinyint(1) NOT NULL COMMENT 'Es vigilado por la superintendencia financiera	',
-  `Obli_est` tinyint(1) NOT NULL COMMENT 'Obligado a tributar en Estados Unidos	',
-  `No_id_tr` double NOT NULL COMMENT 'Si su respuesta es afirmativa indique el número de ID tributario (TIN)	',
-  `Patri_1` varchar(30) NOT NULL COMMENT 'Pais donde se tributa numero 1	',
-  `Patri_2` varchar(30) NOT NULL COMMENT 'Pais donde se tributa numero 2	',
-  `NoidTrib_1` double NOT NULL COMMENT 'Numero de identificacion tributario numero 1	',
-  `NoidTrib_2` double NOT NULL COMMENT 'Numero de identificacion tributario numero 2	',
-  `Idtripro_bi` int(11) NOT NULL COMMENT 'Identificacion de tipos de proveniencia de bienes	',
-  `Otro_fue` varchar(300) NOT NULL COMMENT 'Otro tipo de proveniencia de bienes	',
-  `Idfue_rec` int(11) NOT NULL COMMENT 'Identificacion de los Tipos de proveniencia de los recursos entregados	',
-  `Otro_pro` varchar(300) NOT NULL COMMENT 'Otro Tipo de proveniencia de los recursos entregados	',
-  `Pais_or` varchar(40) NOT NULL COMMENT 'El pais de origen de bienes y/o fondos	',
-  `Ciu_or` varchar(40) NOT NULL COMMENT 'La ciudad de origen de bienes y/o fondos	',
-  `Nat_recu` tinyint(1) NOT NULL COMMENT 'Declaración naturaleza de los recursos	',
-  `Op_ext` tinyint(1) NOT NULL COMMENT 'operaciones en moneda extranjera?	',
-  `Idtiop_m` int(11) NOT NULL COMMENT 'Identificacion de Tipos de operaciones en moneda extranjera	',
-  `Otro_mo` varchar(300) NOT NULL COMMENT 'Otro Tipo de operaciones en moneda extranjera	',
-  `Nom_ent` varchar(60) NOT NULL COMMENT 'Nombre de la entidad	',
-  `Idtipro_m` int(11) NOT NULL COMMENT 'Identificacion de Tipo de producto en moneda extranjera	',
-  `Otro_mo2` varchar(300) NOT NULL COMMENT 'Otro Tipo de producto en moneda extranjera	',
-  `No_pro` double NOT NULL COMMENT 'Numero de producto	',
-  `Mo_pro` double NOT NULL COMMENT 'Monto mensual promedio	',
-  `Moneda` varchar(60) NOT NULL COMMENT 'Moneda utilizada	',
-  `Ciu_ent` varchar(30) NOT NULL COMMENT 'Ciudad de la entidad	',
-  `Pa_ent` varchar(30) NOT NULL COMMENT 'Pais de la entidad	',
-  `Idtien_re` int(11) NOT NULL COMMENT 'Identificacion de Tipo de entrega de Reporte Anual de Costos Totales',
-  `No_solicit` double NOT NULL COMMENT 'Numero de identificacion del solicitante',
-  `Cod_vend` int(11) NOT NULL COMMENT 'Código vendedor'
+  `Fe_dil` date DEFAULT NULL COMMENT 'Fecha de diligenciamiento',
+  `tidoc_ent` varchar(40) DEFAULT NULL COMMENT 'tipo de documento de la entidad',
+  `Nit` double DEFAULT NULL COMMENT 'Nit de la entidad',
+  `Fidei` varchar(15) DEFAULT NULL COMMENT 'fideicomiso',
+  `No_fide` double DEFAULT NULL COMMENT 'Numero de fideicomiso',
+  `Nom_ra` varchar(45) DEFAULT NULL COMMENT 'Nombre o razon social de la entidad',
+  `Nom_cor` varchar(45) DEFAULT NULL COMMENT 'Nombre corto o sigla',
+  `Fe_cons` date DEFAULT NULL COMMENT 'Fecha de constitucion de la entidad',
+  `Ciu_cons` varchar(30) DEFAULT NULL COMMENT 'Ciudad de constitucion de la entidad',
+  `Pai_cons` varchar(30) DEFAULT NULL COMMENT 'Pais de constitucion de la entidad',
+  `Dir_se` varchar(40) DEFAULT NULL COMMENT 'Direccion de sede principal de la entidad',
+  `Barrio` varchar(30) DEFAULT NULL COMMENT 'Barrio de la entidad',
+  `Ciu_mu` varchar(30) DEFAULT NULL COMMENT 'Ciudad de la entidad',
+  `Depart` varchar(30) DEFAULT NULL COMMENT 'Departamento de la entidad',
+  `Pais` varchar(30) DEFAULT NULL COMMENT 'Pais de la entidad',
+  `Telefono` double DEFAULT NULL COMMENT 'Telefono de la entidad',
+  `Ext` int(11) DEFAULT NULL COMMENT 'Extension de numero ',
+  `Corr_se` varchar(40) DEFAULT NULL COMMENT 'Correo de la sede principal',
+  `No_doc` double DEFAULT NULL COMMENT 'Numero de documento del representante legal',
+  `Pre_1` varchar(10) DEFAULT NULL COMMENT '¿Tiene socios o accionistas con participación directa o indirecta superior al 5%?	',
+  `Pre_2` varchar(10) DEFAULT NULL COMMENT '¿Tiene socios o accionistas con participación directa o indirecta igual o inferior al 5% y que tengan control sobre la entidad?	',
+  `No_docu` double DEFAULT NULL COMMENT 'Nunero de documento del contacto de la entidad',
+  `Idti_na` int(11) DEFAULT NULL COMMENT 'Identificacion de tipo de naturaleza	',
+  `Co_ciuu` double DEFAULT NULL COMMENT 'Codigo CIUU	',
+  `Det_act` varchar(200) DEFAULT NULL COMMENT 'Detalle de la actividad economica principal	',
+  `No_emp` int(11) DEFAULT NULL COMMENT 'Numero de empleados	',
+  `Idti_soci` int(11) DEFAULT NULL COMMENT 'Identificacion del tipo de sociedad comercial o civil	',
+  `Otro_com` varchar(300) DEFAULT NULL COMMENT 'Otro tipo de sociedad comercial o civil	',
+  `Idti_en` int(11) DEFAULT NULL COMMENT 'Identificacion de tipo de entidad o asociacion	',
+  `Otro_ent` varchar(300) DEFAULT NULL COMMENT 'Otro tipo de entidad o asociacion	',
+  `Idti_es` int(11) DEFAULT NULL COMMENT 'Identificacion de tipos de entidades estatales	',
+  `Otro_est` varchar(300) DEFAULT NULL COMMENT 'otro tipo de entidad estatal	',
+  `Idti_des` int(11) DEFAULT NULL COMMENT 'identificacion de tipos de entidades estatales descentralizadas de orden	',
+  `Ing_op` double DEFAULT NULL COMMENT 'Ingresos operacionales mensuales	',
+  `Ino_op` double DEFAULT NULL COMMENT 'ngresos no operacionales mensuales	',
+  `Detno` double DEFAULT NULL COMMENT 'Detalle de ingresos no operacionales u originados en actividades diferentes a la principal	',
+  `vent_an` double DEFAULT NULL COMMENT 'Ventas anuales	',
+  `Fe_ci` date DEFAULT NULL COMMENT 'Fecha de cierre de ventas	',
+  `Egre_me` double DEFAULT NULL COMMENT 'Egresos mensuales	',
+  `Util_ne` double DEFAULT NULL COMMENT 'Utilidad neta	',
+  `Tot_act` double DEFAULT NULL COMMENT 'Total activos	',
+  `Tot_pas` double DEFAULT NULL COMMENT 'Total pasivos	',
+  `Tot_pat` double DEFAULT NULL COMMENT 'Total patrimonio	',
+  `Idti_cont` int(11) DEFAULT NULL COMMENT 'Identificacion de tipo de contribuyente	',
+  `Idcla_cont` int(11) DEFAULT NULL COMMENT 'Identificacion de clase de contribuyente	',
+  `Res_iva` varchar(10) DEFAULT NULL COMMENT 'Responsable de iva	',
+  `Aut_ing` varchar(10) DEFAULT NULL COMMENT 'Autorretenedor otros ingresos	',
+  `Int_merc` varchar(10) DEFAULT NULL COMMENT 'Intermediario del mercado cambiario	',
+  `Vig_sup` varchar(10) DEFAULT NULL COMMENT 'Es vigilado por la superintendencia financiera	',
+  `Obli_est` varchar(10) DEFAULT NULL COMMENT 'Obligado a tributar en Estados Unidos	',
+  `No_id_tr` double DEFAULT NULL COMMENT 'Si su respuesta es afirmativa indique el número de ID tributario (TIN)	',
+  `Patri_1` varchar(30) DEFAULT NULL COMMENT 'Pais donde se tributa numero 1	',
+  `Patri_2` varchar(30) DEFAULT NULL COMMENT 'Pais donde se tributa numero 2	',
+  `NoidTrib_1` double DEFAULT NULL COMMENT 'Numero de identificacion tributario numero 1	',
+  `NoidTrib_2` double DEFAULT NULL COMMENT 'Numero de identificacion tributario numero 2	',
+  `Idtripro_bi` int(11) DEFAULT NULL COMMENT 'Identificacion de tipos de proveniencia de bienes	',
+  `Otro_fue` varchar(300) DEFAULT NULL COMMENT 'Otro tipo de proveniencia de bienes	',
+  `Idfue_rec` int(11) DEFAULT NULL COMMENT 'Identificacion de los Tipos de proveniencia de los recursos entregados	',
+  `Otro_pro` varchar(300) DEFAULT NULL COMMENT 'Otro Tipo de proveniencia de los recursos entregados	',
+  `Pais_or` varchar(40) DEFAULT NULL COMMENT 'El pais de origen de bienes y/o fondos	',
+  `Ciu_or` varchar(40) DEFAULT NULL COMMENT 'La ciudad de origen de bienes y/o fondos	',
+  `Nat_recu` varchar(10) DEFAULT NULL COMMENT 'Declaración naturaleza de los recursos	',
+  `Op_ext` varchar(10) DEFAULT NULL COMMENT 'operaciones en moneda extranjera?	',
+  `Idtiop_m` int(11) DEFAULT NULL COMMENT 'Identificacion de Tipos de operaciones en moneda extranjera	',
+  `Otro_mo` varchar(300) DEFAULT NULL COMMENT 'Otro Tipo de operaciones en moneda extranjera	',
+  `Nom_ent` varchar(60) DEFAULT NULL COMMENT 'Nombre de la entidad	',
+  `Idtipro_m` int(11) DEFAULT NULL COMMENT 'Identificacion de Tipo de producto en moneda extranjera	',
+  `Otro_mo2` varchar(300) DEFAULT NULL COMMENT 'Otro Tipo de producto en moneda extranjera	',
+  `No_pro` double DEFAULT NULL COMMENT 'Numero de producto	',
+  `Mo_pro` double DEFAULT NULL COMMENT 'Monto mensual promedio	',
+  `Moneda` varchar(60) DEFAULT NULL COMMENT 'Moneda utilizada	',
+  `Ciu_ent` varchar(30) DEFAULT NULL COMMENT 'Ciudad de la entidad	',
+  `Pa_ent` varchar(30) DEFAULT NULL COMMENT 'Pais de la entidad	',
+  `Idtien_re` int(11) DEFAULT NULL COMMENT 'Identificacion de Tipo de entrega de Reporte Anual de Costos Totales',
+  `No_solicit` double DEFAULT NULL COMMENT 'Numero de identificacion del solicitante',
+  `Cod_vend` int(11) DEFAULT NULL COMMENT 'Código vendedor'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Informacion de la entidad';
+
+--
+-- Volcado de datos para la tabla `entidad`
+--
+
+INSERT INTO `entidad` (`Id_ent`, `Fe_dil`, `tidoc_ent`, `Nit`, `Fidei`, `No_fide`, `Nom_ra`, `Nom_cor`, `Fe_cons`, `Ciu_cons`, `Pai_cons`, `Dir_se`, `Barrio`, `Ciu_mu`, `Depart`, `Pais`, `Telefono`, `Ext`, `Corr_se`, `No_doc`, `Pre_1`, `Pre_2`, `No_docu`, `Idti_na`, `Co_ciuu`, `Det_act`, `No_emp`, `Idti_soci`, `Otro_com`, `Idti_en`, `Otro_ent`, `Idti_es`, `Otro_est`, `Idti_des`, `Ing_op`, `Ino_op`, `Detno`, `vent_an`, `Fe_ci`, `Egre_me`, `Util_ne`, `Tot_act`, `Tot_pas`, `Tot_pat`, `Idti_cont`, `Idcla_cont`, `Res_iva`, `Aut_ing`, `Int_merc`, `Vig_sup`, `Obli_est`, `No_id_tr`, `Patri_1`, `Patri_2`, `NoidTrib_1`, `NoidTrib_2`, `Idtripro_bi`, `Otro_fue`, `Idfue_rec`, `Otro_pro`, `Pais_or`, `Ciu_or`, `Nat_recu`, `Op_ext`, `Idtiop_m`, `Otro_mo`, `Nom_ent`, `Idtipro_m`, `Otro_mo2`, `No_pro`, `Mo_pro`, `Moneda`, `Ciu_ent`, `Pa_ent`, `Idtien_re`, `No_solicit`, `Cod_vend`) VALUES
+(2, '2022-07-11', 'Nit', 123, 'Fideicomiso', 123, 'hola', 'hola', '2022-07-11', '0000', '0000', '0000', '000', '000', '000', '000', 0, 0, '0000', 111111, 'Si', 'Si', 22222, 1, 123, '132', 123, 3, 'h', 4, 'h', 3, 'h', 2, 55555, 55555, 5555, 5555, '2022-07-11', 55555, 555, 5555, 555, 5535, 2, 1, 'Si', 'Si', 'Si', 'Si', 'Si', 55555, 'h', '5555', 555, 55, 2, 'hh', 2, 'h', 'h', 'h', 'Si', 'Si', 3, 'h', 'h', 2, 'h', 123, 5555, 'h', 'h', 'h', 1, 456, 789);
 
 -- --------------------------------------------------------
 
@@ -318,6 +306,13 @@ CREATE TABLE `ent_ti` (
   `Nit` double NOT NULL COMMENT 'Nit de la entidad',
   `Idti_sol` int(11) NOT NULL COMMENT 'Identificacion de tipo de solicitud'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Intermedia entre entidad y tipo de solicitud';
+
+--
+-- Volcado de datos para la tabla `ent_ti`
+--
+
+INSERT INTO `ent_ti` (`Nit`, `Idti_sol`) VALUES
+(123, 2);
 
 -- --------------------------------------------------------
 
@@ -392,15 +387,6 @@ CREATE TABLE `reg_soli` (
   `No_ide` double NOT NULL COMMENT 'Numero de identificacion del cliente'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Registros de solicitudes';
 
---
--- Volcado de datos para la tabla `reg_soli`
---
-
-INSERT INTO `reg_soli` (`Id_reg`, `No_ide`) VALUES
-(12, 13),
-(14, 2578),
-(9, 1192719887);
-
 -- --------------------------------------------------------
 
 --
@@ -430,22 +416,29 @@ INSERT INTO `reg_usu` (`Id_usu`, `Usuario`, `Contra`, `Idti_rol`) VALUES
 
 CREATE TABLE `repr_le` (
   `No_doc` double NOT NULL COMMENT 'Numero de documento del representante legal',
-  `Idti_doc` int(11) NOT NULL COMMENT 'Identificacion de tipo de documento',
-  `Pri_no` varchar(30) NOT NULL COMMENT 'Primer nombre del representante legal',
-  `Seg_no` varchar(30) NOT NULL COMMENT 'Segundo nombre del representante legal',
-  `Pri_ape` varchar(30) NOT NULL COMMENT 'Primer apellido del representante legal',
-  `Seg_ape` varchar(30) NOT NULL COMMENT 'SEgundo apellido del representante legal',
-  `Cargo` varchar(30) NOT NULL COMMENT 'Cargo del representante legal',
-  `Dir_lab` varchar(40) NOT NULL COMMENT 'Direccion laboral del representante legal',
-  `Barrio` varchar(30) NOT NULL COMMENT 'Barrio del representante legal',
-  `Ciu_mu` varchar(30) NOT NULL COMMENT 'Ciudad o municipio del representante legal',
-  `Depart` varchar(30) NOT NULL COMMENT 'Departamento del representante legal',
-  `Pais` varchar(30) NOT NULL COMMENT 'Pais del representante legal',
-  `Tel_lab` double NOT NULL COMMENT 'Telefono laboral del representante legal',
-  `Ext` int(11) NOT NULL COMMENT 'Extension de telefono',
-  `Celular` double NOT NULL COMMENT 'Celular del representante legal',
-  `Corr_lab` varchar(40) NOT NULL COMMENT 'Correo laboral del representante legal'
+  `Idti_doc` int(11) DEFAULT NULL COMMENT 'Identificacion de tipo de documento',
+  `Pri_no` varchar(30) DEFAULT NULL COMMENT 'Primer nombre del representante legal',
+  `Seg_no` varchar(30) DEFAULT NULL COMMENT 'Segundo nombre del representante legal',
+  `Pri_ape` varchar(30) DEFAULT NULL COMMENT 'Primer apellido del representante legal',
+  `Seg_ape` varchar(30) DEFAULT NULL COMMENT 'SEgundo apellido del representante legal',
+  `Cargo` varchar(30) DEFAULT NULL COMMENT 'Cargo del representante legal',
+  `Dir_lab` varchar(40) DEFAULT NULL COMMENT 'Direccion laboral del representante legal',
+  `Barrio` varchar(30) DEFAULT NULL COMMENT 'Barrio del representante legal',
+  `Ciu_mu` varchar(30) DEFAULT NULL COMMENT 'Ciudad o municipio del representante legal',
+  `Depart` varchar(30) DEFAULT NULL COMMENT 'Departamento del representante legal',
+  `Pais` varchar(30) DEFAULT NULL COMMENT 'Pais del representante legal',
+  `Tel_lab` double DEFAULT NULL COMMENT 'Telefono laboral del representante legal',
+  `Ext` int(11) DEFAULT NULL COMMENT 'Extension de telefono',
+  `Celular` double DEFAULT NULL COMMENT 'Celular del representante legal',
+  `Corr_lab` varchar(40) DEFAULT NULL COMMENT 'Correo laboral del representante legal'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Informacion de representante legal';
+
+--
+-- Volcado de datos para la tabla `repr_le`
+--
+
+INSERT INTO `repr_le` (`No_doc`, `Idti_doc`, `Pri_no`, `Seg_no`, `Pri_ape`, `Seg_ape`, `Cargo`, `Dir_lab`, `Barrio`, `Ciu_mu`, `Depart`, `Pais`, `Tel_lab`, `Ext`, `Celular`, `Corr_lab`) VALUES
+(111111, 5, '1111', '1111', '1111', '11111', '1111', '1111', '1111', '1111', '111', '111', 1111, 1111, 111, '111111');
 
 -- --------------------------------------------------------
 
@@ -454,10 +447,10 @@ CREATE TABLE `repr_le` (
 --
 
 CREATE TABLE `solicitante` (
-  `Idti_soli` int(11) NOT NULL COMMENT 'Identificacion de Tipo de solicitante parte inferior',
+  `Idti_soli` int(11) DEFAULT NULL COMMENT 'Identificacion de Tipo de solicitante parte inferior',
   `No_solicit` double NOT NULL COMMENT 'Numero de identificacion del solicitante',
-  `Nom_solicit` varchar(100) NOT NULL COMMENT 'Nombre completo del solicitante',
-  `Firma` varchar(40) NOT NULL COMMENT 'Firma del solicitante'
+  `Nom_solicit` varchar(100) DEFAULT NULL COMMENT 'Nombre completo del solicitante',
+  `Firma` varchar(40) DEFAULT NULL COMMENT 'Firma del solicitante'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Medida de seguridad que contiene informacion del solicitante';
 
 --
@@ -465,16 +458,8 @@ CREATE TABLE `solicitante` (
 --
 
 INSERT INTO `solicitante` (`Idti_soli`, `No_solicit`, `Nom_solicit`, `Firma`) VALUES
-(1, 43, 'dfgdfg', 'dgdfgd'),
-(2, 3453, 'fgdgd', 'dfgfgd'),
-(1, 8967, 'fgdfg', 'fgfdgfd'),
-(1, 34432, 'dfgdfg', 'fdgdfgd'),
-(1, 43242, 'dfgdfg', 'dgdfgd'),
-(2, 76537, 'jjkljl', 'fddgfh'),
-(1, 435345, 'fdgdf', 'fdgdfg'),
-(1, 456456, 'FDGDGD', 'FGDFGD'),
-(1, 3242345, 'dsfsdf', 'dsfsfs'),
-(2, 1192719887, 'Cristian', 'Cristian');
+(1, 456, 'hhh', 'hh'),
+(2, 3453, 'fgdgd', 'dfgfgd');
 
 -- --------------------------------------------------------
 
@@ -945,10 +930,10 @@ INSERT INTO `ti_solicit` (`Idti_solicit`, `Nomti_sol`) VALUES
 
 CREATE TABLE `vendedor` (
   `Cod_vend` int(11) NOT NULL COMMENT 'Código vendedor',
-  `Nom_vend` varchar(100) NOT NULL COMMENT 'Nombre del vendedor',
-  `Oficina` varchar(50) NOT NULL COMMENT 'Oficina del vendedor',
-  `Obser` varchar(300) NOT NULL COMMENT 'Observaciones',
-  `Firma_vend` varchar(40) NOT NULL COMMENT 'Firma del vendedor'
+  `Nom_vend` varchar(100) DEFAULT NULL COMMENT 'Nombre del vendedor',
+  `Oficina` varchar(50) DEFAULT NULL COMMENT 'Oficina del vendedor',
+  `Obser` varchar(300) DEFAULT NULL COMMENT 'Observaciones',
+  `Firma_vend` varchar(40) DEFAULT NULL COMMENT 'Firma del vendedor'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Vendedor';
 
 --
@@ -956,17 +941,8 @@ CREATE TABLE `vendedor` (
 --
 
 INSERT INTO `vendedor` (`Cod_vend`, `Nom_vend`, `Oficina`, `Obser`, `Firma_vend`) VALUES
-(0, '', '', '', ''),
-(23, 'sdfsd', 'dsfsd', 'dsfsdfsdf', 'fdsfs'),
-(4353, 'dfgdfg', 'gfdgd', 'gdfgdf', 'dfgdgdf'),
-(7705, 'fdgdf', 'fdgdf', 'fdgdgfd', 'gdfgd'),
-(12345, 'dfdgd', 'fdgfd', 'gdfgdf', 'fdgfdg'),
-(23423, 'sdfsd', 'dsfsd', 'dsfsdfsdf', 'fdsfs'),
-(34532, 'dsf', 'fsdf', 'fsdfs', 'fdfsdf'),
-(46878, 'dsdf', 'fsds', 'dsfs', 'dsfsdd'),
-(324234, 'Valentina Bandida', 'Sus ex', 'Ojo con ella', 'Siempre Bandida'),
-(435353, 'dfgdgd', 'dgdfgd', 'gdfgdfgd', 'dfgdg'),
-(564435, 'DGDFDG', 'GFDGD', 'GDFGD', 'DFGDGfd');
+(789, 'hh', 'hhh', 'hhhh', 'hhh'),
+(4353, 'dfgdfg', 'gfdgd', 'gdfgdf', 'dfgdgdf');
 
 --
 -- Índices para tablas volcadas
@@ -1263,7 +1239,7 @@ ALTER TABLE `clien_tip`
 -- AUTO_INCREMENT de la tabla `entidad`
 --
 ALTER TABLE `entidad`
-  MODIFY `Id_ent` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_ent` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `reg_soli`

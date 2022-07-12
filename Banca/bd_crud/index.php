@@ -218,9 +218,11 @@ if($_POST['METHOD']=='FORMN'){
 if ($_POST['METHOD'] == 'FORMJ') {
     unset($_POST['METHOD']);
     $Fe_dil = $_POST['Fe_dil'];
+    $tidoc_ent = $_POST['tidoc_ent'];
     $Nit = $_POST['Nit'];
     $Idti_sol = $_POST['Idti_sol'];
     $Idti_doc = $_POST['Idti_doc'];
+    $Idti_doc2 = $_POST['Idti_doc2'];
     $Fidei = $_POST['Fidei'];
     $No_fide = $_POST['No_fide'];
     $Nom_ra = $_POST['Nom_ra'];
@@ -236,16 +238,33 @@ if ($_POST['METHOD'] == 'FORMJ') {
     $Seg_no = $_POST['Seg_no'];
     $Pri_ape = $_POST['Pri_ape'];
     $Seg_ape = $_POST['Seg_ape'];
+    $Pri_ape2 = $_POST['Pri_ape2'];
+    $Seg_ape2 = $_POST['Seg_ape2'];
     $Cargo = $_POST['Cargo'];
+    $Cargo2 = $_POST['Cargo2'];
     $Dir_lab = $_POST['Dir_lab'];
+    $Dir_lab2 = $_POST['Dir_lab2'];
     $Barrio = $_POST['Barrio'];
+    $Barrio2 = $_POST['Barrio2'];
+    $Barrio3 = $_POST['Barrio3'];
     $Ciu_mu = $_POST['Ciu_mu'];
+    $Ciu_mu2 = $_POST['Ciu_mu2'];
+    $Ciu_mu3 = $_POST['Ciu_mu3'];
     $Depart = $_POST['Depart'];
+    $Depart2 = $_POST['Depart2'];
+    $Depart3 = $_POST['Depart3'];
     $Pais = $_POST['Pais'];
+    $Pais2 = $_POST['Pais2'];
+    $Pais3 = $_POST['Pais3'];
     $Tel_lab = $_POST['Tel_lab'];
+    $Tel_lab2 = $_POST['Tel_lab2'];
     $Ext = $_POST['Ext'];
+    $Ext2 = $_POST['Ext2'];
+    $Ext3 = $_POST['Ext3'];
     $Celular = $_POST['Celular'];
+    $Celular2 = $_POST['Celular2'];
     $Corr_lab = $_POST['Corr_lab'];
+    $Corr_lab2 = $_POST['Corr_lab2'];
     $Pre_1 = $_POST['Pre_1'];
     $Pre_2 = $_POST['Pre_2'];
     $No_docu = $_POST['No_docu'];
@@ -315,19 +334,19 @@ if ($_POST['METHOD'] == 'FORMJ') {
     $query = "insert into vendedor(Cod_vend,Nom_vend,Oficina,Obser,Firma_vend) values ('$Cod_vend','$Nom_vend','$Oficina','$Obser','$Firma_vend')";
     $resultado5 = mysqli_query($conexion, $query);
     if ($resultado5 == 1) {
-        $query = "insert into solicitante(Idti_soli,No_solicit,Nom_solicit, Firma) values ('$Idti_soli','$No_solicit','$Nom_solicit','$Firma')";
+        $query = "insert into solicitante(Idti_soli,No_solicit,Nom_solicit,Firma) values ('$Idti_soli','$No_solicit','$Nom_solicit','$Firma')";
         $resultado6 = mysqli_query($conexion, $query);
         if ($resultado6 == 1) {
-            $query = "insert into repr_le(No_doc,Idti_doc,Pri_no,Seg_no,Pri_ape,Seg_ape,Cargo,Dir_lab,Barrio,Ciu_mu,Depart,Pais,Tel_lab,Ext,Celular,Corr_lab) values 
-            ('$No_doc','$Idti_doc','$Pri_no','$Seg_no','$Pri_ape','$Seg_ape','$Cargo','$Dir_lab','$Barrio','$Ciu_mu','$Depart','$Pais','$Tel_lab','$Ext','$Celular','$Corr_lab')";
+            $query = "insert into cont_ent(No_docu,Idti_doc,Pri_nom,Seg_nom,Pri_ape,Seg_ape,Cargo,Dir_lab,Barrio,Ciu_mu,Depart,Pais,Tel_lab,Ext,Celular,Corr_lab) values 
+            ('$No_docu','$Idti_doc2','$Pri_nom','$Seg_nom','$Pri_ape2','$Seg_ape2','$Cargo2','$Dir_lab2','$Barrio3','$Ciu_mu3','$Depart3','$Pais3','$Tel_lab2','$Ext3','$Celular2','$Corr_lab2')"; 
             $resultado7 = mysqli_query($conexion, $query);
             if ($resultado7 == 1) {
-                $query = "insert into entidad(Fe_dil,Fidei,No_fide,Nom_ra,Nom_cor,Fe_cons,Ciu_cons,Pai_cons,Dir_se,Telefono,Ext,Corr_se,Pre_1,Pre_2,Idti_na,Co_ciuu,Det_act,No_emp,Idti_soci,Otro_com,Idti_en,Otro_ent,Idti_es,Otro_est,Idti_des,Ing_op,Ino_op,Detno,vent_an,Fe_ci,Egre_me,Util_ne,Tot_act,Tot_pas,Tot_pat,Idti_cont,Idcla_cont,Res_iva,Aut_ing,Int_merc,Vig_sup,Obli_est,No_id_tr,Patri_1,Patri_2,NoidTrib_1,NoidTrib_2,Idtripro_bi,Otro_fue,Idfue_rec,Otro_pro,Ciu_or,Nat_recu,Op_ext,Otro_mo,Nom_ent,Idtipro_m,Otro_mo2,No_pro,Mo_pro,Moneda,Ciu_ent,Pa_ent,Idtien_re,No_solicit,Cod_vend) 
-                values ('$Fe_dil','$Fidei','$No_fide','$Nom_ra','$Nom_cor','$Fe_cons','$Ciu_cons','$Pai_cons','$Dir_se','$Telefono','$Corr_se','$Pre_1','$Pre_2',','$Idti_na','$Co_ciuu','$Det_act','$No_emp','$Idti_soci','$Otro_com','$Idti_en','$Otro_ent','$Idti_es','$Otro_est','$Idti_des','$Ing_op','$Ino_op','$Detno','$vent_an','$Fe_ci','$Egre_me','$Util_ne','$Tot_act','$Tot_pas','$Tot_pat','$Idti_cont','$Idcla_cont','$Res_iva','$Aut_ing','$Int_merc','$Vig_sup','$Obli_est','$No_id_tr','$Patri_1','$Patri_2','$NoidTrib_1','$NoidTrib_2','$Idtripro_bi','$Otro_fue','$Idfue_rec','$Otro_pro','$Pais_or','$Ciu_or','$Nat_recu','$Op_ext','$Idtiop_m','$Otro_mo','$Nom_ent','$Idtipro_m','$Otro_mo2','$No_pro','$Mo_pro','$Moneda','$Ciu_ent','$Pa_ent','$Idtien_re','$No_solicit','$Cod_vend')"; 
+                $query = "insert into repr_le(No_doc,Idti_doc,Pri_no,Seg_no,Pri_ape,Seg_ape,Cargo,Dir_lab,Barrio,Ciu_mu,Depart,Pais,Tel_lab,Ext,Celular,Corr_lab) values 
+                ('$No_doc','$Idti_doc','$Pri_no','$Seg_no','$Pri_ape','$Seg_ape','$Cargo','$Dir_lab','$Barrio2','$Ciu_mu2','$Depart2','$Pais2','$Tel_lab','$Ext2','$Celular','$Corr_lab')";
                 $resultado8 = mysqli_query($conexion, $query);         
                 if ($resultado8 == 1) {
-                    $query = "insert into cont_ent(No_docu,Idti_doc,Pri_nom,Seg_nom,Pri_ape,Seg_ape,Cargo,Dir_lab,Barrio,Ciu_mu,Depart,Pais,Tel_lab,Ext,Celular,Corr_lab) values 
-                    ('$No_docu','$Idti_doc','$Pri_nom','$Seg_nom','$Pri_ape','$Seg_ape','$Cargo','$Dir_lab','$Barrio','$Ciu_mu','$Depart','$Pais','$Tel_lab','$Ext','$Celular','$Corr_lab')";   
+                    $query = "insert into entidad(Fe_dil,tidoc_ent,Nit,Fidei,No_fide,Nom_ra,Nom_cor,Fe_cons,Ciu_cons,Pai_cons,Dir_se,Barrio,Ciu_mu,Depart,Pais,Telefono,Ext,Corr_se,No_doc,Pre_1,Pre_2,No_docu,Idti_na,Co_ciuu,Det_act,No_emp,Idti_soci,Otro_com,Idti_en,Otro_ent,Idti_es,Otro_est,Idti_des,Ing_op,Ino_op,Detno,vent_an,Fe_ci,Egre_me,Util_ne,Tot_act,Tot_pas,Tot_pat,Idti_cont,Idcla_cont,Res_iva,Aut_ing,Int_merc,Vig_sup,Obli_est,No_id_tr,Patri_1,Patri_2,NoidTrib_1,NoidTrib_2,Idtripro_bi,Otro_fue,Idfue_rec,Otro_pro,Pais_or,Ciu_or,Nat_recu,Op_ext,Idtiop_m,Otro_mo,Nom_ent,Idtipro_m,Otro_mo2,No_pro,Mo_pro,Moneda,Ciu_ent,Pa_ent,Idtien_re,No_solicit,Cod_vend) 
+                    values ('$Fe_dil','$tidoc_ent','$Nit','$Fidei','$No_fide','$Nom_ra','$Nom_cor','$Fe_cons','$Ciu_cons','$Pai_cons','$Dir_se','$Barrio','$Ciu_mu','$Depart','$Pais','$Telefono','$Ext','$Corr_se','$No_doc','$Pre_1','$Pre_2','$No_docu','$Idti_na','$Co_ciuu','$Det_act','$No_emp','$Idti_soci','$Otro_com','$Idti_en','$Otro_ent','$Idti_es','$Otro_est','$Idti_des','$Ing_op','$Ino_op','$Detno','$vent_an','$Fe_ci','$Egre_me','$Util_ne','$Tot_act','$Tot_pas','$Tot_pat','$Idti_cont','$Idcla_cont','$Res_iva','$Aut_ing','$Int_merc','$Vig_sup','$Obli_est','$No_id_tr','$Patri_1','$Patri_2','$NoidTrib_1','$NoidTrib_2','$Idtripro_bi','$Otro_fue','$Idfue_rec','$Otro_pro','$Pais_or','$Ciu_or','$Nat_recu','$Op_ext','$Idtiop_m','$Otro_mo','$Nom_ent','$Idtipro_m','$Otro_mo2','$No_pro','$Mo_pro','$Moneda','$Ciu_ent','$Pa_ent','$Idtien_re','$No_solicit','$Cod_vend')";
                     $resultado9 = mysqli_query($conexion, $query);  
                     if ($resultado9 == 1) {
                         $query = "insert into ent_ti(Nit, Idti_sol) values ('$Nit', '$Idti_sol')";

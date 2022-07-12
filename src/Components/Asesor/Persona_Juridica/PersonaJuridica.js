@@ -153,9 +153,12 @@ const PersonaJuridica = () => {
     Seg_no: "",
     Pri_ape: "",
     Seg_ape: "",
+    Pri_ape2: "",
+    Seg_ape2: "",
     Cargo: "",
     Cargo2: "",
     Dir_lab: "",
+    Dir_lab2: "",
     Barrio: "",
     Barrio2: "",
     Barrio3: "",
@@ -169,11 +172,14 @@ const PersonaJuridica = () => {
     Pais2: "",
     Pais3: "",
     Tel_lab: "",
+    Tel_lab2: "",
     Ext: "",
     Ext2: "",
     Ext3: "",
     Celular: "",
+    Celular2: "",
     Corr_lab: "",
+    Corr_lab2: "",
     Fidei: "",
     No_fide: "",
     Nom_ra: "",
@@ -265,9 +271,12 @@ const PersonaJuridica = () => {
     f.append("Seg_no", dataUsuario.Seg_no);
     f.append("Pri_ape", dataUsuario.Pri_ape);
     f.append("Seg_ape", dataUsuario.Seg_ape);
+    f.append("Pri_ape2", dataUsuario.Pri_ape2);
+    f.append("Seg_ape2", dataUsuario.Seg_ape2);
     f.append("Cargo", dataUsuario.Cargo);
     f.append("Cargo2", dataUsuario.Cargo2);
     f.append("Dir_lab", dataUsuario.Dir_lab);
+    f.append("Dir_lab2", dataUsuario.Dir_lab2);
     f.append("Barrio", dataUsuario.Barrio);
     f.append("Barrio2", dataUsuario.Barrio2);
     f.append("Barrio3", dataUsuario.Barrio3);
@@ -281,11 +290,14 @@ const PersonaJuridica = () => {
     f.append("Pais2", dataUsuario.Pais2);
     f.append("Pais3", dataUsuario.Pais3);
     f.append("Tel_lab", dataUsuario.Tel_lab);
+    f.append("Tel_lab2", dataUsuario.Tel_lab2);
     f.append("Ext", dataUsuario.Ext);
     f.append("Ext2", dataUsuario.Ext2);
     f.append("Ext3", dataUsuario.Ext3);
     f.append("Celular", dataUsuario.Celular);
+    f.append("Celular2", dataUsuario.Celular2);
     f.append("Corr_lab", dataUsuario.Corr_lab);
+    f.append("Corr_lab2", dataUsuario.Corr_lab2);
     f.append("Fidei", dataUsuario.Fidei);
     f.append("No_fide", dataUsuario.No_fide);
     f.append("Nom_ra", dataUsuario.Nom_ra);
@@ -1071,7 +1083,7 @@ const PersonaJuridica = () => {
                 Primer apellido{" "}
                 <input
                   type="text"
-                  name="Pri_ape"
+                  name="Pri_ape2"
                   className="Border"
                   onChange={handleChange}
                   required
@@ -1081,7 +1093,7 @@ const PersonaJuridica = () => {
                 Segundo apellido{" "}
                 <input
                   type="text"
-                  name="Seg_ape"
+                  name="Seg_ape2"
                   className="Border"
                   onChange={handleChange}
                 />
@@ -1110,7 +1122,7 @@ const PersonaJuridica = () => {
                 Dirección laboral{" "}
                 <input
                   type="text"
-                  name="Dir_lab"
+                  name="Dir_lab2"
                   className="Border"
                   onChange={handleChange}
                   required
@@ -1185,7 +1197,7 @@ const PersonaJuridica = () => {
                 Teléfono laboral
                 <input
                   type="number"
-                  name="Tel_lab"
+                  name="Tel_lab2"
                   className="Border"
                   onChange={handleChange}
                   required
@@ -1209,7 +1221,7 @@ const PersonaJuridica = () => {
                 Celular
                 <input
                   type="number"
-                  name="Celular"
+                  name="Celular2"
                   className="Border-3"
                   onChange={handleChange}
                   required
@@ -1224,7 +1236,7 @@ const PersonaJuridica = () => {
                 Correo electrónico laboral
                 <input
                   type="text"
-                  name="Corr_lab"
+                  name="Corr_lab2"
                   className="Border"
                   onChange={handleChange}
                   required
