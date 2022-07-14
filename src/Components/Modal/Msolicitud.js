@@ -17,6 +17,29 @@ const Msolicitud = ({
 
   const baseUrl = "http://localhost:8080/Banca/bd_crud/index.php";
   const [detalle, setDetalle] = useState([])
+  const [estado, setEstado] = useState({
+    Des_soli: "",
+  })
+
+  const peticionPostsolicitud = async (No_ide) => {
+    var f = new FormData();
+    f.append("Des_soli", estado.Des_soli);
+    f.append("METHOD", "CANCELSOLI");
+    await axios
+    .post(baseUrl, f, { params: { No_ide: No_ide } })
+    .then((response) => {
+      setSolicitud(
+        solicitud.filter((Usuario) => Usuario.No_ide !== No_ide)
+      );
+      cerrar2();
+      document
+      .getElementById("ventana_modal")
+      .setAttribute("style", "display:none;");
+    }) 
+    .catch((error) => {
+      console.log(error);
+    })
+  }
 
   const Detalleid = async(value) => {
     const No_ide = value;
@@ -25,7 +48,7 @@ const Msolicitud = ({
     f.append("METHOD", "CONSULTAID3");
     await axios.post(baseUrl, f).then((response)=>{
       setDetalle(response.data)
-      abrir()
+      abrir();
     }) 
   }
 
@@ -46,6 +69,15 @@ const Msolicitud = ({
       .catch((error) => {
         console.log(error);
       });
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setEstado((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+    //console.log(estado);
   };
 
   return (
@@ -174,11 +206,11 @@ const Msolicitud = ({
 
           <div class="body__modal3">
             <h1 class="title__modal3">Solicitud #-Asesor#</h1>
-            <input type="text" className="contenedortext" />
+            <textarea type="text" className="contenedortext" name="Des_soli" onChange={handleChange}></textarea>
             <button
               id="boton_Modal_2_0"
               className="btn btn-success"
-              onClick={cerrarT}
+              onClick={()=> peticionPostsolicitud(detalle.No_ide)}
             >
               Aceptar
             </button>

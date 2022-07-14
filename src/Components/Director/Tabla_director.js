@@ -218,7 +218,6 @@ export const Tabla_director = () => {
   };
 
   const cerrar2 = (e) => {
-    e.preventDefault();
     document
       .getElementById("ventana_modal2")
       .setAttribute("style", "display:none;");

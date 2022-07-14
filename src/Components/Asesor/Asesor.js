@@ -40,8 +40,18 @@ const Asesor = () => {
 
   const [data, setData] = useContext(AppContext);
   const [dataUsuario, setDataUsuario] = useState({
-    No_ide: ""
+    No_ide: "",
+    Nit: "",
   });
+  const peticionGet = async () => {
+    var f = new FormData();
+    f.append("Nit", dataUsuario.Nit);
+    f.append("METHOD", "CONSULTAIDENT");
+    await axios.post(baseUrl, f).then((response) => {
+      setData(response.data);
+      History.push("/Consulta");
+    });  
+  };
 
   const peticionGet2 = async () => {
     var f = new FormData();
@@ -60,7 +70,7 @@ const Asesor = () => {
       ...prevState,
       [name]: value,
     }));
-    //console.log(dataUsuario);
+    console.log(dataUsuario);
   };
 
   const handleSubmit = (e) => {
@@ -96,16 +106,18 @@ const Asesor = () => {
                     <div className="contj">
                       <div className="col" id="contenedor1">
                         <img className="PJ" alt="" src={personaj} />
-                        <form>
+                        <form onSubmit={handleSubmit}>
                           <input
-                            placeholder="Ingrese la cedula"
+                            placeholder="Ingrese el Nit"
                             type="number"
                             className="campo1"
+                            name="Nit"
+                            onChange={handleChange}
                           ></input>
                           <button
                             type="submit"
                             className="consultar1"
-                            onClick={() => History.push("/Consulta")}
+                            onClick={() => peticionGet()}
                           >
                             Consultar
                           </button>

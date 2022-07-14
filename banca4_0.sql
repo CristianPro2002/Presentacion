@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 12-07-2022 a las 03:41:16
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.6
+-- Servidor: localhost
+-- Tiempo de generación: 14-07-2022 a las 00:05:52
+-- Versión del servidor: 8.0.29
+-- Versión de PHP: 7.4.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,13 +28,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `act_cli` (
-  `Idact_cli` int(11) NOT NULL COMMENT 'Identificacion de actividad de cliente',
+  `Idact_cli` int NOT NULL COMMENT 'Identificacion de actividad de cliente',
   `Fe_act` datetime NOT NULL COMMENT 'Fecha de actividad',
-  `Idti_pro` int(11) NOT NULL COMMENT 'Identificacion de tipo de producto',
+  `Idti_pro` int NOT NULL COMMENT 'Identificacion de tipo de producto',
   `Valor` decimal(10,0) NOT NULL COMMENT 'Valor de actividad',
   `No_cajero` varchar(60) NOT NULL COMMENT 'Numero de cajero',
-  `No_cue` int(11) NOT NULL COMMENT 'Numero de cuenta'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Actividad de cliente';
+  `No_cue` int NOT NULL COMMENT 'Numero de cuenta'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Actividad de cliente';
 
 -- --------------------------------------------------------
 
@@ -43,9 +43,9 @@ CREATE TABLE `act_cli` (
 --
 
 CREATE TABLE `cla_contr` (
-  `Idcla_contr` int(11) NOT NULL COMMENT 'Identificacion de clase de contribuyente',
+  `Idcla_contr` int NOT NULL COMMENT 'Identificacion de clase de contribuyente',
   `Nom_cla` varchar(60) NOT NULL COMMENT 'Nombre de clase de contribuyente'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Clase de contribuyente';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Clase de contribuyente';
 
 --
 -- Volcado de datos para la tabla `cla_contr`
@@ -62,26 +62,26 @@ INSERT INTO `cla_contr` (`Idcla_contr`, `Nom_cla`) VALUES
 --
 
 CREATE TABLE `client_co` (
-  `Id_client` int(11) NOT NULL COMMENT 'Identificacion aleatorio de cada cliente',
+  `Id_client` int NOT NULL COMMENT 'Identificacion aleatorio de cada cliente',
   `No_ide` double NOT NULL COMMENT 'Nunero de identificacion del cliente',
-  `Idti_solicit` int(11) DEFAULT NULL COMMENT 'Identificacion de Tipo de solicitante',
+  `Idti_solicit` int DEFAULT NULL COMMENT 'Identificacion de Tipo de solicitante',
   `Fec_dil` date DEFAULT NULL COMMENT 'Fecha de diligenciamiento',
   `Pri_nom` varchar(30) DEFAULT NULL COMMENT 'Primer nombre del cliente',
   `Seg_nom` varchar(30) DEFAULT NULL COMMENT 'Segundo nombre del cliente',
   `Pri_ape` varchar(30) DEFAULT NULL COMMENT 'Primer apellido del cliente',
   `Seg_ape` varchar(30) DEFAULT NULL COMMENT 'Segundo apellido del cliente',
-  `Idti_doc` int(11) DEFAULT NULL COMMENT 'Identificacion de tipo de documento',
+  `Idti_doc` int DEFAULT NULL COMMENT 'Identificacion de tipo de documento',
   `Lug_exp` varchar(40) DEFAULT NULL COMMENT 'Lugar de expedicion de documento',
   `Fec_exp` date DEFAULT NULL COMMENT 'Fecha de expedicion de documento',
   `Fec_nac` date DEFAULT NULL COMMENT 'Fecha de nacimiento del cliente',
   `Ciu_nac` varchar(40) DEFAULT NULL COMMENT 'Ciudad de nacimiento del cliente',
-  `Id_gen` int(11) DEFAULT NULL COMMENT 'Identificacion de genero',
-  `Idest_ci` int(11) DEFAULT NULL COMMENT 'Identificacion de estado civil',
-  `Id_nac` int(11) DEFAULT NULL COMMENT 'Identificacion de nacionalidad',
+  `Id_gen` int DEFAULT NULL COMMENT 'Identificacion de genero',
+  `Idest_ci` int DEFAULT NULL COMMENT 'Identificacion de estado civil',
+  `Id_nac` int DEFAULT NULL COMMENT 'Identificacion de nacionalidad',
   `Otr_nac` varchar(100) DEFAULT NULL COMMENT 'Otra nacionalidad',
   `Dir_re` varchar(60) DEFAULT NULL COMMENT 'Direccion de residencia del cliente',
-  `Blo_to` int(11) DEFAULT NULL COMMENT 'Bloque o torre del cliente',
-  `Ap_ca` int(11) DEFAULT NULL COMMENT 'Apartamento o casa del cliente',
+  `Blo_to` int DEFAULT NULL COMMENT 'Bloque o torre del cliente',
+  `Ap_ca` int DEFAULT NULL COMMENT 'Apartamento o casa del cliente',
   `Barrio` varchar(40) DEFAULT NULL COMMENT 'Barrio donde vive el cliente',
   `Ciu_mu` varchar(40) DEFAULT NULL COMMENT 'Ciudad o municipio donde vive el cliente',
   `Depart` varchar(40) DEFAULT NULL COMMENT 'Departamento donde vive el cliente',
@@ -90,10 +90,10 @@ CREATE TABLE `client_co` (
   `Celular` double DEFAULT NULL COMMENT 'Numero de celular del cliente',
   `Corr_ele` varchar(60) DEFAULT NULL COMMENT 'Correo electronico del cliente',
   `Profe` varchar(300) DEFAULT NULL COMMENT 'Profesion que ejerce el cliente',
-  `Idocu_ofii` int(11) DEFAULT NULL COMMENT 'Identificacion de ocupacion o oficio del cliente',
+  `Idocu_ofii` int DEFAULT NULL COMMENT 'Identificacion de ocupacion o oficio del cliente',
   `Det_act` varchar(300) DEFAULT NULL COMMENT 'Detalle de actividad economica del cliente',
-  `Cod_ciuu` int(11) DEFAULT NULL COMMENT 'Codigo CIUU',
-  `No_emp` int(11) DEFAULT NULL COMMENT 'Numero de empleados',
+  `Cod_ciuu` int DEFAULT NULL COMMENT 'Codigo CIUU',
+  `No_emp` int DEFAULT NULL COMMENT 'Numero de empleados',
   `Nom_emp` varchar(60) DEFAULT NULL COMMENT 'Nombre de la empresa',
   `Dir_emp` varchar(60) DEFAULT NULL COMMENT 'Dirección de la empresa o lugar donde desarrolla su actividad	',
   `Barr_lab` varchar(30) DEFAULT NULL COMMENT 'Barrio donde labora',
@@ -101,7 +101,7 @@ CREATE TABLE `client_co` (
   `Dep_lab` varchar(30) DEFAULT NULL COMMENT 'Departamento donde labora	',
   `Pais_lab` varchar(30) DEFAULT NULL COMMENT 'Pais donde labora	',
   `Tel_lab` double DEFAULT NULL COMMENT 'Telefono laboral	',
-  `Ext` int(11) DEFAULT NULL COMMENT 'Extension de telefono	',
+  `Ext` int DEFAULT NULL COMMENT 'Extension de telefono	',
   `Cel_lab` double DEFAULT NULL COMMENT 'Celular laboral	',
   `Corr_lab` varchar(60) DEFAULT NULL COMMENT 'Correo laboral	',
   `Ing_men` double DEFAULT NULL COMMENT 'Ingresos mensuales del cliente	',
@@ -114,7 +114,7 @@ CREATE TABLE `client_co` (
   `Fe_ci` date DEFAULT NULL COMMENT 'Fecha de cierre de ventas del cliente	',
   `Dec_rent` varchar(10) DEFAULT NULL COMMENT '¿Es declarante de renta?	',
   `Age_ret` varchar(10) DEFAULT NULL COMMENT 'Agente retenedor	',
-  `Idtireg_iva` int(11) DEFAULT NULL COMMENT 'Identificacion de tipos de regimen de iva	',
+  `Idtireg_iva` int DEFAULT NULL COMMENT 'Identificacion de tipos de regimen de iva	',
   `Ob_tri` varchar(10) DEFAULT NULL COMMENT 'Obligado a tributar en Estados Unidos	',
   `Notri_est` double DEFAULT NULL COMMENT 'número de ID tributario (TIN) de estados unidos	',
   `Pais_1` varchar(60) DEFAULT NULL COMMENT 'Otro pais diferente a colombia por el cual tributa numero 1	',
@@ -125,20 +125,20 @@ CREATE TABLE `client_co` (
   `Pais_bi` varchar(40) DEFAULT NULL COMMENT 'país origen de bienes y/o fondos	',
   `Ciu_bie` varchar(40) DEFAULT NULL COMMENT 'ciudad origen de bienes y/o fondos	',
   `Op_ext` varchar(10) DEFAULT NULL COMMENT 'operaciones en moneda extranjera?	',
-  `Idtiop_m` int(11) DEFAULT NULL COMMENT 'Identificacion de Tipos de operaciones en moneda extranjera	',
+  `Idtiop_m` int DEFAULT NULL COMMENT 'Identificacion de Tipos de operaciones en moneda extranjera	',
   `Otro_mo` varchar(300) DEFAULT NULL COMMENT 'Otro Tipo de operaciones en moneda extranjera	',
   `Nom_ent` varchar(60) DEFAULT NULL COMMENT 'Nombre de la entidad	',
-  `Idtipro_m` int(11) DEFAULT NULL COMMENT 'Identificacion de Tipo de producto en moneda extranjera	',
+  `Idtipro_m` int DEFAULT NULL COMMENT 'Identificacion de Tipo de producto en moneda extranjera	',
   `Otro_mo2` varchar(300) DEFAULT NULL COMMENT 'Otro Tipo de producto en moneda extranjera	',
   `No_pro` double DEFAULT NULL COMMENT 'Numero de producto	',
   `Mo_pro` double DEFAULT NULL COMMENT 'Monto mensual promedio	',
   `Moneda` varchar(60) DEFAULT NULL COMMENT 'Moneda utilizada	',
   `Ciu_ent` varchar(30) DEFAULT NULL COMMENT 'Ciudad de la entidad	',
   `Pa_ent` varchar(30) DEFAULT NULL COMMENT 'Pais de la entidad	',
-  `Idtien_re` int(11) DEFAULT NULL COMMENT 'Identificacion de Tipo de entrega de Reporte Anual de Costos Totales',
+  `Idtien_re` int DEFAULT NULL COMMENT 'Identificacion de Tipo de entrega de Reporte Anual de Costos Totales',
   `No_solicit` double DEFAULT NULL COMMENT 'Numero de identificacion del solicitante',
-  `Cod_vend` int(11) DEFAULT NULL COMMENT 'Código vendedor'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Cliente comun';
+  `Cod_vend` int DEFAULT NULL COMMENT 'Código vendedor'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Cliente comun';
 
 --
 -- Volcado de datos para la tabla `client_co`
@@ -154,10 +154,10 @@ INSERT INTO `client_co` (`Id_client`, `No_ide`, `Idti_solicit`, `Fec_dil`, `Pri_
 --
 
 CREATE TABLE `clien_tip` (
-  `Idclien_tip` int(11) NOT NULL COMMENT 'Identificacion de intermedia clien_tip',
-  `Idti_sol` int(11) NOT NULL COMMENT 'Identificacion de tipo de solicitud	',
+  `Idclien_tip` int NOT NULL COMMENT 'Identificacion de intermedia clien_tip',
+  `Idti_sol` int NOT NULL COMMENT 'Identificacion de tipo de solicitud	',
   `No_ide` double NOT NULL COMMENT 'Nunero de identificacion del cliente'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Intermedia entre cliente comun y tipo de solicitud';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Intermedia entre cliente comun y tipo de solicitud';
 
 -- --------------------------------------------------------
 
@@ -167,7 +167,7 @@ CREATE TABLE `clien_tip` (
 
 CREATE TABLE `cont_ent` (
   `No_docu` double NOT NULL COMMENT 'Nunero de documento del contacto de la entidad',
-  `Idti_doc` int(11) DEFAULT NULL COMMENT 'Identificacion del tipo de documento',
+  `Idti_doc` int DEFAULT NULL COMMENT 'Identificacion del tipo de documento',
   `Pri_nom` varchar(30) DEFAULT NULL COMMENT 'Primer nombre del contacto de la entidad',
   `Seg_nom` varchar(30) DEFAULT NULL COMMENT 'Segundo nombre del contacto de la entidad',
   `Pri_ape` varchar(30) DEFAULT NULL COMMENT 'Primer apellido del contacto de la entidad',
@@ -179,10 +179,10 @@ CREATE TABLE `cont_ent` (
   `Depart` varchar(30) DEFAULT NULL COMMENT 'Departamento del contacto de la entidad',
   `Pais` varchar(30) DEFAULT NULL COMMENT 'Pais del contacto de la entidad',
   `Tel_lab` double DEFAULT NULL COMMENT 'Telefono laboral del contacto de la entidad',
-  `Ext` int(11) DEFAULT NULL COMMENT 'Extension de numero',
+  `Ext` int DEFAULT NULL COMMENT 'Extension de numero',
   `Celular` double DEFAULT NULL COMMENT 'Celular del contacto de la entidad',
   `Corr_lab` varchar(40) DEFAULT NULL COMMENT 'Correo laboral del contacto de la entidad'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Informacion de un contacto de la entidad';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Informacion de un contacto de la entidad';
 
 --
 -- Volcado de datos para la tabla `cont_ent`
@@ -198,10 +198,10 @@ INSERT INTO `cont_ent` (`No_docu`, `Idti_doc`, `Pri_nom`, `Seg_nom`, `Pri_ape`, 
 --
 
 CREATE TABLE `cuenta_c` (
-  `No_cuenta` int(11) NOT NULL COMMENT 'Numero de cuenta',
+  `No_cuenta` int NOT NULL COMMENT 'Numero de cuenta',
   `No_ide` double DEFAULT NULL COMMENT 'Numero de identificacion del cliente comun',
-  `Idti_cue` int(11) DEFAULT NULL COMMENT 'Identificacion de tipo de cuenta'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Cuentas del cliente comun';
+  `Idti_cue` int DEFAULT NULL COMMENT 'Identificacion de tipo de cuenta'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Cuentas del cliente comun';
 
 -- --------------------------------------------------------
 
@@ -210,7 +210,7 @@ CREATE TABLE `cuenta_c` (
 --
 
 CREATE TABLE `entidad` (
-  `Id_ent` int(11) NOT NULL,
+  `Id_ent` int NOT NULL,
   `Fe_dil` date DEFAULT NULL COMMENT 'Fecha de diligenciamiento',
   `tidoc_ent` varchar(40) DEFAULT NULL COMMENT 'tipo de documento de la entidad',
   `Nit` double DEFAULT NULL COMMENT 'Nit de la entidad',
@@ -227,23 +227,23 @@ CREATE TABLE `entidad` (
   `Depart` varchar(30) DEFAULT NULL COMMENT 'Departamento de la entidad',
   `Pais` varchar(30) DEFAULT NULL COMMENT 'Pais de la entidad',
   `Telefono` double DEFAULT NULL COMMENT 'Telefono de la entidad',
-  `Ext` int(11) DEFAULT NULL COMMENT 'Extension de numero ',
+  `Ext` int DEFAULT NULL COMMENT 'Extension de numero ',
   `Corr_se` varchar(40) DEFAULT NULL COMMENT 'Correo de la sede principal',
   `No_doc` double DEFAULT NULL COMMENT 'Numero de documento del representante legal',
   `Pre_1` varchar(10) DEFAULT NULL COMMENT '¿Tiene socios o accionistas con participación directa o indirecta superior al 5%?	',
   `Pre_2` varchar(10) DEFAULT NULL COMMENT '¿Tiene socios o accionistas con participación directa o indirecta igual o inferior al 5% y que tengan control sobre la entidad?	',
   `No_docu` double DEFAULT NULL COMMENT 'Nunero de documento del contacto de la entidad',
-  `Idti_na` int(11) DEFAULT NULL COMMENT 'Identificacion de tipo de naturaleza	',
+  `Idti_na` int DEFAULT NULL COMMENT 'Identificacion de tipo de naturaleza	',
   `Co_ciuu` double DEFAULT NULL COMMENT 'Codigo CIUU	',
   `Det_act` varchar(200) DEFAULT NULL COMMENT 'Detalle de la actividad economica principal	',
-  `No_emp` int(11) DEFAULT NULL COMMENT 'Numero de empleados	',
-  `Idti_soci` int(11) DEFAULT NULL COMMENT 'Identificacion del tipo de sociedad comercial o civil	',
+  `No_emp` int DEFAULT NULL COMMENT 'Numero de empleados	',
+  `Idti_soci` int DEFAULT NULL COMMENT 'Identificacion del tipo de sociedad comercial o civil	',
   `Otro_com` varchar(300) DEFAULT NULL COMMENT 'Otro tipo de sociedad comercial o civil	',
-  `Idti_en` int(11) DEFAULT NULL COMMENT 'Identificacion de tipo de entidad o asociacion	',
+  `Idti_en` int DEFAULT NULL COMMENT 'Identificacion de tipo de entidad o asociacion	',
   `Otro_ent` varchar(300) DEFAULT NULL COMMENT 'Otro tipo de entidad o asociacion	',
-  `Idti_es` int(11) DEFAULT NULL COMMENT 'Identificacion de tipos de entidades estatales	',
+  `Idti_es` int DEFAULT NULL COMMENT 'Identificacion de tipos de entidades estatales	',
   `Otro_est` varchar(300) DEFAULT NULL COMMENT 'otro tipo de entidad estatal	',
-  `Idti_des` int(11) DEFAULT NULL COMMENT 'identificacion de tipos de entidades estatales descentralizadas de orden	',
+  `Idti_des` int DEFAULT NULL COMMENT 'identificacion de tipos de entidades estatales descentralizadas de orden	',
   `Ing_op` double DEFAULT NULL COMMENT 'Ingresos operacionales mensuales	',
   `Ino_op` double DEFAULT NULL COMMENT 'ngresos no operacionales mensuales	',
   `Detno` double DEFAULT NULL COMMENT 'Detalle de ingresos no operacionales u originados en actividades diferentes a la principal	',
@@ -254,8 +254,8 @@ CREATE TABLE `entidad` (
   `Tot_act` double DEFAULT NULL COMMENT 'Total activos	',
   `Tot_pas` double DEFAULT NULL COMMENT 'Total pasivos	',
   `Tot_pat` double DEFAULT NULL COMMENT 'Total patrimonio	',
-  `Idti_cont` int(11) DEFAULT NULL COMMENT 'Identificacion de tipo de contribuyente	',
-  `Idcla_cont` int(11) DEFAULT NULL COMMENT 'Identificacion de clase de contribuyente	',
+  `Idti_cont` int DEFAULT NULL COMMENT 'Identificacion de tipo de contribuyente	',
+  `Idcla_cont` int DEFAULT NULL COMMENT 'Identificacion de clase de contribuyente	',
   `Res_iva` varchar(10) DEFAULT NULL COMMENT 'Responsable de iva	',
   `Aut_ing` varchar(10) DEFAULT NULL COMMENT 'Autorretenedor otros ingresos	',
   `Int_merc` varchar(10) DEFAULT NULL COMMENT 'Intermediario del mercado cambiario	',
@@ -266,35 +266,35 @@ CREATE TABLE `entidad` (
   `Patri_2` varchar(30) DEFAULT NULL COMMENT 'Pais donde se tributa numero 2	',
   `NoidTrib_1` double DEFAULT NULL COMMENT 'Numero de identificacion tributario numero 1	',
   `NoidTrib_2` double DEFAULT NULL COMMENT 'Numero de identificacion tributario numero 2	',
-  `Idtripro_bi` int(11) DEFAULT NULL COMMENT 'Identificacion de tipos de proveniencia de bienes	',
+  `Idtripro_bi` int DEFAULT NULL COMMENT 'Identificacion de tipos de proveniencia de bienes	',
   `Otro_fue` varchar(300) DEFAULT NULL COMMENT 'Otro tipo de proveniencia de bienes	',
-  `Idfue_rec` int(11) DEFAULT NULL COMMENT 'Identificacion de los Tipos de proveniencia de los recursos entregados	',
+  `Idfue_rec` int DEFAULT NULL COMMENT 'Identificacion de los Tipos de proveniencia de los recursos entregados	',
   `Otro_pro` varchar(300) DEFAULT NULL COMMENT 'Otro Tipo de proveniencia de los recursos entregados	',
   `Pais_or` varchar(40) DEFAULT NULL COMMENT 'El pais de origen de bienes y/o fondos	',
   `Ciu_or` varchar(40) DEFAULT NULL COMMENT 'La ciudad de origen de bienes y/o fondos	',
   `Nat_recu` varchar(10) DEFAULT NULL COMMENT 'Declaración naturaleza de los recursos	',
   `Op_ext` varchar(10) DEFAULT NULL COMMENT 'operaciones en moneda extranjera?	',
-  `Idtiop_m` int(11) DEFAULT NULL COMMENT 'Identificacion de Tipos de operaciones en moneda extranjera	',
+  `Idtiop_m` int DEFAULT NULL COMMENT 'Identificacion de Tipos de operaciones en moneda extranjera	',
   `Otro_mo` varchar(300) DEFAULT NULL COMMENT 'Otro Tipo de operaciones en moneda extranjera	',
   `Nom_ent` varchar(60) DEFAULT NULL COMMENT 'Nombre de la entidad	',
-  `Idtipro_m` int(11) DEFAULT NULL COMMENT 'Identificacion de Tipo de producto en moneda extranjera	',
+  `Idtipro_m` int DEFAULT NULL COMMENT 'Identificacion de Tipo de producto en moneda extranjera	',
   `Otro_mo2` varchar(300) DEFAULT NULL COMMENT 'Otro Tipo de producto en moneda extranjera	',
   `No_pro` double DEFAULT NULL COMMENT 'Numero de producto	',
   `Mo_pro` double DEFAULT NULL COMMENT 'Monto mensual promedio	',
   `Moneda` varchar(60) DEFAULT NULL COMMENT 'Moneda utilizada	',
   `Ciu_ent` varchar(30) DEFAULT NULL COMMENT 'Ciudad de la entidad	',
   `Pa_ent` varchar(30) DEFAULT NULL COMMENT 'Pais de la entidad	',
-  `Idtien_re` int(11) DEFAULT NULL COMMENT 'Identificacion de Tipo de entrega de Reporte Anual de Costos Totales',
+  `Idtien_re` int DEFAULT NULL COMMENT 'Identificacion de Tipo de entrega de Reporte Anual de Costos Totales',
   `No_solicit` double DEFAULT NULL COMMENT 'Numero de identificacion del solicitante',
-  `Cod_vend` int(11) DEFAULT NULL COMMENT 'Código vendedor'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Informacion de la entidad';
+  `Cod_vend` int DEFAULT NULL COMMENT 'Código vendedor'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Informacion de la entidad';
 
 --
 -- Volcado de datos para la tabla `entidad`
 --
 
 INSERT INTO `entidad` (`Id_ent`, `Fe_dil`, `tidoc_ent`, `Nit`, `Fidei`, `No_fide`, `Nom_ra`, `Nom_cor`, `Fe_cons`, `Ciu_cons`, `Pai_cons`, `Dir_se`, `Barrio`, `Ciu_mu`, `Depart`, `Pais`, `Telefono`, `Ext`, `Corr_se`, `No_doc`, `Pre_1`, `Pre_2`, `No_docu`, `Idti_na`, `Co_ciuu`, `Det_act`, `No_emp`, `Idti_soci`, `Otro_com`, `Idti_en`, `Otro_ent`, `Idti_es`, `Otro_est`, `Idti_des`, `Ing_op`, `Ino_op`, `Detno`, `vent_an`, `Fe_ci`, `Egre_me`, `Util_ne`, `Tot_act`, `Tot_pas`, `Tot_pat`, `Idti_cont`, `Idcla_cont`, `Res_iva`, `Aut_ing`, `Int_merc`, `Vig_sup`, `Obli_est`, `No_id_tr`, `Patri_1`, `Patri_2`, `NoidTrib_1`, `NoidTrib_2`, `Idtripro_bi`, `Otro_fue`, `Idfue_rec`, `Otro_pro`, `Pais_or`, `Ciu_or`, `Nat_recu`, `Op_ext`, `Idtiop_m`, `Otro_mo`, `Nom_ent`, `Idtipro_m`, `Otro_mo2`, `No_pro`, `Mo_pro`, `Moneda`, `Ciu_ent`, `Pa_ent`, `Idtien_re`, `No_solicit`, `Cod_vend`) VALUES
-(2, '2022-07-11', 'Nit', 123, 'Fideicomiso', 123, 'hola', 'hola', '2022-07-11', '0000', '0000', '0000', '000', '000', '000', '000', 0, 0, '0000', 111111, 'Si', 'Si', 22222, 1, 123, '132', 123, 3, 'h', 4, 'h', 3, 'h', 2, 55555, 55555, 5555, 5555, '2022-07-11', 55555, 555, 5555, 555, 5535, 2, 1, 'Si', 'Si', 'Si', 'Si', 'Si', 55555, 'h', '5555', 555, 55, 2, 'hh', 2, 'h', 'h', 'h', 'Si', 'Si', 3, 'h', 'h', 2, 'h', 123, 5555, 'h', 'h', 'h', 1, 456, 789);
+(2, '2022-07-11', 'Nit', 1234, 'Fideicomiso', 123, 'hola', 'hola', '2022-07-11', '0000', '0000', '0000', '000', '000', '000', '000', 0, 0, '0000', 111111, 'Si', 'Si', 22222, 1, 123, '132', 123, 3, 'h', 4, 'h', 3, 'h', 2, 55555, 55555, 5555, 5555, '2022-07-11', 55555, 555, 5555, 555, 5535, 2, 1, 'Si', 'Si', 'Si', 'Si', 'Si', 55555, 'h', '5555', 555, 55, 2, 'hh', 2, 'h', 'h', 'h', 'Si', 'Si', 3, 'h', 'h', 2, 'h', 123, 5555, 'h', 'h', 'h', 1, 456, 789);
 
 -- --------------------------------------------------------
 
@@ -303,16 +303,38 @@ INSERT INTO `entidad` (`Id_ent`, `Fe_dil`, `tidoc_ent`, `Nit`, `Fidei`, `No_fide
 --
 
 CREATE TABLE `ent_ti` (
+  `Idint_entsol` int NOT NULL COMMENT 'Identificacion de intermedia entre entidad y tipo de solicitud',
   `Nit` double NOT NULL COMMENT 'Nit de la entidad',
-  `Idti_sol` int(11) NOT NULL COMMENT 'Identificacion de tipo de solicitud'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Intermedia entre entidad y tipo de solicitud';
+  `Idti_sol` int NOT NULL COMMENT 'Identificacion de tipo de solicitud'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Intermedia entre entidad y tipo de solicitud';
 
 --
 -- Volcado de datos para la tabla `ent_ti`
 --
 
-INSERT INTO `ent_ti` (`Nit`, `Idti_sol`) VALUES
-(123, 2);
+INSERT INTO `ent_ti` (`Idint_entsol`, `Nit`, `Idti_sol`) VALUES
+(1, 1234, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `est_soli`
+--
+
+CREATE TABLE `est_soli` (
+  `Idest_soli` int NOT NULL COMMENT 'Identificacion de estado de la solicitud',
+  `Idclient` double DEFAULT NULL COMMENT 'Identificacion de cliente tanto comun como entidad',
+  `Esta_so` varchar(30) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT 'Estado de la solicitud',
+  `Des_soli` varchar(300) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT 'Descripcion del estado de la solicitud'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Estado de la solicitud';
+
+--
+-- Volcado de datos para la tabla `est_soli`
+--
+
+INSERT INTO `est_soli` (`Idest_soli`, `Idclient`, `Esta_so`, `Des_soli`) VALUES
+(3, 123, 'Denegada', 'Cancelada porque no tiene suficientes ingresos'),
+(4, 123, 'Denegada', 'dfdgdfdg');
 
 -- --------------------------------------------------------
 
@@ -321,9 +343,9 @@ INSERT INTO `ent_ti` (`Nit`, `Idti_sol`) VALUES
 --
 
 CREATE TABLE `fue_recu` (
-  `Idfue_recu` int(11) NOT NULL COMMENT 'Identificacion de los Tipos de proveniencia de los recursos entregados ',
+  `Idfue_recu` int NOT NULL COMMENT 'Identificacion de los Tipos de proveniencia de los recursos entregados ',
   `Nom_rec` varchar(100) NOT NULL COMMENT 'Nombre de los tipos de proveniencia de los recursos entregados'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tipos de proveniencia de los recursos entregados';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tipos de proveniencia de los recursos entregados';
 
 --
 -- Volcado de datos para la tabla `fue_recu`
@@ -341,9 +363,9 @@ INSERT INTO `fue_recu` (`Idfue_recu`, `Nom_rec`) VALUES
 --
 
 CREATE TABLE `genero` (
-  `Id_gen` int(11) NOT NULL COMMENT 'Identificacion de genero',
+  `Id_gen` int NOT NULL COMMENT 'Identificacion de genero',
   `Nom_gen` varchar(30) NOT NULL COMMENT 'Nombre de genero'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Genero';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Genero';
 
 --
 -- Volcado de datos para la tabla `genero`
@@ -360,12 +382,12 @@ INSERT INTO `genero` (`Id_gen`, `Nom_gen`) VALUES
 --
 
 CREATE TABLE `prueba` (
-  `Id_act` int(11) NOT NULL,
+  `Id_act` int NOT NULL,
   `Fecha_act` datetime NOT NULL,
   `Tip_pro` varchar(300) NOT NULL,
   `Valor_act` decimal(10,0) NOT NULL,
   `Cajero` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `prueba`
@@ -383,9 +405,9 @@ INSERT INTO `prueba` (`Id_act`, `Fecha_act`, `Tip_pro`, `Valor_act`, `Cajero`) V
 --
 
 CREATE TABLE `reg_soli` (
-  `Id_reg` int(11) NOT NULL COMMENT 'Identificacion de los registros de las solicitudes',
+  `Id_reg` int NOT NULL COMMENT 'Identificacion de los registros de las solicitudes',
   `No_ide` double NOT NULL COMMENT 'Numero de identificacion del cliente'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Registros de solicitudes';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Registros de solicitudes';
 
 -- --------------------------------------------------------
 
@@ -394,11 +416,11 @@ CREATE TABLE `reg_soli` (
 --
 
 CREATE TABLE `reg_usu` (
-  `Id_usu` int(11) NOT NULL COMMENT 'Identificacion de usuario',
+  `Id_usu` int NOT NULL COMMENT 'Identificacion de usuario',
   `Usuario` varchar(30) NOT NULL COMMENT 'Usuario',
   `Contra` varchar(30) NOT NULL COMMENT 'Contraseña',
-  `Idti_rol` int(11) DEFAULT NULL COMMENT 'Identificacion de tipo de rol'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `Idti_rol` int DEFAULT NULL COMMENT 'Identificacion de tipo de rol'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `reg_usu`
@@ -416,7 +438,7 @@ INSERT INTO `reg_usu` (`Id_usu`, `Usuario`, `Contra`, `Idti_rol`) VALUES
 
 CREATE TABLE `repr_le` (
   `No_doc` double NOT NULL COMMENT 'Numero de documento del representante legal',
-  `Idti_doc` int(11) DEFAULT NULL COMMENT 'Identificacion de tipo de documento',
+  `Idti_doc` int DEFAULT NULL COMMENT 'Identificacion de tipo de documento',
   `Pri_no` varchar(30) DEFAULT NULL COMMENT 'Primer nombre del representante legal',
   `Seg_no` varchar(30) DEFAULT NULL COMMENT 'Segundo nombre del representante legal',
   `Pri_ape` varchar(30) DEFAULT NULL COMMENT 'Primer apellido del representante legal',
@@ -428,10 +450,10 @@ CREATE TABLE `repr_le` (
   `Depart` varchar(30) DEFAULT NULL COMMENT 'Departamento del representante legal',
   `Pais` varchar(30) DEFAULT NULL COMMENT 'Pais del representante legal',
   `Tel_lab` double DEFAULT NULL COMMENT 'Telefono laboral del representante legal',
-  `Ext` int(11) DEFAULT NULL COMMENT 'Extension de telefono',
+  `Ext` int DEFAULT NULL COMMENT 'Extension de telefono',
   `Celular` double DEFAULT NULL COMMENT 'Celular del representante legal',
   `Corr_lab` varchar(40) DEFAULT NULL COMMENT 'Correo laboral del representante legal'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Informacion de representante legal';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Informacion de representante legal';
 
 --
 -- Volcado de datos para la tabla `repr_le`
@@ -447,11 +469,11 @@ INSERT INTO `repr_le` (`No_doc`, `Idti_doc`, `Pri_no`, `Seg_no`, `Pri_ape`, `Seg
 --
 
 CREATE TABLE `solicitante` (
-  `Idti_soli` int(11) DEFAULT NULL COMMENT 'Identificacion de Tipo de solicitante parte inferior',
+  `Idti_soli` int DEFAULT NULL COMMENT 'Identificacion de Tipo de solicitante parte inferior',
   `No_solicit` double NOT NULL COMMENT 'Numero de identificacion del solicitante',
   `Nom_solicit` varchar(100) DEFAULT NULL COMMENT 'Nombre completo del solicitante',
   `Firma` varchar(40) DEFAULT NULL COMMENT 'Firma del solicitante'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Medida de seguridad que contiene informacion del solicitante';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Medida de seguridad que contiene informacion del solicitante';
 
 --
 -- Volcado de datos para la tabla `solicitante`
@@ -468,9 +490,9 @@ INSERT INTO `solicitante` (`Idti_soli`, `No_solicit`, `Nom_solicit`, `Firma`) VA
 --
 
 CREATE TABLE `tien_re` (
-  `Idtien_re` int(11) NOT NULL COMMENT 'Identificacion de Tipo de entrega de Reporte Anual de Costos Totales',
+  `Idtien_re` int NOT NULL COMMENT 'Identificacion de Tipo de entrega de Reporte Anual de Costos Totales',
   `Nom_tien` varchar(40) NOT NULL COMMENT 'Nombre de Tipo de entrega de Reporte Anual de Costos Totales'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tipo de entrega de Reporte Anual de Costos Totales';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tipo de entrega de Reporte Anual de Costos Totales';
 
 --
 -- Volcado de datos para la tabla `tien_re`
@@ -487,9 +509,9 @@ INSERT INTO `tien_re` (`Idtien_re`, `Nom_tien`) VALUES
 --
 
 CREATE TABLE `tiest_civ` (
-  `Idest_ci` int(11) NOT NULL COMMENT 'Identificacion de estado civil',
+  `Idest_ci` int NOT NULL COMMENT 'Identificacion de estado civil',
   `Nom_civ` varchar(40) NOT NULL COMMENT 'Nombre del tipo de estado civil'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tipo de estado civil';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tipo de estado civil';
 
 --
 -- Volcado de datos para la tabla `tiest_civ`
@@ -507,9 +529,9 @@ INSERT INTO `tiest_civ` (`Idest_ci`, `Nom_civ`) VALUES
 --
 
 CREATE TABLE `tiocu_ofi` (
-  `Idocu_ofi` int(11) NOT NULL COMMENT 'Identificacion de ocupacion o oficio',
+  `Idocu_ofi` int NOT NULL COMMENT 'Identificacion de ocupacion o oficio',
   `Nom_ocu` varchar(40) NOT NULL COMMENT 'Nombre de tipo de ocupacion o oficio'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tipo de ocupacion o oficio';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tipo de ocupacion o oficio';
 
 --
 -- Volcado de datos para la tabla `tiocu_ofi`
@@ -537,9 +559,9 @@ INSERT INTO `tiocu_ofi` (`Idocu_ofi`, `Nom_ocu`) VALUES
 --
 
 CREATE TABLE `tiop_mo` (
-  `Idtiop_mo` int(11) NOT NULL COMMENT 'Identificacio de Tipos de operaciones en moneda extranjera',
+  `Idtiop_mo` int NOT NULL COMMENT 'Identificacio de Tipos de operaciones en moneda extranjera',
   `Nom_opm` varchar(100) NOT NULL COMMENT 'Nombre de Tipos de operaciones en moneda extranjera'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tipos de operaciones en moneda extranjera';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tipos de operaciones en moneda extranjera';
 
 --
 -- Volcado de datos para la tabla `tiop_mo`
@@ -562,9 +584,9 @@ INSERT INTO `tiop_mo` (`Idtiop_mo`, `Nom_opm`) VALUES
 --
 
 CREATE TABLE `tipro_bie` (
-  `Idtripro_bie` int(11) NOT NULL COMMENT 'Identificacion de tipos de proveniencia de bienes',
+  `Idtripro_bie` int NOT NULL COMMENT 'Identificacion de tipos de proveniencia de bienes',
   `Nomti_bie` varchar(60) NOT NULL COMMENT 'Nombre de tipos de proveniencia de bienes'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='tipos de proveniencia de bienes';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='tipos de proveniencia de bienes';
 
 --
 -- Volcado de datos para la tabla `tipro_bie`
@@ -582,9 +604,9 @@ INSERT INTO `tipro_bie` (`Idtripro_bie`, `Nomti_bie`) VALUES
 --
 
 CREATE TABLE `tipro_mo` (
-  `Idtipro_mo` int(11) NOT NULL COMMENT 'Identificacion de Tipo de producto en moneda extranjera',
+  `Idtipro_mo` int NOT NULL COMMENT 'Identificacion de Tipo de producto en moneda extranjera',
   `Nom_promo` varchar(40) NOT NULL COMMENT 'Nombre de Tipo de producto en moneda extranjera'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tipo de producto en moneda extranjera';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tipo de producto en moneda extranjera';
 
 --
 -- Volcado de datos para la tabla `tipro_mo`
@@ -602,9 +624,9 @@ INSERT INTO `tipro_mo` (`Idtipro_mo`, `Nom_promo`) VALUES
 --
 
 CREATE TABLE `tip_cue` (
-  `Idti_cue` int(11) NOT NULL COMMENT 'Identificacion de tipo de cuenta',
+  `Idti_cue` int NOT NULL COMMENT 'Identificacion de tipo de cuenta',
   `Nom_cue` varchar(60) NOT NULL COMMENT 'Nombre del tipo de cuenta'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tipo de cuenta ';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tipo de cuenta ';
 
 --
 -- Volcado de datos para la tabla `tip_cue`
@@ -621,9 +643,9 @@ INSERT INTO `tip_cue` (`Idti_cue`, `Nom_cue`) VALUES
 --
 
 CREATE TABLE `tip_pro` (
-  `Idti_pro` int(11) NOT NULL COMMENT 'Identificacion de tipo de producto',
+  `Idti_pro` int NOT NULL COMMENT 'Identificacion de tipo de producto',
   `Nom_pro` varchar(40) NOT NULL COMMENT 'Nombre del producto'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tipo de producto';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tipo de producto';
 
 --
 -- Volcado de datos para la tabla `tip_pro`
@@ -641,9 +663,9 @@ INSERT INTO `tip_pro` (`Idti_pro`, `Nom_pro`) VALUES
 --
 
 CREATE TABLE `tip_rol` (
-  `Idti_rol` int(11) NOT NULL COMMENT 'Identificacion de tipo de rol',
+  `Idti_rol` int NOT NULL COMMENT 'Identificacion de tipo de rol',
   `Nom_rol` varchar(30) NOT NULL COMMENT 'Nombre de rol'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `tip_rol`
@@ -663,9 +685,9 @@ INSERT INTO `tip_rol` (`Idti_rol`, `Nom_rol`) VALUES
 --
 
 CREATE TABLE `tireg_iv` (
-  `Idtireg_iv` int(11) NOT NULL COMMENT 'Identificacion de tipos de regimen de iva',
+  `Idtireg_iv` int NOT NULL COMMENT 'Identificacion de tipos de regimen de iva',
   `Nom_reg` varchar(30) NOT NULL COMMENT 'Nombre de tipos de regimen de iva'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tipos de regimen de iva';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tipos de regimen de iva';
 
 --
 -- Volcado de datos para la tabla `tireg_iv`
@@ -683,9 +705,9 @@ INSERT INTO `tireg_iv` (`Idtireg_iv`, `Nom_reg`) VALUES
 --
 
 CREATE TABLE `ti_contr` (
-  `Idti_contr` int(11) NOT NULL COMMENT 'Identificacion de tipo de contribuyente',
+  `Idti_contr` int NOT NULL COMMENT 'Identificacion de tipo de contribuyente',
   `Nom_contr` varchar(300) NOT NULL COMMENT 'Nombre de tipo de contribuyente'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tipo de contribuyente';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tipo de contribuyente';
 
 --
 -- Volcado de datos para la tabla `ti_contr`
@@ -705,9 +727,9 @@ INSERT INTO `ti_contr` (`Idti_contr`, `Nom_contr`) VALUES
 --
 
 CREATE TABLE `ti_desc` (
-  `Idti_desc` int(11) NOT NULL COMMENT 'identificacion de tipos de entidades estatales descentralizadas de orden',
+  `Idti_desc` int NOT NULL COMMENT 'identificacion de tipos de entidades estatales descentralizadas de orden',
   `Nom_desc` varchar(80) NOT NULL COMMENT 'Nombre de tipos de entidades estatales descentralizadas de orden'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tipos de entidades estatales descentralizadas de orden';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tipos de entidades estatales descentralizadas de orden';
 
 --
 -- Volcado de datos para la tabla `ti_desc`
@@ -725,9 +747,9 @@ INSERT INTO `ti_desc` (`Idti_desc`, `Nom_desc`) VALUES
 --
 
 CREATE TABLE `ti_doc` (
-  `Idti_doc` int(11) NOT NULL COMMENT 'Identificacion de tipo de documento',
+  `Idti_doc` int NOT NULL COMMENT 'Identificacion de tipo de documento',
   `Nom_doc` varchar(30) NOT NULL COMMENT 'Nombre de documento'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tipo de documento';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tipo de documento';
 
 --
 -- Volcado de datos para la tabla `ti_doc`
@@ -748,9 +770,9 @@ INSERT INTO `ti_doc` (`Idti_doc`, `Nom_doc`) VALUES
 --
 
 CREATE TABLE `ti_ent` (
-  `Idti_ent` int(11) NOT NULL COMMENT 'Identificacion de tipo de entidad o asociacion',
+  `Idti_ent` int NOT NULL COMMENT 'Identificacion de tipo de entidad o asociacion',
   `Noti_ent` varchar(300) NOT NULL COMMENT 'Nombre de tipo de entidad o asociacion'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tipo de entidad o asociacion';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tipo de entidad o asociacion';
 
 --
 -- Volcado de datos para la tabla `ti_ent`
@@ -784,9 +806,9 @@ INSERT INTO `ti_ent` (`Idti_ent`, `Noti_ent`) VALUES
 --
 
 CREATE TABLE `ti_est` (
-  `Idti_est` int(11) NOT NULL COMMENT 'Identificacion de tipos de entidades estatales',
+  `Idti_est` int NOT NULL COMMENT 'Identificacion de tipos de entidades estatales',
   `Nom_est` varchar(80) NOT NULL COMMENT 'Nombre de tipo de entidades estatales'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tipos de entidades estatales';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tipos de entidades estatales';
 
 --
 -- Volcado de datos para la tabla `ti_est`
@@ -804,9 +826,9 @@ INSERT INTO `ti_est` (`Idti_est`, `Nom_est`) VALUES
 --
 
 CREATE TABLE `ti_nac` (
-  `Id_nac` int(11) NOT NULL COMMENT 'Identificacion de tipo de nacionalidad',
+  `Id_nac` int NOT NULL COMMENT 'Identificacion de tipo de nacionalidad',
   `Nom_nac` varchar(30) NOT NULL COMMENT 'Nombre de tipo de nacionalidad'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tipo de nacionalidad';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tipo de nacionalidad';
 
 --
 -- Volcado de datos para la tabla `ti_nac`
@@ -824,9 +846,9 @@ INSERT INTO `ti_nac` (`Id_nac`, `Nom_nac`) VALUES
 --
 
 CREATE TABLE `ti_nat` (
-  `Idti_nat` int(11) NOT NULL COMMENT 'Identificacion de tipo de naturaleza ',
+  `Idti_nat` int NOT NULL COMMENT 'Identificacion de tipo de naturaleza ',
   `Nom_nat` varchar(30) NOT NULL COMMENT 'Nombre del tipo de naturaleza'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tipo de naturaleza de la entidad';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tipo de naturaleza de la entidad';
 
 --
 -- Volcado de datos para la tabla `ti_nat`
@@ -844,9 +866,9 @@ INSERT INTO `ti_nat` (`Idti_nat`, `Nom_nat`) VALUES
 --
 
 CREATE TABLE `ti_soc` (
-  `Idti_soc` int(11) NOT NULL COMMENT 'Identificacion del tipo de sociedad comercial o civil',
+  `Idti_soc` int NOT NULL COMMENT 'Identificacion del tipo de sociedad comercial o civil',
   `nom_ti` varchar(100) NOT NULL COMMENT 'Nombre de tipo de sociedad comercial o civil'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='tipo de sociedad comercial o civil';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='tipo de sociedad comercial o civil';
 
 --
 -- Volcado de datos para la tabla `ti_soc`
@@ -873,9 +895,9 @@ INSERT INTO `ti_soc` (`Idti_soc`, `nom_ti`) VALUES
 --
 
 CREATE TABLE `ti_sol` (
-  `Idti_sol` int(11) NOT NULL COMMENT 'Identificacion de tipo de solicitud',
+  `Idti_sol` int NOT NULL COMMENT 'Identificacion de tipo de solicitud',
   `Nom_sol` varchar(30) NOT NULL COMMENT 'Nombre de solicitud'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Entidad';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Entidad';
 
 --
 -- Volcado de datos para la tabla `ti_sol`
@@ -892,9 +914,9 @@ INSERT INTO `ti_sol` (`Idti_sol`, `Nom_sol`) VALUES
 --
 
 CREATE TABLE `ti_soli` (
-  `Idti_soli` int(11) NOT NULL COMMENT 'Identificacion de Tipo de solicitante parte inferior',
+  `Idti_soli` int NOT NULL COMMENT 'Identificacion de Tipo de solicitante parte inferior',
   `Nom_soli` varchar(40) NOT NULL COMMENT 'Nombre de tipo de solicitante parte inferior'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='tipo de solicitante parte inferior';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='tipo de solicitante parte inferior';
 
 --
 -- Volcado de datos para la tabla `ti_soli`
@@ -911,9 +933,9 @@ INSERT INTO `ti_soli` (`Idti_soli`, `Nom_soli`) VALUES
 --
 
 CREATE TABLE `ti_solicit` (
-  `Idti_solicit` int(11) NOT NULL COMMENT 'Identificacion de Tipo de solicitante ',
+  `Idti_solicit` int NOT NULL COMMENT 'Identificacion de Tipo de solicitante ',
   `Nomti_sol` varchar(60) NOT NULL COMMENT 'Nombre de Tipo de solicitante'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tipo de solicitante';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tipo de solicitante';
 
 --
 -- Volcado de datos para la tabla `ti_solicit`
@@ -929,12 +951,12 @@ INSERT INTO `ti_solicit` (`Idti_solicit`, `Nomti_sol`) VALUES
 --
 
 CREATE TABLE `vendedor` (
-  `Cod_vend` int(11) NOT NULL COMMENT 'Código vendedor',
+  `Cod_vend` int NOT NULL COMMENT 'Código vendedor',
   `Nom_vend` varchar(100) DEFAULT NULL COMMENT 'Nombre del vendedor',
   `Oficina` varchar(50) DEFAULT NULL COMMENT 'Oficina del vendedor',
   `Obser` varchar(300) DEFAULT NULL COMMENT 'Observaciones',
   `Firma_vend` varchar(40) DEFAULT NULL COMMENT 'Firma del vendedor'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Vendedor';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Vendedor';
 
 --
 -- Volcado de datos para la tabla `vendedor`
@@ -1032,8 +1054,16 @@ ALTER TABLE `entidad`
 -- Indices de la tabla `ent_ti`
 --
 ALTER TABLE `ent_ti`
+  ADD PRIMARY KEY (`Idint_entsol`),
   ADD KEY `Nit` (`Nit`),
   ADD KEY `Idti_sol` (`Idti_sol`);
+
+--
+-- Indices de la tabla `est_soli`
+--
+ALTER TABLE `est_soli`
+  ADD PRIMARY KEY (`Idest_soli`),
+  ADD KEY `Idclient` (`Idclient`);
 
 --
 -- Indices de la tabla `fue_recu`
@@ -1221,37 +1251,49 @@ ALTER TABLE `vendedor`
 -- AUTO_INCREMENT de la tabla `act_cli`
 --
 ALTER TABLE `act_cli`
-  MODIFY `Idact_cli` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificacion de actividad de cliente';
+  MODIFY `Idact_cli` int NOT NULL AUTO_INCREMENT COMMENT 'Identificacion de actividad de cliente';
 
 --
 -- AUTO_INCREMENT de la tabla `client_co`
 --
 ALTER TABLE `client_co`
-  MODIFY `Id_client` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificacion aleatorio de cada cliente', AUTO_INCREMENT=12;
+  MODIFY `Id_client` int NOT NULL AUTO_INCREMENT COMMENT 'Identificacion aleatorio de cada cliente', AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `clien_tip`
 --
 ALTER TABLE `clien_tip`
-  MODIFY `Idclien_tip` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificacion de intermedia clien_tip', AUTO_INCREMENT=11;
+  MODIFY `Idclien_tip` int NOT NULL AUTO_INCREMENT COMMENT 'Identificacion de intermedia clien_tip', AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `entidad`
 --
 ALTER TABLE `entidad`
-  MODIFY `Id_ent` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id_ent` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `ent_ti`
+--
+ALTER TABLE `ent_ti`
+  MODIFY `Idint_entsol` int NOT NULL AUTO_INCREMENT COMMENT 'Identificacion de intermedia entre entidad y tipo de solicitud', AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `est_soli`
+--
+ALTER TABLE `est_soli`
+  MODIFY `Idest_soli` int NOT NULL AUTO_INCREMENT COMMENT 'Identificacion de estado de la solicitud', AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `reg_soli`
 --
 ALTER TABLE `reg_soli`
-  MODIFY `Id_reg` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificacion de los registros de las solicitudes', AUTO_INCREMENT=15;
+  MODIFY `Id_reg` int NOT NULL AUTO_INCREMENT COMMENT 'Identificacion de los registros de las solicitudes', AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `reg_usu`
 --
 ALTER TABLE `reg_usu`
-  MODIFY `Id_usu` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificacion de usuario', AUTO_INCREMENT=13;
+  MODIFY `Id_usu` int NOT NULL AUTO_INCREMENT COMMENT 'Identificacion de usuario', AUTO_INCREMENT=13;
 
 --
 -- Restricciones para tablas volcadas
@@ -1328,6 +1370,12 @@ ALTER TABLE `entidad`
 ALTER TABLE `ent_ti`
   ADD CONSTRAINT `ent_ti_ibfk_1` FOREIGN KEY (`Nit`) REFERENCES `entidad` (`Nit`) ON UPDATE CASCADE,
   ADD CONSTRAINT `ent_ti_ibfk_2` FOREIGN KEY (`Idti_sol`) REFERENCES `ti_sol` (`Idti_sol`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `est_soli`
+--
+ALTER TABLE `est_soli`
+  ADD CONSTRAINT `est_soli_ibfk_1` FOREIGN KEY (`Idclient`) REFERENCES `client_co` (`No_ide`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `reg_soli`

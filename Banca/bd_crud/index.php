@@ -86,6 +86,21 @@ if($_POST['METHOD']=='CONSULTAID3'){
 }
 
 
+//consulta de informacion de persona juridica
+if($_POST['METHOD']=='CONSULTAIDENT'){
+    unset($_POST['METHOD']);
+    $query="select * from entidad where Nit=".$_POST['Nit'];
+    $resultado=metodoGet($query);
+    if($resultado==true){
+        $query2="select * from ent_ti inner join ti_sol on ent_ti.Idti_sol=ti_sol.Idti_sol where Nit=".$_POST['Nit'];
+        $resultado2=metodoGet($query2);
+    }
+    echo json_encode($resultado->fetch(PDO::FETCH_ASSOC));
+    header("HTTP/1.1 200 OK");
+    exit();
+}
+
+
 //Registro de Fomulario persona natural
 if($_POST['METHOD']=='FORMN'){
     unset($_POST['METHOD']);
@@ -415,12 +430,35 @@ if($_POST['METHOD']=='DELETE'){
 
 //Eliminacion de solicitudes
 
+//aceptacion de solicitud y eliminacion de la misma
 if($_POST['METHOD']=='DELETESOLI'){
     unset($_POST['METHOD']);
     $No_ide=$_GET['No_ide'];
-    $query="DELETE FROM reg_soli WHERE No_ide='$No_ide'";
-    $resultado=metodoDelete($query);
-    echo json_encode($resultado);
+    $query="insert into est_soli(Idclient,Esta_so,Des_soli) values ('$No_ide','Aprobada','La solicitud fue aprobada')";
+    $resultado = mysqli_query($conexion, $query); 
+    if($resultado == 1){
+        $query="DELETE FROM reg_soli WHERE No_ide='$No_ide'";
+        $resultado2 = mysqli_query($conexion, $query); 
+    }else{
+        echo ("error en la insercion");
+    }
+    header("HTTP/1.1 200 OK");
+    exit();
+}
+
+//cancelacion de solicitud y eliminacion de la misma
+if($_POST['METHOD']=='CANCELSOLI'){
+    unset($_POST['METHOD']);
+    $Des_soli=$_POST['Des_soli'];
+    $No_ide=$_GET['No_ide'];
+    $query="insert into est_soli(Idclient,Esta_so,Des_soli) values ('$No_ide','Denegada','$Des_soli')";
+    $resultado = mysqli_query($conexion, $query); 
+    if($resultado == 1){
+        $query="DELETE FROM reg_soli WHERE No_ide='$No_ide'";
+        $resultado2 = mysqli_query($conexion, $query); 
+    }else{
+        echo ("error en la insercion");
+    }
     header("HTTP/1.1 200 OK");
     exit();
 }
