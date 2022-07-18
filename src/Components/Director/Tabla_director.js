@@ -23,6 +23,7 @@ export const Tabla_director = () => {
   const [data2, setData2] = useState([]);
   const [dato, setDato] = useState([]);
   const [solicitud, setSolicitud] = useState([]);
+  const [solicitud2, setSolicitud2] = useState([]);
   const [tablaUsuarios, setTablaUsuarios] = useState([]);
   const [busqueda, setBusqueda] = useState("");
 
@@ -68,6 +69,20 @@ export const Tabla_director = () => {
   useEffect(() => {
     peticionGet3();
   }, []);
+
+  const peticionGet4 = async () => {
+    var f = new FormData();
+    f.append("METHOD", "SOLICITUDPJ");
+    await axios.post(baseUrl, f).then((response) => {
+      setSolicitud2(response.data);
+    });
+  };
+
+
+  useEffect(() => {
+    peticionGet4();
+  }, []);
+
 
   const peticionPost = async () => {
     var f = new FormData();
@@ -203,12 +218,26 @@ export const Tabla_director = () => {
       .setAttribute("style", "visibility:visible; top:50%;");
   };
 
+  const abrirpj = (e) => {
+    document
+      .getElementById("ventana_modal3")
+      .setAttribute("style", "visibility:visible; top:50%;");
+  };
+
   const cerrar = (e) => {
     e.preventDefault();
     document
       .getElementById("ventana_modal")
       .setAttribute("style", "display:none;");
   };
+
+  const cerrarpj = (e) => {
+    e.preventDefault();
+    document
+      .getElementById("ventana_modal3")
+      .setAttribute("style", "display:none;");
+  };
+
 
   const abrir2 = (e) => {
     e.preventDefault();
@@ -246,6 +275,11 @@ export const Tabla_director = () => {
           cerrarp={cerrarp}
           solicitud={solicitud}
           setSolicitud={setSolicitud}
+          peticionGet3={peticionGet3}
+          solicitud2={solicitud2}
+          setSolicitud2={setSolicitud2}
+          abrirpj={abrirpj}
+          cerrarpj={cerrarpj}
         />
       </div>
       <h1 className="titureg">Registros de cuentas de usuario</h1>

@@ -194,8 +194,8 @@ const PersonaNatural = () => {
   //   }),
   const baseUrl = "http://localhost:8080/Banca/bd_crud/index.php";
 
-  var min=1000; 
-  var max=9999;  
+  var min=100000; 
+  var max=999999;  
   var random =Math.floor(Math.random() * (+max - +min)) + +min; 
   //console.log("el valor random es:"+ random)
 

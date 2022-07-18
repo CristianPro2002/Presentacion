@@ -141,6 +141,11 @@ const PersonaJuridica = () => {
 
   const baseUrl = "http://localhost:8080/Banca/bd_crud/index.php";
 
+  var min=100000; 
+  var max=999999;  
+  var random =Math.floor(Math.random() * (+max - +min)) + +min; 
+  //console.log("el valor random es:"+ random)
+
   const [data, setData] = useState([]);
   const [dataUsuario, setDataUsuario] = useState({
     Fe_dil: "",
@@ -151,6 +156,7 @@ const PersonaJuridica = () => {
     Idti_doc2: "",
     Pri_no: "",
     Seg_no: "",
+    No_cuenta: random,
     Pri_ape: "",
     Seg_ape: "",
     Pri_ape2: "",
@@ -265,6 +271,7 @@ const PersonaJuridica = () => {
     f.append("Idti_sol", dataUsuario.Idti_sol);
     f.append("tidoc_ent", dataUsuario.tidoc_ent);
     f.append("Nit", dataUsuario.Nit);
+    f.append("No_cuenta", dataUsuario.No_cuenta);
     f.append("Idti_doc", dataUsuario.Idti_doc);
     f.append("Idti_doc2", dataUsuario.Idti_doc2);
     f.append("Pri_no", dataUsuario.Pri_no);
@@ -1893,7 +1900,7 @@ const PersonaJuridica = () => {
                     2.{" "}
                     <input
                       type="text"
-                      name="NoidTrib_2"
+                      name="Patri_2"
                       className="Border"
                       onChange={handleChange}
                     />{" "}
@@ -1902,7 +1909,7 @@ const PersonaJuridica = () => {
                     2.{" "}
                     <input
                       type="number"
-                      name="Patri_2"
+                      name="NoidTrib_2"
                       className="Border"
                       onChange={handleChange}
                     />

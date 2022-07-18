@@ -50,6 +50,15 @@ if($_POST['METHOD']=='SOLICITUD2'){
     exit();
 }
 
+if($_POST['METHOD']=='SOLICITUDPJ'){
+    unset($_POST['METHOD']);
+    $query="select * from reg_solij inner join entidad on reg_solij.Nit = entidad.Nit";
+    $resultado=metodoGet($query);
+    echo json_encode($resultado->fetchAll());
+    header("HTTP/1.1 200 OK");
+    exit();
+}
+
 //Consulta de informacion de persona natural
 
 if($_POST['METHOD']=='CONSULTAID'){
@@ -79,6 +88,16 @@ if($_POST['METHOD']=='CONSULTAID2'){
 if($_POST['METHOD']=='CONSULTAID3'){
     unset($_POST['METHOD']);
     $query="select * from client_co where No_ide=".$_POST['No_ide'];
+    $resultado=metodoGet($query);
+    echo json_encode($resultado->fetch(PDO::FETCH_ASSOC));
+    header("HTTP/1.1 200 OK");
+    exit();
+}
+
+
+if($_POST['METHOD']=='CONSULTAIPJ'){
+    unset($_POST['METHOD']);
+    $query="select * from entidad where Nit=".$_POST['Nit'];
     $resultado=metodoGet($query);
     echo json_encode($resultado->fetch(PDO::FETCH_ASSOC));
     header("HTTP/1.1 200 OK");
@@ -235,6 +254,7 @@ if ($_POST['METHOD'] == 'FORMJ') {
     $Fe_dil = $_POST['Fe_dil'];
     $tidoc_ent = $_POST['tidoc_ent'];
     $Nit = $_POST['Nit'];
+    $No_cuenta =$_POST['No_cuenta'];
     $Idti_sol = $_POST['Idti_sol'];
     $Idti_doc = $_POST['Idti_doc'];
     $Idti_doc2 = $_POST['Idti_doc2'];
@@ -365,9 +385,24 @@ if ($_POST['METHOD'] == 'FORMJ') {
                     $resultado9 = mysqli_query($conexion, $query);  
                     if ($resultado9 == 1) {
                         $query = "insert into ent_ti(Nit, Idti_sol) values ('$Nit', '$Idti_sol')";
-                        $resultado10 = mysqli_query($conexion, $query);   
+                        $resultado10 = mysqli_query($conexion, $query);
+                        if($resultado10 == 1){
+                            $query= "insert into reg_solij(Nit) values ('$Nit')";
+                            $resultado11 = mysqli_query($conexion, $query);
+                            if($resultado11 == 1){
+                                $query = "insert into cuenta_j(No_cuenta,Nit) values ('$No_cuenta', '$Nit')";
+                                $resultado12 = mysqli_query($conexion, $query);
+                            }else{
+                                echo "Error en la septima insersion ";
+                            }
+                        }else{
+                            echo "Error en la sexta insersion ";
+                        }   
+                        
+                    }else{
+                        echo "Error en la quinta insersion ";
                     }
-                } else {
+                    } else {
                     echo ("error en la cuarta insersion");
                 }
             } else {
