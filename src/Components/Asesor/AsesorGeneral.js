@@ -8,7 +8,7 @@ import personan from "./Imagens/personan.jpg";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
 import {AppContext} from '../application/provider'
-const Asesor = () => {
+const Asesor = ({onclick, numeroAsesor}) => {
 
   let History = useHistory();
 
@@ -85,12 +85,12 @@ const Asesor = () => {
           <i
             class="bi bi-arrow-left-circle-fill"
             id="cir"
-            onClick={()=> History.push("/Rasesor")}
+            onClick={onclick}
           ></i>
         </div>
 
         <div className="contenedort">
-          <h1 className="titulu">Asesor #1</h1>
+          <h1 className="titulu">{numeroAsesor}</h1>
         </div>
 
         <div className="pri">

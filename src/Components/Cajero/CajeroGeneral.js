@@ -9,7 +9,7 @@ import imagen from "../Cajero/imagen/User-Login.png";
 import axios from "axios";
 
 
-export const Cajero = (props) => {
+export const Cajero = ({numeroCajero}) => {
 
   let History = useHistory();
 
@@ -67,7 +67,7 @@ export const Cajero = (props) => {
           ></i>
         </div>
         <div>
-          <h1 className="TITULO">Cajero #1</h1>
+          <h1 className="TITULO">{numeroCajero}</h1>
         </div>
         <div className="Contenedores">
           <div className="Contenedor1">

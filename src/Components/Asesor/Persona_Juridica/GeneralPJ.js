@@ -380,6 +380,7 @@ const PersonaJuridica = () => {
       .post(baseUrl, f)
       .then((response) => {
         setData(data.concat(response.data));
+        History.goBack();
       })
       .catch((error) => {
         alert("Error en el post");
@@ -715,7 +716,7 @@ const PersonaJuridica = () => {
                   name="Idti_doc"
                   required
                 >
-                  <option value="" disabled>
+                  <option >
                     Seleccione su documento de identidad
                   </option>
                   <option value="1">CC</option>
@@ -1024,7 +1025,7 @@ const PersonaJuridica = () => {
                   onChange={handleChange}
                   required
                 >
-                  <option value="" disabled>
+                  <option >
                     Seleccione su documento de identidad
                   </option>
                   <option value="1">CC</option>
@@ -1342,6 +1343,7 @@ const PersonaJuridica = () => {
                   onChange={handleChange}
                   required
                 >
+                  <option >Seleccione una opcion</option>
                   <option value="1">Por acciones simplificadas S.A.S</option>
                   <option value="2">Anónima</option>
                   <option value="3">Limitada</option>
@@ -1380,6 +1382,7 @@ const PersonaJuridica = () => {
                   onChange={handleChange}
                   required
                 >
+                  <option >Seleccione una opcion</option>
                   <option value="1">Establecimiento público</option>
                   <option value="2">
                     Empresa industrial y comercial del estado
@@ -1438,6 +1441,7 @@ const PersonaJuridica = () => {
                   onChange={handleChange}
                   required
                 >
+                  <option >Seleccione una opcion</option>
                   <option value="1">Nación</option>
                   <option value="2">Departamento</option>
                   <option value="3">Municipio</option>
@@ -1467,6 +1471,7 @@ const PersonaJuridica = () => {
                   onChange={handleChange}
                   required
                 >
+                  <option >Seleccione una opcion</option>
                   <option value="1">Nacional</option>
                   <option value="2">Departamental</option>
                   <option value="3">Municipal</option>
@@ -1521,7 +1526,7 @@ const PersonaJuridica = () => {
                 Detalle de ingresos no operacionales u originados en actividades
                 diferentes a la principal
                 <input
-                  type="number"
+                  type="text"
                   name="Detno"
                   className="Border"
                   onChange={handleChange}
@@ -1652,6 +1657,7 @@ const PersonaJuridica = () => {
                   onChange={handleChange}
                   required
                 >
+                  <option >Seleccione una opcion</option>
                   <option value="1">
                     Persona juridicas, comerciales y civiles, consorcios y
                     uniones temporales
@@ -1886,7 +1892,7 @@ const PersonaJuridica = () => {
                   <label className="label">
                     2.{" "}
                     <input
-                      type="number"
+                      type="text"
                       name="NoidTrib_2"
                       className="Border"
                       onChange={handleChange}
@@ -1895,7 +1901,7 @@ const PersonaJuridica = () => {
                   <label className="label">
                     2.{" "}
                     <input
-                      type="text"
+                      type="number"
                       name="Patri_2"
                       className="Border"
                       onChange={handleChange}
@@ -1924,6 +1930,7 @@ const PersonaJuridica = () => {
                   onChange={handleChange}
                   required
                 >
+                  <option >Seleccione una opcion</option>
                   <option value="1">Compraventa</option>
                   <option value="2">Aporte de socios</option>
                   <option value="3">Utilidades</option>
@@ -1950,6 +1957,7 @@ const PersonaJuridica = () => {
                   onChange={handleChange}
                   required
                 >
+                  <option >Seleccione una opcion</option>
                   <option value="1">Capitalización por parte de socios</option>
                   <option value="2">Desarrollo del objeto social</option>
                   <option value="3">Utilidades del negocio</option>
@@ -2093,6 +2101,7 @@ const PersonaJuridica = () => {
                   onChange={handleChange}
                   required
                 >
+                  <option >Seleccione una opcion</option>
                   <option value="1">Exportador e importador</option>
                   <option value="2">Pago de servicios</option>
                   <option value="3">Préstamos</option>
@@ -2143,6 +2152,7 @@ const PersonaJuridica = () => {
                   onChange={handleChange}
                   required
                 >
+                  <option >Seleccione una opcion</option>
                   <option value="1">Cuenta de ahorro</option>
                   <option value="2">Cuenta corriente</option>
                 </select>
@@ -2837,7 +2847,7 @@ const PersonaJuridica = () => {
             <label className="Texto-5">
               Código vendedor
               <input
-                type="text"
+                type="number"
                 name="Cod_vend"
                 className="Border"
                 onChange={handleChange}
