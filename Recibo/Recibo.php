@@ -4,6 +4,8 @@ $Fecha_act = $_POST['Fecha_act'];
 $Tip_pro = $_POST['Tip_pro'];
 $Valor_act = $_POST['Valor_act'];
 $Cajero = $_POST['Cajero'];
+$No_cuenta = $_POST['No_cuenta'];
+$Nom_ra = $_POST['Nom_ra'];
 ?>
 
 <!DOCTYPE html>
@@ -39,10 +41,15 @@ $Cajero = $_POST['Cajero'];
                             </div>
                             <div class="float__infoss">
                                 <div class="texto-cont ">
+                                <label class="Black">
+                                        Numero de cuenta:
+                                    </label>
+                                    <span><?php echo $No_cuenta ?></span>
+                                    <br></br>
                                     <label class="Black">
                                         Nombre del cliente:
                                     </label>
-                                    <span> Pepito perez</span>
+                                    <span><?php echo $Nom_ra ?></span>
                                     <br></br>
                                     <label class="Black">
                                         Identificación del cliente:

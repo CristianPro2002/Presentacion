@@ -9,20 +9,36 @@ import imagen from "../Cajero/imagen/User-Login.png";
 import axios from "axios";
 
 
-export const Cajero = ({numeroCajero}) => {
+export const Cajero = ({numeroCajero, numeroCajeroBD}) => {
 
   let History = useHistory();
 
+
   const baseUrl = "http://localhost:8080/Banca/bd_crud/cajero.php";
+  const baseUrl2 = "http://localhost:8080/Banca/bd_crud/index.php";
 
   const [data, setData] = useState([]);
+  const [consulta, setConsulta] = useState([]);
+  const [nombre, setNombre] = useState([]);
+  let consultaid = (consulta);
+
+//console.log(consultaid);
+
+//console.log(hola)
   const [dataUsuario, setDataUsuario] = useState({
     Id_act: "",
     Fecha_act: "",
     Tip_pro: "",
     Valor_act: "",
-    Cajero: "Cajero1",
+    Cajero: "",
+    No_cuenta: "",
+    Nom_ra: "",
   });
+
+
+  
+
+ //console.log(dataUsuario)
 
   const peticionPost = async () => {
     var f = new FormData();
@@ -36,6 +52,52 @@ export const Cajero = ({numeroCajero}) => {
       setData(data.concat(response.data));
     });
   };
+
+
+  const peticionGetCajero = async () => {
+    var f = new FormData();
+    f.append("No_cuenta", dataUsuario.No_cuenta);
+    f.append("METHOD", "CONSULTACAJERO");
+    await axios.post(baseUrl2, f).then((response) => {
+      setConsulta(response.data);
+      if(response.data.length == 1){
+      setDataUsuario({
+        Id_act: String(response.data[0].Nit),
+        Cajero: String(numeroCajeroBD),
+        Nom_ra: String(response.data[0].Nom_ra),
+      })
+      }
+    });
+  };
+
+  const peticionGetCajero2 = async () => {
+    var f = new FormData();
+    f.append("No_cuenta", dataUsuario.No_cuenta);
+    f.append("METHOD", "CONSULTACAJERO2");
+    await axios.post(baseUrl2, f).then((response) => {
+      setConsulta(response.data);
+      console.log(response.data);
+      if(response.data.length == 1){
+      setDataUsuario({
+        Id_act: String(response.data[0].No_ide),
+        Cajero: String(numeroCajeroBD),
+        Nom_ra: String(response.data[0].Pri_nom),
+      })
+    }
+    });
+  };
+
+
+
+  const peticionGetGeneral = () => {
+      peticionGetCajero2();
+      if(peticionGetCajero2().length == null){
+        peticionGetCajero();
+      }
+  }
+
+
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -81,27 +143,19 @@ export const Cajero = ({numeroCajero}) => {
                   <div className="Center">
                     <h1 className=" title">Apertura de ahorro</h1>
                   </div>
-                  <Form.Group controlId="sign-in-email-address">
+                  <Form.Group controlId="sign-in-password" className="mb-3">
                     <Form.Control
                       type="number"
                       size="lg"
-                      placeholder="Identificacion del cliente"
-                      autoComplete="username"
-                      className="position-relative mb-2"
-                    />
-                  </Form.Group>
-
-                  <Form.Group controlId="sign-in-password" className="mb-3">
-                    <Form.Control
-                      type="password"
-                      size="lg"
                       placeholder="Nº Cuenta"
+                      name="No_cuenta"
                       autoComplete="current-password"
                       className="position-relative"
+                      onChange={handleChange}
                     />
                   </Form.Group>
                   <div className="d-grid">
-                    <Button className="ingreso">Ingresar</Button>
+                    <Button className="ingreso" onClick={()=>peticionGetGeneral()}>Ingresar</Button>
                   </div>
                 </Form>
               </Container>
@@ -125,14 +179,29 @@ export const Cajero = ({numeroCajero}) => {
                       <h1 className="title2">Datos del cliente</h1>
                     </div>
                   </div>
-
+                  
+                {consulta.length == 1 ? consultaid.map((item) => (
                   <div className="margin">
+                    <Form.Group className="mb-3" id="Caje">
+                      <Form.Label>No de cuenta:</Form.Label>
+                      <Form.Control
+                        name="No_cuenta"
+                        className="cursor"
+                        type="text"
+                        value={dataUsuario.No_cuenta}
+                        onChange={handleChange}
+                      />
+                    </Form.Group>
                     <Form.Group className="mb-3">
                       <Form.Label>Nombre del cliente:</Form.Label>
                       <Form.Control
                         className="cursor"
-                        placeholder="Pepito Perez"
-                        disabled
+                        name="Nom_ra"
+                        placeholder={dataUsuario.Nom_ra}
+                        value={dataUsuario.Nom_ra}
+                        onChange={handleChange}
+                        readOnly="readOnly"
+                        
                       />
                     </Form.Group>
                     <Form.Group className="mb-3">
@@ -141,11 +210,12 @@ export const Cajero = ({numeroCajero}) => {
                         type="number"
                         name="Id_act"
                         className="cursor"
-                        placeholder="Cc. 1006.456.226"
+                        placeholder={dataUsuario.Id_act}
+                        value={dataUsuario.Id_act}
                         onChange={handleChange}
-                        required
+                        readOnly="readOnly"
                       />
-                    
+                     
                     </Form.Group>
                     <Form.Group className="mb-3">
                       <Form.Label>Fecha de apertura:</Form.Label>
@@ -194,7 +264,7 @@ export const Cajero = ({numeroCajero}) => {
                         name="Cajero"
                         className="cursor"
                         type="text"
-                        value="Cajero1"
+                        value={dataUsuario.Cajero}
                         onChange={handleChange}
                       />
                     </Form.Group>
@@ -208,10 +278,13 @@ export const Cajero = ({numeroCajero}) => {
                         Guardar{" "}
                       </Button>
                     </div>
-                    <div>
+                    
+                  </div> 
+                  )): 
+                  <h3 style={{backgroundColor: "red", padding: "10px", borderRadius: "8px", color: "white", marginTop: "20px"}}>¡Por favor ingresa un numero de cuenta!</h3>}
+                  <div>
                       <a href="/Tabla">Ver tabla de registro</a>
                     </div>
-                  </div>
                 </Form>
               </Container>
             </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 18-07-2022 a las 07:59:45
+-- Tiempo de generación: 21-07-2022 a las 15:46:03
 -- Versión del servidor: 8.0.29
 -- Versión de PHP: 7.4.30
 
@@ -145,7 +145,8 @@ CREATE TABLE `client_co` (
 --
 
 INSERT INTO `client_co` (`Id_client`, `No_ide`, `Idti_solicit`, `Fec_dil`, `Pri_nom`, `Seg_nom`, `Pri_ape`, `Seg_ape`, `Idti_doc`, `Lug_exp`, `Fec_exp`, `Fec_nac`, `Ciu_nac`, `Id_gen`, `Idest_ci`, `Id_nac`, `Otr_nac`, `Dir_re`, `Blo_to`, `Ap_ca`, `Barrio`, `Ciu_mu`, `Depart`, `Pais`, `Telef`, `Celular`, `Corr_ele`, `Profe`, `Idocu_ofii`, `Det_act`, `Cod_ciuu`, `No_emp`, `Nom_emp`, `Dir_emp`, `Barr_lab`, `Ciu_lab`, `Dep_lab`, `Pais_lab`, `Tel_lab`, `Ext`, `Cel_lab`, `Corr_lab`, `Ing_men`, `Otr_ing`, `Det_otr`, `To_act`, `To_pa`, `To_egr`, `Vent_a`, `Fe_ci`, `Dec_rent`, `Age_ret`, `Idtireg_iva`, `Ob_tri`, `Notri_est`, `Pais_1`, `Pais_2`, `No_tri1`, `No_tri2`, `Prov_bie`, `Pais_bi`, `Ciu_bie`, `Op_ext`, `Idtiop_m`, `Otro_mo`, `Nom_ent`, `Idtipro_m`, `Otro_mo2`, `No_pro`, `Mo_pro`, `Moneda`, `Ciu_ent`, `Pa_ent`, `Idtien_re`, `No_solicit`, `Cod_vend`) VALUES
-(1, 123, 1, '2022-06-10', 'sonia', 'maria', 'salas', 'sanchez', 4, 'dfdgfg', '2022-06-09', '2022-06-17', 'dfgdfgdf', 1, 3, 2, 'dgfdgd', 'dgfgdgd', 345, 534, 'dfgdg', 'dfgdfg', 'gdgdf', 'gdfgd', 3453, 53453, 'fdgdfg', 'gdfgd', 6, 'dfgdgd', 2342, 34, 'dsgsdg', 'dsfsdf', 'dsffs', 'fsdfs', 'fsdf', 'fdsf', 324, 43, 3242, 'dssfsfd', 3455, 5345, 'dgddfg', 54353, 5435, 3453, 53453, '2022-06-14', 'Si', 'No', 2, 'Si', 34535, 'fgdfgd', 'gdfgfd', 3453, 5344, 'dsfsdfs', 'dsfsf', 'sdfsf', 'Si', 5, 'gfhfh', 'dfhdhfhdhd', 2, 'dfgdfgd', 345, 3453, '5345', 'dgfdgd', 'gdfgd', 1, 3453, 4353);
+(1, 123, 1, '2022-06-10', 'sonia', 'maria', 'salas', 'sanchez', 4, 'dfdgfg', '2022-06-09', '2022-06-17', 'dfgdfgdf', 1, 3, 2, 'dgfdgd', 'dgfgdgd', 345, 534, 'dfgdg', 'dfgdfg', 'gdgdf', 'gdfgd', 3453, 53453, 'fdgdfg', 'gdfgd', 6, 'dfgdgd', 2342, 34, 'dsgsdg', 'dsfsdf', 'dsffs', 'fsdfs', 'fsdf', 'fdsf', 324, 43, 3242, 'dssfsfd', 3455, 5345, 'dgddfg', 54353, 5435, 3453, 53453, '2022-06-14', 'Si', 'No', 2, 'Si', 34535, 'fgdfgd', 'gdfgfd', 3453, 5344, 'dsfsdfs', 'dsfsf', 'sdfsf', 'Si', 5, 'gfhfh', 'dfhdhfhdhd', 2, 'dfgdfgd', 345, 3453, '5345', 'dgfdgd', 'gdfgd', 1, 3453, 4353),
+(12, 435436, 1, '2022-07-05', 'dgdfgdf', 'gdfgdf', 'gfdgdf', 'fdgdfg', 1, 'sdfsdfs', '2022-07-22', '2022-07-15', 'dfsdfsd', 2, 1, 2, 'fdsfsdf', 'dsfsd', 435, 4353, 'dfsdf', 'dsfsd', 'sdfsd', 'sdfsf', 3452, 45232, 'fsdgsdh', 'dsfsdf', 6, 'sddsgds', 3453, 53453, 'dsfds', 'sdffsd', 'dsfsdfsd', 'fdhdf', 'fgdgf', 'fdgdf', 435, 34, 5345, 'fdgdf', 35435, 3453, 'dfgdfgd', 345, 453, 34534, 53453, '2022-07-12', 'Si', 'Si', 1, 'Si', 435345, 'fdgdf', 'gfdgdf', 34534, 534534, 'fdgdfg', 'dfgdf', 'dfgdfg', 'Si', 1, 'gdfgdf', 'fdgdfgd', 1, 'fdgdfgdf', 34534, 34534, 'dgfdgdf', 'dfgdfgdf', 'gdfgdf', 1, 7585, 547845);
 
 -- --------------------------------------------------------
 
@@ -158,6 +159,13 @@ CREATE TABLE `clien_tip` (
   `Idti_sol` int NOT NULL COMMENT 'Identificacion de tipo de solicitud	',
   `No_ide` double NOT NULL COMMENT 'Nunero de identificacion del cliente'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Intermedia entre cliente comun y tipo de solicitud';
+
+--
+-- Volcado de datos para la tabla `clien_tip`
+--
+
+INSERT INTO `clien_tip` (`Idclien_tip`, `Idti_sol`, `No_ide`) VALUES
+(11, 2, 435436);
 
 -- --------------------------------------------------------
 
@@ -205,6 +213,13 @@ CREATE TABLE `cuenta_c` (
   `No_ide` double DEFAULT NULL COMMENT 'Numero de identificacion del cliente ',
   `Idti_cue` int DEFAULT NULL COMMENT 'Identificacion de tipo de cuenta'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Cuentas del cliente comun';
+
+--
+-- Volcado de datos para la tabla `cuenta_c`
+--
+
+INSERT INTO `cuenta_c` (`No_cuenta`, `No_ide`, `Idti_cue`) VALUES
+(137627, 435436, NULL);
 
 -- --------------------------------------------------------
 
@@ -404,6 +419,7 @@ INSERT INTO `genero` (`Id_gen`, `Nom_gen`) VALUES
 --
 
 CREATE TABLE `prueba` (
+  `id` int NOT NULL,
   `Id_act` int NOT NULL,
   `Fecha_act` datetime NOT NULL,
   `Tip_pro` varchar(300) COLLATE utf8mb4_general_ci NOT NULL,
@@ -415,10 +431,21 @@ CREATE TABLE `prueba` (
 -- Volcado de datos para la tabla `prueba`
 --
 
-INSERT INTO `prueba` (`Id_act`, `Fecha_act`, `Tip_pro`, `Valor_act`, `Cajero`) VALUES
-(342, '2022-06-13 21:48:00', 'Consignación', '324324', 'Cajero1'),
-(12345, '2022-06-18 18:11:00', 'Retiro', '500000', 'Cajero1'),
-(324324, '2022-05-18 00:27:00', 'Apertura de Cuenta', '20000', 'Cajero1');
+INSERT INTO `prueba` (`id`, `Id_act`, `Fecha_act`, `Tip_pro`, `Valor_act`, `Cajero`) VALUES
+(1, 342, '2022-06-13 21:48:00', 'Consignación', '324324', 'Cajero1'),
+(2, 12345, '2022-06-18 18:11:00', 'Retiro', '500000', 'Cajero1'),
+(3, 324324, '2022-05-18 00:27:00', 'Apertura de Cuenta', '20000', 'Cajero1'),
+(4, 551389, '2022-07-19 13:12:00', 'Consignación', '100000', 'Cajero1'),
+(20, 345354, '2022-07-23 01:56:00', 'Apertura de Cuenta', '453453', 'Cajero2'),
+(21, 345353, '2022-07-14 12:20:00', 'Retiro', '345345', 'Cajero1'),
+(22, 3534, '2022-07-14 12:38:00', 'Consignación', '34534', 'Cajero2'),
+(23, 34534, '2022-07-21 12:38:00', 'Apertura de Cuenta', '34532', 'Cajero2'),
+(24, 11111111, '2022-07-15 12:42:00', 'Consignación', '34534', 'Cajero2'),
+(25, 435436, '2022-07-13 16:23:00', 'Consignación', '456464', 'Cajero2'),
+(26, 11111111, '2022-07-19 16:24:00', 'Consignación', '3543', 'Cajero2'),
+(27, 435436, '2022-07-23 16:34:00', 'Consignación', '6565', 'Cajero3'),
+(28, 11111111, '2022-07-21 16:36:00', 'Consignación', '43534', 'Cajero3'),
+(29, 435436, '2022-07-22 17:38:00', 'Consignación', '5464', 'Cajero2');
 
 -- --------------------------------------------------------
 
@@ -436,7 +463,8 @@ CREATE TABLE `reg_soli` (
 --
 
 INSERT INTO `reg_soli` (`Id_reg`, `No_ide`) VALUES
-(20, 123);
+(20, 123),
+(21, 435436);
 
 -- --------------------------------------------------------
 
@@ -530,7 +558,8 @@ CREATE TABLE `solicitante` (
 
 INSERT INTO `solicitante` (`idsolicit`, `Idti_soli`, `No_solicit`, `Nom_solicit`, `Firma`) VALUES
 (2, 2, 3453, 'fgdgd', 'dfgfgd'),
-(5, 1, 6573, 'sdsd', 'sdsd');
+(5, 1, 6573, 'sdsd', 'sdsd'),
+(7, 1, 7585, 'dfgdf', 'ftfhgffh');
 
 -- --------------------------------------------------------
 
@@ -1014,7 +1043,8 @@ CREATE TABLE `vendedor` (
 
 INSERT INTO `vendedor` (`idcond`, `Cod_vend`, `Nom_vend`, `Oficina`, `Obser`, `Firma_vend`) VALUES
 (2, 4353, 'dfgdfg', 'gfdgd', 'gdfgdf', 'dfgdgdf'),
-(5, 6986, 'ddsd', 'sdsds', 'sdsds', 'sdsdsds');
+(5, 6986, 'ddsd', 'sdsds', 'sdsds', 'sdsdsds'),
+(7, 547845, 'fdgfd', 'fdgdf', 'dfgdfgdf', 'gfdgdfhd');
 
 --
 -- Índices para tablas volcadas
@@ -1140,7 +1170,8 @@ ALTER TABLE `genero`
 -- Indices de la tabla `prueba`
 --
 ALTER TABLE `prueba`
-  ADD PRIMARY KEY (`Id_act`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `Id_act` (`Id_act`);
 
 --
 -- Indices de la tabla `reg_soli`
@@ -1326,13 +1357,13 @@ ALTER TABLE `act_cli`
 -- AUTO_INCREMENT de la tabla `client_co`
 --
 ALTER TABLE `client_co`
-  MODIFY `Id_client` int NOT NULL AUTO_INCREMENT COMMENT 'Identificacion aleatorio de cada cliente', AUTO_INCREMENT=12;
+  MODIFY `Id_client` int NOT NULL AUTO_INCREMENT COMMENT 'Identificacion aleatorio de cada cliente', AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `clien_tip`
 --
 ALTER TABLE `clien_tip`
-  MODIFY `Idclien_tip` int NOT NULL AUTO_INCREMENT COMMENT 'Identificacion de intermedia clien_tip', AUTO_INCREMENT=11;
+  MODIFY `Idclien_tip` int NOT NULL AUTO_INCREMENT COMMENT 'Identificacion de intermedia clien_tip', AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `cont_ent`
@@ -1359,10 +1390,16 @@ ALTER TABLE `est_soli`
   MODIFY `Idest_soli` int NOT NULL AUTO_INCREMENT COMMENT 'Identificacion de estado de la solicitud', AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT de la tabla `prueba`
+--
+ALTER TABLE `prueba`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+--
 -- AUTO_INCREMENT de la tabla `reg_soli`
 --
 ALTER TABLE `reg_soli`
-  MODIFY `Id_reg` int NOT NULL AUTO_INCREMENT COMMENT 'Identificacion de los registros de las solicitudes', AUTO_INCREMENT=21;
+  MODIFY `Id_reg` int NOT NULL AUTO_INCREMENT COMMENT 'Identificacion de los registros de las solicitudes', AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `reg_solij`
@@ -1386,13 +1423,13 @@ ALTER TABLE `repr_le`
 -- AUTO_INCREMENT de la tabla `solicitante`
 --
 ALTER TABLE `solicitante`
-  MODIFY `idsolicit` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idsolicit` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `vendedor`
 --
 ALTER TABLE `vendedor`
-  MODIFY `idcond` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idcond` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restricciones para tablas volcadas

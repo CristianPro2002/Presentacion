@@ -82,7 +82,7 @@ const Factura = () => {
                       <br></br>
                       <label>
                         {" "}
-                        N° Cajero: <span className="span"> Cajero1</span>
+                        N° Cajero: <span className="span"> Cajero2</span>
                       </label>
                       <br></br>
                       <br></br>
