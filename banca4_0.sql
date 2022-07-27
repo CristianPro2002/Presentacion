@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 21-07-2022 a las 15:46:03
+-- Tiempo de generación: 27-07-2022 a las 15:17:10
 -- Versión del servidor: 8.0.29
 -- Versión de PHP: 7.4.30
 
@@ -445,7 +445,9 @@ INSERT INTO `prueba` (`id`, `Id_act`, `Fecha_act`, `Tip_pro`, `Valor_act`, `Caje
 (26, 11111111, '2022-07-19 16:24:00', 'Consignación', '3543', 'Cajero2'),
 (27, 435436, '2022-07-23 16:34:00', 'Consignación', '6565', 'Cajero3'),
 (28, 11111111, '2022-07-21 16:36:00', 'Consignación', '43534', 'Cajero3'),
-(29, 435436, '2022-07-22 17:38:00', 'Consignación', '5464', 'Cajero2');
+(29, 435436, '2022-07-22 17:38:00', 'Consignación', '5464', 'Cajero2'),
+(30, 435436, '2022-07-20 10:06:00', 'Apertura de Cuenta', '4353', 'Cajero1'),
+(31, 11111111, '2022-07-13 10:10:00', 'Consignación', '5464564', 'Cajero3');
 
 -- --------------------------------------------------------
 
@@ -1393,7 +1395,7 @@ ALTER TABLE `est_soli`
 -- AUTO_INCREMENT de la tabla `prueba`
 --
 ALTER TABLE `prueba`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT de la tabla `reg_soli`
