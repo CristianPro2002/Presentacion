@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { useHistory } from "react-router-dom";
 import Table from 'react-bootstrap/Table'
 import './Consulta.css'
-import { AppContext } from "../../application/provider";
+import { AppContext } from "../../../stateManagement/provider";
 
 const Consulta = () => {
   let History = useHistory();

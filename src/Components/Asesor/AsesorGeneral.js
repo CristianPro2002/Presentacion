@@ -7,7 +7,7 @@ import personaj from "./Imagens/personaj.png";
 import personan from "./Imagens/personan.jpg";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
-import {AppContext} from '../application/provider'
+import {AppContext} from '../../stateManagement/provider';
 const Asesor = ({onclick, numeroAsesor}) => {
 
   let History = useHistory();
